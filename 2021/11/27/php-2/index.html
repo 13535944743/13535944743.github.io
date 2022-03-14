@@ -1,0 +1,1743 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta name="keywords" content="后端 php">
+    <meta name="description" content="One Plus One Equals Two.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="google-site-verification" content="N2tyqrBMiGbzMX97sCxKpveMRBLdm8zEfKfFo8kitYk" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GZXVDMM7YD"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-GZXVDMM7YD');
+</script>
+
+
+    <title>PHP笔记(二) | 赤蓝紫</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/clz.css">
+
+    <link href="https://cdn.bootcdn.net/ajax/libs/highlight.js/11.1.0/styles/base16/atelier-forest.min.css"
+        rel="stylesheet">
+
+        <script src="/libs/jquery/jquery.min.js"></script>
+	<!-- async load function -->
+    <script>
+        function async(u, c) {
+            var d = document, t = 'script',
+                o = d.createElement(t),
+                s = d.getElementsByTagName(t)[0];
+            o.src = u;
+            if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+            s.parentNode.insertBefore(o, s);
+        }
+    </script>
+    <script src="/libs/valine/av-min.js"></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="赤蓝紫" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+  
+
+        <body>
+          <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="pageContent">
+            <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/avatar.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">赤蓝紫</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact/" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/avatar.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">赤蓝紫</div>
+        <div class="logo-desc">
+            
+            One Plus One Equals Two.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+    <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</header>
+
+              
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">PHP笔记(二)</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css" />
+<style>
+  #articleContent h1::before,
+  #articleContent h2::before,
+  #articleContent h3::before,
+  #articleContent h4::before,
+  #articleContent h5::before,
+  #articleContent h6::before {
+    display: block;
+    content: " ";
+    height: 100px;
+    margin-top: -100px;
+    visibility: hidden;
+  }
+
+  #articleContent :focus {
+    outline: none;
+  }
+
+  .toc-fixed {
+    position: fixed;
+    top: 64px;
+  }
+
+  .toc-widget {
+    width: 345px;
+    padding-left: 20px;
+  }
+
+  .toc-widget .toc-title {
+    padding: 35px 0 15px 17px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+  }
+
+  .toc-widget ol {
+    padding: 0;
+    list-style: none;
+  }
+
+  #toc-content {
+    padding-bottom: 30px;
+    overflow: auto;
+  }
+
+  #toc-content ol {
+    padding-left: 10px;
+  }
+
+  #toc-content ol li {
+    padding-left: 10px;
+  }
+
+  #toc-content .toc-link:hover {
+    color: #42b983;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+
+  #toc-content .toc-link::before {
+    background-color: transparent;
+    max-height: 25px;
+
+    position: absolute;
+    right: 23.5vw;
+    display: block;
+  }
+
+  #toc-content .is-active-link {
+    color: #42b983;
+  }
+
+  #floating-toc-btn {
+    position: fixed;
+    right: 15px;
+    bottom: 76px;
+    padding-top: 15px;
+    margin-bottom: 0;
+    z-index: 998;
+  }
+
+  #floating-toc-btn .btn-floating {
+    width: 48px;
+    height: 48px;
+  }
+
+  #floating-toc-btn .btn-floating i {
+    line-height: 48px;
+    font-size: 1.4rem;
+  }
+</style>
+<div class="row">
+  <div id="main-content" class="col s12 m12 l9"><!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/php/">
+                                <span class="chip bg-color">php</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
+                                后端
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-11-27
+                </div>
+                
+
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    17 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="PHP笔记-二"><a href="#PHP笔记-二" class="headerlink" title="PHP笔记(二)"></a>PHP笔记(二)</h1><h2 id="1-面向对象"><a href="#1-面向对象" class="headerlink" title="1. 面向对象"></a>1. 面向对象</h2><p><b style="color: red">已经学过C++面向对象、Java面向对象，这一部分属于是复习，以及熟悉PHP面向对象的不同之处，所以不会详讲</b></p>
+<h3 id="1-1-基本使用"><a href="#1-1-基本使用" class="headerlink" title="1.1 基本使用"></a>1.1 基本使用</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br>  <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Car</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"><span class="hljs-variable">$color</span></span>) </span>&#123; <span class="hljs-comment">// 构造函数: 用来在创建对象时初始化对象，在创建对象的语句中与 new 运算符一起使用。</span><br>      <span class="hljs-keyword">$this</span>-&gt;color = <span class="hljs-variable">$color</span>;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__destruct</span>(<span class="hljs-params"></span>) </span>&#123;  <span class="hljs-comment">// 析构函数: 当对象结束它的生命周期时，系统会自动执行析构函数</span><br>      <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;br&gt;&quot;</span>;<br>      <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;系统自动执行析构函数&quot;</span>;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setColor</span>(<span class="hljs-params"><span class="hljs-variable">$color</span></span>) </span>&#123;<br>      <span class="hljs-keyword">$this</span>-&gt;color = <span class="hljs-variable">$color</span>;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getColor</span>(<span class="hljs-params"></span>) </span>&#123;<br>      <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;color;<br>    &#125;<br>  &#125;<br><br>  <span class="hljs-variable">$car</span> = <span class="hljs-keyword">new</span> Car(<span class="hljs-string">&quot;White&quot;</span>);<br>  <span class="hljs-keyword">echo</span> <span class="hljs-variable">$car</span>-&gt;getColor();<br>  <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;br&gt;&quot;</span>;<br><br>  <span class="hljs-variable">$car</span>-&gt;setColor(<span class="hljs-string">&quot;Red&quot;</span>);<br>  <span class="hljs-keyword">echo</span> <span class="hljs-variable">$car</span>-&gt;getColor();<br><br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="1-2-继承"><a href="#1-2-继承" class="headerlink" title="1.2 继承"></a>1.2 继承</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br>  <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Car</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getColor</span>(<span class="hljs-params"></span>) </span>&#123;<br>      <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;白色&quot;</span>;<br>    &#125;<br>  &#125;<br><br>  <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FCar</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Car</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getColor</span>(<span class="hljs-params"></span>) </span>&#123; <span class="hljs-comment">// 重写getColor()方法</span><br>      <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;红色&quot;</span>;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fly</span>(<span class="hljs-params"></span>) </span>&#123;<br>      <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;I can Fly&quot;</span>;<br>    &#125;<br>  &#125;<br><br>  <span class="hljs-variable">$fcar</span> = <span class="hljs-keyword">new</span> FCar(<span class="hljs-string">&quot;White&quot;</span>);<br>  <span class="hljs-keyword">echo</span> <span class="hljs-variable">$fcar</span>-&gt;getColor();<br>  <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;br&gt;&quot;</span>;<br><br>  <span class="hljs-variable">$fcar</span>-&gt;fly();<br><br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="1-3-访问控制"><a href="#1-3-访问控制" class="headerlink" title="1.3 访问控制"></a>1.3 访问控制</h3><p>只有属性的访问控制，方法的类似</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br>  <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;pre&gt;&quot;</span>;<br>  <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyClass1</span> </span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-variable">$public</span> = <span class="hljs-string">&quot;Public&quot;</span>;<br>    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$protected</span> = <span class="hljs-string">&quot;Protected&quot;</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-variable">$private</span> = <span class="hljs-string">&quot;Private&quot;</span>;<br><br>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">printM</span>(<span class="hljs-params"></span>) </span>&#123;<br>      <span class="hljs-keyword">echo</span> <span class="hljs-keyword">$this</span>-&gt;public . <span class="hljs-string">&quot;\n&quot;</span>;<br>      <span class="hljs-keyword">echo</span> <span class="hljs-keyword">$this</span>-&gt;protected . <span class="hljs-string">&quot;\n&quot;</span>;<br>      <span class="hljs-keyword">echo</span> <span class="hljs-keyword">$this</span>-&gt;private . <span class="hljs-string">&quot;\n&quot;</span>;<br>    &#125;<br>  &#125;<br><br>  <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyClass2</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">MyClass1</span> </span>&#123;<br>    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$protected</span> = <span class="hljs-string">&#x27;Protected2&#x27;</span>;  <span class="hljs-comment">// 可以对public和protected重定义，但private不能，因为无法继承private属性</span><br>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">printM</span>(<span class="hljs-params"></span>) </span>&#123;<br>      <span class="hljs-keyword">echo</span> <span class="hljs-keyword">$this</span>-&gt;public . <span class="hljs-string">&quot;\n&quot;</span>;<br>      <span class="hljs-keyword">echo</span> <span class="hljs-keyword">$this</span>-&gt;protected . <span class="hljs-string">&quot;\n&quot;</span>;<br>      <span class="hljs-keyword">echo</span> <span class="hljs-keyword">$this</span>-&gt;private . <span class="hljs-string">&quot;\n&quot;</span>;   <span class="hljs-comment">// 会出现未定义private的警告</span><br>    &#125;<br>  &#125;<br><br>  <span class="hljs-variable">$obj1</span> = <span class="hljs-keyword">new</span> MyClass1();<br>  <span class="hljs-keyword">echo</span> <span class="hljs-variable">$obj1</span>-&gt;public . <span class="hljs-string">&quot;\n&quot;</span>;<br>  <span class="hljs-comment">// echo $obj1-&gt;protected;</span><br>  <span class="hljs-comment">// echo $obj1-&gt;private;   // 类外部无法访问protected属性和private属性</span><br>  <span class="hljs-variable">$obj1</span>-&gt;printM();      <span class="hljs-comment">// 对象方法可以访问所有属性</span><br><br>  <span class="hljs-variable">$obj2</span> = <span class="hljs-keyword">new</span> MyClass2();<br>  <span class="hljs-keyword">echo</span> <span class="hljs-variable">$obj2</span>-&gt;public . <span class="hljs-string">&quot;\n&quot;</span>;<br>  <span class="hljs-variable">$obj2</span>-&gt;printM();<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="1-4-接口"><a href="#1-4-接口" class="headerlink" title="1.4 接口"></a>1.4 接口</h3><p>使用接口，可以指定某个类必须实现哪些方法，但不需要定义这些方法的具体内容</p>
+<p>接口通过<strong>interface</strong>关键字来定义，定义所有的方法都是空的</p>
+<p><b style="color: red">接口中定义的所有方法都必须是公有(public)</b>, 这是接口的特性</p>
+<p>实现接口，使用<strong>implements</strong>操作符。类中必须实现接口中定义的所有方法，否则会报错。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br>  <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;pre&gt;&quot;</span>;<br>  <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">myName</span> </span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setName</span>(<span class="hljs-params"><span class="hljs-variable">$name</span></span>)</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getName</span>(<span class="hljs-params"></span>)</span>;<br>  &#125;<br><br>  <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Name</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">myName</span> </span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setName</span>(<span class="hljs-params"><span class="hljs-variable">$name</span></span>) </span>&#123;<br>      <span class="hljs-keyword">$this</span>-&gt;name = <span class="hljs-variable">$name</span>;<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getName</span>(<span class="hljs-params"></span>) </span>&#123;<br>      <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;name;<br>    &#125;<br>  &#125;<br><br>  <span class="hljs-variable">$n</span> = <span class="hljs-keyword">new</span> Name;<br>  <span class="hljs-variable">$n</span>-&gt;setName(<span class="hljs-string">&quot;CLZ&quot;</span>);<br>  <span class="hljs-keyword">echo</span> <span class="hljs-variable">$n</span>-&gt;getName();<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="1-5-抽象类"><a href="#1-5-抽象类" class="headerlink" title="1.5 抽象类"></a>1.5 抽象类</h3><p>任何一个类，如果至少有一个方法被声明为抽象的，则这个类就必须声明为抽象的</p>
+<p>被定义为抽象的方法只是声明了它的调用方式，不能定义具体的功能实现。</p>
+<p>继承一个抽象类的时候，子类必须定义父类中的抽象方法，这些方法的访问控制必须和父类一样或比父类宽松。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br>  <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;pre&gt;&quot;</span>;<br>  <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AbstractClass</span> </span>&#123;<br>    <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getValue</span>(<span class="hljs-params"></span>)</span>;<br>    <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">prefixValue</span>(<span class="hljs-params"><span class="hljs-variable">$prefix</span></span>)</span>;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">printOut</span>(<span class="hljs-params"></span>) </span>&#123;<br>      <span class="hljs-keyword">print</span> <span class="hljs-keyword">$this</span>-&gt;getValue() . PHP_EOL;<br>    &#125;<br>  &#125;<br><br>  <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConcreateClass1</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AbstractClass</span> </span>&#123;<br>    <span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getValue</span>(<span class="hljs-params"></span>) </span>&#123;<br>      <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;ConcreateClass1&quot;</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">prefixValue</span>(<span class="hljs-params"><span class="hljs-variable">$prefix</span></span>) </span>&#123;<br>      <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;<span class="hljs-subst">&#123;$prefix&#125;</span>ConcreateClass1&quot;</span>;<br>    &#125;<br>  &#125;<br><br>  <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConcreateClass2</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AbstractClass</span> </span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getValue</span>(<span class="hljs-params"></span>) </span>&#123;<br>      <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;ConcreateClass2&quot;</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">prefixValue</span>(<span class="hljs-params"><span class="hljs-variable">$prefix</span></span>) </span>&#123;<br>      <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;<span class="hljs-subst">&#123;$prefix&#125;</span>ConcreateClass2&quot;</span>;<br>    &#125;<br>  &#125;<br><br>  <span class="hljs-variable">$class1</span> = <span class="hljs-keyword">new</span> ConcreateClass1();<br>  <span class="hljs-variable">$class1</span>-&gt;printOut();<br>  <span class="hljs-keyword">echo</span> <span class="hljs-variable">$class1</span>-&gt;prefixValue(<span class="hljs-string">&quot;FOO_&quot;</span>) . PHP_EOL;<br><br>  <span class="hljs-variable">$class2</span> = <span class="hljs-keyword">new</span> ConcreateClass2();<br>  <span class="hljs-variable">$class2</span>-&gt;printOut();<br>  <span class="hljs-keyword">echo</span> <span class="hljs-variable">$class2</span>-&gt;prefixValue(<span class="hljs-string">&quot;FOO_&quot;</span>) . PHP_EOL;<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="1-6-静态方法"><a href="#1-6-静态方法" class="headerlink" title="1.6 静态方法"></a>1.6 静态方法</h3><p>通过<strong>static关键字</strong>声明类属性或方法，可以不是实例化类直接访问</p>
+<p><strong>静态属性不能由对象通过-&gt;操作符访问，而应该使用::操作符访问</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br>  <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;pre&gt;&quot;</span>;<br>  <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">static</span> <span class="hljs-variable">$my_static</span> = <span class="hljs-string">&quot;静态变量&quot;</span>;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">staticValue</span>(<span class="hljs-params"></span>) </span>&#123;<br>      <span class="hljs-keyword">return</span> <span class="hljs-built_in">self</span>::<span class="hljs-variable">$my_static</span>;<br>    &#125;<br><br>    <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayHello</span>(<span class="hljs-params"></span>) </span>&#123;<br>      <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Hello!&quot;</span> . PHP_EOL; <br>    &#125;<br>  &#125;<br><br>  <span class="hljs-keyword">print</span> Test::<span class="hljs-variable">$my_static</span> . PHP_EOL;   <br>  Test::sayHello();       <span class="hljs-comment">// 可以直接通过类名::访问静态变量和静态方法</span><br><br>  <span class="hljs-variable">$test</span> = <span class="hljs-keyword">new</span> Test();<br>  <span class="hljs-keyword">print</span> <span class="hljs-variable">$test</span>::<span class="hljs-variable">$my_static</span> . PHP_EOL;    <span class="hljs-comment">// 也可以通过对象::访问静态变量和静态方法</span><br>  <span class="hljs-keyword">print</span> <span class="hljs-variable">$test</span>-&gt;staticValue() . PHP_EOL;<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="1-7-调用父类的构造方法"><a href="#1-7-调用父类的构造方法" class="headerlink" title="1.7 调用父类的构造方法"></a>1.7 调用父类的构造方法</h3><p>在子类的构造方法中调用<strong>parent::__construct()</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br>  <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;pre&gt;&quot;</span>;<br>  <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Car</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"><span class="hljs-variable">$color</span>, <span class="hljs-variable">$cost</span></span>) </span>&#123;<br>      <span class="hljs-keyword">$this</span>-&gt;color = <span class="hljs-variable">$color</span>;<br>      <span class="hljs-keyword">$this</span>-&gt;cost = <span class="hljs-variable">$cost</span>;<br>    &#125;<br>  &#125;<br><br>  <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">WCar</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Car</span></span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"><span class="hljs-variable">$color</span>, <span class="hljs-variable">$cost</span>, <span class="hljs-variable">$weight</span></span>) </span>&#123;<br>      <span class="hljs-built_in">parent</span>::__construct(<span class="hljs-variable">$color</span>, <span class="hljs-variable">$cost</span>);<br>      <span class="hljs-keyword">$this</span>-&gt;weight = <span class="hljs-variable">$weight</span>;<br>    &#125;<br>  &#125;<br><br>  <span class="hljs-variable">$wcar</span> = <span class="hljs-keyword">new</span> WCar(<span class="hljs-string">&quot;White&quot;</span>, <span class="hljs-number">99999</span>, <span class="hljs-string">&quot;999kg&quot;</span>);<br>  var_dump(<span class="hljs-variable">$wcar</span>);<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="2-表单"><a href="#2-表单" class="headerlink" title="2. 表单"></a>2. 表单</h2><p><strong>简单使用</strong></p>
+<p>form.html</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;X-UA-Compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;IE=edge&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;welcome.php&quot;</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;post&quot;</span>&gt;</span><br>    名字: <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;fname&quot;</span>&gt;</span><br>    年龄: <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;age&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;提交&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p>welcome.php</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br>  <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;欢迎&quot;</span> . <span class="hljs-variable">$_POST</span>[<span class="hljs-string">&quot;fname&quot;</span>] . <span class="hljs-string">&quot;&lt;br&gt;&quot;</span>;<br>  <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;你的年龄是 &quot;</span> . <span class="hljs-variable">$_POST</span>[<span class="hljs-string">&quot;age&quot;</span>] . <span class="hljs-string">&quot;岁&quot;</span>;<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="3-PHP-AJAX"><a href="#3-PHP-AJAX" class="headerlink" title="3. PHP AJAX"></a>3. PHP AJAX</h2><h3 id="3-1-AJAX"><a href="#3-1-AJAX" class="headerlink" title="3.1 AJAX"></a>3.1 AJAX</h3><p>AJAX是一种<strong>无需重新加载整个页面的情况下，能够更新部分网页的技术</strong>。</p>
+<p>AJAX通过在后台与服务器进行少量数据交换，使网页实现异步更新。使用AJAX可以实现在不重载整个页面的情况下，对页面的某些部分进行更新。</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2013/08/ajax.gif"></p>
+<h3 id="3-2-使用PHP、AJAX实现简单的前后端交互"><a href="#3-2-使用PHP、AJAX实现简单的前后端交互" class="headerlink" title="3.2 使用PHP、AJAX实现简单的前后端交互"></a>3.2 使用PHP、AJAX实现简单的前后端交互</h3><p>websites表如下:</p>
+<p><img src="https://pic.imgdb.cn/item/619b1c562ab3f51d916a0508.jpg"></p>
+<p>前端：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;X-UA-Compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;IE=edge&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">form</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;users&quot;</span> <span class="hljs-attr">onchange</span>=<span class="hljs-string">&quot;showSite(this.value)&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>选择一个网站:<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;1&quot;</span>&gt;</span>Google<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;2&quot;</span>&gt;</span>淘宝<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;3&quot;</span>&gt;</span>Facebook<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;txtHint&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"></span><br><span class="javascript">    <span class="hljs-keyword">const</span> txtHint = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&#x27;txtHint&#x27;</span>);</span><br><span class="javascript"></span><br><span class="javascript">    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showSite</span>(<span class="hljs-params">str</span>) </span>&#123;</span><br><span class="javascript">      <span class="hljs-keyword">if</span> (str == <span class="hljs-string">&#x27;&#x27;</span>) &#123;</span><br><span class="javascript">        txtHint.innerHTML = <span class="hljs-string">&#x27;&#x27;</span>;</span><br><span class="javascript">        <span class="hljs-keyword">return</span>;</span><br><span class="javascript">      &#125;</span><br><span class="javascript"></span><br><span class="javascript">      <span class="hljs-keyword">let</span> xmlhttp = <span class="hljs-keyword">new</span> XMLHttpRequest();</span><br><span class="javascript">      xmlhttp.open(<span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-string">&quot;getsite.php?v=&quot;</span> + str, <span class="hljs-literal">true</span>); <span class="hljs-comment">// true表示异步执行请求</span></span><br><span class="javascript">      xmlhttp.send(<span class="hljs-literal">null</span>);</span><br><span class="javascript"></span><br><span class="javascript">      xmlhttp.onreadystatechange = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="javascript">        <span class="hljs-keyword">if</span> (xmlhttp.readyState === <span class="hljs-number">4</span> &amp;&amp; xmlhttp.status === <span class="hljs-number">200</span>) &#123;</span><br><span class="javascript">          txtHint.innerHTML = xmlhttp.responseText;</span><br><span class="javascript">        &#125;</span><br><span class="javascript">      &#125;</span><br><span class="javascript">    &#125;</span><br><span class="javascript">  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p>后端</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br>  <span class="hljs-comment">// $v = isset($_GET[&#x27;v&#x27;]) ? intval($_GET[&#x27;v&#x27;]) : &#x27;&#x27;;</span><br>  <span class="hljs-variable">$v</span> = <span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;v&#x27;</span>];<br><br>  <span class="hljs-keyword">if</span>(<span class="hljs-keyword">empty</span>(<span class="hljs-variable">$v</span>)) &#123;<br>    <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;请选择一个网站&#x27;</span>;<br>    <span class="hljs-keyword">exit</span>;<br>  &#125;<br><br>  <span class="hljs-variable">$con</span> = mysqli_connect(<span class="hljs-string">&#x27;localhost&#x27;</span>, <span class="hljs-string">&#x27;root&#x27;</span>, <span class="hljs-string">&#x27;root1234&#x27;</span>);<br>  <span class="hljs-keyword">if</span>(!<span class="hljs-variable">$con</span>) &#123;<br>    <span class="hljs-keyword">die</span>(<span class="hljs-string">&#x27;连接数据库失败: &#x27;</span> . mysqli_error(<span class="hljs-variable">$con</span>));<br>  &#125;<br><br>  mysqli_select_db(<span class="hljs-variable">$con</span>, <span class="hljs-string">&#x27;php_ajax_mysql&#x27;</span>); <span class="hljs-comment">// 选择数据库</span><br>  mysqli_set_charset(<span class="hljs-variable">$con</span>, <span class="hljs-string">&#x27;utf8&#x27;</span>);<br><br>  <span class="hljs-variable">$sql</span> = <span class="hljs-string">&#x27;select * from websites where id = &#x27;</span> . <span class="hljs-variable">$v</span>;<br><br>  <span class="hljs-variable">$result</span> = mysqli_query(<span class="hljs-variable">$con</span>, <span class="hljs-variable">$sql</span>);<br><br>  <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;20&quot; style=&quot;margin-top: 20px&quot;&gt;</span><br><span class="hljs-string">        &lt;tr style=&quot;background-color: #555; color: #fff&quot;&gt;</span><br><span class="hljs-string">          &lt;th&gt;ID&lt;/th&gt;</span><br><span class="hljs-string">          &lt;th&gt;网站名&lt;/th&gt;</span><br><span class="hljs-string">          &lt;th&gt;网站url&lt;/th&gt;</span><br><span class="hljs-string">          &lt;th&gt;Alexa排名&lt;/th&gt;</span><br><span class="hljs-string">          &lt;th&gt;国家&lt;/th&gt;</span><br><span class="hljs-string">        &lt;/tr&gt;&#x27;</span>;<br>  <span class="hljs-keyword">while</span>(<span class="hljs-variable">$row</span> = mysqli_fetch_assoc(<span class="hljs-variable">$result</span>)) &#123;<br>    <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;&lt;tr&gt;&#x27;</span>;<br>    <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;&lt;td&gt;&#x27;</span> . <span class="hljs-variable">$row</span>[<span class="hljs-string">&#x27;id&#x27;</span>] . <span class="hljs-string">&#x27;&lt;/td&gt;&#x27;</span>;<br>    <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;&lt;td&gt;&#x27;</span> . <span class="hljs-variable">$row</span>[<span class="hljs-string">&#x27;name&#x27;</span>] . <span class="hljs-string">&#x27;&lt;/td&gt;&#x27;</span>;<br>    <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;&lt;td&gt;&#x27;</span> . <span class="hljs-variable">$row</span>[<span class="hljs-string">&#x27;url&#x27;</span>] . <span class="hljs-string">&#x27;&lt;/td&gt;&#x27;</span>;<br>    <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;&lt;td&gt;&#x27;</span> . <span class="hljs-variable">$row</span>[<span class="hljs-string">&#x27;alexa&#x27;</span>] . <span class="hljs-string">&#x27;&lt;/td&gt;&#x27;</span>;<br>    <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;&lt;td&gt;&#x27;</span> . <span class="hljs-variable">$row</span>[<span class="hljs-string">&#x27;country&#x27;</span>] . <span class="hljs-string">&#x27;&lt;/td&gt;&#x27;</span>;<br>    <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;&lt;/tr&gt;&#x27;</span>;<br>  &#125;<br>  <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;&lt;/table&gt;&#x27;</span>;<br><br>  mysqli_close(<span class="hljs-variable">$con</span>);<br>          <br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<p><img src="https://pic.imgdb.cn/item/619b1d232ab3f51d916a66d1.jpg"></p>
+<h2 id="4-二维数组"><a href="#4-二维数组" class="headerlink" title="4. 二维数组"></a>4. 二维数组</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br>  <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;pre&gt;&quot;</span>;<br>  <span class="hljs-variable">$sites</span> = <span class="hljs-keyword">array</span><br>  (<br>    <span class="hljs-string">&quot;google&quot;</span> =&gt; <span class="hljs-keyword">array</span><br>    (<br>      <span class="hljs-string">&quot;Google搜索&quot;</span>,<br>      <span class="hljs-string">&quot;http://www.google.com&quot;</span><br>    ),<br>    <span class="hljs-string">&quot;baidu&quot;</span> =&gt; <span class="hljs-keyword">array</span><br>    (<br>      <span class="hljs-string">&quot;Baidu搜索&quot;</span>,<br>      <span class="hljs-string">&quot;http://www.baidu.com&quot;</span><br>    )<br>    );<br>    <span class="hljs-keyword">echo</span> <span class="hljs-variable">$sites</span>[<span class="hljs-string">&#x27;google&#x27;</span>][<span class="hljs-number">0</span>] . <span class="hljs-string">&#x27;地址为: &#x27;</span> . <span class="hljs-variable">$sites</span>[<span class="hljs-string">&#x27;google&#x27;</span>][<span class="hljs-number">1</span>];<br>    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;/pre&gt;&quot;</span>;<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="5-日期"><a href="#5-日期" class="headerlink" title="5. 日期"></a>5. 日期</h2><p>date()用于格式化时间/日期</p>
+<p>语法：</p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">string date ( string $format [, int $timestamp ] )<br></code></pre></td></tr></table></figure>
+</blockquote>
+<ul>
+<li>format：<strong>必需</strong>。规定如何格式化当前的日期和时间</li>
+<li>timestamp：可选。规定时间戳，默认是当前的时间和日期。</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br>  <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;pre&gt;&quot;</span>;<br>  <span class="hljs-keyword">echo</span> date(<span class="hljs-string">&quot;Y/m/d&quot;</span>) . PHP_EOL;<br>  <span class="hljs-keyword">echo</span> date(<span class="hljs-string">&quot;Y-m-d&quot;</span>) . PHP_EOL;<br>  <span class="hljs-keyword">echo</span> date(<span class="hljs-string">&quot;Y-m-d&quot;</span>, mktime(<span class="hljs-number">23</span>, <span class="hljs-number">59</span>, <span class="hljs-number">59</span>, <span class="hljs-number">12</span>, <span class="hljs-number">31</span>, <span class="hljs-number">2020</span>));<br>  <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;/pre&gt;&quot;</span>;<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>mktime()返回一个日期的UNIX时间戳</p>
+<p>语法：</p>
+<blockquote>
+<p>mktime(hour, minute, second, month, day, year);</p>
+</blockquote>
+<h2 id="6-插入文件"><a href="#6-插入文件" class="headerlink" title="6. 插入文件"></a>6. 插入文件</h2><p>require和include除了处理错误的方式不同外，在其他方面都相同</p>
+<ul>
+<li>require生成一个致命错误，在错误发生后脚本会停止执行</li>
+<li>include生成一个警告，在错误发生后脚本会继续执行</li>
+</ul>
+<ul>
+<li>require 一般放在 PHP 文件的最前面，程序在执行前就会先导入要引用的文件；</li>
+<li>include 一般放在程序的流程控制中，当程序执行时碰到才会引用，简化程序的执行流程</li>
+</ul>
+<p><strong>上一段文字引自</strong><a target="_blank" rel="noopener" href="https://www.runoob.com/php/php-includes.html">PHP include 和 require | 菜鸟教程 (runoob.com)</a></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br>  <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;h1&gt;测试开始&lt;h1&gt;&quot;</span>;<br>  <span class="hljs-keyword">require</span> <span class="hljs-string">&quot;./form.html&quot;</span>;<br>  <span class="hljs-comment">// include &quot;./form.html&quot;;</span><br>  <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;h1&gt;测试结束&lt;/h1&gt;&quot;</span><br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://pic.imgdb.cn/item/6199b1ab2ab3f51d91e38ce8.jpg"></p>
+<p>另一种用法：</p>
+<p>test.php：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br>  <span class="hljs-variable">$tt</span> = <span class="hljs-string">&quot;Hello World!&quot;</span>;<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p>practise.php</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br>  <span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;./test.php&#x27;</span>;<br>  <span class="hljs-keyword">echo</span> <span class="hljs-variable">$tt</span>;<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://pic.imgdb.cn/item/6199b4dd2ab3f51d91e4bc20.jpg"></p>
+<h2 id="7-文件上传"><a href="#7-文件上传" class="headerlink" title="7. 文件上传"></a>7. 文件上传</h2><p>form.html</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>菜鸟教程(runoob.com)<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;upload_file.php&quot;</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;post&quot;</span> <span class="hljs-attr">enctype</span>=<span class="hljs-string">&quot;multipart/form-data&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;file&quot;</span>&gt;</span>文件名：<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;file&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;file&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;file&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;提交&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>upload_file.php`</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br>  <span class="hljs-keyword">if</span>(<span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&#x27;file&#x27;</span>][<span class="hljs-string">&#x27;error&#x27;</span>] &gt; <span class="hljs-number">0</span>) &#123;<br>    <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;错误: &#x27;</span> . <span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&#x27;file&#x27;</span>][<span class="hljs-string">&#x27;error&#x27;</span>] . <span class="hljs-string">&#x27;&lt;br&gt;&#x27;</span>;<br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;上传文件名: &#x27;</span> . <span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&#x27;file&#x27;</span>][<span class="hljs-string">&#x27;name&#x27;</span>] . <span class="hljs-string">&#x27;&lt;br&gt;&#x27;</span>;<br>    <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;文件类型: &#x27;</span> . <span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&#x27;file&#x27;</span>][<span class="hljs-string">&#x27;type&#x27;</span>] . <span class="hljs-string">&#x27;&lt;br&gt;&#x27;</span>;<br>    <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;文件大小: &#x27;</span> . (<span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&#x27;file&#x27;</span>][<span class="hljs-string">&#x27;size&#x27;</span>] / <span class="hljs-number">1024</span>) . <span class="hljs-string">&#x27; kB&lt;br&gt;&#x27;</span>;<br>    <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;文件临时存储的位置: &#x27;</span> . <span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&#x27;file&#x27;</span>][<span class="hljs-string">&#x27;tmp_name&#x27;</span>];<br>  &#125;<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://pic.imgdb.cn/item/6199c8d62ab3f51d91ecb868.jpg"></p>
+<p><strong>上传限制和保存上传的文件</strong>:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br>  <span class="hljs-variable">$allowedExts</span> = <span class="hljs-keyword">array</span>(<span class="hljs-string">&#x27;gif&#x27;</span>, <span class="hljs-string">&#x27;jpeg&#x27;</span>, <span class="hljs-string">&#x27;jpg&#x27;</span>, <span class="hljs-string">&#x27;png&#x27;</span>);<br>  <span class="hljs-variable">$temp</span> = explode(<span class="hljs-string">&#x27;.&#x27;</span>, <span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&#x27;file&#x27;</span>][<span class="hljs-string">&#x27;name&#x27;</span>]);    <span class="hljs-comment">// 文件名按 . 分为字符串数组</span><br>  <span class="hljs-variable">$extension</span> = end(<span class="hljs-variable">$temp</span>);                  <span class="hljs-comment">// 得到数组中最后一个元素的值，即文件后缀名</span><br>  <span class="hljs-keyword">if</span>(<span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&#x27;file&#x27;</span>][<span class="hljs-string">&#x27;size&#x27;</span>] &lt; <span class="hljs-number">204800</span>       <span class="hljs-comment">// 上传文件大小要求小于200kb</span><br>  &amp;&amp; in_array(<span class="hljs-variable">$extension</span>, <span class="hljs-variable">$allowedExts</span>)) &#123;  <span class="hljs-comment">// 上传文件类型必须符合要求</span><br>    <span class="hljs-keyword">if</span>(<span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&#x27;file&#x27;</span>][<span class="hljs-string">&#x27;error&#x27;</span>] &gt; <span class="hljs-number">0</span>) &#123;<br>      <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;错误: &#x27;</span> . <span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&#x27;file&#x27;</span>][<span class="hljs-string">&#x27;error&#x27;</span>] . <span class="hljs-string">&#x27;&lt;br&gt;&#x27;</span>;<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>      <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;上传文件名: &#x27;</span> . <span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&#x27;file&#x27;</span>][<span class="hljs-string">&#x27;name&#x27;</span>] . <span class="hljs-string">&#x27;&lt;br&gt;&#x27;</span>;<br>      <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;文件类型: &#x27;</span> . <span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&#x27;file&#x27;</span>][<span class="hljs-string">&#x27;type&#x27;</span>] . <span class="hljs-string">&#x27;&lt;br&gt;&#x27;</span>;<br>      <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;文件大小: &#x27;</span> . (<span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&#x27;file&#x27;</span>][<span class="hljs-string">&#x27;size&#x27;</span>] / <span class="hljs-number">1024</span>) . <span class="hljs-string">&#x27; kB&lt;br&gt;&#x27;</span>;<br>      <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;文件临时存储的位置: &#x27;</span> . <span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&#x27;file&#x27;</span>][<span class="hljs-string">&#x27;tmp_name&#x27;</span>] . <span class="hljs-string">&#x27;&lt;br&gt;&#x27;</span>;<br>      <br>      <span class="hljs-keyword">if</span>(file_exists(<span class="hljs-string">&#x27;upload/&#x27;</span> . <span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&#x27;file&#x27;</span>][<span class="hljs-string">&#x27;name&#x27;</span>])) &#123;   <span class="hljs-comment">// 判断文件已经存在</span><br>        <span class="hljs-keyword">echo</span> <span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&#x27;file&#x27;</span>][<span class="hljs-string">&#x27;name&#x27;</span>] . <span class="hljs-string">&#x27;文件已经存在&#x27;</span>;<br>      &#125; <span class="hljs-keyword">else</span> &#123;<br>        move_uploaded_file(<span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&#x27;file&#x27;</span>][<span class="hljs-string">&#x27;tmp_name&#x27;</span>], <span class="hljs-string">&#x27;upload/&#x27;</span> . <span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&#x27;file&#x27;</span>][<span class="hljs-string">&#x27;name&#x27;</span>]);   <span class="hljs-comment">// 必须有upload文件夹，否则会出错</span><br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;文件存储在: &#x27;</span> . <span class="hljs-string">&#x27;upload/&#x27;</span> . <span class="hljs-variable">$_FILES</span>[<span class="hljs-string">&#x27;file&#x27;</span>][<span class="hljs-string">&#x27;name&#x27;</span>];<br>      &#125;<br>    &#125;<br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;非法的文件格式&quot;</span>;<br>  &#125;<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="8-Cookie"><a href="#8-Cookie" class="headerlink" title="8. Cookie"></a>8. Cookie</h2><p>当web服务器向浏览器发送web页面时，在连接关闭后，服务端不会记录用户的信息</p>
+<p>Cookie的作用就是用于解决<strong>如何记录客户端的用户信息</strong></p>
+<ul>
+<li>当用户访问web页面时，他的名字可以记录在Cookie中</li>
+<li>在用户下一次访问该页面时，可以在Cookie中读取用户访问记录</li>
+</ul>
+<p>Cookie以键值对的形式存储。</p>
+<h3 id="8-1-创建Cookie"><a href="#8-1-创建Cookie" class="headerlink" title="8.1 创建Cookie"></a>8.1 创建Cookie</h3><p>语法：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php">setcookie(name, value, expire, path, domain);<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>name: 必需。规定cookie的名称</li>
+<li>value: 必需。规定cookie的值</li>
+<li>expire: 可选。规定cookie的有效值</li>
+<li>path: 可选。规定cookie的服务器路径</li>
+<li>domain: 可选。规定cookie的域名</li>
+<li>secure: 可选。规定是否通过安全的HTTPS连接来传输cookie</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br>  <span class="hljs-variable">$expire</span> = time() + <span class="hljs-number">60</span>*<span class="hljs-number">60</span>*<span class="hljs-number">24</span>*<span class="hljs-number">30</span>; <span class="hljs-comment">// 设置过期时间为1个月, 60秒*60分*24小时*30天</span><br>  setcookie(<span class="hljs-string">&#x27;user&#x27;</span>, <span class="hljs-string">&#x27;clz&#x27;</span>, <span class="hljs-variable">$expire</span>);<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="8-2-取回Cookie的值"><a href="#8-2-取回Cookie的值" class="headerlink" title="8.2 取回Cookie的值"></a>8.2 取回Cookie的值</h3><p>通过$_COOKIE变量取回Cookie的值</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br> <span class="hljs-keyword">echo</span> <span class="hljs-variable">$_COOKIE</span>[<span class="hljs-string">&#x27;user&#x27;</span>] . <span class="hljs-string">&quot;&lt;br&gt;&quot;</span>;<br> print_r(<span class="hljs-variable">$_COOKIE</span>);   <span class="hljs-comment">// 查看所有的cookie</span><br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p>简单判断是不是登录的用户</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br> <span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$_COOKIE</span>[<span class="hljs-string">&#x27;user&#x27;</span>])) &#123;  <span class="hljs-comment">//判断cookie是否存在</span><br>  <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;欢迎 &quot;</span> . <span class="hljs-variable">$_COOKIE</span>[<span class="hljs-string">&#x27;user&#x27;</span>] . <span class="hljs-string">&#x27;&lt;br&gt;&#x27;</span>;<br> &#125; <span class="hljs-keyword">else</span> &#123;<br>   <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;普通访客&lt;br&gt;&#x27;</span>;<br> &#125;<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="8-3-删除Cookie"><a href="#8-3-删除Cookie" class="headerlink" title="8.3 删除Cookie"></a>8.3 删除Cookie</h3><p>有点巧妙，重新设置cookie，不过把过期时间设置为过去的时间</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br>  setcookie(<span class="hljs-string">&#x27;user&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>, time() - <span class="hljs-number">60</span>);<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="9-PHP-JSON"><a href="#9-PHP-JSON" class="headerlink" title="9. PHP JSON"></a>9. PHP JSON</h2><p><strong>json_encode()函数</strong>用于对变量进行JSON编码，执行成功则返回JSON数据，否则返回false</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br>  <span class="hljs-variable">$arr</span> = <span class="hljs-keyword">array</span>(<span class="hljs-string">&#x27;a&#x27;</span> =&gt; <span class="hljs-number">1</span>, <span class="hljs-string">&#x27;b&#x27;</span> =&gt; <span class="hljs-number">2</span>, <span class="hljs-string">&#x27;c&#x27;</span> =&gt; <span class="hljs-number">3</span>);<br>  <span class="hljs-keyword">echo</span> json_encode(<span class="hljs-variable">$arr</span>);<br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>结果：{“a”:1,”b”:2,”c”:3}</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br>   <span class="hljs-variable">$arr</span> = <span class="hljs-keyword">array</span>(<span class="hljs-string">&#x27;test&#x27;</span> =&gt; <span class="hljs-string">&#x27;测试&#x27;</span>, <span class="hljs-string">&#x27;baidu&#x27;</span> =&gt; <span class="hljs-string">&#x27;百度&#x27;</span>);<br>   <span class="hljs-keyword">echo</span> json_encode(<span class="hljs-variable">$arr</span>);  <span class="hljs-comment">// 编码中文</span><br>   <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;br&gt;&quot;</span>;<br>   <span class="hljs-keyword">echo</span> json_encode(<span class="hljs-variable">$arr</span>, JSON_UNESCAPED_UNICODE); <span class="hljs-comment">// 不编码中文</span><br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<blockquote>
+<p>{“test”:”\u6d4b\u8bd5”,”baidu”:”\u767e\u5ea6”}<br>{“test”:”测试”,”baidu”:”百度”}</p>
+</blockquote>
+<p><strong>json_decode() 函数</strong>用于对 JSON 格式的字符串进行解码，并转换为 PHP 变量。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br>  <span class="hljs-variable">$json</span> = <span class="hljs-string">&#x27;&#123;&quot;a&quot;: 1, &quot;b&quot;: 2, &quot;c&quot;: 3&#125;&#x27;</span>;<br><br>  print_r(json_decode(<span class="hljs-variable">$json</span>));<br>  <span class="hljs-keyword">print</span> <span class="hljs-string">&#x27;&lt;br&gt;&#x27;</span>;<br>  print_r(json_decode(<span class="hljs-variable">$json</span>, <span class="hljs-literal">true</span>));  <span class="hljs-comment">// 第二个参数为true时，将返回数组，为false时，返回对象，默认为false</span><br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p>参考：<a target="_blank" rel="noopener" href="https://www.runoob.com/php/php-tutorial.html">PHP 教程 | 菜鸟教程 (runoob.com)</a></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">赤蓝紫</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://clz.vercel.app/2021/11/27/php-2/">https://clz.vercel.app/2021/11/27/php-2/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">赤蓝紫</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/php/">
+                                    <span class="chip bg-color">php</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="qq,wechat" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+  .valine-card {
+    margin: 1.5rem auto;
+  }
+
+  .valine-card .card-content {
+    padding: 20px 20px 5px 20px;
+  }
+
+  #vcomments textarea {
+    resize: none;
+    box-sizing: border-box;
+    background: url("/medias/my_comment_bg.jpg") 100% 100% no-repeat;
+  }
+
+  #vcomments p {
+    margin: 2px 2px 10px;
+    font-size: 1.05rem;
+    line-height: 1.78rem;
+  }
+
+  #vcomments blockquote p {
+    text-indent: 0.2rem;
+  }
+
+  #vcomments a {
+    padding: 0 2px;
+    color: #4cbf30;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  #vcomments img {
+    max-width: 100%;
+    height: auto;
+    cursor: pointer;
+  }
+
+  #vcomments ol li {
+    list-style-type: decimal;
+  }
+
+  #vcomments ol,
+  ul {
+    display: block;
+    padding-left: 2em;
+    word-spacing: 0.05rem;
+  }
+
+  #vcomments ul li,
+  ol li {
+    display: list-item;
+    line-height: 1.8rem;
+    font-size: 1rem;
+  }
+
+  #vcomments ul li {
+    list-style-type: disc;
+  }
+
+  #vcomments ul ul li {
+    list-style-type: circle;
+  }
+
+  #vcomments table,
+  th,
+  td {
+    padding: 12px 13px;
+    border: 1px solid #dfe2e5;
+  }
+
+  #vcomments table,
+  th,
+  td {
+    border: 0;
+  }
+
+  table tr:nth-child(2n),
+  thead {
+    background-color: #fafafa;
+  }
+
+  #vcomments table th {
+    background-color: #f2f2f2;
+    min-width: 80px;
+  }
+
+  #vcomments table td {
+    min-width: 80px;
+  }
+
+  #vcomments h1 {
+    font-size: 1.85rem;
+    font-weight: bold;
+    line-height: 2.2rem;
+  }
+
+  #vcomments h2 {
+    font-size: 1.65rem;
+    font-weight: bold;
+    line-height: 1.9rem;
+  }
+
+  #vcomments h3 {
+    font-size: 1.45rem;
+    font-weight: bold;
+    line-height: 1.7rem;
+  }
+
+  #vcomments h4 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+  }
+
+  #vcomments h5 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    line-height: 1.4rem;
+  }
+
+  #vcomments h6 {
+    font-size: 1rem;
+    line-height: 1.3rem;
+  }
+
+  #vcomments p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  #vcomments hr {
+    margin: 12px 0;
+    border: 0;
+    border-top: 1px solid #ccc;
+  }
+
+  #vcomments blockquote {
+    margin: 15px 0;
+    border-left: 5px solid #42b983;
+    padding: 1rem 0.8rem 0.3rem 0.8rem;
+    color: #666;
+    background-color: rgba(66, 185, 131, 0.1);
+  }
+
+  #vcomments pre {
+    font-family: monospace, monospace;
+    padding: 1.2em;
+    margin: 0.5em 0;
+    background: #272822;
+    overflow: auto;
+    border-radius: 0.3em;
+    tab-size: 4;
+  }
+
+  #vcomments code {
+    font-family: monospace, monospace;
+    padding: 1px 3px;
+    font-size: 0.92rem;
+    color: #e96900;
+    background-color: #f8f8f8;
+    border-radius: 2px;
+  }
+
+  #vcomments pre code {
+    font-family: monospace, monospace;
+    padding: 0;
+    color: #e8eaf6;
+    background-color: #272822;
+  }
+
+  #vcomments pre[class*="language-"] {
+    padding: 1.2em;
+    margin: 0.5em 0;
+  }
+
+  #vcomments code[class*="language-"],
+  pre[class*="language-"] {
+    color: #e8eaf6;
+  }
+
+  #vcomments [type="checkbox"]:not(:checked),
+  [type="checkbox"]:checked {
+    position: inherit;
+    margin-left: -1.3rem;
+    margin-right: 0.4rem;
+    margin-top: -1px;
+    vertical-align: middle;
+    left: unset;
+    visibility: visible;
+  }
+
+  #vcomments b,
+  strong {
+    font-weight: bold;
+  }
+
+  #vcomments dfn {
+    font-style: italic;
+  }
+
+  #vcomments small {
+    font-size: 85%;
+  }
+
+  #vcomments cite {
+    font-style: normal;
+  }
+
+  #vcomments mark {
+    background-color: #fcf8e3;
+    padding: 0.2em;
+  }
+
+  #vcomments table,
+  th,
+  td {
+    padding: 12px 13px;
+    border: 1px solid #dfe2e5;
+  }
+
+  table tr:nth-child(2n),
+  thead {
+    background-color: #fafafa;
+  }
+
+  #vcomments table th {
+    background-color: #f2f2f2;
+    min-width: 80px;
+  }
+
+  #vcomments table td {
+    min-width: 80px;
+  }
+
+  #vcomments [type="checkbox"]:not(:checked),
+  [type="checkbox"]:checked {
+    position: inherit;
+    margin-left: -1.3rem;
+    margin-right: 0.4rem;
+    margin-top: -1px;
+    vertical-align: middle;
+    left: unset;
+    visibility: visible;
+  }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+  <div class="comment_headling"
+    style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px">
+    <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+    <span>评论</span>
+  </div>
+  <div id="vcomments" class="card-content" style="display: grid"></div>
+</div>
+
+<script>
+  async("/libs/valine/ValineHCLonely.js", function () {
+    new Valine({
+      el: "#vcomments",
+      appId: "2coN91JLNAEdiLdotu8swszK-MdYXbMMI",
+      appKey: "lMPrwDlhyJdnYay6JviS0qKS",
+      notify: "true" === "true",
+      verify: "false" === "true",
+      visitor: "true" === "true",
+      avatar: "identicon",
+      pageSize: "10",
+      lang: 'zh-cn',
+      placeholder: "One Plus One is ?",
+      serverURLs: 'https://2con91jl.api.lncldglobal.com',
+
+      requiredFields: ["nick", "mail"],
+      // 设置Bilibili表情包地址
+      emojiCDN: "//i0.hdslb.com/bfs/emote/",
+      // 表情title和图片映射
+      emojiMaps: {
+        tv_doge: "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+        tv_亲亲: "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+        tv_偷笑: "bb690d4107620f1c15cff29509db529a73aee261.png",
+        tv_再见: "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+        tv_冷漠: "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+        tv_发怒: "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+        tv_发财: "34db290afd2963723c6eb3c4560667db7253a21a.png",
+        tv_可爱: "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+        tv_吐血: "09dd16a7aa59b77baa1155d47484409624470c77.png",
+        tv_呆: "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+        tv_呕吐: "9f996894a39e282ccf5e66856af49483f81870f3.png",
+        tv_困: "241ee304e44c0af029adceb294399391e4737ef2.png",
+        tv_坏笑: "1f0b87f731a671079842116e0991c91c2c88645a.png",
+        tv_大佬: "093c1e2c490161aca397afc45573c877cdead616.png",
+        tv_大哭: "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+        tv_委屈: "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+        tv_害羞: "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+        tv_尴尬: "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+        tv_微笑: "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+        tv_思考: "90cf159733e558137ed20aa04d09964436f618a1.png",
+        tv_惊吓: "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+        tv_打脸: "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+        tv_抓狂: "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+        tv_抠鼻: "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+        tv_斜眼笑: "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+        tv_无奈: "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+        tv_晕: "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+        tv_流汗: "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+        tv_流泪: "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+        tv_流鼻血: "c32d39db2737f89b904ca32700d140a9241b0767.png",
+        tv_点赞: "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+        tv_生气: "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+        tv_生病: "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+        tv_疑问: "0793d949b18d7be716078349c202c15ff166f314.png",
+        tv_白眼: "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+        tv_皱眉: "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+        tv_目瞪口呆: "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+        tv_睡着: "8b196675b53af58264f383c50ad0945048290b33.png",
+        tv_笑哭: "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+        tv_腼腆: "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+        tv_色: "61822c7e9aae5da76475e7892534545336b23a6f.png",
+        tv_调侃: "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+        tv_调皮: "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+        tv_鄙视: "6e72339f346a692a495b123174b49e4e8e781303.png",
+        tv_闭嘴: "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+        tv_难过: "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+        tv_馋: "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+        tv_鬼脸: "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+        tv_黑人问号: "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+        tv_鼓掌: "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"
+        // ... 更多表情
+      },
+      master: "6215c7b8691be9bc9e7e783fe8372da6",
+      tagMeta: ["博主", "小伙伴", "访客"],
+      friends: [],
+      metaPlaceholder: { nick: "昵称/QQ号", mail: "邮箱" },
+      enableQQ: true,
+      path: window.location.pathname
+    })
+  })
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/11/27/python-4/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="python(四)">
+                        
+                        <span class="card-title">python(四)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-27
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/11/27/php-1/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="PHP笔记(一)">
+                        
+                        <span class="card-title">PHP笔记(一)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-27
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
+                                    后端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/php/">
+                        <span class="chip bg-color">php</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 赤蓝紫<br />'
+            + '文章作者: 赤蓝紫<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+</div>
+  <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+    <div class="toc-widget card" style="background-color: white">
+      <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+      <div id="toc-content"></div>
+    </div>
+  </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+  <a class="btn-floating btn-large bg-color">
+    <i class="fas fa-list-ul"></i>
+  </a>
+</div>
+
+
+<script>
+  async("/libs/tocbot/tocbot.min.js", function() {
+      $(function () {
+          tocbot.init({
+              tocSelector: '#toc-content',
+              contentSelector: '#articleContent',
+              headingsOffset: -($(window).height() * 0.4 - 45),
+              collapseDepth: Number('0'),
+              headingSelector: 'h2, h3, h4'
+          });
+
+          // modify the toc link href to support Chinese.
+          let i = 0;
+          let tocHeading = 'toc-heading-';
+          $('#toc-content a').each(function () {
+              $(this).attr('href', '#' + tocHeading + (++i));
+          });
+
+          // modify the heading title id to support Chinese.
+          i = 0;
+          $('#articleContent').children('h2, h3, h4').each(function () {
+              $(this).attr('id', tocHeading + (++i));
+          });
+
+          // Set scroll toc fixed.
+          let tocHeight = parseInt($(window).height() * 0.4 - 64);
+          let $tocWidget = $('.toc-widget');
+          $(window).scroll(function () {
+              let scroll = $(window).scrollTop();
+              /* add post toc fixed. */
+              if (scroll > tocHeight) {
+                  $tocWidget.addClass('toc-fixed');
+              } else {
+                  $tocWidget.removeClass('toc-fixed');
+              }
+          });
+
+          
+          /* 修复文章卡片 div 的宽度. */
+          let fixPostCardWidth = function (srcId, targetId) {
+              let srcDiv = $('#' + srcId);
+              if (srcDiv.length === 0) {
+                  return;
+              }
+
+              let w = srcDiv.width();
+              if (w >= 450) {
+                  w = w + 21;
+              } else if (w >= 350 && w < 450) {
+                  w = w + 18;
+              } else if (w >= 300 && w < 350) {
+                  w = w + 16;
+              } else {
+                  w = w + 14;
+              }
+              $('#' + targetId).width(w);
+          };
+
+          // 切换TOC目录展开收缩的相关操作.
+          const expandedClass = 'expanded';
+          let $tocAside = $('#toc-aside');
+          let $mainContent = $('#main-content');
+          $('#floating-toc-btn .btn-floating').click(function () {
+              if ($tocAside.hasClass(expandedClass)) {
+                  $tocAside.removeClass(expandedClass).hide();
+                  $mainContent.removeClass('l9');
+              } else {
+                  $tocAside.addClass(expandedClass).show();
+                  $mainContent.addClass('l9');
+              }
+              fixPostCardWidth('artDetail', 'prenext-posts');
+          });
+          
+      });
+  })
+</script>
+
+    
+
+</main>
+
+
+
+                <footer class="page-footer bg-color">
+  <!-- 
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="" id="aplayerContent">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="6833073788"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+     -->
+  <div class="container row center-align" style="margin-bottom: 15px !important;">
+    <div class="col s12 m8 l8 copy-right">
+      Copyright&nbsp;&copy; 
+      <span id="year">2021-2022</span>
+      
+      <span id="year">2021</span>
+      <a href="/about" target="_blank">赤蓝紫</a>
+      |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+      <br />
+       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">160.4k</span>&nbsp;字      
+      <span id="busuanzi_container_site_pv"> |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次 </span>
+       
+      <span id="busuanzi_container_site_uv"> |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人 </span>
+      
+      <br />
+      
+      <span id="sitetime">载入运行时间...</span>
+      <script>
+        function siteTime() {
+          var seconds = 1000
+          var minutes = seconds * 60
+          var hours = minutes * 60
+          var days = hours * 24
+          var years = days * 365
+          var today = new Date()
+          var startYear = "2021"
+          var startMonth = "6"
+          var startDate = "20"
+          var startHour = "0"
+          var startMinute = "0"
+          var startSecond = "0"
+          var todayYear = today.getFullYear()
+          var todayMonth = today.getMonth() + 1
+          var todayDate = today.getDate()
+          var todayHour = today.getHours()
+          var todayMinute = today.getMinutes()
+          var todaySecond = today.getSeconds()
+          var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond)
+          var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond)
+          var diff = t2 - t1
+          var diffYears = Math.floor(diff / years)
+          var diffDays = Math.floor(diff / days - diffYears * 365)
+          var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours)
+          var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes)
+          var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds)
+          if (startYear == todayYear) {
+            document.getElementById("year").innerHTML = todayYear
+            document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒"
+          } else {
+            document.getElementById("year").innerHTML = startYear + " - " + todayYear
+            document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒"
+          }
+        }
+        setInterval(siteTime, 1000)
+      </script>
+      
+      <br />
+      
+      <span id="icp"
+        >
+        <!-- <img src="/medias/icp.png" style="vertical-align: text-bottom" /> -->
+        <a href="https://icp.gov.moe/?keyword=20229007" target="_blank">萌ICP备20229007号</a>
+      </span>
+      
+    </div>
+    <div class="col s12 m4 l4 social-link social-statis">
+<a href="https://github.com/13535944743" target="_blank"
+    data-position="top" data-delay="50">
+    <i class="fab fa-github"></i>
+</a>
+
+
+
+<a href="javascript:;" class="wechat" data-position="top" data-delay="50">
+    <i class="fab fa-weixin"></i>
+</a>
+
+
+
+<a href="mailto:1926389897@qq.com"  target="_blank"
+    data-position="top" data-delay="50">
+    <i class="fas fa-envelope-open"></i>
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top"
+    data-delay="50">
+    <i class="fas fa-rss"></i>
+</a>
+</div>
+  </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+                  <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+                    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+                      <script src="/libs/materialize/materialize.min.js"></script>
+                      <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+                      <script src="/libs/aos/aos.js"></script>
+                      <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+                      <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+                      <script>async("/js/matery.js");</script>
+
+
+                      <!-- <script src="/js/digitalRain.js"></script> -->
+                      <script src="https://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
+                      <script>
+                        hljs.initHighlightingOnLoad()
+                      </script>
+
+                      <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?4ad37b19b8976dd4a39f98611bfe8cf1";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+                        <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+                          
+                              
+                                <script async
+                                  src="/libs/others/busuanzi.pure.mini.js"></script>
+                                
+                                  
+                                      
+                                          
+                                              
+                                                  
+                                                        
+                                                            
+                                                              <script
+                                                                src="/libs/instantpage/instantpage.js"
+                                                                type="module"></script>
+                                                              
+          </div>
+
+          
+            <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="" id="aplayerContent">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="6833073788"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+              
+                <script src="/js/jquery.pjax.js"></script>
+                <script src="/js/clz.js"></script>
+
+                <!--动态线条背景-->
+                <script type="text/javascript" color="220,220,220" opacity="0.7" zIndex="-2" count="200"
+                  src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+        </body>
+
+</html>

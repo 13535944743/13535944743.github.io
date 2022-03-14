@@ -1,0 +1,1773 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta name="keywords" content="Javascript DOM(一), 赤蓝紫">
+    <meta name="description" content="One Plus One Equals Two.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="google-site-verification" content="N2tyqrBMiGbzMX97sCxKpveMRBLdm8zEfKfFo8kitYk" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GZXVDMM7YD"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-GZXVDMM7YD');
+</script>
+
+
+    <title>Javascript DOM(一) | 赤蓝紫</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/clz.css">
+
+    <link href="https://cdn.bootcdn.net/ajax/libs/highlight.js/11.1.0/styles/base16/atelier-forest.min.css"
+        rel="stylesheet">
+
+        <script src="/libs/jquery/jquery.min.js"></script>
+	<!-- async load function -->
+    <script>
+        function async(u, c) {
+            var d = document, t = 'script',
+                o = d.createElement(t),
+                s = d.getElementsByTagName(t)[0];
+            o.src = u;
+            if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+            s.parentNode.insertBefore(o, s);
+        }
+    </script>
+    <script src="/libs/valine/av-min.js"></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="赤蓝紫" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+  
+
+        <body>
+          <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="pageContent">
+            <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/avatar.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">赤蓝紫</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact/" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/avatar.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">赤蓝紫</div>
+        <div class="logo-desc">
+            
+            One Plus One Equals Two.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+    <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</header>
+
+              
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Javascript DOM(一)</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css" />
+<style>
+  #articleContent h1::before,
+  #articleContent h2::before,
+  #articleContent h3::before,
+  #articleContent h4::before,
+  #articleContent h5::before,
+  #articleContent h6::before {
+    display: block;
+    content: " ";
+    height: 100px;
+    margin-top: -100px;
+    visibility: hidden;
+  }
+
+  #articleContent :focus {
+    outline: none;
+  }
+
+  .toc-fixed {
+    position: fixed;
+    top: 64px;
+  }
+
+  .toc-widget {
+    width: 345px;
+    padding-left: 20px;
+  }
+
+  .toc-widget .toc-title {
+    padding: 35px 0 15px 17px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+  }
+
+  .toc-widget ol {
+    padding: 0;
+    list-style: none;
+  }
+
+  #toc-content {
+    padding-bottom: 30px;
+    overflow: auto;
+  }
+
+  #toc-content ol {
+    padding-left: 10px;
+  }
+
+  #toc-content ol li {
+    padding-left: 10px;
+  }
+
+  #toc-content .toc-link:hover {
+    color: #42b983;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+
+  #toc-content .toc-link::before {
+    background-color: transparent;
+    max-height: 25px;
+
+    position: absolute;
+    right: 23.5vw;
+    display: block;
+  }
+
+  #toc-content .is-active-link {
+    color: #42b983;
+  }
+
+  #floating-toc-btn {
+    position: fixed;
+    right: 15px;
+    bottom: 76px;
+    padding-top: 15px;
+    margin-bottom: 0;
+    z-index: 998;
+  }
+
+  #floating-toc-btn .btn-floating {
+    width: 48px;
+    height: 48px;
+  }
+
+  #floating-toc-btn .btn-floating i {
+    line-height: 48px;
+    font-size: 1.4rem;
+  }
+</style>
+<div class="row">
+  <div id="main-content" class="col s12 m12 l9"><!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Javascript/">
+                                <span class="chip bg-color">Javascript</span>
+                            </a>
+                        
+                            <a href="/tags/DOM/">
+                                <span class="chip bg-color">DOM</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-08-26
+                </div>
+                
+
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    7 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="JavaScript-DOM（一）"><a href="#JavaScript-DOM（一）" class="headerlink" title="JavaScript DOM（一）"></a>JavaScript DOM（一）</h1><p>整理一下学习的DOM部分知识，首先小复习一下知识点”预解析”。.</p>
+<p>案例只留下案例名称，需复习的话，<a target="_blank" rel="noopener" href="https://gitee.com/xiaoqiang001/java-script">下载素材</a>，按名字搜索后可找到文件</p>
+<h2 id="预解析"><a href="#预解析" class="headerlink" title="预解析"></a>预解析</h2><p>运行js会分为两步。</p>
+<ol>
+<li>预解析</li>
+<li>代码执行</li>
+</ol>
+<p>预解析：js引擎会把js里面所有的var和function提升到当前作用域的最前面</p>
+<p>预解析分为：</p>
+<ol>
+<li>变量预解析(变量提升）</li>
+</ol>
+<p>把所有的变量声明提升到当前的最前面。<b style = "color:red;">只提升声明，不提升赋值，函数同理，不提升调用</b><br>2. 函数预解析(函数提升）</p>
+<p>把所有的函数声明提升到当前的最前面。</p>
+<p style="color:red">实际上，变量提升，可能会引发很多问题，会导致变量可以先使用后申明。函数提升暂时没有遇到什么问题。</p>
+
+<p>例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><br><br><span class="hljs-keyword">var</span> num = <span class="hljs-number">10</span>;<br>fn();<br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn</span>(<span class="hljs-params"></span>) </span>&#123;<br>	<span class="hljs-built_in">console</span>.log(num);<br>	<span class="hljs-keyword">var</span> num = <span class="hljs-number">20</span>;<br>&#125;<br><br><br><span class="hljs-comment">// 执行代码之前预解析，预解析后的代码如下所示，上面和下面的代码不同，但执行是一样的</span><br><br><span class="hljs-keyword">var</span> num;<br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn</span>(<span class="hljs-params"></span>) </span>&#123;<br>	<span class="hljs-keyword">var</span> num;<br>	<span class="hljs-built_in">console</span>.log(num);<br>	num = <span class="hljs-number">20</span>;<br>&#125;<br>num = <span class="hljs-number">10</span>;<br>fn();<br><br></code></pre></td></tr></table></figure>
+
+<h2 id="DOM简介"><a href="#DOM简介" class="headerlink" title="DOM简介"></a>DOM简介</h2><p>文档对象模型(Document Object Model，简称DOM), ，是W3C推荐的处理可扩展标记语言（HTML和XML）的标准编程接口。</p>
+<p>DOM:对节点结构化表诉，并定义了一种方式可以使程序对该结构进行访问，将web页面和脚本语言连接起来。</p>
+<p>通过DOM接口可以改变网页的内容、结构和样式。</p>
+<p><img src="https://pic.imgdb.cn/item/61162a995132923bf8ee7848.jpg"></p>
+<h2 id="获取元素"><a href="#获取元素" class="headerlink" title="获取元素"></a>获取元素</h2><p>用console.dir() 可以打印我们获取的元素对象，更好的查看对象里面的属性和方法</p>
+<h3 id="根据id获取"><a href="#根据id获取" class="headerlink" title="根据id获取"></a>根据id获取</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><br><span class="hljs-built_in">document</span>.getElementById(id名字符串形式);<br><span class="hljs-built_in">document</span>可以换成已经得到的元素，相应的获取的元素就只能是它的子元素<br><br></code></pre></td></tr></table></figure>
+
+<p>实例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs html"><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;my&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"></span><br><span class="javascript">	<span class="hljs-keyword">var</span> my = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&#x27;my&#x27;</span>);</span><br><span class="javascript">	<span class="hljs-built_in">console</span>.log(my);</span><br><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br></code></pre></td></tr></table></figure>
+
+<h3 id="根据标签名获取"><a href="#根据标签名获取" class="headerlink" title="根据标签名获取"></a>根据标签名获取</h3><p><code>document.getElementsByTagName(标签名，字符串形式);</code></p>
+<p>得到的是一个对象的集合</p>
+<h3 id="通过-HTML5-新增的方法获取"><a href="#通过-HTML5-新增的方法获取" class="headerlink" title="通过 HTML5 新增的方法获取"></a>通过 HTML5 新增的方法获取</h3><h4 id="根据类名获取"><a href="#根据类名获取" class="headerlink" title="根据类名获取"></a>根据类名获取</h4><p><code>document.getElementsByClassName(类名，字符串形式);</code></p>
+<p>得到的是一个对象的集合</p>
+<h4 id="根据选择器获取"><a href="#根据选择器获取" class="headerlink" title="根据选择器获取"></a>根据选择器获取</h4><ol>
+<li>document.querySelector(‘选择器’)，返回第一个元素对象</li>
+</ol>
+<p>例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><br><span class="hljs-keyword">var</span> id = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&#x27;#id&#x27;</span>);<br><span class="hljs-keyword">var</span> tagName = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&#x27;div&#x27;</span>);<br><span class="hljs-keyword">var</span> className = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&#x27;.className&#x27;</span>);<br><br></code></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>document.querySelectorAll(‘选择器’)，返回一个对象的集合</li>
+</ol>
+<h3 id="获取特殊元素-body-html"><a href="#获取特殊元素-body-html" class="headerlink" title="获取特殊元素(body, html)"></a>获取特殊元素(body, html)</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><br><span class="hljs-keyword">var</span> body = <span class="hljs-built_in">document</span>.body;<br><span class="hljs-keyword">var</span> html = <span class="hljs-built_in">document</span>.documentElement;<br><br></code></pre></td></tr></table></figure>
+
+<h2 id="事件基础"><a href="#事件基础" class="headerlink" title="事件基础"></a>事件基础</h2><h3 id="事件概述"><a href="#事件概述" class="headerlink" title="事件概述"></a>事件概述</h3><p>事件是指可以被Javas侦测到的行为。例如，点击按钮，鼠标移动等。</p>
+<h3 id="事件三要素"><a href="#事件三要素" class="headerlink" title="事件三要素"></a>事件三要素</h3><ol>
+<li>事件源</li>
+<li>事件类型</li>
+<li>事件处理程序</li>
+</ol>
+<p>实例： 点击按钮弹出窗口</p>
+<p>其中，事件源是按钮，事件类型则是点击，事件处理程序是弹出窗口</p>
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
+<li>获取事件源</li>
+<li>注册事件（绑定事件）</li>
+<li>添加事件处理程序</li>
+</ol>
+<p>例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><br><span class="hljs-keyword">var</span> btn = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&#x27;button&#x27;</span>);<br>btn.onclick = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>	alert(<span class="hljs-string">&#x27;Hello!&#x27;</span>);<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<h2 id="操作元素"><a href="#操作元素" class="headerlink" title="操作元素"></a>操作元素</h2><h3 id="改变元素内容"><a href="#改变元素内容" class="headerlink" title="改变元素内容"></a>改变元素内容</h3><ol>
+<li>element.innerText</li>
+</ol>
+<p>不识别html标签，空格和换行也会去掉<br>2. element.innerHTML</p>
+<p>识别html标签，保留空格和换行</p>
+<h3 id="常见元素的属性操作"><a href="#常见元素的属性操作" class="headerlink" title="常见元素的属性操作"></a>常见元素的属性操作</h3><p>src、href、id、alt、title等</p>
+<p>element.src</p>
+<h3 id="表单元素的属性操作"><a href="#表单元素的属性操作" class="headerlink" title="表单元素的属性操作"></a>表单元素的属性操作</h3><p>type、value、checked、disabled、selected等</p>
+<p>element.value</p>
+<h4 id="案例："><a href="#案例：" class="headerlink" title="案例："></a>案例：</h4><p>仿京东显示隐藏密码</p>
+<p><img src="https://pic.imgdb.cn/item/61163eee5132923bf814e9a5.jpg"></p>
+<h3 id="样式属性操作"><a href="#样式属性操作" class="headerlink" title="样式属性操作"></a>样式属性操作</h3><h4 id="element-style"><a href="#element-style" class="headerlink" title="element.style"></a>element.style</h4><ol>
+<li>样式采用驼峰命名法，如fontSize，backgroundColor;</li>
+<li>产生的是行内样式，CSS权重比较高</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><br><span class="hljs-keyword">var</span> div = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&#x27;div&#x27;</span>);<br>div.onclick = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>	div.style.backgroundColor = <span class="hljs-string">&#x27;purple&#x27;</span>;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<p>点击前：</p>
+<p><img src="https://pic.imgdb.cn/item/611638e75132923bf80a3008.jpg"></p>
+<p>点击后：</p>
+<p><img src="https://pic.imgdb.cn/item/611639035132923bf80a66df.jpg"></p>
+<h5 id="案例：-1"><a href="#案例：-1" class="headerlink" title="案例："></a>案例：</h5><ol>
+<li>关闭淘宝二维码案例</li>
+</ol>
+<p><img src="https://pic.imgdb.cn/item/61163f0d5132923bf8152175.jpg"><br>2. 循环精灵图</p>
+<p><img src="https://pic.imgdb.cn/item/61163f225132923bf8154542.jpg"><br>3. 显示隐藏文本框内容</p>
+<p><img src="https://pic.imgdb.cn/item/61163f355132923bf81566c6.jpg"></p>
+<h4 id="element-className"><a href="#element-className" class="headerlink" title="element.className"></a>element.className</h4><p>通过另外写CSS，然后通过className来更改类名</p>
+<ol>
+<li>适合用于样式修改过多，通过行内样式操作会很复杂</li>
+<li>class是保留字，所以通过使用className来操作元素类名属性</li>
+<li>会直接更改元素的类名，即覆盖原来的类名。想要保留原来的类名的基础上改的话，则通过element.className = ‘原来的类名 新的类名’来保留。</li>
+</ol>
+<h5 id="案例：-2"><a href="#案例：-2" class="headerlink" title="案例："></a>案例：</h5><p>仿新浪注册页面</p>
+<p><img src="https://pic.imgdb.cn/item/61163f595132923bf815ab5f.jpg"></p>
+<p><img src="https://pic.imgdb.cn/item/61163bc15132923bf80f520e.jpg"></p>
+<h3 id="排他思想"><a href="#排他思想" class="headerlink" title="排他思想"></a>排他思想</h3><p>情境：</p>
+<p>有一组元素，我们只想要一个元素实现某种样式。</p>
+<p>方法：</p>
+<ol>
+<li>所有元素全部清除样式</li>
+<li>给当前元素设置样式</li>
+</ol>
+<p>实例:</p>
+<p>三个按钮，点击按钮，对应的按钮变色，其他的原来的默认色。相当于多选一。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs html"><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>按钮1<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>按钮2<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>按钮3<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"></span><br><span class="javascript">		<span class="hljs-keyword">var</span> btns = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">&#x27;button&#x27;</span>);</span><br><span class="javascript">		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; btns.length; i++) &#123;</span><br><span class="javascript">			btns[i].addEventListener(<span class="hljs-string">&#x27;click&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="javascript">				<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> j = <span class="hljs-number">0</span>; j &lt; btns.length; j++) &#123;</span><br><span class="javascript">					btns[j].style.backgroundColor = <span class="hljs-string">&#x27;&#x27;</span>;</span><br><span class="javascript">				&#125;</span><br><span class="javascript">				<span class="hljs-built_in">this</span>.style.backgroundColor = <span class="hljs-string">&#x27;pink&#x27;</span>;</span><br><span class="javascript">			&#125;)</span><br><span class="javascript">		&#125;</span><br><span class="javascript">	</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><br></code></pre></td></tr></table></figure>
+
+<h4 id="案例：-3"><a href="#案例：-3" class="headerlink" title="案例："></a>案例：</h4><ol>
+<li>百度换肤效果</li>
+<li>表格隔行变色</li>
+<li>全选反选</li>
+</ol>
+<p><img src="https://pic.imgdb.cn/item/61163f9a5132923bf81623b1.jpg"></p>
+<h3 id="元素属性操作"><a href="#元素属性操作" class="headerlink" title="元素属性操作"></a>元素属性操作</h3><h4 id="获取属性值"><a href="#获取属性值" class="headerlink" title="获取属性值"></a>获取属性值</h4><ol>
+<li>element.属性</li>
+</ol>
+<p style="color: red">只能获取内置属性值，无法获取自定义属性值，如index、data-index等，其中data-*是H5的自定义属性</p>
+
+<p>例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><br><span class="hljs-keyword">var</span> div = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;#demo&quot;</span>);<br><span class="hljs-built_in">console</span>.log(div.id);<br><br></code></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>element.getAttribute(‘属性’);</li>
+</ol>
+<p>可以获取自定义属性</p>
+<p>例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><br><span class="hljs-keyword">var</span> div = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;#demo&quot;</span>);<br><span class="hljs-built_in">console</span>.log(div.getAttribute(<span class="hljs-string">&quot;id&quot;</span>));<br><span class="hljs-built_in">console</span>.log(div.getAttribute(<span class="hljs-string">&quot;index&quot;</span>));<br><br></code></pre></td></tr></table></figure>
+
+<h4 id="设置属性值"><a href="#设置属性值" class="headerlink" title="设置属性值"></a>设置属性值</h4><p>和获取一样，第一种方法也无法设置自定义属性值</p>
+<ol>
+<li>element.属性 = ‘值’</li>
+</ol>
+<p>例子： </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><br><span class="hljs-keyword">var</span> div = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;#demo&quot;</span>);<br>div.id = <span class="hljs-string">&quot;box&quot;</span>;<br><br></code></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>element.setAttribute(‘属性’, ‘值’);</li>
+</ol>
+<p>例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><br><span class="hljs-keyword">var</span> div = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;#demo&quot;</span>);<br>div.setAttribute(<span class="hljs-string">&quot;id&quot;</span>, <span class="hljs-string">&quot;box&quot;</span>);<br>div.setAttribute(<span class="hljs-string">&quot;index&quot;</span>, <span class="hljs-number">2</span>);<br><br></code></pre></td></tr></table></figure>
+
+<h4 id="移除属性"><a href="#移除属性" class="headerlink" title="移除属性"></a>移除属性</h4><p>只有一种方法，element.属性 = ‘’；只能令属性值为空，而不会移除属性</p>
+<p>element.removeAttribute(‘属性’);</p>
+<p>例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><br><span class="hljs-keyword">var</span> div = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;#demo&quot;</span>);<br>div.removeAttribute(<span class="hljs-string">&quot;id&quot;</span>);<br>div.removeAttribute(<span class="hljs-string">&quot;index&quot;</span>);<br><br></code></pre></td></tr></table></figure>
+
+<h4 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h4><p>tab栏切换</p>
+<h3 id="H5自定义属性"><a href="#H5自定义属性" class="headerlink" title="H5自定义属性"></a>H5自定义属性</h3><p>自定义属性目的：为了保存和使用数据。有些数据可以保存到页面中而不用保存到数据库中。<b style="color: red">未解：保存到数据库：怎么存？存在哪里怎么看？怎么用？</b></p>
+<p>由上面的元素属性操作可知，Attribute系列函数(get、set、remove)可以对自定义属性进行操作。</p>
+<p>出现问题：不容易判断是内置属性还是自定义属性</p>
+<h4 id="设置H5自定义属性"><a href="#设置H5自定义属性" class="headerlink" title="设置H5自定义属性"></a>设置H5自定义属性</h4><p>H5规定自定义属性data-开头作为属性名</p>
+<ol>
+<li>直接在标签后给属性赋值</li>
+</ol>
+<p>例子：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html"><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-index</span>=<span class="hljs-string">&quot;1&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>element.setAttribute(‘属性’, ‘值’);</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><br><span class="hljs-keyword">var</span> div = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;#demo&quot;</span>);<br>div.setAttribute(<span class="hljs-string">&quot;data-index&quot;</span>, <span class="hljs-string">&quot;2&quot;</span>);<br><br></code></pre></td></tr></table></figure>
+
+<p>这里设置为数值时可以不用字符串形式</p>
+<h4 id="获取H5自定义属性"><a href="#获取H5自定义属性" class="headerlink" title="获取H5自定义属性"></a>获取H5自定义属性</h4><ol>
+<li>element.getAttribute(‘属性’);和上面用法一样，不同的只是自定义属性以data-开头</li>
+<li>H5新增element.dataset.’data-后面部分’或者<br>element.dataset[‘data-后面部分’（字符串形式）]</li>
+</ol>
+<p>示例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><br><span class="hljs-keyword">var</span> div = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;#demo&quot;</span>);<br><span class="hljs-built_in">console</span>.log(div.dataset.index);<br><span class="hljs-built_in">console</span>.log(div.dataset[<span class="hljs-string">&quot;index&quot;</span>]);<br><br></code></pre></td></tr></table></figure>
+
+<p>dataset这个方法有兼容性问题，只有ie11才开始支持。（不用ie，现在一般也不去考虑兼容性，而且用Attribute系列就行了）</p>
+<h4 id="移除H5自定义属性"><a href="#移除H5自定义属性" class="headerlink" title="移除H5自定义属性"></a>移除H5自定义属性</h4><p>element.removeAttribute(‘属性’);用法类似</p>
+<p>学习链接：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Sy4y1C7ha">pink老师前端入门</a></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">赤蓝紫</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://clz.vercel.app/2021/08/26/Javascript-DOM-1/">https://clz.vercel.app/2021/08/26/Javascript-DOM-1/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">赤蓝紫</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Javascript/">
+                                    <span class="chip bg-color">Javascript</span>
+                                </a>
+                            
+                                <a href="/tags/DOM/">
+                                    <span class="chip bg-color">DOM</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="qq,wechat" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+  .valine-card {
+    margin: 1.5rem auto;
+  }
+
+  .valine-card .card-content {
+    padding: 20px 20px 5px 20px;
+  }
+
+  #vcomments textarea {
+    resize: none;
+    box-sizing: border-box;
+    background: url("/medias/my_comment_bg.jpg") 100% 100% no-repeat;
+  }
+
+  #vcomments p {
+    margin: 2px 2px 10px;
+    font-size: 1.05rem;
+    line-height: 1.78rem;
+  }
+
+  #vcomments blockquote p {
+    text-indent: 0.2rem;
+  }
+
+  #vcomments a {
+    padding: 0 2px;
+    color: #4cbf30;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  #vcomments img {
+    max-width: 100%;
+    height: auto;
+    cursor: pointer;
+  }
+
+  #vcomments ol li {
+    list-style-type: decimal;
+  }
+
+  #vcomments ol,
+  ul {
+    display: block;
+    padding-left: 2em;
+    word-spacing: 0.05rem;
+  }
+
+  #vcomments ul li,
+  ol li {
+    display: list-item;
+    line-height: 1.8rem;
+    font-size: 1rem;
+  }
+
+  #vcomments ul li {
+    list-style-type: disc;
+  }
+
+  #vcomments ul ul li {
+    list-style-type: circle;
+  }
+
+  #vcomments table,
+  th,
+  td {
+    padding: 12px 13px;
+    border: 1px solid #dfe2e5;
+  }
+
+  #vcomments table,
+  th,
+  td {
+    border: 0;
+  }
+
+  table tr:nth-child(2n),
+  thead {
+    background-color: #fafafa;
+  }
+
+  #vcomments table th {
+    background-color: #f2f2f2;
+    min-width: 80px;
+  }
+
+  #vcomments table td {
+    min-width: 80px;
+  }
+
+  #vcomments h1 {
+    font-size: 1.85rem;
+    font-weight: bold;
+    line-height: 2.2rem;
+  }
+
+  #vcomments h2 {
+    font-size: 1.65rem;
+    font-weight: bold;
+    line-height: 1.9rem;
+  }
+
+  #vcomments h3 {
+    font-size: 1.45rem;
+    font-weight: bold;
+    line-height: 1.7rem;
+  }
+
+  #vcomments h4 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+  }
+
+  #vcomments h5 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    line-height: 1.4rem;
+  }
+
+  #vcomments h6 {
+    font-size: 1rem;
+    line-height: 1.3rem;
+  }
+
+  #vcomments p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  #vcomments hr {
+    margin: 12px 0;
+    border: 0;
+    border-top: 1px solid #ccc;
+  }
+
+  #vcomments blockquote {
+    margin: 15px 0;
+    border-left: 5px solid #42b983;
+    padding: 1rem 0.8rem 0.3rem 0.8rem;
+    color: #666;
+    background-color: rgba(66, 185, 131, 0.1);
+  }
+
+  #vcomments pre {
+    font-family: monospace, monospace;
+    padding: 1.2em;
+    margin: 0.5em 0;
+    background: #272822;
+    overflow: auto;
+    border-radius: 0.3em;
+    tab-size: 4;
+  }
+
+  #vcomments code {
+    font-family: monospace, monospace;
+    padding: 1px 3px;
+    font-size: 0.92rem;
+    color: #e96900;
+    background-color: #f8f8f8;
+    border-radius: 2px;
+  }
+
+  #vcomments pre code {
+    font-family: monospace, monospace;
+    padding: 0;
+    color: #e8eaf6;
+    background-color: #272822;
+  }
+
+  #vcomments pre[class*="language-"] {
+    padding: 1.2em;
+    margin: 0.5em 0;
+  }
+
+  #vcomments code[class*="language-"],
+  pre[class*="language-"] {
+    color: #e8eaf6;
+  }
+
+  #vcomments [type="checkbox"]:not(:checked),
+  [type="checkbox"]:checked {
+    position: inherit;
+    margin-left: -1.3rem;
+    margin-right: 0.4rem;
+    margin-top: -1px;
+    vertical-align: middle;
+    left: unset;
+    visibility: visible;
+  }
+
+  #vcomments b,
+  strong {
+    font-weight: bold;
+  }
+
+  #vcomments dfn {
+    font-style: italic;
+  }
+
+  #vcomments small {
+    font-size: 85%;
+  }
+
+  #vcomments cite {
+    font-style: normal;
+  }
+
+  #vcomments mark {
+    background-color: #fcf8e3;
+    padding: 0.2em;
+  }
+
+  #vcomments table,
+  th,
+  td {
+    padding: 12px 13px;
+    border: 1px solid #dfe2e5;
+  }
+
+  table tr:nth-child(2n),
+  thead {
+    background-color: #fafafa;
+  }
+
+  #vcomments table th {
+    background-color: #f2f2f2;
+    min-width: 80px;
+  }
+
+  #vcomments table td {
+    min-width: 80px;
+  }
+
+  #vcomments [type="checkbox"]:not(:checked),
+  [type="checkbox"]:checked {
+    position: inherit;
+    margin-left: -1.3rem;
+    margin-right: 0.4rem;
+    margin-top: -1px;
+    vertical-align: middle;
+    left: unset;
+    visibility: visible;
+  }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+  <div class="comment_headling"
+    style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px">
+    <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+    <span>评论</span>
+  </div>
+  <div id="vcomments" class="card-content" style="display: grid"></div>
+</div>
+
+<script>
+  async("/libs/valine/ValineHCLonely.js", function () {
+    new Valine({
+      el: "#vcomments",
+      appId: "2coN91JLNAEdiLdotu8swszK-MdYXbMMI",
+      appKey: "lMPrwDlhyJdnYay6JviS0qKS",
+      notify: "true" === "true",
+      verify: "false" === "true",
+      visitor: "true" === "true",
+      avatar: "identicon",
+      pageSize: "10",
+      lang: 'zh-cn',
+      placeholder: "One Plus One is ?",
+      serverURLs: 'https://2con91jl.api.lncldglobal.com',
+
+      requiredFields: ["nick", "mail"],
+      // 设置Bilibili表情包地址
+      emojiCDN: "//i0.hdslb.com/bfs/emote/",
+      // 表情title和图片映射
+      emojiMaps: {
+        tv_doge: "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+        tv_亲亲: "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+        tv_偷笑: "bb690d4107620f1c15cff29509db529a73aee261.png",
+        tv_再见: "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+        tv_冷漠: "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+        tv_发怒: "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+        tv_发财: "34db290afd2963723c6eb3c4560667db7253a21a.png",
+        tv_可爱: "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+        tv_吐血: "09dd16a7aa59b77baa1155d47484409624470c77.png",
+        tv_呆: "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+        tv_呕吐: "9f996894a39e282ccf5e66856af49483f81870f3.png",
+        tv_困: "241ee304e44c0af029adceb294399391e4737ef2.png",
+        tv_坏笑: "1f0b87f731a671079842116e0991c91c2c88645a.png",
+        tv_大佬: "093c1e2c490161aca397afc45573c877cdead616.png",
+        tv_大哭: "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+        tv_委屈: "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+        tv_害羞: "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+        tv_尴尬: "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+        tv_微笑: "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+        tv_思考: "90cf159733e558137ed20aa04d09964436f618a1.png",
+        tv_惊吓: "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+        tv_打脸: "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+        tv_抓狂: "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+        tv_抠鼻: "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+        tv_斜眼笑: "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+        tv_无奈: "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+        tv_晕: "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+        tv_流汗: "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+        tv_流泪: "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+        tv_流鼻血: "c32d39db2737f89b904ca32700d140a9241b0767.png",
+        tv_点赞: "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+        tv_生气: "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+        tv_生病: "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+        tv_疑问: "0793d949b18d7be716078349c202c15ff166f314.png",
+        tv_白眼: "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+        tv_皱眉: "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+        tv_目瞪口呆: "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+        tv_睡着: "8b196675b53af58264f383c50ad0945048290b33.png",
+        tv_笑哭: "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+        tv_腼腆: "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+        tv_色: "61822c7e9aae5da76475e7892534545336b23a6f.png",
+        tv_调侃: "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+        tv_调皮: "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+        tv_鄙视: "6e72339f346a692a495b123174b49e4e8e781303.png",
+        tv_闭嘴: "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+        tv_难过: "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+        tv_馋: "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+        tv_鬼脸: "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+        tv_黑人问号: "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+        tv_鼓掌: "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"
+        // ... 更多表情
+      },
+      master: "6215c7b8691be9bc9e7e783fe8372da6",
+      tagMeta: ["博主", "小伙伴", "访客"],
+      friends: [],
+      metaPlaceholder: { nick: "昵称/QQ号", mail: "邮箱" },
+      enableQQ: true,
+      path: window.location.pathname
+    })
+  })
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/09/02/Javascript-DOM-2/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="JavaScript DOM（二）">
+                        
+                        <span class="card-title">JavaScript DOM（二）</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-02
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Javascript/">
+                        <span class="chip bg-color">Javascript</span>
+                    </a>
+                    
+                    <a href="/tags/DOM/">
+                        <span class="chip bg-color">DOM</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/08/19/HTML-yuyihuaTag/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="HTML基础">
+                        
+                        <span class="card-title">HTML基础</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/HTML/">
+                        <span class="chip bg-color">HTML</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 赤蓝紫<br />'
+            + '文章作者: 赤蓝紫<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+</div>
+  <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+    <div class="toc-widget card" style="background-color: white">
+      <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+      <div id="toc-content"></div>
+    </div>
+  </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+  <a class="btn-floating btn-large bg-color">
+    <i class="fas fa-list-ul"></i>
+  </a>
+</div>
+
+
+<script>
+  async("/libs/tocbot/tocbot.min.js", function() {
+      $(function () {
+          tocbot.init({
+              tocSelector: '#toc-content',
+              contentSelector: '#articleContent',
+              headingsOffset: -($(window).height() * 0.4 - 45),
+              collapseDepth: Number('0'),
+              headingSelector: 'h2, h3, h4'
+          });
+
+          // modify the toc link href to support Chinese.
+          let i = 0;
+          let tocHeading = 'toc-heading-';
+          $('#toc-content a').each(function () {
+              $(this).attr('href', '#' + tocHeading + (++i));
+          });
+
+          // modify the heading title id to support Chinese.
+          i = 0;
+          $('#articleContent').children('h2, h3, h4').each(function () {
+              $(this).attr('id', tocHeading + (++i));
+          });
+
+          // Set scroll toc fixed.
+          let tocHeight = parseInt($(window).height() * 0.4 - 64);
+          let $tocWidget = $('.toc-widget');
+          $(window).scroll(function () {
+              let scroll = $(window).scrollTop();
+              /* add post toc fixed. */
+              if (scroll > tocHeight) {
+                  $tocWidget.addClass('toc-fixed');
+              } else {
+                  $tocWidget.removeClass('toc-fixed');
+              }
+          });
+
+          
+          /* 修复文章卡片 div 的宽度. */
+          let fixPostCardWidth = function (srcId, targetId) {
+              let srcDiv = $('#' + srcId);
+              if (srcDiv.length === 0) {
+                  return;
+              }
+
+              let w = srcDiv.width();
+              if (w >= 450) {
+                  w = w + 21;
+              } else if (w >= 350 && w < 450) {
+                  w = w + 18;
+              } else if (w >= 300 && w < 350) {
+                  w = w + 16;
+              } else {
+                  w = w + 14;
+              }
+              $('#' + targetId).width(w);
+          };
+
+          // 切换TOC目录展开收缩的相关操作.
+          const expandedClass = 'expanded';
+          let $tocAside = $('#toc-aside');
+          let $mainContent = $('#main-content');
+          $('#floating-toc-btn .btn-floating').click(function () {
+              if ($tocAside.hasClass(expandedClass)) {
+                  $tocAside.removeClass(expandedClass).hide();
+                  $mainContent.removeClass('l9');
+              } else {
+                  $tocAside.addClass(expandedClass).show();
+                  $mainContent.addClass('l9');
+              }
+              fixPostCardWidth('artDetail', 'prenext-posts');
+          });
+          
+      });
+  })
+</script>
+
+    
+
+</main>
+
+
+
+                <footer class="page-footer bg-color">
+  <!-- 
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="" id="aplayerContent">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="6833073788"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+     -->
+  <div class="container row center-align" style="margin-bottom: 15px !important;">
+    <div class="col s12 m8 l8 copy-right">
+      Copyright&nbsp;&copy; 
+      <span id="year">2021-2022</span>
+      
+      <span id="year">2021</span>
+      <a href="/about" target="_blank">赤蓝紫</a>
+      |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+      <br />
+       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">160.4k</span>&nbsp;字      
+      <span id="busuanzi_container_site_pv"> |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次 </span>
+       
+      <span id="busuanzi_container_site_uv"> |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人 </span>
+      
+      <br />
+      
+      <span id="sitetime">载入运行时间...</span>
+      <script>
+        function siteTime() {
+          var seconds = 1000
+          var minutes = seconds * 60
+          var hours = minutes * 60
+          var days = hours * 24
+          var years = days * 365
+          var today = new Date()
+          var startYear = "2021"
+          var startMonth = "6"
+          var startDate = "20"
+          var startHour = "0"
+          var startMinute = "0"
+          var startSecond = "0"
+          var todayYear = today.getFullYear()
+          var todayMonth = today.getMonth() + 1
+          var todayDate = today.getDate()
+          var todayHour = today.getHours()
+          var todayMinute = today.getMinutes()
+          var todaySecond = today.getSeconds()
+          var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond)
+          var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond)
+          var diff = t2 - t1
+          var diffYears = Math.floor(diff / years)
+          var diffDays = Math.floor(diff / days - diffYears * 365)
+          var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours)
+          var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes)
+          var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds)
+          if (startYear == todayYear) {
+            document.getElementById("year").innerHTML = todayYear
+            document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒"
+          } else {
+            document.getElementById("year").innerHTML = startYear + " - " + todayYear
+            document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒"
+          }
+        }
+        setInterval(siteTime, 1000)
+      </script>
+      
+      <br />
+      
+      <span id="icp"
+        >
+        <!-- <img src="/medias/icp.png" style="vertical-align: text-bottom" /> -->
+        <a href="https://icp.gov.moe/?keyword=20229007" target="_blank">萌ICP备20229007号</a>
+      </span>
+      
+    </div>
+    <div class="col s12 m4 l4 social-link social-statis">
+<a href="https://github.com/13535944743" target="_blank"
+    data-position="top" data-delay="50">
+    <i class="fab fa-github"></i>
+</a>
+
+
+
+<a href="javascript:;" class="wechat" data-position="top" data-delay="50">
+    <i class="fab fa-weixin"></i>
+</a>
+
+
+
+<a href="mailto:1926389897@qq.com"  target="_blank"
+    data-position="top" data-delay="50">
+    <i class="fas fa-envelope-open"></i>
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top"
+    data-delay="50">
+    <i class="fas fa-rss"></i>
+</a>
+</div>
+  </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+                  <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+                    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+                      <script src="/libs/materialize/materialize.min.js"></script>
+                      <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+                      <script src="/libs/aos/aos.js"></script>
+                      <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+                      <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+                      <script>async("/js/matery.js");</script>
+
+
+                      <!-- <script src="/js/digitalRain.js"></script> -->
+                      <script src="https://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
+                      <script>
+                        hljs.initHighlightingOnLoad()
+                      </script>
+
+                      <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?4ad37b19b8976dd4a39f98611bfe8cf1";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+                        <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+                          
+                              
+                                <script async
+                                  src="/libs/others/busuanzi.pure.mini.js"></script>
+                                
+                                  
+                                      
+                                          
+                                              
+                                                  
+                                                        
+                                                            
+                                                              <script
+                                                                src="/libs/instantpage/instantpage.js"
+                                                                type="module"></script>
+                                                              
+          </div>
+
+          
+            <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="" id="aplayerContent">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="6833073788"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+              
+                <script src="/js/jquery.pjax.js"></script>
+                <script src="/js/clz.js"></script>
+
+                <!--动态线条背景-->
+                <script type="text/javascript" color="220,220,220" opacity="0.7" zIndex="-2" count="200"
+                  src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+        </body>
+
+</html>

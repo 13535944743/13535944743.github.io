@@ -1,0 +1,68 @@
+/* Here is your custom css styles. */
+/*****************************************************赤蓝紫*************************************/
+
+body {
+    background-color: black;
+}
+
+.veditor {
+    min-height: 12.75em !important;
+}
+
+.line {
+    color: #fff;
+}
+
+.gutter {
+    display: none;
+}
+
+#tag-wordcloud_word_1 {
+    margin-right: 10px;
+}
+
+.vcode {
+    width: 4.6em !important;
+    height: 2.3em !important;
+}
+
+#canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#articleContent table td,
+#vcomments table,
+th,
+td {
+    border: 0;
+}
+
+.wechat:hover {
+    position: relative;
+}
+
+.wechat:hover::before {
+    content: '';
+    position: absolute;
+    top: -92px;
+    left: -11px;
+    width: 80px;
+    height: 80px;
+    background-color: pink;
+    background: url('../medias/social/wechat.jpg');
+    background-size: 80px;
+}
+
+.row {
+    margin-bottom: 0;
+}
+
+.page-footer {
+    position: relative;
+    bottom: -20px;
+}
