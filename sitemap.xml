@@ -822,14 +822,14 @@
   </url>
   
   <url>
-    <loc>https://clz.vercel.app/tags/Javascript/</loc>
+    <loc>https://clz.vercel.app/tags/HTML/</loc>
     <lastmod>2022-03-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://clz.vercel.app/tags/HTML/</loc>
+    <loc>https://clz.vercel.app/tags/Javascript/</loc>
     <lastmod>2022-03-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -899,14 +899,14 @@
   </url>
   
   <url>
-    <loc>https://clz.vercel.app/tags/git/</loc>
+    <loc>https://clz.vercel.app/tags/git-dev/</loc>
     <lastmod>2022-03-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://clz.vercel.app/tags/git-dev/</loc>
+    <loc>https://clz.vercel.app/tags/git/</loc>
     <lastmod>2022-03-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -934,20 +934,6 @@
   </url>
   
   <url>
-    <loc>https://clz.vercel.app/tags/Less/</loc>
-    <lastmod>2022-03-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://clz.vercel.app/tags/Node-js/</loc>
-    <lastmod>2022-03-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://clz.vercel.app/tags/VSCode/</loc>
     <lastmod>2022-03-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -956,6 +942,20 @@
   
   <url>
     <loc>https://clz.vercel.app/tags/php/</loc>
+    <lastmod>2022-03-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://clz.vercel.app/tags/Less/</loc>
+    <lastmod>2022-03-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://clz.vercel.app/tags/Node-js/</loc>
     <lastmod>2022-03-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1004,13 +1004,6 @@
   </url>
   
   <url>
-    <loc>https://clz.vercel.app/tags/Vuex/</loc>
-    <lastmod>2022-03-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://clz.vercel.app/tags/webpack/</loc>
     <lastmod>2022-03-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -1032,14 +1025,14 @@
   </url>
   
   <url>
-    <loc>https://clz.vercel.app/tags/%E5%8A%A8%E7%94%BB/</loc>
+    <loc>https://clz.vercel.app/tags/Vuex/</loc>
     <lastmod>2022-03-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://clz.vercel.app/tags/%E8%B0%83%E8%AF%95/</loc>
+    <loc>https://clz.vercel.app/tags/%E5%8A%A8%E7%94%BB/</loc>
     <lastmod>2022-03-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1068,6 +1061,13 @@
   
   <url>
     <loc>https://clz.vercel.app/tags/Webpack/</loc>
+    <lastmod>2022-03-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://clz.vercel.app/tags/%E8%B0%83%E8%AF%95/</loc>
     <lastmod>2022-03-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
