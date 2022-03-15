@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://clz.vercel.app/2022/03/15/vue-router-deep-2/</loc>
+    
+    <lastmod>2022-03-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://clz.vercel.app/2022/03/14/javascript-eventloop/</loc>
     
     <lastmod>2022-03-14</lastmod>
