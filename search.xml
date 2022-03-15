@@ -1521,9 +1521,9 @@
       
         <tags>
             
-            <tag> git_dev </tag>
-            
             <tag> git </tag>
+            
+            <tag> git_dev </tag>
             
         </tags>
       
