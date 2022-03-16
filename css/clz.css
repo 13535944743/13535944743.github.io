@@ -71,3 +71,7 @@ td {
     left: unset;
     right: 90px;
 }
+
+#aplayerContent .aplayer.aplayer-fixed .aplayer-lrc {
+    text-shadow: none;
+}
