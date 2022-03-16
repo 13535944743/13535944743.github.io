@@ -6,7 +6,7 @@
   <link href="https://clz.vercel.app/atom.xml" rel="self"/>
   
   <link href="https://clz.vercel.app/"/>
-  <updated>2022-03-15T08:42:15.231Z</updated>
+  <updated>2022-03-16T09:32:54.036Z</updated>
   <id>https://clz.vercel.app/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>微软自带的日语输入法怎么切换平假名和片假名</title>
+    <link href="https://clz.vercel.app/2022/03/16/life-skill/"/>
+    <id>https://clz.vercel.app/2022/03/16/life-skill/</id>
+    <published>2022-03-16T09:32:17.000Z</published>
+    <updated>2022-03-16T09:32:54.036Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="微软自带的日语输入法怎么切换平假名和片假名"><a href="#微软自带的日语输入法怎么切换平假名和片假名" class="headerlink" title="微软自带的日语输入法怎么切换平假名和片假名"></a>微软自带的日语输入法怎么切换平假名和片假名</h1><p>使用按键ctrl+caps lock，切换平假名。</p><p>使用按键alt+caps lock，切换片假名。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;微软自带的日语输入法怎么切换平假名和片假名&quot;&gt;&lt;a href=&quot;#微软自带的日语输入法怎么切换平假名和片假名&quot; class=&quot;headerlink&quot; title=&quot;微软自带的日语输入法怎么切换平假名和片假名&quot;&gt;&lt;/a&gt;微软自带的日语输入法怎么切换平假名和片假名&lt;/</summary>
+      
+    
+    
+    
+    <category term="小技能" scheme="https://clz.vercel.app/categories/%E5%B0%8F%E6%8A%80%E8%83%BD/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Vue Router深入学习(二)</title>
@@ -485,30 +507,6 @@
     <category term="uni-app" scheme="https://clz.vercel.app/tags/uni-app/"/>
     
     <category term="Vue" scheme="https://clz.vercel.app/tags/Vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>右键打开VScode</title>
-    <link href="https://clz.vercel.app/2022/02/21/open-with-vscode/"/>
-    <id>https://clz.vercel.app/2022/02/21/open-with-vscode/</id>
-    <published>2022-02-21T13:44:31.000Z</published>
-    <updated>2022-02-21T13:45:42.727Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="右键打开VScode"><a href="#右键打开VScode" class="headerlink" title="右键打开VScode"></a>右键打开VScode</h1><h2 id="右键打开文件"><a href="#右键打开文件" class="headerlink" title="右键打开文件"></a>右键打开文件</h2><ol><li><p><code> win + R</code>，输入<code> regedit</code>，打开注册表编辑器</p></li><li><p>在<code> HKEY_CLASSES_ROOT \ * \ shell</code>下新建项<code> VSCode</code></p></li><li><p>在<code> VSCode</code>下新建项<code> command</code></p><p><img src="https://s2.loli.net/2022/02/21/YMrKETtlfQXkcRs.png" alt="image-20220221211953677"></p></li><li><p>点击<code> command</code>项，双击右边的<code> (默认)</code>，数值数据变为VSCode的安装路径 + “%1”</p><p><img src="https://s2.loli.net/2022/02/21/dvuhkpO2tYjHyJQ.png" alt="image-20220221212426269"></p></li><li><p>点击<code> VSCode</code>项，双击右边的<code> (默认)</code>，数值数据变为你想要的提示信息，如<code> Open with Code</code></p></li><li><p>在<code> VSCode</code>下新建<code> 可扩充字符串值</code>，命名为<code> Icon</code>，更改数值数据为VSCode的安装路径</p><p><img src="https://s2.loli.net/2022/02/21/BmC2pDZLawGPRn7.png" alt="image-20220221213111724"></p></li></ol><h2 id="右键打开文件夹"><a href="#右键打开文件夹" class="headerlink" title="右键打开文件夹"></a>右键打开文件夹</h2><p>同理，就是位置不一样而已，在<code> HKEY_CLASSES_ROOT\Directory\shell</code>下</p><p><img src="https://s2.loli.net/2022/02/21/hIrp9VEPWwsuizZ.png" alt="image-20220221213828789"></p><p>另外，<code> command</code>项的数据数值后的参数<code> &quot;%1&quot;</code>变为<code> &quot;%V&quot;</code></p><h2 id="右键文件夹空白处，打开文件夹"><a href="#右键文件夹空白处，打开文件夹" class="headerlink" title="右键文件夹空白处，打开文件夹"></a>右键文件夹空白处，打开文件夹</h2><p>同理，就是位置不一样而已，在<code> HKEY_CLASSES_ROOT\Directory\Background\shell</code>下</p><p><img src="https://s2.loli.net/2022/02/21/uKi2AJ7Z1moXwHv.png" alt="image-20220221214201643"></p><p>另外，<code> command</code>项的数据数值后的参数也是<code> &quot;%V&quot;</code></p><p>其实，有个快捷方法的，我之前就是跟着网上的教程一次操作，三个都配置好了，只不过我忘记了，也没记下来，又没收藏，真是悔不当初啊。知道的人可以说一下。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;右键打开VScode&quot;&gt;&lt;a href=&quot;#右键打开VScode&quot; class=&quot;headerlink&quot; title=&quot;右键打开VScode&quot;&gt;&lt;/a&gt;右键打开VScode&lt;/h1&gt;&lt;h2 id=&quot;右键打开文件&quot;&gt;&lt;a href=&quot;#右键打开文件&quot; class=&quot;</summary>
-      
-    
-    
-    
-    <category term="小技能" scheme="https://clz.vercel.app/categories/%E5%B0%8F%E6%8A%80%E8%83%BD/"/>
-    
-    
-    <category term="VSCode" scheme="https://clz.vercel.app/tags/VSCode/"/>
     
   </entry>
   

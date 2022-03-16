@@ -69,5 +69,5 @@ td {
 /* 歌词样式覆盖 */
 #aplayerContent .aplayer.aplayer-fixed .aplayer-lrc {
     left: unset;
-    right: 30px;
+    right: 90px;
 }
