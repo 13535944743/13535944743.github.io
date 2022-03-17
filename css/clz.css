@@ -75,3 +75,10 @@ td {
 #aplayerContent .aplayer.aplayer-fixed .aplayer-lrc {
     text-shadow: none;
 }
+
+
+/* 备案链接 */
+.icp-link {
+    position: relative;
+    top: 2px;
+}
