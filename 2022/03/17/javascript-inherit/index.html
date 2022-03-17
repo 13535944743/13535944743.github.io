@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="WebGL">
+    <meta name="keywords" content="JavaScript实现继承的六种方式, 赤蓝紫">
     <meta name="description" content="One Plus One Equals Two.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -30,7 +30,7 @@
 </script>
 
 
-    <title>WebGL基础笔记 | 赤蓝紫</title>
+    <title>JavaScript实现继承的六种方式 | 赤蓝紫</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -307,7 +307,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">WebGL基础笔记</h1>
+                    <h1 class="description center-align post-title">JavaScript实现继承的六种方式</h1>
                 </div>
             </div>
         </div>
@@ -422,12 +422,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E9%9D%92%E8%AE%AD%E8%90%A5/">
-                                <span class="chip bg-color">青训营</span>
-                            </a>
-                        
-                            <a href="/tags/WebGL/">
-                                <span class="chip bg-color">WebGL</span>
+                            <a href="/tags/JavaScript/">
+                                <span class="chip bg-color">JavaScript</span>
                             </a>
                         
                     </div>
@@ -451,7 +447,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-01-24
+                    2022-03-17
                 </div>
                 
 
@@ -462,7 +458,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    7 分
                 </div>
                 
 
@@ -487,76 +483,172 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="WebGL基础笔记"><a href="#WebGL基础笔记" class="headerlink" title="WebGL基础笔记"></a>WebGL基础笔记</h1><p>个人参加字节跳动的青训营时写的笔记。这部分是月影老师讲的WebGL基础。</p>
-<h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h2><p>WebGL代码有两部分：</p>
+                <h1 id="JavaScript实现继承的六种方式"><a href="#JavaScript实现继承的六种方式" class="headerlink" title="JavaScript实现继承的六种方式"></a>JavaScript实现继承的六种方式</h1><hr>
+<p><strong>父类</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Person</span>(<span class="hljs-params">name</span>) </span>&#123;<br>  <span class="hljs-built_in">this</span>.name = name<br>  <span class="hljs-built_in">this</span>.say = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;1 + 1 = 2&#x27;</span>)<br>  &#125;<br>&#125;<br><br>Person.prototype.listen = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;エウテルペ&#x27;</span>)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="1-原型链继承"><a href="#1-原型链继承" class="headerlink" title="1. 原型链继承"></a>1. 原型链继承</h2><p><strong>将父类的实例作为子类的原型</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Person</span>(<span class="hljs-params">name</span>) </span>&#123;<br>  <span class="hljs-built_in">this</span>.name = name<br>  <span class="hljs-built_in">this</span>.say = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;1 + 1 = 2&#x27;</span>)<br>  &#125;<br>&#125;<br><br>Person.prototype.listen = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;エウテルペ&#x27;</span>)<br>&#125;<br><br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Student</span>(<span class="hljs-params"></span>) </span>&#123; &#125;<br><br>Student.prototype = <span class="hljs-keyword">new</span> Person()  <span class="hljs-comment">//关键</span><br><br><br><span class="hljs-keyword">const</span> stu = <span class="hljs-keyword">new</span> Student()<br><br>stu.grade = <span class="hljs-number">3</span><br><br><span class="hljs-built_in">console</span>.log(stu.grade)  <span class="hljs-comment">// 3</span><br><br>stu.say()   <span class="hljs-comment">// 1 + 1 = 2</span><br>stu.listen()    <span class="hljs-comment">// エウテルペ</span><br></code></pre></td></tr></table></figure>
+
+<br>
+
+<p><strong>优点</strong>：</p>
 <ul>
-<li>运行在CPU上的JavaScript</li>
-<li>运行在GPU上的GLSL</li>
+<li><p>简单易实现</p>
+</li>
+<li><p>父类新增原型方法/原型属性，子类都能访问</p>
+</li>
+<li><p>实例是子类的实例也是父类的实例</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js">stu <span class="hljs-keyword">instanceof</span> Student   <span class="hljs-comment">// true</span><br>stu <span class="hljs-keyword">instanceof</span> Person    <span class="hljs-comment">// true</span><br></code></pre></td></tr></table></figure></li>
 </ul>
-<p><strong>CPU和GPU</strong>：</p>
+<br>
+
+<p><strong>缺点</strong>：</p>
 <ul>
-<li>CPU适合比较复杂的任务，不适合量大但每个单元比较简单的任务</li>
-<li>GPU有大量的小运算单元构成，每个运算单元只负责处理<strong>简单</strong>的计算，每个运算单元彼此独立。所有计算可以并行处理。适合量大但每个单元比较简单的任务。</li>
+<li>为子类新增属性和方法，不能在构造函数中</li>
+<li>无法实现多继承</li>
+<li>创建子类实例时，不能向父类构造函数传参数</li>
+<li>所有新实例都会共享父类实例的属性。（原型上的属性是共享的，一个实例修改了原型属性，另一个实例的原型属性也会被修改！）</li>
 </ul>
-<p>图像的处理适合交给GPU，因为图像会有很多的像素点需要处理。</p>
-<h2 id="2-流程"><a href="#2-流程" class="headerlink" title="2. 流程"></a>2. 流程</h2><p>这部分只能说似懂非懂(任重而道远啊)，先贴一下课上的示例代码，方便之后看。</p>
-<p><img src="https://s2.loli.net/2022/01/24/c4mPWogj9vIVfR6.png" alt="image-20220121161752150"></p>
-<ol>
-<li><p>创建WebGL上下文</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> canvas = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&#x27;canvas&#x27;</span>);<br><span class="hljs-keyword">const</span> gl = canvas.getContext(<span class="hljs-string">&#x27;webgl&#x27;</span>);<br></code></pre></td></tr></table></figure></li>
-<li><p>创建WebGL程序(GLSL，顶点着色器、片元着色器)</p>
-<p><strong>顶点着色器</strong>(Vertex Shader)：</p>
-<p><img src="https://s2.loli.net/2022/01/24/tapPx5QJwurCEX4.png" alt="image-20220121163200070"></p>
-<p><strong>片元着色器</strong>(Fragment Shader)：顶点之间的轮廓中的所有像素都会经过片元着色器处理。(并行处理)</p>
-<p><img src="https://s2.loli.net/2022/01/24/r19PV7sUClEGcDY.png" alt="image-20220121163223930"></p>
-<p><img src="https://s2.loli.net/2022/01/24/jnvh4zaoqIReFJ5.png" alt="image-20220121163501575"></p>
-</li>
-<li><p>将数据存入缓冲区</p>
-<p><img src="https://s2.loli.net/2022/01/24/3lp5OzrWq9ZIJCA.png" alt="image-20220121163750505"></p>
-</li>
-<li><p>将缓冲区数据读取到GPU</p>
-<p><img src="https://s2.loli.net/2022/01/24/lDbBEtJQh6Paio7.png" alt="image-20220121164109751"></p>
-</li>
-<li><p>GPU执行WebGL程序，输出结果</p>
-<p><img src="https://s2.loli.net/2022/01/24/3p1A2IRkV9BZJPX.png" alt="image-20220121164208556"></p>
-</li>
-</ol>
-<p>完整代码：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 1. 创建WebGL上下文</span><br><span class="hljs-keyword">const</span> canvas = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&#x27;canvas&#x27;</span>);<br><span class="hljs-keyword">const</span> gl = canvas.getContext(<span class="hljs-string">&#x27;webgl&#x27;</span>);<br><br><span class="hljs-comment">// 2. 创建WebGL程序</span><br><br><span class="hljs-comment">// 2.1 顶点着色器</span><br><span class="hljs-keyword">const</span> vertex = <span class="hljs-string">`</span><br><span class="hljs-string">  attribute vec2 position;</span><br><span class="hljs-string"></span><br><span class="hljs-string">  void main() &#123;</span><br><span class="hljs-string">    gl_PointSize = 1.0;</span><br><span class="hljs-string">    gl_Position = vec4(position, 1.0, 1.0);</span><br><span class="hljs-string">  &#125;</span><br><span class="hljs-string">`</span>;<br><br><span class="hljs-comment">// 2.2 片元着色器</span><br><span class="hljs-keyword">const</span> fragment = <span class="hljs-string">`</span><br><span class="hljs-string">  precision mediump float;</span><br><span class="hljs-string"></span><br><span class="hljs-string">  void main()</span><br><span class="hljs-string">  &#123;</span><br><span class="hljs-string">    gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);	// 类似rgba</span><br><span class="hljs-string">  &#125;    </span><br><span class="hljs-string">`</span>;<br><br><span class="hljs-comment">// 2.3 加载、编译、使用着色器</span><br><span class="hljs-keyword">const</span> vertexShader = gl.createShader(gl.VERTEX_SHADER);<br>gl.shaderSource(vertexShader, vertex);<br>gl.compileShader(vertexShader);<br><br><span class="hljs-keyword">const</span> fragmentShader = gl.createShader(gl.FRAGMENT_SHADER);<br>gl.shaderSource(fragmentShader, fragment);<br>gl.compileShader(fragmentShader);<br><br><br><span class="hljs-keyword">const</span> program = gl.createProgram();<br>gl.attachShader(program, vertexShader);<br>gl.attachShader(program, fragmentShader);<br>gl.linkProgram(program);<br>gl.useProgram(program);<br><br><span class="hljs-keyword">const</span> points = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Float32Array</span>([<br>  -<span class="hljs-number">1</span>, -<span class="hljs-number">1</span>,<br>  <span class="hljs-number">0</span>, <span class="hljs-number">1</span>,<br>  <span class="hljs-number">1</span>, -<span class="hljs-number">1</span>,<br>]);<br><br><span class="hljs-comment">// 3. 将数据存入缓存区</span><br><span class="hljs-keyword">const</span> bufferId = gl.createBuffer();<br>gl.bindBuffer(gl.ARRAY_BUFFER, bufferId);<br>gl.bufferData(gl.ARRAY_BUFFER, points, gl.STATIC_DRAW);<br><br><span class="hljs-comment">// 4. 将缓冲区数据读取到GPU</span><br><span class="hljs-keyword">const</span> vPosition = gl.getAttribLocation(program, <span class="hljs-string">&#x27;position&#x27;</span>);<br>gl.vertexAttribPointer(vPosition, <span class="hljs-number">2</span>, gl.FLOAT, <span class="hljs-literal">false</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);<br>gl.enableVertexAttribArray(vPosition);<br><br><span class="hljs-comment">// 5. GPU执行WebGL程序</span><br>gl.clear(gl.COLOR_BUFFER_BIT);<br>gl.drawArrays(gl.TRIANGLES, <span class="hljs-number">0</span>, points.length / <span class="hljs-number">2</span>);  <span class="hljs-comment">// points中有六个点，实际上只有三个点，所以需要除以2</span><br></code></pre></td></tr></table></figure>
+<br>
 
-<p>效果：</p>
-<p><img src="https://s2.loli.net/2022/01/24/hj6JoKRS4AQau2t.png" alt="image-20220121165503382"></p>
-<p>canvas 2D版本：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> canvas = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&#x27;canvas&#x27;</span>);<br><span class="hljs-keyword">const</span> ctx = canvas.getContext(<span class="hljs-string">&#x27;2d&#x27;</span>);<br><br>ctx.beginPath();<br>ctx.moveTo(<span class="hljs-number">250</span>, <span class="hljs-number">0</span>);<br>ctx.lineTo(<span class="hljs-number">500</span>, <span class="hljs-number">500</span>);<br>ctx.lineTo(<span class="hljs-number">0</span>, <span class="hljs-number">500</span>);<br>ctx.fillStyle = <span class="hljs-string">&#x27;red&#x27;</span>;<br>ctx.fill();<br></code></pre></td></tr></table></figure>
+<p><strong>存在的问题：</strong></p>
+<ul>
+<li><p><code>prototype</code>里有个属性<code>constructor</code>指向构造函数本身，但是，<code> Student</code>的原型已经被父类的实例取代了，所以指向也不正确，所以需要修复构造函数指向(这里网上的教程只是对组合继承、寄生组合式继承进行了修复，不知道是不是因为这个不常用的关系)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Student</span>(<span class="hljs-params"></span>) </span>&#123; &#125;<br><span class="hljs-built_in">console</span>.log(Student.prototype.constructor)<br><br>Student.prototype = <span class="hljs-keyword">new</span> Person()  <span class="hljs-comment">//关键</span><br><br><br><span class="hljs-keyword">const</span> stu = <span class="hljs-keyword">new</span> Student()<br><br>stu.grade = <span class="hljs-number">3</span><br><br><span class="hljs-built_in">console</span>.log(stu.grade)  <span class="hljs-comment">// 3</span><br><br>stu.say()   <span class="hljs-comment">// 1 + 1 = 2</span><br>stu.listen()    <span class="hljs-comment">// エウテルペ</span><br><span class="hljs-built_in">console</span>.log(Student.prototype.constructor)<br></code></pre></td></tr></table></figure>
 
-<p>效果和上图所示一样。(比原生WebGL简单好多)</p>
-<h2 id="3-多边形"><a href="#3-多边形" class="headerlink" title="3. 多边形"></a>3. 多边形</h2><p>多边形需要进行三角划分</p>
-<p><img src="https://s2.loli.net/2022/01/24/bl275FqhsRkruVN.png" alt="image-20220121175100166"></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/mapbox/earcut">Earcut</a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 1. 创建WebGL上下文</span><br><span class="hljs-keyword">const</span> canvas = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&#x27;canvas&#x27;</span>);<br><span class="hljs-keyword">const</span> gl = canvas.getContext(<span class="hljs-string">&#x27;webgl&#x27;</span>);<br><br><span class="hljs-comment">// 2. 创建WebGL程序</span><br><br><span class="hljs-comment">// 2.1 顶点着色器</span><br><span class="hljs-keyword">const</span> vertex = <span class="hljs-string">`</span><br><span class="hljs-string">  attribute vec2 position;</span><br><span class="hljs-string"></span><br><span class="hljs-string">  void main() &#123;</span><br><span class="hljs-string">    gl_PointSize = 1.0;</span><br><span class="hljs-string">    gl_Position = vec4(position, 1.0, 1.0);</span><br><span class="hljs-string">  &#125;</span><br><span class="hljs-string">`</span>;<br><br><span class="hljs-comment">// 2.2 片元着色器</span><br><span class="hljs-keyword">const</span> fragment = <span class="hljs-string">`</span><br><span class="hljs-string">  precision mediump float;</span><br><span class="hljs-string"></span><br><span class="hljs-string">  void main()</span><br><span class="hljs-string">  &#123;</span><br><span class="hljs-string">    gl_FragColor = vec4(0.0, 1.0, 1.0, 1.0);</span><br><span class="hljs-string">  &#125;    </span><br><span class="hljs-string">`</span>;<br><br><span class="hljs-comment">// 2.3 加载、编译、使用着色器</span><br><span class="hljs-keyword">const</span> vertexShader = gl.createShader(gl.VERTEX_SHADER);<br>gl.shaderSource(vertexShader, vertex);<br>gl.compileShader(vertexShader);<br><br><span class="hljs-keyword">const</span> fragmentShader = gl.createShader(gl.FRAGMENT_SHADER);<br>gl.shaderSource(fragmentShader, fragment);<br>gl.compileShader(fragmentShader);<br><br><br><span class="hljs-keyword">const</span> program = gl.createProgram();<br>gl.attachShader(program, vertexShader);<br>gl.attachShader(program, fragmentShader);<br>gl.linkProgram(program);<br>gl.useProgram(program);<br><br><span class="hljs-comment">// 顶点集</span><br><span class="hljs-keyword">const</span> vertices = [<br>  [-<span class="hljs-number">1</span>, -<span class="hljs-number">1</span>],<br>  [-<span class="hljs-number">1</span>, <span class="hljs-number">0</span>],<br>  [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>],<br>  [<span class="hljs-number">0</span>, -<span class="hljs-number">1</span>],<br>];  <br><br><span class="hljs-keyword">const</span> points = vertices.flat();  <span class="hljs-comment">// 点集</span><br><span class="hljs-keyword">const</span> triangles = earcut(points);  <span class="hljs-comment">// 三角形集(三角划分后的三角性)</span><br><br><span class="hljs-keyword">const</span> position = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Float32Array</span>(points);<br><span class="hljs-keyword">const</span> cells = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Uint16Array</span>(triangles);<br><br><span class="hljs-comment">// 3. 将数据存入缓存区，这时候需要分点和三角形来分别存</span><br><span class="hljs-keyword">const</span> pointBuffer = gl.createBuffer();<br>gl.bindBuffer(gl.ARRAY_BUFFER, pointBuffer);<br>gl.bufferData(gl.ARRAY_BUFFER, position, gl.STATIC_DRAW);<br><br><span class="hljs-keyword">const</span> cellsBuffer = gl.createBuffer();<br>gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, cellsBuffer);<br>gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, cells, gl.STATIC_DRAW);<br><br><span class="hljs-comment">// 4. 将缓冲区数据读取到GPU</span><br><span class="hljs-keyword">const</span> vPosition = gl.getAttribLocation(program, <span class="hljs-string">&#x27;position&#x27;</span>);<br>gl.vertexAttribPointer(vPosition, <span class="hljs-number">2</span>, gl.FLOAT, <span class="hljs-literal">false</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);<br>gl.enableVertexAttribArray(vPosition);<br><br><span class="hljs-comment">// 5. GPU执行WebGL程序</span><br>gl.clear(gl.COLOR_BUFFER_BIT);<br>gl.drawElements(gl.TRIANGLES, cells.length, gl.UNSIGNED_SHORT, <span class="hljs-number">0</span>);  <span class="hljs-comment">// 这部分还不是很明白</span><br><br></code></pre></td></tr></table></figure>
-
-<p>效果：</p>
-<p><img src="https://s2.loli.net/2022/01/24/Chzl9qIcwPTYSHU.png" alt="image-20220121184608412"></p>
-<h2 id="4-变换"><a href="#4-变换" class="headerlink" title="4. 变换"></a>4. 变换</h2><ul>
-<li>平移</li>
-<li>旋转</li>
-<li>缩放</li>
+<p><img src="https://s2.loli.net/2022/03/17/5jp73YhObJIxtM2.png" alt="image-20220317095122520"></p>
+</li>
 </ul>
-<p><img src="https://s2.loli.net/2022/01/24/dxmy2MaYjuCgec7.png" alt="image-20220121203813648"></p>
-<h2 id="5-3D标准模型的四个齐次矩阵"><a href="#5-3D标准模型的四个齐次矩阵" class="headerlink" title="5.  3D标准模型的四个齐次矩阵"></a>5.  3D标准模型的四个齐次矩阵</h2><ul>
-<li>投影矩阵</li>
-<li>模型矩阵</li>
-<li>视图矩阵</li>
-<li>法向量矩阵</li>
+<br>
+
+<p><strong>解决问题</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">Student.prototype.constructor = Student<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/03/17/4eCavAGMltys9TK.png" alt="image-20220317095215698"></p>
+<hr>
+<h2 id="2-借用构造函数继承"><a href="#2-借用构造函数继承" class="headerlink" title="2. 借用构造函数继承"></a>2. 借用构造函数继承</h2><p><strong>在一个类中执行另一个类的构造函数，通过<code> call</code>函数设置<code> this</code>的指向，这样就可以得到另一个类的所有属性</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">WebsiteMaster</span>(<span class="hljs-params">site</span>) </span>&#123;<br>  <span class="hljs-built_in">this</span>.site = site<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Student</span>(<span class="hljs-params">name, grade, site</span>) </span>&#123;<br>  Person.call(<span class="hljs-built_in">this</span>, name)<br>  WebsiteMaster.call(<span class="hljs-built_in">this</span>, site)<br>  <span class="hljs-built_in">this</span>.grade = grade<br>&#125;<br><br><span class="hljs-keyword">const</span> stu = <span class="hljs-keyword">new</span> Student(<span class="hljs-string">&#x27;clz&#x27;</span>, <span class="hljs-number">3</span>, <span class="hljs-string">&#x27;https://clz.vercel.app&#x27;</span>)<br><br><span class="hljs-built_in">console</span>.log(stu.name, stu.grade, stu.site)  <span class="hljs-comment">// clz, 3, https://clz.vercel.app</span><br><br>stu.say()   <span class="hljs-comment">// 1 + 1 = 2</span><br>stu.listen()    <span class="hljs-comment">// Uncaught TypeError: stu.listen is not a function</span><br></code></pre></td></tr></table></figure>
+
+<br>
+
+<p><strong>优点：</strong></p>
+<ul>
+<li>创建子类实例时，可以向父类传递参数</li>
+<li>可以实现多继承(call多个对象)</li>
+<li>不需要修复构造函数指向</li>
 </ul>
-<p><strong>挖了个大坑</strong></p>
-<h2 id="6-相关链接"><a href="#6-相关链接" class="headerlink" title="6. 相关链接"></a>6. 相关链接</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://thebookofshaders.com/">The Book of Shaders</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.shadertoy.com/">着色器分享</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/mesh-js/mesh.js">Mesh.js</a></li>
-<li><a target="_blank" rel="noopener" href="https://doodle.webgl.group/">glsl-doodle</a></li>
-<li><a target="_blank" rel="noopener" href="http://spritejs.com/">SpriteJS</a></li>
-<li><a target="_blank" rel="noopener" href="https://threejs.org/">three.js</a></li>
+<br>
+
+<p><strong>缺点：</strong></p>
+<ul>
+<li><p>方法在构造函数中定义，无法复用</p>
+</li>
+<li><p>只能继承父类的实例属性，不能继承原型属性、方法</p>
+</li>
+<li><p>实例并不是父类的实例，而只是子类的实例</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js">stu <span class="hljs-keyword">instanceof</span> Student   <span class="hljs-comment">// true</span><br>stu <span class="hljs-keyword">instanceof</span> Person    <span class="hljs-comment">// false</span><br></code></pre></td></tr></table></figure>
+
+<p>继承继着不再是人了(笑)</p>
+</li>
+</ul>
+<hr>
+<h2 id="3-原型式继承"><a href="#3-原型式继承" class="headerlink" title="3. 原型式继承"></a>3. 原型式继承</h2><p>为父类实例添加属性、方法，作为子类实例。</p>
+<blockquote>
+<p>道格拉斯·克罗克福德在一篇文章中介绍了一种实现继承的方法，这种方法并没有使用严格意义上的构造函数。它的想法是借助原型可以基于已有的对象创建新对象，同时还不必因此创建自定义类型。为了达到这个目的，他给出了如下函数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">object</span>(<span class="hljs-params">o</span>)</span>&#123;<br> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">F</span>(<span class="hljs-params"></span>) </span>&#123;&#125;<br> F.prototype = o;<br> <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> F();<br>&#125;<br></code></pre></td></tr></table></figure>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">object</span>(<span class="hljs-params">o</span>) </span>&#123;<br>  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">F</span>(<span class="hljs-params"></span>) </span>&#123; &#125;<br>  F.prototype = o;<br>  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> F();<br>&#125;<br><br><span class="hljs-keyword">const</span> person = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">&#x27;clz&#x27;</span>)<br><br><span class="hljs-keyword">const</span> stu = object(person)<br><br>stu.grade = <span class="hljs-number">3</span><br>stu.study = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;FrontEnd&#x27;</span>)<br>&#125;<br><br><span class="hljs-built_in">console</span>.log(stu.name, stu.grade)  <span class="hljs-comment">// clz, 3</span><br><br>stu.say()   <span class="hljs-comment">// 1 + 1 = 2</span><br>stu.listen()    <span class="hljs-comment">// エウテルペ</span><br><br>stu.study()		<span class="hljs-comment">// FrontEnd</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/03/17/HRrLnl6oKQhDiv7.png" alt="image-20220316224057344"></p>
+<br>
+
+<p><strong>优点</strong>：</p>
+<ul>
+<li>感觉没啥优点，不太像继承</li>
+</ul>
+<br>
+
+<p><strong>缺点：</strong></p>
+<ul>
+<li>不支持多继承</li>
+<li>实例是父类的实例</li>
+</ul>
+<hr>
+<h2 id="4-寄生式继承"><a href="#4-寄生式继承" class="headerlink" title="4. 寄生式继承"></a>4. 寄生式继承</h2><p>为父类实例添加属性、方法，作为子类实例。(原理和原型式继承一样)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">object</span>(<span class="hljs-params">o</span>) </span>&#123;<br>  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">F</span>(<span class="hljs-params"></span>) </span>&#123; &#125;<br>  F.prototype = o;<br>  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> F();<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Student</span>(<span class="hljs-params">name, grade</span>) </span>&#123;<br>  <span class="hljs-keyword">const</span> person = object(<span class="hljs-keyword">new</span> Person(name))<br><br>  person.grade = grade<br>  person.study = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;FrontEnd&#x27;</span>)<br>  &#125;<br><br>  <span class="hljs-keyword">return</span> person<br>&#125;<br><br><span class="hljs-keyword">const</span> stu = <span class="hljs-keyword">new</span> Student(<span class="hljs-string">&#x27;clz&#x27;</span>, <span class="hljs-number">3</span>)<br><br><span class="hljs-built_in">console</span>.log(stu.name, stu.grade)  <span class="hljs-comment">// clz, 3</span><br><br>stu.say()   <span class="hljs-comment">// 1 + 1 = 2</span><br>stu.listen()    <span class="hljs-comment">// エウテルペ</span><br><br>stu.study()		<span class="hljs-comment">// FrontEnd</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p><strong>优点</strong>：</p>
+<ul>
+<li>有了子类的雏形，但是换汤不换药，原理和原型式继承一样</li>
+</ul>
+<br>
+
+<p><strong>缺点：</strong></p>
+<ul>
+<li><p>不支持多继承</p>
+</li>
+<li><p>实例是父类的实例，不是子类的实例(因为只是在父类的实例上添加属性、方法而已)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js">stu <span class="hljs-keyword">instanceof</span> Student   <span class="hljs-comment">// false</span><br>stu <span class="hljs-keyword">instanceof</span> Person    <span class="hljs-comment">// true</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<h2 id="5-组合继承"><a href="#5-组合继承" class="headerlink" title="5. 组合继承"></a>5. 组合继承</h2><p>原型链继承+借用构造函数继承</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">WebsiteMaster</span>(<span class="hljs-params">site</span>) </span>&#123;<br>  <span class="hljs-built_in">this</span>.site = site<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Student</span>(<span class="hljs-params">name, grade, site</span>) </span>&#123;<br>  Person.call(<span class="hljs-built_in">this</span>, name)			<span class="hljs-comment">// 继承属性</span><br>  WebsiteMaster.call(<span class="hljs-built_in">this</span>, site)<br>  <span class="hljs-built_in">this</span>.grade = grade<br>&#125;<br><br>Student.prototype = <span class="hljs-keyword">new</span> Person()		<span class="hljs-comment">// 继承方法</span><br>Student.prototype.constructor = Student<br><br><span class="hljs-keyword">const</span> stu = <span class="hljs-keyword">new</span> Student(<span class="hljs-string">&#x27;clz&#x27;</span>, <span class="hljs-number">3</span>, <span class="hljs-string">&#x27;https://clz.vercel.app&#x27;</span>)<br><br><span class="hljs-built_in">console</span>.log(stu.name, stu.grade, stu.site)  <span class="hljs-comment">// clz, 3, https://clz.vercel.app</span><br><br>stu.say()   <span class="hljs-comment">// 1 + 1 = 2</span><br>stu.listen()    <span class="hljs-comment">// エウテルペ</span><br><br><span class="hljs-built_in">console</span>.log(stu.constructor)<br></code></pre></td></tr></table></figure>
+
+<br>
+
+<p><strong>优点</strong>：</p>
+<ul>
+<li>可以继承实例属性、方法，也可以继承原型属性、方法</li>
+<li>可传参、可复用</li>
+<li>实例既是子类的实例，也是父类的实例</li>
+</ul>
+<br>
+
+<p><strong>缺点</strong>：</p>
+<ul>
+<li>调用了两次父类构造函数，耗内存</li>
+<li>需要修复构造函数指向</li>
+</ul>
+<br>
+
+<h2 id="6-寄生组合式继承"><a href="#6-寄生组合式继承" class="headerlink" title="6. 寄生组合式继承"></a>6. 寄生组合式继承</h2><p>通过<code> Object.create()</code>来代替给子类原型赋值的过程，解决了两次调用父类构造函数的问题</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">WebsiteMaster</span>(<span class="hljs-params">site</span>) </span>&#123;<br>  <span class="hljs-built_in">this</span>.site = site<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Student</span>(<span class="hljs-params">name, grade, site</span>) </span>&#123;<br>  Person.call(<span class="hljs-built_in">this</span>, name)			<span class="hljs-comment">// 继承属性</span><br>  WebsiteMaster.call(<span class="hljs-built_in">this</span>, site)<br>  <span class="hljs-built_in">this</span>.grade = grade<br>&#125;<br><br>Student.prototype = <span class="hljs-built_in">Object</span>.create(Person.prototype)		<span class="hljs-comment">// 继承方法</span><br>Student.prototype.constructor = Student   <span class="hljs-comment">// 修复构造函数指向</span><br><br><span class="hljs-keyword">const</span> stu = <span class="hljs-keyword">new</span> Student(<span class="hljs-string">&#x27;clz&#x27;</span>, <span class="hljs-number">3</span>, <span class="hljs-string">&#x27;https://clz.vercel.app&#x27;</span>)<br><br><span class="hljs-built_in">console</span>.log(stu.name, stu.grade, stu.site)  <span class="hljs-comment">// clz, 3, https://clz.vercel.app</span><br><br>stu.say()   <span class="hljs-comment">// 1 + 1 = 2</span><br>stu.listen()    <span class="hljs-comment">// エウテルペ</span><br></code></pre></td></tr></table></figure>
+
+<br>
+
+<p>有人可能会提出：为什么不可以直接把父类原型赋值给子类原型来实现呢？</p>
+<p>这是因为直接赋值的话，那就是引用关系。下面就来看看</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">WebsiteMaster</span>(<span class="hljs-params">site</span>) </span>&#123;<br>  <span class="hljs-built_in">this</span>.site = site<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Student</span>(<span class="hljs-params">name, grade, site</span>) </span>&#123;<br>  Person.call(<span class="hljs-built_in">this</span>, name)			<span class="hljs-comment">// 继承属性</span><br>  WebsiteMaster.call(<span class="hljs-built_in">this</span>, site)<br>  <span class="hljs-built_in">this</span>.grade = grade<br>&#125;<br><br>Student.prototype = Person.prototype		<span class="hljs-comment">// 继承方法</span><br>Student.prototype.constructor = Student   <span class="hljs-comment">// 修复实例</span><br><br><span class="hljs-keyword">const</span> stu = <span class="hljs-keyword">new</span> Student(<span class="hljs-string">&#x27;clz&#x27;</span>, <span class="hljs-number">3</span>, <span class="hljs-string">&#x27;https://clz.vercel.app&#x27;</span>)<br><br><span class="hljs-built_in">console</span>.log(stu.name, stu.grade, stu.site)  <span class="hljs-comment">// clz, 3, https://clz.vercel.app</span><br><br>stu.say()   <span class="hljs-comment">// 1 + 1 = 2</span><br>stu.listen()    <span class="hljs-comment">// エウテルペ</span><br><br><br>Student.prototype.listen = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;EGOIST&#x27;</span>)<br>&#125;<br><br><span class="hljs-built_in">console</span>.log(Person.prototype.listen)<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/03/17/tSLzqmKE1jRk4iJ.png" alt="image-20220316234707764"></p>
+<p>可以看到，修改<code> Student</code>原型上的方法时，<code> Person</code>的原型上的也会跟着变化。</p>
+<blockquote>
+<p>**<code>Object.create()</code>**方法创建一个新对象，使用现有的对象来提供新创建的对象的<code>__proto__</code>。</p>
+<p>所以，此时修改<code> Student</code>原型上的方法时，<code> Person</code>的原型上的不会跟着变化。</p>
+</blockquote>
+<hr>
+<p>es6之前没有<code> Object.create()</code>方法，可以自己实现(实际就是原型式继承的关键函数)</p>
+<p><strong>关键</strong>：</p>
+<ul>
+<li>接受一个对象obj</li>
+<li>返回一个新对象newObj</li>
+<li>让<code> newObj.__proto__ === obj</code> </li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">object</span>(<span class="hljs-params">obj</span>) </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">F</span>(<span class="hljs-params"></span>) </span>&#123;&#125; <span class="hljs-comment">// 新的构造函数</span><br>    F.prototype = obj;	<span class="hljs-comment">// 继承传入的参数obj</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> F();		<span class="hljs-comment">// 返回新的函数对象	</span><br>&#125; <br></code></pre></td></tr></table></figure>
+
+
+
+<hr>
+<p>参考链接：</p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/37735247">js继承的几种方式 - 知乎 (zhihu.com)</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/ranyonsue/p/11201730.html">js继承的6种方式 - ranyonsue - 博客园 (cnblogs.com)</a></p>
+</li>
 </ul>
 
                 
@@ -584,7 +676,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://clz.vercel.app/2022/01/24/yc-WebGL/">https://clz.vercel.app/2022/01/24/yc-WebGL/</a>
+                    <a href="https://clz.vercel.app/2022/03/17/javascript-inherit/">https://clz.vercel.app/2022/03/17/javascript-inherit/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -622,12 +714,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E9%9D%92%E8%AE%AD%E8%90%A5/">
-                                    <span class="chip bg-color">青训营</span>
-                                </a>
-                            
-                                <a href="/tags/WebGL/">
-                                    <span class="chip bg-color">WebGL</span>
+                                <a href="/tags/JavaScript/">
+                                    <span class="chip bg-color">JavaScript</span>
                                 </a>
                             
                         </div>
@@ -1011,17 +1099,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/01/25/yc-animation/">
+                <a href="/2022/03/17/javascript-inherit/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="前端动画实现笔记">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="JavaScript实现继承的六种方式">
                         
-                        <span class="card-title">前端动画实现笔记</span>
+                        <span class="card-title">JavaScript实现继承的六种方式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1031,9 +1120,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-25
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1046,15 +1135,12 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%9D%92%E8%AE%AD%E8%90%A5/">
-                        <span class="chip bg-color">青训营</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%8A%A8%E7%94%BB/">
-                        <span class="chip bg-color">动画</span>
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
                 </div>
@@ -1068,13 +1154,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/01/23/python-5/">
+                <a href="/2022/03/17/git-readme/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="python(五)">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="github添加README文件后导致的问题">
                         
-                        <span class="card-title">python(五)</span>
+                        <span class="card-title">github添加README文件后导致的问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1085,14 +1171,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-17
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Python/" class="post-category">
-                                    Python
+                            <a href="/categories/%E5%B0%8F%E6%8A%80%E8%83%BD/" class="post-category">
+                                    小技能
                                 </a>
                             
                             
@@ -1102,8 +1188,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Python/">
-                        <span class="chip bg-color">Python</span>
+                    <a href="/tags/git/">
+                        <span class="chip bg-color">git</span>
                     </a>
                     
                 </div>

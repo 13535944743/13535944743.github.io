@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://clz.vercel.app/2022/03/17/javascript-inherit/</loc>
+    <lastmod>2022-03-17</lastmod>
+  </url>
+  <url>
     <loc>https://clz.vercel.app/2021/10/08/vue-2/</loc>
     <lastmod>2022-03-17</lastmod>
   </url>
