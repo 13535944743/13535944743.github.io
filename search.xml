@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>github添加README文件后导致的问题</title>
+      <link href="/2022/03/17/git-readme/"/>
+      <url>/2022/03/17/git-readme/</url>
+      
+        <content type="html"><![CDATA[<h1 id="github添加README文件后导致的问题"><a href="#github添加README文件后导致的问题" class="headerlink" title="github添加README文件后导致的问题"></a>github添加README文件后导致的问题</h1><p>github 添加<code> README.md</code>文件后，<code> git push origin main</code>报错，<code> git pull origin main</code>后再推也无济于事。</p><p>这是因为<code> github</code>处添加<code> README</code>文件导致历史不一样。</p><p>通过<code> git pull</code>指令后添加<code> --allow-unrelated-histories</code>选项解决问题</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git pull origin main --allow-unrelated-histories<br></code></pre></td></tr></table></figure><p>该选项可以合并两个独立启动仓库的历史。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 小技能 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>详解原型与原型链</title>
       <link href="/2022/03/16/javascript-prototype/"/>
       <url>/2022/03/16/javascript-prototype/</url>

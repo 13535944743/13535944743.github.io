@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://clz.vercel.app/2022/03/17/git-readme/</loc>
+    
+    <lastmod>2022-03-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://clz.vercel.app/2022/03/16/javascript-prototype/</loc>
     
     <lastmod>2022-03-16</lastmod>
@@ -814,7 +823,7 @@
 
   <url>
     <loc>https://clz.vercel.app/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -822,280 +831,280 @@
   
   <url>
     <loc>https://clz.vercel.app/tags/blog/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/Chrome-Debug/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/%E5%B8%83%E5%B1%80/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/HTML/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/Javascript/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/BOM/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/hexo/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/DOM/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/Python/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/HTTP/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/SQL/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/axios/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/css/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/Express/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/git/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/git-dev/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/CSS/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/JavaScript/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/LeetCode/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/Less/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/Node-js/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/VSCode/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/php/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/Promise/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/uni-app/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/Vue/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/Vue-Router/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/Vue3/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/Vue-router/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/Vuex/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/webpack/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/%E9%9D%92%E8%AE%AD%E8%90%A5/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/WebGL/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/%E5%8A%A8%E7%94%BB/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/%E8%B0%83%E8%AF%95/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/http/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/Webpack/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/Web%E5%A4%9A%E5%AA%92%E4%BD%93/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/tags/TypeScript%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -1104,56 +1113,56 @@
   
   <url>
     <loc>https://clz.vercel.app/categories/%E5%B0%8F%E6%8A%80%E8%83%BD/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/categories/%E5%89%8D%E7%AB%AF/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/categories/Python/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/categories/SQL/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/categories/%E5%90%8E%E7%AB%AF/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/categories/%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://clz.vercel.app/categories/%E5%89%8D%E5%90%8E%E7%AB%AF/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <lastmod>2022-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
