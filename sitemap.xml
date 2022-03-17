@@ -2,6 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://clz.vercel.app/2021/10/08/vue-2/</loc>
+    
+    <lastmod>2022-03-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://clz.vercel.app/2021/10/15/vue-3/</loc>
+    
+    <lastmod>2022-03-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://clz.vercel.app/2022/02/21/vue3-1/</loc>
+    
+    <lastmod>2022-03-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://clz.vercel.app/2022/03/01/vue3-2/</loc>
+    
+    <lastmod>2022-03-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://clz.vercel.app/2022/03/17/git-readme/</loc>
     
     <lastmod>2022-03-17</lastmod>
@@ -48,24 +84,6 @@
   
   <url>
     <loc>https://clz.vercel.app/2022/02/06/yc-webpack/</loc>
-    
-    <lastmod>2022-03-13</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://clz.vercel.app/2022/03/01/vue3-2/</loc>
-    
-    <lastmod>2022-03-13</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://clz.vercel.app/2022/02/21/vue3-1/</loc>
     
     <lastmod>2022-03-13</lastmod>
     
@@ -203,15 +221,6 @@
     <loc>https://clz.vercel.app/2022/03/05/promise-2/</loc>
     
     <lastmod>2022-03-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://clz.vercel.app/2021/10/15/vue-3/</loc>
-    
-    <lastmod>2022-03-02</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -588,15 +597,6 @@
   
   <url>
     <loc>https://clz.vercel.app/2021/11/01/FlowLayout/</loc>
-    
-    <lastmod>2021-12-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://clz.vercel.app/2021/10/08/vue-2/</loc>
     
     <lastmod>2021-12-11</lastmod>
     
