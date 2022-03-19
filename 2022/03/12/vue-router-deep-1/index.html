@@ -483,7 +483,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Vue-Router深入学习-一"><a href="#Vue-Router深入学习-一" class="headerlink" title="Vue Router深入学习(一)"></a>Vue Router深入学习(一)</h1><p>之前的笔记：<a href="https://clz.vercel.app/2021/10/15/vue-3/#toc-heading-9">Vue路由</a></p>
+                <h1 id="Vue-Router深入学习-一"><a href="#Vue-Router深入学习-一" class="headerlink" title="Vue Router深入学习(一)"></a>Vue Router深入学习(一)</h1><p>之前的笔记：<a target="_blank" rel="noopener" href="https://clz.vercel.app/2021/10/15/vue-3/#toc-heading-9">Vue路由</a></p>
 <p>通过阅读文档，自己写一些demo来加深自己的理解。(主要针对Vue3)</p>
 <h2 id="1-动态路由匹配"><a href="#1-动态路由匹配" class="headerlink" title="1. 动态路由匹配"></a>1. 动态路由匹配</h2><h3 id="1-1-捕获所有路由-404路由"><a href="#1-1-捕获所有路由-404路由" class="headerlink" title="1.1 捕获所有路由(404路由)"></a>1.1 捕获所有路由(404路由)</h3><blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js">&gt;<span class="hljs-keyword">const</span> routes = [<br>&gt;<span class="hljs-comment">// 将匹配所有内容并将其放在 `$route.params.pathMatch` 下</span><br>&gt;&#123; <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;/:pathMatch(.*)*&#x27;</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;NotFound&#x27;</span>, <span class="hljs-attr">component</span>: NotFound &#125;,<br>&gt;<span class="hljs-comment">// 将匹配以 `/user-` 开头的所有内容，并将其放在 `$route.params.afterUser` 下</span><br>&gt;&#123; <span class="hljs-attr">path</span>: <span class="hljs-string">&#x27;/user-:afterUser(.*)&#x27;</span>, <span class="hljs-attr">component</span>: UserGeneric &#125;,<br>&gt;]<br></code></pre></td></tr></table></figure>
@@ -596,7 +596,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://clz.vercel.app/2022/03/12/vue-router-deep-1/">https://clz.vercel.app/2022/03/12/vue-router-deep-1/</a>
+                    <a href="https://www.clzczh.top/2022/03/12/vue-router-deep-1/">https://www.clzczh.top/2022/03/12/vue-router-deep-1/</a>
                 </span>
             </div>
             <div class="reprint__notice">

@@ -564,7 +564,7 @@
 
 <p><img src="https://s2.loli.net/2022/03/10/pRVPvKnuZqzJ3Uf.png" alt="image-20220301001039494"></p>
 <p>先发送请求，再接收响应。所以会先触发请求拦截器，再触发响应拦截器，经过响应拦截器后才能得到数据</p>
-<h4 id="3-3-4-取消请求"><a href="#3-3-4-取消请求" class="headerlink" title="3.3.4 取消请求"></a>3.3.4 取消请求</h4><p>express知识：<a href="https://clz.vercel.app/tags/Express/">Express笔记: clz</a></p>
+<h4 id="3-3-4-取消请求"><a href="#3-3-4-取消请求" class="headerlink" title="3.3.4 取消请求"></a>3.3.4 取消请求</h4><p>express知识：<a target="_blank" rel="noopener" href="https://clz.vercel.app/tags/Express/">Express笔记: clz</a></p>
 <p>先搭建一个服务器：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;express&#x27;</span>)<br><span class="hljs-keyword">const</span> cors = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;cors&#x27;</span>)<br><br><span class="hljs-keyword">const</span> app = express()<br><br>app.use(cors())  <span class="hljs-comment">// 使用cors，允许跨域</span><br><br>app.use(express.json())   <span class="hljs-comment">// 解析Content-Type为 application/json格式的请求体</span><br><br>app.get(<span class="hljs-string">&#x27;/product1&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> &#123;<br>  <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>    res.send([<br>      &#123;<br>        <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>,<br>        <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;product1&#x27;</span><br>      &#125;<br>    ])<br>  &#125;, <span class="hljs-number">2000</span>)<br>&#125;)<br><br>app.listen(<span class="hljs-number">3000</span>, <span class="hljs-function">() =&gt;</span> &#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;http://localhost:3000&#x27;</span>)<br>&#125;)<br></code></pre></td></tr></table></figure>
 
@@ -633,7 +633,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://clz.vercel.app/2022/03/10/axios-2/">https://clz.vercel.app/2022/03/10/axios-2/</a>
+                    <a href="https://www.clzczh.top/2022/03/10/axios-2/">https://www.clzczh.top/2022/03/10/axios-2/</a>
                 </span>
             </div>
             <div class="reprint__notice">

@@ -530,7 +530,7 @@
 
 
 <h3 id="页面生命周期"><a href="#页面生命周期" class="headerlink" title="页面生命周期"></a>页面生命周期</h3><p><a target="_blank" rel="noopener" href="https://uniapp.dcloud.net.cn/collocation/frame/lifecycle?id=page">页面生命周期</a></p>
-<h3 id="组件生命周期"><a href="#组件生命周期" class="headerlink" title="组件生命周期"></a>组件生命周期</h3><p><a href="https://clz.vercel.app/2021/10/08/vue-2/#toc-heading-9">Vue组件生命周期</a></p>
+<h3 id="组件生命周期"><a href="#组件生命周期" class="headerlink" title="组件生命周期"></a>组件生命周期</h3><p><a target="_blank" rel="noopener" href="https://clz.vercel.app/2021/10/08/vue-2/#toc-heading-9">Vue组件生命周期</a></p>
 <p><code>uni-app</code> 组件支持的生命周期，与vue标准组件的生命周期相同</p>
 <p><img src="https://s2.loli.net/2022/02/25/HDmvkn6If12ZPcx.png" alt="image-20220224165359762"></p>
 <h2 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h2><h3 id="uni-app"><a href="#uni-app" class="headerlink" title="uni-app"></a>uni-app</h3><p><code>uni-app</code>页面路由为框架统一管理，开发者需要在<a target="_blank" rel="noopener" href="https://uniapp.dcloud.net.cn/collocation/pages?id=pages">pages.json</a>里配置每个路由页面的路径及页面样式。</p>
@@ -560,9 +560,9 @@
 <p><img src="https://s2.loli.net/2022/02/25/amgiZdwJkLOhrS4.gif" alt="uniapp"></p>
 <p>插一嘴：HBuilderX感觉挺人性化的，缺少的插件保存时会自动帮你安装</p>
 <p><img src="https://s2.loli.net/2022/02/25/zWogary5BFfTLnq.png" alt="image-20220224161236235"></p>
-<h3 id="Vue路由"><a href="#Vue路由" class="headerlink" title="Vue路由"></a>Vue路由</h3><p><a href="https://clz.vercel.app/2021/10/15/vue-3/#toc-heading-9">Vue路由</a></p>
+<h3 id="Vue路由"><a href="#Vue路由" class="headerlink" title="Vue路由"></a>Vue路由</h3><p><a target="_blank" rel="noopener" href="https://clz.vercel.app/2021/10/15/vue-3/#toc-heading-9">Vue路由</a></p>
 <p>相对uni-app的路由设置来说，Vue的路由配置稍稍麻烦一点，先安装vue-router，再建router文件夹，设置路由规则，并导出路由给Vue使用。详情点击上面的链接</p>
-<p>Vue3相对于Vue2,也有所变化：<a href="https://clz.vercel.app/2022/02/21/vue3-1/#toc-heading-15">Vue3路由</a></p>
+<p>Vue3相对于Vue2,也有所变化：<a target="_blank" rel="noopener" href="https://clz.vercel.app/2022/02/21/vue3-1/#toc-heading-15">Vue3路由</a></p>
 <h2 id="路由守卫"><a href="#路由守卫" class="headerlink" title="路由守卫"></a>路由守卫</h2><p>通过安装<code> uni-simple-router</code>插件，实现路由守卫功能</p>
 <p><strong>安装</strong>：<code> npm install uni-simple-router</code></p>
 <p><strong>文档</strong>：<a target="_blank" rel="noopener" href="https://hhyang.cn/">uni-simple-router</a></p>
@@ -578,7 +578,7 @@
 <p><img src="https://s2.loli.net/2022/02/25/LMoHn8hr4meK3BC.png" alt="image-20220225104643142"></p>
 <p><b style="color: red">以下部分，uni-app和常规Vue开发一样，属于是复习内容</b></p>
 <h2 id="父子组件传值"><a href="#父子组件传值" class="headerlink" title="父子组件传值"></a>父子组件传值</h2><p>和Vue一样，顺便复习一下</p>
-<p><a href="https://clz.vercel.app/2021/10/08/vue-2/#toc-heading-21">Vue组件间的数据共享</a></p>
+<p><a target="_blank" rel="noopener" href="https://clz.vercel.app/2021/10/08/vue-2/#toc-heading-21">Vue组件间的数据共享</a></p>
 <h3 id="父传子-props"><a href="#父传子-props" class="headerlink" title="父传子(props)"></a>父传子(props)</h3><p>子组件</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;template&gt;<br>	&lt;view class=&quot;son&quot;&gt;<br>		子组件: 父组件发送的信息:&#123;&#123;msg&#125;&#125;<br>	&lt;/view&gt;<br>&lt;/template&gt;<br><br>&lt;script&gt;<br>	export default &#123;<br>		name:&quot;Son&quot;,<br>		props: &#123;<br>			msg: &#123;<br>				type: String,<br>				default: &#x27;&#x27;<br>			&#125;<br>		&#125;<br>	&#125;<br>&lt;/script&gt;<br><br>&lt;style scoped&gt;<br>	.son &#123;<br>		width: 300px;<br>		height: 150px;<br>		line-height: 150px;<br>		background-color: pink;<br>		margin: 20px auto;<br>	&#125;<br>&lt;/style&gt;<br><br></code></pre></td></tr></table></figure>
 
@@ -627,7 +627,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://clz.vercel.app/2022/02/24/uniapp-vue/">https://clz.vercel.app/2022/02/24/uniapp-vue/</a>
+                    <a href="https://www.clzczh.top/2022/02/24/uniapp-vue/">https://www.clzczh.top/2022/02/24/uniapp-vue/</a>
                 </span>
             </div>
             <div class="reprint__notice">
