@@ -1,5 +1,5 @@
+https://clz.vercel.app/2022/03/19/javascript-toolFunction-1/
 https://clz.vercel.app/2022/03/17/javascript-inherit/
 https://clz.vercel.app/2022/03/17/git-readme/
 https://clz.vercel.app/2022/03/16/javascript-prototype/
 https://clz.vercel.app/2022/03/16/life-skill/
-https://clz.vercel.app/2022/03/15/vue-router-deep-2/

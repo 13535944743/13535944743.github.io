@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="python(三), 赤蓝紫">
+    <meta name="keywords" content="自定义工具函数库(一)  函数相关, 赤蓝紫">
     <meta name="description" content="One Plus One Equals Two.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -30,7 +30,7 @@
 </script>
 
 
-    <title>python(三) | 赤蓝紫</title>
+    <title>自定义工具函数库(一)  函数相关 | 赤蓝紫</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -302,12 +302,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">python(三)</h1>
+                    <h1 class="description center-align post-title">自定义工具函数库(一)  函数相关</h1>
                 </div>
             </div>
         </div>
@@ -422,8 +422,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Python/">
-                                <span class="chip bg-color">Python</span>
+                            <a href="/tags/JavaScript/">
+                                <span class="chip bg-color">JavaScript</span>
                             </a>
                         
                     </div>
@@ -434,8 +434,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Python/" class="post-category">
-                                Python
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
                             </a>
                         
                     </div>
@@ -447,7 +447,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-10-29
+                    2022-03-19
                 </div>
                 
 
@@ -458,7 +458,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    13 分
+                    7 分
                 </div>
                 
 
@@ -483,95 +483,85 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="python-三-字符串与正则表达式"><a href="#python-三-字符串与正则表达式" class="headerlink" title="python(三)       字符串与正则表达式"></a>python(三)       字符串与正则表达式</h1><h2 id="1-字符串"><a href="#1-字符串" class="headerlink" title="1 字符串"></a>1 字符串</h2><h3 id="1-1-字符串格式化"><a href="#1-1-字符串格式化" class="headerlink" title="1.1 字符串格式化"></a>1.1 字符串格式化</h3><p>语法：<code>&#39;格式字符&#39; %要格式化的内容</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python">x = <span class="hljs-number">16</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;%o&#x27;</span> %x)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;%x&#x27;</span> %x)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;%e&#x27;</span> %x)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;%d, %c&#x27;</span> %(<span class="hljs-number">65</span>, <span class="hljs-number">65</span>))   <span class="hljs-comment"># 如果要求格式化的对象多于一个，要放在元组中</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;%s&#x27;</span> %[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>])<br></code></pre></td></tr></table></figure>
+                <h2 id="自定义工具函数库-一-函数相关"><a href="#自定义工具函数库-一-函数相关" class="headerlink" title="自定义工具函数库(一)          函数相关"></a>自定义工具函数库(一)          函数相关</h2><p>最终仓库：<a target="_blank" rel="noopener" href="https://github.com/13535944743/utils">utils: 自定义工具库</a></p>
+<p>之前在哔哩哔哩看的视频的笔记。整理了一下。</p>
+<h3 id="1-1-call-函数封装实现"><a href="#1-1-call-函数封装实现" class="headerlink" title="1.1 call 函数封装实现"></a>1.1 call 函数封装实现</h3><p>原理：为传入的obj添加临时方法，然后去调用这个临时方法，这样子，这个方法的<code>this</code>就会指向调用它的对象了，最后还需要把临时方法删除掉。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// call函数封装实现</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">call</span>(<span class="hljs-params">fn, obj, ...args</span>) </span>&#123;<br>  <span class="hljs-keyword">if</span> (obj === <span class="hljs-literal">undefined</span> || obj === <span class="hljs-literal">null</span>) &#123;<br>    <span class="hljs-comment">// 如果call函数的第二个参数undefined(包括不传参)或null时，让obj等于全局对象</span><br>    obj = globalThis; <span class="hljs-comment">// 浏览器下globalThis是window，而node环境下则是global</span><br>  &#125;<br><br>  <span class="hljs-comment">// 为obj添加临时方法</span><br>  obj.temp = fn;<br><br>  <span class="hljs-comment">// 调用temp方法，此时方法中的this就是指向obj</span><br>  <span class="hljs-keyword">let</span> result = obj.temp(...args);<br><br>  <span class="hljs-comment">// 删除temp方法</span><br>  <span class="hljs-keyword">delete</span> obj.temp;<br><br>  <span class="hljs-keyword">return</span> result;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p>使用format()方法进行格式化</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;The number &#123;0&#125; in hex is: &#123;0:#x&#125;, the number &#123;1:,&#125; in oct is &#123;1:#o&#125;&#x27;</span>.<span class="hljs-built_in">format</span>(<span class="hljs-number">16</span>, <span class="hljs-number">1234</span>))<br><span class="hljs-comment"># 字符串里的&#123;&#125;相当于占位符，把后面format()的参数放进去，按索引值放，即0代表放第一个参数，&#123;0:#x&#125;代表把第一个参数转换为16进制</span><br><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;My name is &#123;name&#125;, my age is &#123;age&#125;&#x27;</span>.<span class="hljs-built_in">format</span>(name = <span class="hljs-string">&#x27;clz&#x27;</span>, age = <span class="hljs-number">21</span>))<br><br>position = (<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;x: &#123;0[0]&#125;, y:&#123;0[1]&#125;, z: &#123;0[2]&#125;&#x27;</span>.<span class="hljs-built_in">format</span>(position))<br><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;&#123;0:.4f&#125;&#x27;</span>.<span class="hljs-built_in">format</span>(<span class="hljs-number">1.23456</span>))    <span class="hljs-comment"># 指定小数位数</span><br><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;&#123;0:.2%&#125;&#x27;</span>.<span class="hljs-built_in">format</span>(<span class="hljs-number">1</span>/<span class="hljs-number">3</span>))        <span class="hljs-comment"># 格式化为百分数</span><br><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;&#123;0:^10.2%&#125;&#x27;</span>.<span class="hljs-built_in">format</span>(<span class="hljs-number">1</span>/<span class="hljs-number">3</span>))     <span class="hljs-comment"># ^表示居中对齐，&lt;表示左对齐，&gt;表示右对齐</span><br><br></code></pre></td></tr></table></figure>
+<p>测试</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">a, b</span>) </span>&#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>);<br>  <span class="hljs-keyword">return</span> a + b + <span class="hljs-built_in">this</span>.c;<br>&#125;<br><br><span class="hljs-keyword">let</span> obj = &#123;<br>  <span class="hljs-attr">c</span>: <span class="hljs-number">3</span>,<br>&#125;;<br><br><span class="hljs-comment">// 添加全局属性</span><br><span class="hljs-built_in">window</span>.c = <span class="hljs-number">100</span>;<br><br><span class="hljs-built_in">console</span>.log(call(add, obj, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>)); <span class="hljs-comment">// 6：1 + 2 + obj.c，此时add函数中的this是obj</span><br><span class="hljs-built_in">console</span>.log(obj); <span class="hljs-comment">// &#123;c: 3&#125;</span><br><br><span class="hljs-built_in">console</span>.log(call(add, <span class="hljs-literal">null</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>)); <span class="hljs-comment">// 103：1 + 2 + window.c，此时add函数中的this是window</span><br></code></pre></td></tr></table></figure>
 
-<p>从Python 3.6.x开始支持一种新的字符串格式化方法，官方叫做Formatted String Literals, 简称为f-字符串,在Python 3.8之后的版本中，支持print(f’{width=}’)形式的用法++9+++</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">w = <span class="hljs-number">1</span><br>h = <span class="hljs-number">2</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;width is <span class="hljs-subst">&#123;w&#125;</span>, height is <span class="hljs-subst">&#123;h&#125;</span>&#x27;</span>)<br></code></pre></td></tr></table></figure>
+<br>
 
-<h3 id="1-2-字符串常用方法"><a href="#1-2-字符串常用方法" class="headerlink" title="1.2 字符串常用方法"></a>1.2 字符串常用方法</h3><p>**find()、rfind()、index()、rindex()、count()**：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python">s = <span class="hljs-string">&#x27;apple, peach, banana, peach&#x27;</span><br><span class="hljs-built_in">print</span>(s.find(<span class="hljs-string">&#x27;peach&#x27;</span>))  <span class="hljs-comment"># 返回第一次出现的位置</span><br><span class="hljs-built_in">print</span>(s.find(<span class="hljs-string">&#x27;peach&#x27;</span>, <span class="hljs-number">8</span>))  <span class="hljs-comment"># 从指定位置开始查找</span><br><span class="hljs-built_in">print</span>(s.find(<span class="hljs-string">&#x27;peaach&#x27;</span>, <span class="hljs-number">6</span>, <span class="hljs-number">24</span>))  <span class="hljs-comment"># 在指定范围中查找， 查找的字符串要完全在范围内才可以找到，只有开始或结束在范围内也会返回-1</span><br><br><span class="hljs-built_in">print</span>(s.rfind(<span class="hljs-string">&#x27;p&#x27;</span>))   <span class="hljs-comment"># rfind()是从后往前找</span><br><br><span class="hljs-built_in">print</span>(s.index(<span class="hljs-string">&#x27;p&#x27;</span>))     <span class="hljs-comment"># 返回首次出现的位置</span><br><span class="hljs-built_in">print</span>(s.index(<span class="hljs-string">&#x27;pe&#x27;</span>))<br><br><span class="hljs-comment"># print(s.index(&#x27;ppp&#x27;))      # 找不到会抛出异常</span><br><br><span class="hljs-built_in">print</span>(s.count(<span class="hljs-string">&#x27;p&#x27;</span>))     <span class="hljs-comment"># 计算子字符串出现的次数</span><br></code></pre></td></tr></table></figure>
+<h3 id="1-2-apply-函数"><a href="#1-2-apply-函数" class="headerlink" title="1.2 apply 函数"></a>1.2 apply 函数</h3><p>原理：和<code> call</code>函数一样，就只是第三个参数是数组，而不是多个参数而已，所以不需要使用扩展运算符<code> ...</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// apply函数封装实现</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">apply</span>(<span class="hljs-params">fn, obj, args</span>) </span>&#123;<br>  <span class="hljs-keyword">if</span> (obj === <span class="hljs-literal">undefined</span> || obj === <span class="hljs-literal">null</span>) &#123;<br>    obj = globalThis;<br>  &#125;<br>  obj.temp = fn;<br><br>  <span class="hljs-keyword">let</span> result = obj.temp(...args);<br><br>  <span class="hljs-keyword">delete</span> obj.temp;<br><br>  <span class="hljs-keyword">return</span> result;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p>**split()、rsplit()、partition()、rpatition()**：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python">s = <span class="hljs-string">&#x27;a, b, c, d, e, hello&#x27;</span><br>li = s.split(<span class="hljs-string">&#x27;,&#x27;</span>)   <span class="hljs-comment"># 把字符串按指定分隔符分割，变成列表</span><br><span class="hljs-built_in">print</span>(li)<br><br>li = s.partition(<span class="hljs-string">&#x27;,&#x27;</span>)   <span class="hljs-comment"># 将字符串按指定的分隔符分割成三部分，分隔符前的字符串，分隔符，和分割符后的字符串，以元组形式</span><br><span class="hljs-built_in">print</span>(li)<br>li = s.rpartition(<span class="hljs-string">&#x27;,&#x27;</span>)<br><span class="hljs-built_in">print</span>(li)<br><br><span class="hljs-comment"># split()和rsplit()方法，如果不指定分隔符，则字符串中的任何空白符号(包括空格、换行符，制表符等)都会被认为是分隔符</span><br>s = <span class="hljs-string">&#x27;hello\t\tworld   I am\n\n\nclz&#x27;</span><br><span class="hljs-built_in">print</span>(s.split())<br><span class="hljs-built_in">print</span>(s.split(<span class="hljs-literal">None</span>, <span class="hljs-number">2</span>)) <span class="hljs-comment"># 指定最大分隔次数， None相当于不指定分隔符，即分隔符会是所有的空白字符</span><br></code></pre></td></tr></table></figure>
+<br>
 
-<p>**join()**：效率比直接使用’+’拼接高</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># join()方法是将列表或其他可迭代对象中的字符串以指定的字符串连接， 如果当中含有非字符串的元素，则会抛出异常</span><br>li = [<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;b&#x27;</span>, <span class="hljs-string">&#x27;c&#x27;</span>, <span class="hljs-string">&#x27;apple&#x27;</span>, <span class="hljs-string">&#x27;True&#x27;</span>]<br>sep = <span class="hljs-string">&#x27;::&#x27;</span><br><span class="hljs-built_in">print</span>(sep.join(li))<br></code></pre></td></tr></table></figure>
+<h3 id="1-3-bind-函数"><a href="#1-3-bind-函数" class="headerlink" title="1.3 bind 函数"></a>1.3 bind 函数</h3><p>需要依赖自定义 call 函数或内置 call 函数</p>
+<p>这个函数功能和<code> call</code>函数一样，所以可以调用内置的<code> call</code>函数来实现，当然也可以调用自定义版本的。</p>
+<p>不同的是，返回是一个函数，而不是立即调用。而且<strong>在调用<code> bind</code>时可以传参，调用返回的函数也可以传参，只是如果传两次参数，则只有第一次的参数会起作用</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// bind函数封装实现</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bind</span>(<span class="hljs-params">fn, obj, ...args1</span>) </span>&#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">...args2</span>) </span>&#123;<br>    <span class="hljs-keyword">return</span> fn.call(obj, ...args1, ...args2); <span class="hljs-comment">// 如果传两次参数，则只有第一次的参数会起作用。如果只传一次，则那一次的参数就会起作用</span><br>  &#125;;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p>**lower()、upper()、capitalize()、title()、swapcase()**：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python">s = <span class="hljs-string">&#x27;Hello World, hello python&#x27;</span><br><span class="hljs-built_in">print</span>(s.lower())    <span class="hljs-comment"># 转换成小写</span><br><span class="hljs-built_in">print</span>(s.upper())    <span class="hljs-comment"># 转化成大写</span><br><span class="hljs-built_in">print</span>(s.capitalize())   <span class="hljs-comment"># 字符串首字母大写</span><br><span class="hljs-built_in">print</span>(s.title())        <span class="hljs-comment"># 每个单词首字母大写</span><br><span class="hljs-built_in">print</span>(s.swapcase())     <span class="hljs-comment"># 大小写互换</span><br></code></pre></td></tr></table></figure>
+<p>测试用</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;X-UA-Compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;IE=edge&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>函数封装实现<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./bind.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"></span><br><span class="javascript">      <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">a, b</span>) </span>&#123;</span><br><span class="javascript">        <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">arguments</span>);</span><br><span class="javascript">        <span class="hljs-keyword">return</span> a + b + <span class="hljs-built_in">this</span>.c;</span><br><span class="javascript">      &#125;</span><br><span class="javascript"></span><br><span class="javascript">      <span class="hljs-keyword">let</span> obj = &#123;</span><br><span class="javascript">        <span class="hljs-attr">c</span>: <span class="hljs-number">3</span>,</span><br><span class="javascript">      &#125;;</span><br><span class="javascript"></span><br><span class="javascript">      <span class="hljs-comment">// 添加全局属性</span></span><br><span class="javascript">      <span class="hljs-built_in">window</span>.c = <span class="hljs-number">100</span>;</span><br><span class="javascript"></span><br><span class="javascript">      <span class="hljs-keyword">const</span> fn1 = bind(add, obj, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>);</span><br><span class="javascript">      <span class="hljs-built_in">console</span>.log(fn1());</span><br><span class="javascript"></span><br><span class="javascript">      <span class="hljs-keyword">const</span> fn2 = bind(add, obj, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>);</span><br><span class="javascript">      <span class="hljs-built_in">console</span>.log(fn2(<span class="hljs-number">5</span>, <span class="hljs-number">6</span>));</span><br><span class="javascript"></span><br><span class="javascript">      <span class="hljs-keyword">const</span> fn3 = bind(add, obj);</span><br><span class="javascript">      <span class="hljs-built_in">console</span>.log(fn3(<span class="hljs-number">5</span>, <span class="hljs-number">6</span>));</span><br><span class="javascript"></span><br><span class="javascript">      <span class="hljs-keyword">const</span> fn4 = bind(add, <span class="hljs-literal">null</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>);</span><br><span class="javascript">      <span class="hljs-built_in">console</span>.log(fn4());</span><br><span class="javascript"></span><br><span class="javascript">      <span class="hljs-comment">// 内置版本</span></span><br><span class="javascript">      <span class="hljs-comment">// const fn1 = add.bind(obj, 3, 4)</span></span><br><span class="javascript">      <span class="hljs-comment">// console.log(fn1())</span></span><br><span class="javascript"></span><br><span class="javascript">      <span class="hljs-comment">// const fn2 = add.bind(obj, 3, 4)</span></span><br><span class="javascript">      <span class="hljs-comment">// console.log(fn2(5, 6))</span></span><br><span class="javascript"></span><br><span class="javascript">      <span class="hljs-comment">// const fn3 = add.bind(obj)</span></span><br><span class="javascript">      <span class="hljs-comment">// console.log(fn3(5, 6))</span></span><br><span class="javascript"></span><br><span class="javascript">      <span class="hljs-comment">// const fn4 = add.bind(null, 3, 4)</span></span><br><span class="javascript">      <span class="hljs-comment">// console.log(fn4())</span></span><br><span class="javascript">    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
-<p>**replace()**：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python">words = (<span class="hljs-string">&#x27;非法&#x27;</span>, <span class="hljs-string">&#x27;话&#x27;</span>, <span class="hljs-string">&#x27;暴力&#x27;</span>)<br>text = <span class="hljs-string">&#x27;这句话有非法内容&#x27;</span><br><br><span class="hljs-keyword">for</span> word <span class="hljs-keyword">in</span> words:<br>    <span class="hljs-keyword">if</span> word <span class="hljs-keyword">in</span> text:<br>        text = text.replace(word, <span class="hljs-string">&#x27;**&#x27;</span>)<br><br><span class="hljs-built_in">print</span>(text)<br></code></pre></td></tr></table></figure>
+<br>
 
-<p><strong>maketrans()、translate()</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">table = <span class="hljs-string">&#x27;&#x27;</span>.maketrans(<span class="hljs-string">&#x27;0123456789&#x27;</span>, <span class="hljs-string">&#x27;零一二三四五六七八九&#x27;</span>)    <span class="hljs-comment"># 生成字符映射表，可以搭配translate()使用，把字符串中第一个参数内的字符转换为对应第二个参数中的字符(转换过程是单向的)</span><br>s = <span class="hljs-string">&#x27;2021年10月1日&#x27;</span><br><span class="hljs-built_in">print</span>(s.translate(table))<br>s = <span class="hljs-string">&#x27;二零二一年一零月一日&#x27;</span><br><span class="hljs-built_in">print</span>(s.translate(table))<br></code></pre></td></tr></table></figure>
-
-<p>**strip()、rstrip()、lstrip()**：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python">s = <span class="hljs-string">&#x27;  hello \n&#x27;</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">len</span>(s))<br><span class="hljs-built_in">print</span>(s)<br><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">len</span>(s.strip()))   <span class="hljs-comment"># 删除两端空白字符</span><br><span class="hljs-built_in">print</span>(s.strip())<br><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">len</span>(s.rstrip()))<br><span class="hljs-built_in">print</span>(s.rstrip())       <span class="hljs-comment"># 删除右端空白字符</span><br><br>s = <span class="hljs-string">&#x27;aabbccddffee&#x27;</span><br><span class="hljs-built_in">print</span>(s.lstrip(<span class="hljs-string">&#x27;ab&#x27;</span>))   <span class="hljs-comment"># 删除左端指定字符, 是按字符依次进行删除的，即先删除左端字符a，然后再删除左端字符b</span><br><span class="hljs-built_in">print</span>(s.lstrip(<span class="hljs-string">&#x27;ac&#x27;</span>))   <span class="hljs-comment"># 删除左端字符a后，因为c不在左端，所以不会删除c</span><br></code></pre></td></tr></table></figure>
-
-<p>**eval()**：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-built_in">eval</span>(<span class="hljs-string">&#x27;1 + 1&#x27;</span>))    <span class="hljs-comment"># eval()把任意字符串转换为Python表达式并求值</span><br><br>a = <span class="hljs-number">3</span><br>b = <span class="hljs-number">4</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">eval</span>(<span class="hljs-string">&#x27;a + b&#x27;</span>))<br></code></pre></td></tr></table></figure>
-
-<p>使用eval()需要注意的问题：它可以计算任何合法表达式的值，即用户可以用特殊的字符串进行攻击</p>
-<p><strong>in</strong>：</p>
-<p>使用关键字来判断一个字符串是否在另一个字符串中</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;abc&#x27;</span> <span class="hljs-keyword">in</span> <span class="hljs-string">&#x27;aabbcc&#x27;</span>)    <span class="hljs-comment"># False</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;abc&#x27;</span> <span class="hljs-keyword">in</span> <span class="hljs-string">&#x27;abcabc&#x27;</span>)    <span class="hljs-comment"># True</span><br></code></pre></td></tr></table></figure>
-
-<p>**startswith()、endswith()**：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">s = <span class="hljs-string">&quot;Hello World!&quot;</span><br><span class="hljs-built_in">print</span>(s.startswith(<span class="hljs-string">&#x27;He&#x27;</span>))   <span class="hljs-comment"># 用来判断字符串是否以指定字符串开始</span><br><span class="hljs-built_in">print</span>(s.startswith(<span class="hljs-string">&#x27;He&#x27;</span>, <span class="hljs-number">5</span>))    <span class="hljs-comment"># 可以接收整数参数来限定字符串的检测范围</span><br><span class="hljs-built_in">print</span>(s.startswith(<span class="hljs-string">&#x27;He&#x27;</span>, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>))<br></code></pre></td></tr></table></figure>
-
-<p>其他方法：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;1234abcd&#x27;</span>.isalnum())<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;1234abcd&#x27;</span>.isalpha())<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;1234abcd&#x27;</span>.isdigit())<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;abcd&#x27;</span>.isalpha())<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;1234.053&#x27;</span>.isdigit())     <span class="hljs-comment"># 用来判断字符串是不是数字字符，小数点.不是数字字符，所以返回False</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;00123400&#x27;</span>.isdigit())<br><span class="hljs-built_in">print</span>()<br><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Hello world!&#x27;</span>.center(<span class="hljs-number">20</span>))<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Hello world!&#x27;</span>.center(<span class="hljs-number">20</span>, <span class="hljs-string">&#x27;=&#x27;</span>))<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Hello world!&#x27;</span>.ljust(<span class="hljs-number">20</span>, <span class="hljs-string">&#x27;=&#x27;</span>))<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Hello world!&#x27;</span>.rjust(<span class="hljs-number">20</span>, <span class="hljs-string">&#x27;=&#x27;</span>))<br></code></pre></td></tr></table></figure>
-
-<h3 id="1-3-字符串常量"><a href="#1-3-字符串常量" class="headerlink" title="1.3 字符串常量"></a>1.3 字符串常量</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> string<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;数字: &#x27;</span>, string.digits)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;字母: &#x27;</span>, string.ascii_letters)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;特殊符号: &#x27;</span>, string.punctuation)<br><br><span class="hljs-comment"># 下面是生成8位长度的随机密码的例子</span><br><br>x = string.digits + string.ascii_letters + string.punctuation<br><br><span class="hljs-keyword">import</span> random<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;&#x27;</span>.join([random.choice(x) <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">8</span>)]))   <span class="hljs-comment"># random.choice() 方法返回一个列表，元组或字符串的随机项</span><br><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;&#x27;</span>.join(random.sample(x, <span class="hljs-number">8</span>)))<br></code></pre></td></tr></table></figure>
-
-<h2 id="2-正则表达式"><a href="#2-正则表达式" class="headerlink" title="2 正则表达式"></a>2 正则表达式</h2><p>正则表达式使用预定义的特定模式去匹配一类具有共同特征的字符串，主要用于字符串处理，可以快速、准确地完成复杂的查找、替换等处理任务。</p>
-<h3 id="2-1-直接使用re模块函数"><a href="#2-1-直接使用re模块函数" class="headerlink" title="2.1 直接使用re模块函数"></a>2.1 直接使用re模块函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> re       <span class="hljs-comment"># 在Python中，主要使用re模块来实现正则表达式的操作</span><br>text = <span class="hljs-string">&#x27;alpha,beta,gamma,delta&#x27;</span><br><span class="hljs-built_in">print</span>(re.split(<span class="hljs-string">&#x27;[,]+&#x27;</span>, text))       <span class="hljs-comment"># 根据匹配项分割字符串</span><br><br>pat = <span class="hljs-string">&#x27;[a-zA-Z]+&#x27;</span><br><span class="hljs-built_in">print</span>(re.findall(pat, text))    <span class="hljs-comment"># 在text中找符合pat的单词</span><br><br>pat = <span class="hljs-string">&#x27;&#123;name&#125;&#x27;</span><br>text = <span class="hljs-string">&#x27;Dear &#123;name&#125;&#x27;</span><br><span class="hljs-built_in">print</span>(re.sub(pat, <span class="hljs-string">&#x27;clz&#x27;</span>, text))    <span class="hljs-comment"># 将text中的pat匹配项用第二个参数替换</span><br>s = <span class="hljs-string">&#x27;a s d&#x27;</span><br><span class="hljs-built_in">print</span>(re.sub(<span class="hljs-string">&#x27;a|s|d&#x27;</span>, <span class="hljs-string">&#x27;test&#x27;</span>, s))   <span class="hljs-comment"># 将s中的a、s、d替换成test</span><br><span class="hljs-built_in">print</span>(s)                            <span class="hljs-comment"># 不会改变原字符串</span><br><br><span class="hljs-built_in">print</span>(re.escape(<span class="hljs-string">&#x27;http://www.python.org&#x27;</span>))   <span class="hljs-comment"># 字符串转义</span><br><br><span class="hljs-built_in">print</span>(re.match(<span class="hljs-string">&#x27;a|b&#x27;</span>, <span class="hljs-string">&#x27;acgs&#x27;</span>))     <span class="hljs-comment"># re.match()在字符串的开始处匹配模式，匹配成功</span><br><span class="hljs-built_in">print</span>(re.match(<span class="hljs-string">&#x27;a|b&#x27;</span>, <span class="hljs-string">&#x27;cde&#x27;</span>))       <span class="hljs-comment"># 匹配不成功，返回None</span><br><br><span class="hljs-built_in">print</span>(re.match(<span class="hljs-string">&#x27;done|quit&#x27;</span>, <span class="hljs-string">&#x27;testdone&#x27;</span>))    <span class="hljs-comment"># 是在字符串的开始处进行匹配模式，所以会匹配不成功</span><br><span class="hljs-built_in">print</span>(re.search(<span class="hljs-string">&#x27;done|quit&#x27;</span>, <span class="hljs-string">&#x27;testdone&#x27;</span>))   <span class="hljs-comment"># re.search()在整个字符串中寻找模式，所以会匹配成功</span><br><br>text = <span class="hljs-string">&#x27;&#x27;&#x27;good</span><br><span class="hljs-string">bad</span><br><span class="hljs-string">test</span><br><span class="hljs-string">clz&#x27;&#x27;&#x27;</span><br><span class="hljs-built_in">print</span>(re.findall(<span class="hljs-string">r&#x27;\w+&#x27;</span>, text))			<span class="hljs-comment"># r用来阻止转义</span><br><br><span class="hljs-built_in">print</span>(re.findall(<span class="hljs-string">r&#x27;^\w+$&#x27;</span>, text))   <span class="hljs-comment"># \w不能匹配换行符,即有换行就会返回空列表，包括\n形式的换行</span><br><span class="hljs-built_in">print</span>(re.findall(<span class="hljs-string">r&#x27;^.+$&#x27;</span>, text, re.S))      <span class="hljs-comment"># 单行模式，此时.可以匹配换行符，会把换行符变为\n</span><br><span class="hljs-built_in">print</span>(re.findall(<span class="hljs-string">r&#x27;^.+$&#x27;</span>, text, re.M))      <span class="hljs-comment"># 多行模式，会把每一行变为列表中的元素</span><br><br></code></pre></td></tr></table></figure>
-
-<h3 id="2-2-使用正则表达式对象"><a href="#2-2-使用正则表达式对象" class="headerlink" title="2.2 使用正则表达式对象"></a>2.2 使用正则表达式对象</h3><p>使用正则表达式对象的用法和正常使用re模块基本一样，首先通过re模块的compile()函数将正则表达式编译生成正则表达式对象，然后再使用正则表达式对象提供的方法进行字符串处理。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> re<br>example = <span class="hljs-string">&#x27;ShanDong Institute of Business and Technology is a very beautiful school.&#x27;</span><br>pattern = re.<span class="hljs-built_in">compile</span>(<span class="hljs-string">r&#x27;\bB\w+\b&#x27;</span>)   <span class="hljs-comment"># 以B开头的单词</span><br><span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-string">\b表示匹配单词头或单词尾</span><br><span class="hljs-string">\w表示匹配任何字母、数字以及下划线</span><br><span class="hljs-string">+表示匹配位于+之前的字符或子模式的1次或多次重复</span><br><span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-built_in">print</span>(pattern.findall(example))<br><br>pattern = re.<span class="hljs-built_in">compile</span>(<span class="hljs-string">r&#x27;\w+g\b&#x27;</span>)     <span class="hljs-comment"># 以g结尾的单词</span><br><span class="hljs-built_in">print</span>(pattern.findall(example))<br><br>pattern = re.<span class="hljs-built_in">compile</span>(<span class="hljs-string">r&#x27;\b[a-zA-Z]&#123;3&#125;\b&#x27;</span>)    <span class="hljs-comment"># 3个字母长的单词</span><br><span class="hljs-built_in">print</span>(pattern.findall(example))<br><br>pattern = re.<span class="hljs-built_in">compile</span>(<span class="hljs-string">r&#x27;\b\w*a\w*\b&#x27;</span>)        <span class="hljs-comment"># 查找所有含有字母a的单词</span><br><span class="hljs-built_in">print</span>(pattern.findall(example))<br></code></pre></td></tr></table></figure>
-
-<h3 id="2-3-子模式与Match对象"><a href="#2-3-子模式与Match对象" class="headerlink" title="2.3 子模式与Match对象"></a>2.3 子模式与Match对象</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> re<br>telNumber = <span class="hljs-string">&#x27;&#x27;&#x27;Suppose my Phone No. is 0535-1234567,</span><br><span class="hljs-string">yours is 010-12344567, his is 025-123456789&#x27;&#x27;&#x27;</span><br>pattern = re.<span class="hljs-built_in">compile</span>(<span class="hljs-string">r&#x27;(\d&#123;3,4&#125;)-(\d&#123;7,8&#125;)&#x27;</span>)    <span class="hljs-comment"># 这里的字符串格式要注意：如,后不能跟空格，否则匹配不上。看了好久都没发现问题，最后才发现是自己的代码规范导致的</span><br><span class="hljs-built_in">print</span>(pattern.findall(telNumber))<br><br>email = <span class="hljs-string">&#x27;tony@tiremove_thisger.net&#x27;</span><br>m = re.search(<span class="hljs-string">&#x27;remove_this&#x27;</span>, email)     <span class="hljs-comment"># 利用re.search()返回的Match对象来删除字符串指定内容</span><br><span class="hljs-built_in">print</span>(email[:m.start()] + email[m.end():])<br><span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-string">Match对象的start()方法: 返回指定子模式内容的起始位置</span><br><span class="hljs-string">Match对象的end()方法: 返回指定子模式内容的结束位置的下一个位置</span><br><span class="hljs-string">&#x27;&#x27;&#x27;</span><br><br>m = re.match(<span class="hljs-string">r&#x27;(\w+) (\w+)&#x27;</span>, <span class="hljs-string">&#x27;Isaac Newton, physicist&#x27;</span>)<br><span class="hljs-built_in">print</span>(m.group(<span class="hljs-number">0</span>))       <span class="hljs-comment"># 返回整个模式内容</span><br><span class="hljs-built_in">print</span>(m.group(<span class="hljs-number">1</span>))       <span class="hljs-comment"># 返回第1个子模式内容</span><br><span class="hljs-built_in">print</span>(m.group(<span class="hljs-number">2</span>))       <span class="hljs-comment"># 返回第2个子模式内容</span><br><span class="hljs-built_in">print</span>(m.group(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>))    <span class="hljs-comment"># 返回指定的多个子模式的内容，元组形式</span><br><span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-string">group(): 返回匹配的一个或多个子模式内容</span><br><span class="hljs-string">&#x27;&#x27;&#x27;</span><br><br>m = re.match(<span class="hljs-string">r&#x27;(\d+)\.(\d+)&#x27;</span>, <span class="hljs-string">&#x27;12.3456&#x27;</span>)<br><span class="hljs-built_in">print</span>(m.groups())<br><span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-string">groups(): 返回一个包含匹配的所有子模式内容的元组</span><br><span class="hljs-string">&#x27;&#x27;&#x27;</span><br><br>m = re.match(<span class="hljs-string">r&#x27;(?P&lt;first_name&gt;\w+) (?P&lt;last_name&gt;\w+)&#x27;</span>, <span class="hljs-string">&#x27;Malcolm Reynolds&#x27;</span>)     <span class="hljs-comment"># ?P&lt;groupname&gt;: 为子模式命名</span><br><span class="hljs-built_in">print</span>(m.groupdict())<br></code></pre></td></tr></table></figure>
-
-
-
-<p>练习理解：使用正则表达找出AABC和ABAC类型的成员</p>
-<p><img src="https://pic.imgdb.cn/item/616e4cdb2ab3f51d918f17bd.jpg"></p>
-<p>首先，直接给出两个做法的答案</p>
-<p><strong>做法1</strong>：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">pattern = <span class="hljs-string">r&#x27;((.).\2.|(.)\3..)&#x27;</span><br><span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> findall(pattern, text):<br>    <span class="hljs-built_in">print</span>(item[<span class="hljs-number">0</span>])<br></code></pre></td></tr></table></figure>
-
-<p><strong>做法2</strong>：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">pattern = <span class="hljs-string">r&#x27;(\b(?P&lt;F&gt;\w)\w(?P=F)\w\b|\b(?P&lt;D&gt;\w)(?P=D)\w\w\b)&#x27;</span><br><span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> findall(pattern, text):<br>    <span class="hljs-built_in">print</span>(item[<span class="hljs-number">0</span>])<br></code></pre></td></tr></table></figure>
-
-
-
-<p>做法1讲解：</p>
-<ol>
-<li><p>首先，有一个会用到的重要概念，<b style="color: red">使用括号表示一个子模式</b></p>
+<h3 id="1-4-函数节流和函数防抖"><a href="#1-4-函数节流和函数防抖" class="headerlink" title="1.4 函数节流和函数防抖"></a>1.4 函数节流和函数防抖</h3><ul>
+<li>事件频繁触发可能造成问题<ul>
+<li>一些浏览器事件如<code> window.onresize</code>、<code> window.mousedown</code>等，触发频率高，会造成界面卡顿</li>
+<li>向后台发送请求，频繁触发的话，对服务器会造成不必要的麻烦</li>
+</ul>
 </li>
-<li><p>先ABAC类型(实际上ABAB也能匹配到，书上的也是这样，将错就错了，简单点)，小数点表示能匹配到除换行符的任意单个字符，所以先构建</p>
-<p>正则表达式<code> pattern = r&#39;(..)&#39;</code></p>
+</ul>
+<p>解决方案：通过函数节流和函数防抖限制事件处理函数的频繁调用</p>
+<br>
+
+<h4 id="1-4-1-函数节流-throttle"><a href="#1-4-1-函数节流-throttle" class="headerlink" title="1.4.1 函数节流(throttle)"></a>1.4.1 函数节流(throttle)</h4><ul>
+<li><p><strong>在函数需要频繁触发时：函数执行一次后，经过设定的间隔后才可以执行第二次。</strong></p>
 </li>
-<li><p>第三个应该要和第一个相同，所以不能直接<code>pattern = r&#39;(...)&#39;</code>, 这个时候就要用上正则表达式的复制粘贴功能了，首先，做好复制工作–<strong>用括号把要复制的部分包住</strong>，<code> pattern = r&#39;((.).)&#39;</code>, 然后是粘贴工作–反斜线加要粘贴的内容是第几个子模式，<code> pattern = r&#39;((.).\2)&#39;</code>,这里是2的原因就是上面说的重点了，<b style="color: red">使用括号表示一个子模式</b>，我们要把第二个括号里的东西复制粘贴，所以自然就是2了</p>
+<li><p>适合多次时间按时间平均分配触发</p>
 </li>
-<li><p>第四个随便，所以正则表达式变成<code> pattern = r&#39;((.).\2.)&#39;</code></p>
-</li>
-<li><p>再AABC类型的，先加上’|’，<code>pattern = r&#39;((.).\2.|)&#39;</code>,<b style="color: red">这里的|左右不能有空格</b></p>
-</li>
-<li><p>之后的原理和上面的相同，需要注意的是：<b style="color: red">括号并不会重置为0，才开始算，而是前面的括号也算</b>，所以变成<code> pattern = r&#39;((.).\2.|(.)\3..)&#39;</code></p>
-</li>
-<li><p>之后通过循环即可得到结果，因为findall()是找出所有的匹配项，所以只需要item[0]就行了</p>
-</li>
-</ol>
-<p>做法2讲解：</p>
-<ol>
-<li>首先原理和做法1一样，不同的是复制粘贴的形式，做法2是先通过<code> (?P=&lt;groupname&gt;)</code>给要复制的内容命名，然后通过<code> (?P=groupname)</code>把内容粘贴过去</li>
-</ol>
+</ul>
+<p>场景：</p>
+<ul>
+<li>resize 事件(窗口调整)</li>
+<li>scroll 事件(页面滚动)</li>
+<li>mousemove 事件(拖拽功能)</li>
+<li>click 事件(疯狂点击点击)</li>
+</ul>
+<p>语法：<code> throttle(callback, wait)</code></p>
+<p>功能：创建一个节流函数，在 wait 毫秒内最多执行<code> callback</code>一次</p>
+<p>实例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 函数节流</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">throttle</span>(<span class="hljs-params">callback, wait</span>) </span>&#123;<br>  <span class="hljs-comment">// 定义开始时间</span><br>  <span class="hljs-keyword">let</span> start = <span class="hljs-number">0</span>;<br><br>  <span class="hljs-comment">// 返回结果是一个函数</span><br>  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>&#123;<br>    <span class="hljs-comment">// 获取当前时间戳</span><br>    <span class="hljs-keyword">let</span> now = <span class="hljs-built_in">Date</span>.now();<br><br>    <span class="hljs-keyword">if</span> (now - start &gt;= wait) &#123;<br>      callback.call(<span class="hljs-built_in">this</span>, event); <span class="hljs-comment">// 满足条件，执行回调函数</span><br><br>      <span class="hljs-comment">// 修改开始时间</span><br>      start = now;<br>    &#125;<br>  &#125;;<br>&#125;<br><br><span class="hljs-comment">// // 之前青训营时，月影老师教的版本：通过定义一个计时器，当计时器到期时，清除之前的计时器，而清除计时器的时候才可以再次调用回调函数</span><br><span class="hljs-comment">// function throttle(fn, time = 500) &#123;</span><br><span class="hljs-comment">//   let timer;</span><br><span class="hljs-comment">//   return function (...args) &#123;</span><br><span class="hljs-comment">//     if (timer == null) &#123;</span><br><span class="hljs-comment">//       fn.apply(this, args);</span><br><span class="hljs-comment">//       timer = setTimeout(() =&gt; &#123;</span><br><span class="hljs-comment">//         timer = null;	/* 到期的话，清除之前的计时器 */</span><br><span class="hljs-comment">//       &#125;, time)</span><br><span class="hljs-comment">//     &#125;</span><br><span class="hljs-comment">//   &#125;</span><br><span class="hljs-comment">// &#125;</span><br></code></pre></td></tr></table></figure>
+
+<p>测试：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;X-UA-Compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;IE=edge&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>函数封装实现<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"></span><br><span class="css">      <span class="hljs-selector-tag">body</span> &#123;</span><br><span class="css">        <span class="hljs-attribute">height</span>: <span class="hljs-number">2000px</span>;</span><br><span class="css">        <span class="hljs-attribute">background-color</span>: skyblue;</span><br><span class="css">      &#125;</span><br><span class="css">    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./throttle.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"></span><br><span class="javascript">      <span class="hljs-comment">// window.addEventListener(&#x27;scroll&#x27;, () =&gt; &#123;</span></span><br><span class="javascript">      <span class="hljs-comment">//   console.log(this.scrollY) // 直接绑定滚动事件，一滚动，疯狂输出</span></span><br><span class="javascript">      <span class="hljs-comment">// &#125;)</span></span><br><span class="javascript"></span><br><span class="javascript">      <span class="hljs-built_in">window</span>.addEventListener(</span><br><span class="javascript">        <span class="hljs-string">&quot;scroll&quot;</span>,</span><br><span class="javascript">        throttle(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="javascript">          <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.scrollY); <span class="hljs-comment">// 成功实现节流</span></span><br><span class="javascript">        &#125;, <span class="hljs-number">500</span>)</span><br><span class="javascript">      );</span><br><span class="javascript">    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="1-4-2-函数防抖-debounce"><a href="#1-4-2-函数防抖-debounce" class="headerlink" title="1.4.2 函数防抖(debounce)"></a>1.4.2 函数防抖(debounce)</h4><ul>
+<li>在函数需要频繁触发时：<strong>在规定时间内，只让最后一次生效，前面的不生效</strong></li>
+<li>适合多个事件一次相应的情况</li>
+</ul>
+<p>场景：输入框实时搜索联想（keyup / input）</p>
+<blockquote>
+<p>语法：<code> debounce(callback, wait)</code></p>
+<p>功能：创建一个防抖动函数，该函数会从上一次被触发后，延迟<code> wait</code>毫秒后调用<code> callback</code></p>
+<p>如果触发一次，还没过<code> wait</code>毫秒，再次触发，那么又得重新计时，依此类推，直到延迟<code> wait</code>毫秒后才调用<code> callback</code>(即<b style="color: red">频繁触发时，只让最后一次生效</b>)</p>
+</blockquote>
+<p>实例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 函数防抖</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">debounce</span>(<span class="hljs-params">callback, time</span>) </span>&#123;<br>  <span class="hljs-keyword">let</span> timer = <span class="hljs-literal">null</span>; <span class="hljs-comment">// 定时器变量</span><br><br>  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>&#123;<br>    <span class="hljs-built_in">clearTimeout</span>(timer); <span class="hljs-comment">// 每一次新的触发都会把前一次的定时器给清除掉，直到没有新的触发且时间经过time毫秒后才调用callback</span><br><br>    <span class="hljs-comment">// 启动计时器</span><br>    timer = <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>      callback.call(<span class="hljs-built_in">this</span>, e);<br>    &#125;, time);<br>  &#125;;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>测试：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;X-UA-Compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;IE=edge&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>函数封装实现<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./debounce.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"></span><br><span class="javascript">      <span class="hljs-keyword">const</span> input = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;input&quot;</span>);</span><br><span class="javascript"></span><br><span class="javascript">      input.onkeydown = debounce(<span class="hljs-function">(<span class="hljs-params">e</span>) =&gt;</span> &#123;</span><br><span class="javascript">        <span class="hljs-built_in">console</span>.log(e.keyCode);</span><br><span class="javascript">      &#125;, <span class="hljs-number">1000</span>);</span><br><span class="javascript">    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+
+<br>
+
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Cy4y117vt">尚硅谷Web前端自定义工具函数库视频教程_哔哩哔哩_bilibili</a></p>
 
                 
             </div>
@@ -598,7 +588,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://clz.vercel.app/2021/10/29/python-3/">https://clz.vercel.app/2021/10/29/python-3/</a>
+                    <a href="https://clz.vercel.app/2022/03/19/javascript-toolFunction-1/">https://clz.vercel.app/2022/03/19/javascript-toolFunction-1/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -636,8 +626,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Python/">
-                                    <span class="chip bg-color">Python</span>
+                                <a href="/tags/JavaScript/">
+                                    <span class="chip bg-color">JavaScript</span>
                                 </a>
                             
                         </div>
@@ -1021,17 +1011,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/10/29/SQL-2/">
+                <a href="/2022/03/19/javascript-toolFunction-1/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="数据库学习笔记(二)">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="自定义工具函数库(一)  函数相关">
                         
-                        <span class="card-title">数据库学习笔记(二)</span>
+                        <span class="card-title">自定义工具函数库(一)  函数相关</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1041,26 +1032,27 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-29
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-19
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/SQL/" class="post-category">
-                                    SQL
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/SQL/">
-                        <span class="chip bg-color">SQL</span>
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
                 </div>
@@ -1074,13 +1066,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/10/20/computer-network-3/">
+                <a href="/2022/03/17/javascript-inherit/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="计算机和网络(三) 数据链路层">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="JavaScript实现继承的六种方式">
                         
-                        <span class="card-title">计算机和网络(三) 数据链路层</span>
+                        <span class="card-title">JavaScript实现继承的六种方式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1091,14 +1083,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-17
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
-                                    计算机网络
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                             
                             
@@ -1108,8 +1100,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
-                        <span class="chip bg-color">计算机网络</span>
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
                 </div>
