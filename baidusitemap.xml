@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.clzczh.top/2021/11/14/js-array-methods/</loc>
+    <lastmod>2022-03-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.clzczh.top/2021/12/11/JS-developing-1/</loc>
+    <lastmod>2022-03-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.clzczh.top/2022/01/17/yc-javascript/</loc>
+    <lastmod>2022-03-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.clzczh.top/2021/09/02/Javascript-DOM-2/</loc>
+    <lastmod>2022-03-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.clzczh.top/2021/08/26/Javascript-DOM-1/</loc>
+    <lastmod>2022-03-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.clzczh.top/2021/12/05/less/</loc>
+    <lastmod>2022-03-20</lastmod>
+  </url>
+  <url>
     <loc>https://www.clzczh.top/2022/03/20/javascript-toolFunction-2/</loc>
     <lastmod>2022-03-20</lastmod>
   </url>
@@ -14,10 +38,6 @@
   </url>
   <url>
     <loc>https://www.clzczh.top/2022/02/09/yc-typescript/</loc>
-    <lastmod>2022-03-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.clzczh.top/2022/01/17/yc-javascript/</loc>
     <lastmod>2022-03-20</lastmod>
   </url>
   <url>
@@ -49,23 +69,11 @@
     <lastmod>2022-03-20</lastmod>
   </url>
   <url>
-    <loc>https://www.clzczh.top/2021/12/11/JS-developing-1/</loc>
-    <lastmod>2022-03-20</lastmod>
-  </url>
-  <url>
     <loc>https://www.clzczh.top/2021/10/03/Javascript-threeSeries/</loc>
     <lastmod>2022-03-20</lastmod>
   </url>
   <url>
     <loc>https://www.clzczh.top/2021/09/09/javascript-Event/</loc>
-    <lastmod>2022-03-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.clzczh.top/2021/09/02/Javascript-DOM-2/</loc>
-    <lastmod>2022-03-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.clzczh.top/2021/08/26/Javascript-DOM-1/</loc>
     <lastmod>2022-03-20</lastmod>
   </url>
   <url>
@@ -217,10 +225,6 @@
     <lastmod>2022-02-09</lastmod>
   </url>
   <url>
-    <loc>https://www.clzczh.top/2021/11/14/js-array-methods/</loc>
-    <lastmod>2022-02-08</lastmod>
-  </url>
-  <url>
     <loc>https://www.clzczh.top/2022/01/25/yc-animation/</loc>
     <lastmod>2022-01-25</lastmod>
   </url>
@@ -283,10 +287,6 @@
   <url>
     <loc>https://www.clzczh.top/2021/11/01/FlowLayout/</loc>
     <lastmod>2021-12-11</lastmod>
-  </url>
-  <url>
-    <loc>https://www.clzczh.top/2021/12/05/less/</loc>
-    <lastmod>2021-12-05</lastmod>
   </url>
   <url>
     <loc>https://www.clzczh.top/2021/11/27/python-4/</loc>
