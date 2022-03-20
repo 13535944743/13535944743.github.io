@@ -422,8 +422,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Javascript/">
-                                <span class="chip bg-color">Javascript</span>
+                            <a href="/tags/JavaScript/">
+                                <span class="chip bg-color">JavaScript</span>
                             </a>
                         
                             <a href="/tags/%E9%9D%92%E8%AE%AD%E8%90%A5/">
@@ -487,18 +487,18 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="JavaScript温故而知新"><a href="#JavaScript温故而知新" class="headerlink" title="JavaScript温故而知新"></a>JavaScript温故而知新</h1><p>参加字节跳动的青训营时写的笔记。这部分是月影老师讲的课。</p>
+                <h1 id="JavaScript-温故而知新"><a href="#JavaScript-温故而知新" class="headerlink" title="JavaScript 温故而知新"></a>JavaScript 温故而知新</h1><p>参加字节跳动的青训营时写的笔记。这部分是月影老师讲的课。</p>
 <h2 id="1-各司其责"><a href="#1-各司其责" class="headerlink" title="1. 各司其责"></a>1. 各司其责</h2><ul>
-<li><p>HTML/CSS/JS各司其责</p>
+<li><p>HTML/CSS/JS 各司其责</p>
 </li>
-<li><p><strong>避免不必要的直接使用JS操作样式</strong>(element.style.color=”red”)</p>
+<li><p><strong>避免不必要的直接使用 JS 操作样式</strong>(element.style.color=”red”)</p>
 </li>
-<li><p>使用class来表示状态</p>
+<li><p>使用 class 来表示状态</p>
 </li>
-<li><p>纯展示类交互寻求零JS方案(checkbox的checked和label，其中checkbox可以隐藏)</p>
+<li><p>纯展示类交互寻求零 JS 方案(checkbox 的 checked 和 label，其中 checkbox 可以隐藏)</p>
 </li>
 </ul>
-<h2 id="2-组件封装"><a href="#2-组件封装" class="headerlink" title="2. 组件封装"></a>2. 组件封装</h2><p>组件是指Web页面上抽出来一个个包含模板(HTML)、样式(CSS)、功能(JS)的单元</p>
+<h2 id="2-组件封装"><a href="#2-组件封装" class="headerlink" title="2. 组件封装"></a>2. 组件封装</h2><p>组件是指 Web 页面上抽出来一个个包含模板(HTML)、样式(CSS)、功能(JS)的单元</p>
 <p>好的组件：封装性、正确性、扩展性、复用性</p>
 <h3 id="2-1-基本方法"><a href="#2-1-基本方法" class="headerlink" title="2.1 基本方法"></a>2.1 基本方法</h3><ul>
 <li>结构设计</li>
@@ -520,7 +520,7 @@
 </li>
 <li><p><strong>模板化</strong></p>
 <ul>
-<li>将HTML模板化，更易于扩展(即视图根据数据来更新，这样子需要变更图片之类的时候，就只需要在图片数组中操作，而不需要变更HTML)</li>
+<li>将 HTML 模板化，更易于扩展(即视图根据数据来更新，这样子需要变更图片之类的时候，就只需要在图片数组中操作，而不需要变更 HTML)</li>
 </ul>
 </li>
 <li><p><strong>抽象化</strong>(组件框架)</p>
@@ -537,14 +537,14 @@
 <li>以函数作为返回值</li>
 <li>常用于作为函数装饰器</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span>(<span class="hljs-params">fn</span>) </span>&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">...args</span>) </span>&#123;<br>        <span class="hljs-keyword">return</span> fn.apply(<span class="hljs-built_in">this</span>, args);<br>    &#125;<br>&#125;	<span class="hljs-comment">// 等价范式</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span>(<span class="hljs-params">fn</span>) </span>&#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">...args</span>) </span>&#123;<br>    <span class="hljs-keyword">return</span> fn.apply(<span class="hljs-built_in">this</span>, args);<br>  &#125;;<br>&#125; <span class="hljs-comment">// 等价范式</span><br></code></pre></td></tr></table></figure>
 
 <p>常用高阶函数：</p>
 <ul>
 <li><p>Once</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">once</span>(<span class="hljs-params">fn</span>) </span>&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">...args</span>) </span>&#123;<br>        <span class="hljs-keyword">if</span>(fn) &#123;<br>            <span class="hljs-keyword">const</span> ret = fn.apply(<span class="hljs-built_in">this</span>, args);<br>            fn = <span class="hljs-literal">null</span>;<br>            <span class="hljs-keyword">return</span> ret;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">once</span>(<span class="hljs-params">fn</span>) </span>&#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">...args</span>) </span>&#123;<br>    <span class="hljs-keyword">if</span> (fn) &#123;<br>      <span class="hljs-keyword">const</span> ret = fn.apply(<span class="hljs-built_in">this</span>, args);<br>      fn = <span class="hljs-literal">null</span>;<br>      <span class="hljs-keyword">return</span> ret;<br>    &#125;<br>  &#125;;<br>&#125;<br></code></pre></td></tr></table></figure></li>
 <li><p><a target="_blank" rel="noopener" href="https://code.h5jun.com/gale/1/edit?js,output">Throttle</a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">throttle</span>(<span class="hljs-params">fn, time=<span class="hljs-number">500</span></span>) </span>&#123;<br>    <span class="hljs-keyword">let</span> timer;<br>    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">...args</span>) </span>&#123;<br>        <span class="hljs-keyword">if</span>(timer == <span class="hljs-literal">null</span>) &#123;<br>            fn.apply(<span class="hljs-built_in">this</span>, args);<br>            timer = <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>                timer = <span class="hljs-literal">null</span>;	<span class="hljs-comment">/* 到期的话，清除之前的计时器 */</span><br>            &#125;, time)<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">throttle</span>(<span class="hljs-params">fn, time = <span class="hljs-number">500</span></span>) </span>&#123;<br>  <span class="hljs-keyword">let</span> timer;<br>  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">...args</span>) </span>&#123;<br>    <span class="hljs-keyword">if</span> (timer == <span class="hljs-literal">null</span>) &#123;<br>      fn.apply(<span class="hljs-built_in">this</span>, args);<br>      timer = <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>        timer = <span class="hljs-literal">null</span>; <span class="hljs-comment">/* 到期的话，清除之前的计时器 */</span><br>      &#125;, time);<br>    &#125;<br>  &#125;;<br>&#125;<br></code></pre></td></tr></table></figure></li>
 <li><p><a target="_blank" rel="noopener" href="https://code.h5jun.com/wik/edit?js,output">Debounce</a></p>
 </li>
 <li><p><a target="_blank" rel="noopener" href="https://code.h5jun.com/roka/7/edit?js,output">Consumer / 2</a></p>
@@ -622,8 +622,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Javascript/">
-                                    <span class="chip bg-color">Javascript</span>
+                                <a href="/tags/JavaScript/">
+                                    <span class="chip bg-color">JavaScript</span>
                                 </a>
                             
                                 <a href="/tags/%E9%9D%92%E8%AE%AD%E8%90%A5/">
@@ -1342,7 +1342,7 @@
       <a href="/about" target="_blank">赤蓝紫</a>
       |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
       <br />
-       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">169k</span>&nbsp;字      
+       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">172.3k</span>&nbsp;字      
       <span id="busuanzi_container_site_pv"> |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次 </span>
        
       <span id="busuanzi_container_site_uv"> |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人 </span>

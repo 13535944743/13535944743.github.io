@@ -426,10 +426,6 @@
                                 <span class="chip bg-color">git</span>
                             </a>
                         
-                            <a href="/tags/git-dev/">
-                                <span class="chip bg-color">git_dev</span>
-                            </a>
-                        
                     </div>
                     
                 </div>
@@ -487,7 +483,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="远程仓库小技能"><a href="#远程仓库小技能" class="headerlink" title="远程仓库小技能"></a>远程仓库小技能</h1><h2 id="1-github-dev"><a href="#1-github-dev" class="headerlink" title="1. github_dev"></a>1. github_dev</h2><p>这个功能gitee<strong>好像</strong>没有，突然发现的工具，可以在网页直接编辑仓库文件，而且有vscode支持，和直接用vscode差不多</p>
+                <h1 id="远程仓库小技能"><a href="#远程仓库小技能" class="headerlink" title="远程仓库小技能"></a>远程仓库小技能</h1><h2 id="1-github-dev"><a href="#1-github-dev" class="headerlink" title="1. github_dev"></a>1. github_dev</h2><p>这个功能 gitee<strong>好像</strong>没有，突然发现的工具，可以在网页直接编辑仓库文件，而且有 vscode 支持，和直接用 vscode 差不多</p>
 <ol>
 <li><p>进入要修改的仓库，按下键盘.(句号那个键)</p>
 <p><img src="https://pic.imgdb.cn/item/616d9f642ab3f51d911fce14.jpg"></p>
@@ -495,12 +491,12 @@
 <li><p>等一小会，进入以下界面</p>
 <p><img src="https://pic.imgdb.cn/item/616d9fcb2ab3f51d91203540.jpg"></p>
 </li>
-<li><p>直接开始修改代码，这个 网页版的vscode会实时保存，所以，当你修改后，在下图红框框中会出现小标，当你手动恢复原状时，小标又会消失</p>
+<li><p>直接开始修改代码，这个 网页版的 vscode 会实时保存，所以，当你修改后，在下图红框框中会出现小标，当你手动恢复原状时，小标又会消失</p>
 </li>
 </ol>
-<p>  <img src="https://pic.imgdb.cn/item/616da0362ab3f51d91209c0f.jpg"></p>
+<p><img src="https://pic.imgdb.cn/item/616da0362ab3f51d91209c0f.jpg"></p>
 <ol start="4">
-<li><p>点击小标后，按顺序点击下图的1， 2，和vscode类似，比vscode简单，相当于没有远程库了，因为你在网页上打开的就是github上的库，所以只需要执行git add . 和 git commit -m “add test3”就行，1和2分别对应这两个步骤</p>
+<li><p>点击小标后，按顺序点击下图的 1， 2，和 vscode 类似，比 vscode 简单，相当于没有远程库了，因为你在网页上打开的就是 github 上的库，所以只需要执行 git add . 和 git commit -m “add test3”就行，1 和 2 分别对应这两个步骤</p>
 <p><img src="https://pic.imgdb.cn/item/616da1742ab3f51d9121bc0b.jpg"></p>
 </li>
 <li><p>回到仓库，会发现已经修改成功</p>
@@ -509,7 +505,7 @@
 <li><p>删除文件也是同理，通过这个工具再也不用为了删除一个无关文件，而把整个库克隆到本地，再修改提交到远程仓库了</p>
 </li>
 </ol>
-<h2 id="2-gitee项目仓库流程"><a href="#2-gitee项目仓库流程" class="headerlink" title="2. gitee项目仓库流程"></a>2. gitee项目仓库流程</h2><ol>
+<h2 id="2-gitee-项目仓库流程"><a href="#2-gitee-项目仓库流程" class="headerlink" title="2. gitee 项目仓库流程"></a>2. gitee 项目仓库流程</h2><ol>
 <li><p>管理员建仓库</p>
 </li>
 <li><p>邀请成员</p>
@@ -517,20 +513,20 @@
 <p><img src="https://pic.imgdb.cn/item/616fabb62ab3f51d918e8108.jpg"></p>
 </li>
 <li><p>设置保护分支，防止项目成员不小心误推</p>
-<p>「保护分支」是 Gitee 针对团队协作中代码权限管理的功能，即为了减小成员误操作带来的损失，对一些关键的分支进行保护，防止被破坏。保护以后，只有仓库的管理员才能对这个分支进行修改、合并等操作。(转自gitee)</p>
+<p>「保护分支」是 Gitee 针对团队协作中代码权限管理的功能，即为了减小成员误操作带来的损失，对一些关键的分支进行保护，防止被破坏。保护以后，只有仓库的管理员才能对这个分支进行修改、合并等操作。(转自 gitee)</p>
 <p><img src="https://pic.imgdb.cn/item/616fad072ab3f51d918f4c08.jpg"></p>
 </li>
 <li><p>设置保护分支规则(比如谁可以推之类的)</p>
 <p><img src="https://pic.imgdb.cn/item/616fadb32ab3f51d918fc252.jpg"></p>
 <p><img src="https://pic.imgdb.cn/item/616fad882ab3f51d918fa574.jpg"></p>
 </li>
-<li><p>既然添加了保护分支规则，那就肯定不是所有项目成员都可以直接push到仓库的了，这里就需要先fork仓库，再push到自己的仓库，然后发起pull request请求</p>
+<li><p>既然添加了保护分支规则，那就肯定不是所有项目成员都可以直接 push 到仓库的了，这里就需要先 fork 仓库，再 push 到自己的仓库，然后发起 pull request 请求</p>
 <p><img src="https://pic.imgdb.cn/item/616fb3062ab3f51d91930d9a.jpg"></p>
 <p><img src="https://pic.imgdb.cn/item/616fb36f2ab3f51d9193512d.jpg"></p>
 <p><img src="https://pic.imgdb.cn/item/616fb4612ab3f51d9193d0fb.jpg"></p>
 </li>
 <li><p>等待管理员合并代码</p>
-<p>tips: git使用https协议，每次pull,push都要输入密码，使用git协议，使用ssh密钥可以省去每次输密码</p>
+<p>tips: git 使用 https 协议，每次 pull,push 都要输入密码，使用 git 协议，使用 ssh 密钥可以省去每次输密码</p>
 </li>
 </ol>
 
@@ -599,10 +595,6 @@
                             
                                 <a href="/tags/git/">
                                     <span class="chip bg-color">git</span>
-                                </a>
-                            
-                                <a href="/tags/git-dev/">
-                                    <span class="chip bg-color">git_dev</span>
                                 </a>
                             
                         </div>
@@ -1305,7 +1297,7 @@
       <a href="/about" target="_blank">赤蓝紫</a>
       |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
       <br />
-       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">169k</span>&nbsp;字      
+       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">172.3k</span>&nbsp;字      
       <span id="busuanzi_container_site_pv"> |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次 </span>
        
       <span id="busuanzi_container_site_uv"> |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人 </span>

@@ -422,8 +422,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Javascript/">
-                                <span class="chip bg-color">Javascript</span>
+                            <a href="/tags/JavaScript/">
+                                <span class="chip bg-color">JavaScript</span>
                             </a>
                         
                     </div>
@@ -483,16 +483,16 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="JavaScript事件"><a href="#JavaScript事件" class="headerlink" title="JavaScript事件"></a>JavaScript事件</h1><h2 id="注册事件（绑定事件）"><a href="#注册事件（绑定事件）" class="headerlink" title="注册事件（绑定事件）"></a>注册事件（绑定事件）</h2><p>给元素添加事件，称为注册事件或者绑定事件。</p>
+                <h1 id="JavaScript-事件"><a href="#JavaScript-事件" class="headerlink" title="JavaScript 事件"></a>JavaScript 事件</h1><h2 id="注册事件（绑定事件）"><a href="#注册事件（绑定事件）" class="headerlink" title="注册事件（绑定事件）"></a>注册事件（绑定事件）</h2><p>给元素添加事件，称为注册事件或者绑定事件。</p>
 <p>有传统方式和方法监听方式</p>
-<h3 id="传统方式"><a href="#传统方式" class="headerlink" title="传统方式"></a>传统方式</h3><p>利用on开头的事件，如onclick, 同一个元素同一个事件只能设置一个处理函数，出现多个处理函数的话，后面的会覆盖前面的。</p>
+<h3 id="传统方式"><a href="#传统方式" class="headerlink" title="传统方式"></a>传统方式</h3><p>利用 on 开头的事件，如 onclick, 同一个元素同一个事件只能设置一个处理函数，出现多个处理函数的话，后面的会覆盖前面的。</p>
 <p>例子：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>&lt;script&gt;<br>       var btn = document.querySelector(&quot;button&quot;);<br>       btn.onclick = function () &#123;<br>           console.log(1);<br>       &#125;;<br>       btn.onclick = function () &#123;<br>           console.log(2);<br>       &#125;<br>       //结果是2<br>   &lt;/script&gt;<br><br><br></code></pre></td></tr></table></figure>
 
 <h3 id="方法监听注册方式"><a href="#方法监听注册方式" class="headerlink" title="方法监听注册方式"></a>方法监听注册方式</h3><h4 id="addEventListener"><a href="#addEventListener" class="headerlink" title="addEventListener():"></a>addEventListener():</h4><p><code>eventTarget.addEventListener(type, listener[, useCapture])</code></p>
-<p>type: 事件类型字符串，如click、mouseover等，不带on</p>
+<p>type: 事件类型字符串，如 click、mouseover 等，不带 on</p>
 <p>listener: 事件处理函数，事件发生会调用该监听函数</p>
-<p>useCapture: 可选参数，是一个布尔值，默认是false。决定监听器的触发阶段是捕获阶段还是冒泡阶段<a href="#anchor">详见</a>。</p>
+<p>useCapture: 可选参数，是一个布尔值，默认是 false。决定监听器的触发阶段是捕获阶段还是冒泡阶段<a href="#anchor">详见</a>。</p>
 <p>addEventListener() 是 W3C DOM 规范中提供的注册事件监听器的方法。</p>
 <p>优点：</p>
 <ol>
@@ -503,17 +503,16 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">      const btn = document.getElementById(&quot;btn&quot;);<br><br>      btn.addEventListener(&quot;click&quot;, function () &#123;<br>          console.log(1);<br>      &#125;);<br>      btn.addEventListener(&quot;click&quot;, function () &#123;<br>          console.log(1);<br>      &#125;);<br><br>//结果：1, 1<br><br></code></pre></td></tr></table></figure>
 
 <p>此处是个人见解：</p>
-<p>当两个监听函数一样时，由上可发现会输出两次1,这个其实是因为上面两个匿名函数看似一样，实际它们所开辟的内存空间不一样。</p>
+<p>当两个监听函数一样时，由上可发现会输出两次 1,这个其实是因为上面两个匿名函数看似一样，实际它们所开辟的内存空间不一样。</p>
 <p>把相同的方法抽出来后会发现，无法实现多个监听，就是因为两个方法变成完全一样了。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>   const btn = document.getElementById(&quot;btn&quot;);<br><br>   btn.addEventListener(&quot;click&quot;, fn)<br>   btn.addEventListener(&quot;click&quot;, fn)<br>   <br>   function fn() &#123;<br>     console.log(1);<br>   &#125;<br><br>//结果：1<br><br></code></pre></td></tr></table></figure>
-
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>   const btn = document.getElementById(&quot;btn&quot;);<br><br>   btn.addEventListener(&quot;click&quot;, fn)<br>   btn.addEventListener(&quot;click&quot;, fn)<br><br>   function fn() &#123;<br>     console.log(1);<br>   &#125;<br><br>//结果：1<br><br></code></pre></td></tr></table></figure>
 
 <ol start="2">
 <li>可以控制监听器的触发阶段（可选捕获或冒泡）</li>
 <li>对任何 DOM 元素都是有效的，而不仅仅只对 HTML 元素有效。(<b style="color:red">未找到合适案例</b>)</li>
 </ol>
 <p>参数是匿名函数和是箭头函数区别：</p>
-<p>它们绑定不同的this对象。匿名函数和传统方式一样会创建独有的this对象（即触发事件的元素），而箭头函数是继承绑定它所在函数的this对象。</p>
+<p>它们绑定不同的 this 对象。匿名函数和传统方式一样会创建独有的 this 对象（即触发事件的元素），而箭头函数是继承绑定它所在函数的 this 对象。</p>
 <p>例子：</p>
 <p>匿名函数：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>&lt;div id=&quot;div&quot;&gt;<br>       &lt;button id=&quot;btn&quot;&gt;点击&lt;/button&gt;<br>   &lt;/div&gt;<br><br>   &lt;script&gt;<br>       const div = document.getElementById(&quot;div&quot;);<br><br>       const btn = document.getElementById(&quot;btn&quot;);<br>       div.addEventListener(&quot;mouseenter&quot;, function () &#123;<br>           console.log(this);<br>           btn.addEventListener(&quot;click&quot;, function () &#123;<br>               console.log(this);<br>           &#125;)<br>       &#125;);<br>   &lt;/script&gt;<br><br></code></pre></td></tr></table></figure>
@@ -526,15 +525,15 @@
 <p>结果：</p>
 <p><img src="https://pic.imgdb.cn/item/612c398044eaada7392a354b.jpg"></p>
 <h4 id="attachEvent"><a href="#attachEvent" class="headerlink" title="attachEvent():"></a>attachEvent():</h4><p><code>eventTarget.attachEvent(eventNameWithOn, callback)</code></p>
-<p>eventNameWithOn: 事件类型字符串。如onclick、onmouseover，要带on</p>
-<p>callback:  事件处理函数，事件发生会调用该回调函数</p>
-<p>IE9之前的IE不支持，对应有attachEvent()，用法和addEventListener 近似，不过事件需要变回传统方式的on系列。</p>
-<p>attachEvent缺点：this的值会变成window对象的引用而不是触发事件的元素。</p>
+<p>eventNameWithOn: 事件类型字符串。如 onclick、onmouseover，要带 on</p>
+<p>callback: 事件处理函数，事件发生会调用该回调函数</p>
+<p>IE9 之前的 IE 不支持，对应有 attachEvent()，用法和 addEventListener 近似，不过事件需要变回传统方式的 on 系列。</p>
+<p>attachEvent 缺点：this 的值会变成 window 对象的引用而不是触发事件的元素。</p>
 <h2 id="删除事件（解绑事件）"><a href="#删除事件（解绑事件）" class="headerlink" title="删除事件（解绑事件）"></a>删除事件（解绑事件）</h2><h3 id="传统方式-1"><a href="#传统方式-1" class="headerlink" title="传统方式"></a>传统方式</h3><p>eventTarget.onclick = null;</p>
 <p>例子:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>const btn = document.getElementById(&quot;btn&quot;);<br>      btn.onclick = function () &#123;<br>          console.log(1);<br>      &#125;;<br><br>      btn.onclick = null;<br><br></code></pre></td></tr></table></figure>
 
-<h3 id="方法监听注册方式-1"><a href="#方法监听注册方式-1" class="headerlink" title="方法监听注册方式"></a>方法监听注册方式</h3><h4 id="对应addEventListener"><a href="#对应addEventListener" class="headerlink" title="对应addEventListener"></a>对应addEventListener</h4><p><code>eventTarget.removeEventListener(type, listener[, useCapture]);</code></p>
+<h3 id="方法监听注册方式-1"><a href="#方法监听注册方式-1" class="headerlink" title="方法监听注册方式"></a>方法监听注册方式</h3><h4 id="对应-addEventListener"><a href="#对应-addEventListener" class="headerlink" title="对应 addEventListener"></a>对应 addEventListener</h4><p><code>eventTarget.removeEventListener(type, listener[, useCapture]);</code></p>
 <p>移除完全匹配的监听，只有事件处理函数完全一样，包括开辟的内存空间。</p>
 <p>完全匹配例子：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>const btn = document.getElementById(&quot;btn&quot;);<br>      btn.addEventListener(&quot;click&quot;, fn); //第二个参数只要函数名就可以，不需要调用<br>      btn.removeEventListener(&quot;click&quot;, fn);<br><br>      function fn() &#123;<br>          console.log(1);<br>      &#125;<br><br></code></pre></td></tr></table></figure>
@@ -542,55 +541,58 @@
 <p>不完全匹配例子（开辟的内存空间不一样）:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>const btn = document.getElementById(&quot;btn&quot;);<br>      btn.addEventListener(&quot;click&quot;, function () &#123;<br>          console.log(1);<br>      &#125;);<br>      btn.removeEventListener(&quot;click&quot;, function () &#123;<br>          console.log(1);<br>      &#125;);<br><br></code></pre></td></tr></table></figure>
 
-<h2 id="DOM事件流"><a href="#DOM事件流" class="headerlink" title="DOM事件流"></a>DOM事件流</h2><p id="anchor">事件流描述的是从页面中接收事件的顺序。</p>
+<h2 id="DOM-事件流"><a href="#DOM-事件流" class="headerlink" title="DOM 事件流"></a>DOM 事件流</h2><p id="anchor">事件流描述的是从页面中接收事件的顺序。</p>
 
-<p>事件发生时会在元素节点之间按照特定的顺序传播，这个传播过程就是DOM事件流。</p>
-<p>例如给一个div注册了事件：</p>
-<p>DOM事件流分为3个阶段：</p>
+<p>事件发生时会在元素节点之间按照特定的顺序传播，这个传播过程就是 DOM 事件流。</p>
+<p>例如给一个 div 注册了事件：</p>
+<p>DOM 事件流分为 3 个阶段：</p>
 <ol>
 <li>捕获阶段</li>
 <li>当前目标阶段</li>
 <li>冒泡阶段</li>
 </ol>
-<p>事件捕获：网景最早提出，由DOM最顶层节点开始，然后逐级向下传播到绑定事件的元素接受的过程。</p>
-<p>事件冒泡：IE最早提出，事件逐级向上传播到DOM最顶层节点的过程。</p>
+<p>事件捕获：网景最早提出，由 DOM 最顶层节点开始，然后逐级向下传播到绑定事件的元素接受的过程。</p>
+<p>事件冒泡：IE 最早提出，事件逐级向上传播到 DOM 最顶层节点的过程。</p>
 <p><img src="https://pic.imgdb.cn/item/612c5ace44eaada7396858fb.jpg"></p>
-<p>事件发生时会在元素节点之间按照特定的顺序传播，这个传播过程即DOM事件流。</p>
+<p>事件发生时会在元素节点之间按照特定的顺序传播，这个传播过程即 DOM 事件流。</p>
 <p>注意：</p>
 <ol>
-<li>JS代码只能执行捕获或者冒泡其中一个阶段</li>
-<li>onclick和attachEvent只能得到冒泡阶段</li>
+<li>JS 代码只能执行捕获或者冒泡其中一个阶段</li>
+<li>onclick 和 attachEvent 只能得到冒泡阶段</li>
 </ol>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>const btn = document.getElementById(&quot;btn&quot;);<br>      btn.onclick = () =&gt; alert(1);<br>      document.body.onclick = () =&gt; alert(2);<br>      document.documentElement.onclick = () =&gt; alert(3);<br>      document.onclick = () =&gt; alert(4);<br>//点击按钮后，弹出顺序1、2、3、4<br><br></code></pre></td></tr></table></figure>
+
 <ol start="3">
-<li>addEventListener(type, listener[, useCapture])第三个参数默认是false，表示在冒泡阶段调用事件处理程序，如果是true，则表示在事件捕获阶段调用事件处理程序。</li>
+<li>addEventListener(type, listener[, useCapture])第三个参数默认是 false，表示在冒泡阶段调用事件处理程序，如果是 true，则表示在事件捕获阶段调用事件处理程序。</li>
 </ol>
-<p>为false:</p>
+<p>为 false:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>const btn = document.getElementById(&quot;btn&quot;);<br>      btn.addEventListener(&quot;click&quot;, () =&gt; alert(1), false);<br>      document.body.addEventListener(&quot;click&quot;, () =&gt; alert(2), false);<br>      document.documentElement.addEventListener(&quot;click&quot;, () =&gt; alert(3));<br>      document.addEventListener(&quot;click&quot;, () =&gt; alert(4));<br>//点击按钮后，弹出顺序1、2、3、4<br><br></code></pre></td></tr></table></figure>
 
-<p>为true:</p>
+<p>为 true:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>const btn = document.getElementById(&quot;btn&quot;);<br>      btn.addEventListener(&quot;click&quot;, () =&gt; alert(1), true);<br>      document.body.addEventListener(&quot;click&quot;, () =&gt; alert(2), true);<br>      document.documentElement.addEventListener(&quot;click&quot;, () =&gt; alert(3), true);<br>      document.addEventListener(&quot;click&quot;, () =&gt; alert(4), true);<br>//点击按钮后，弹出顺序4、3、2、1<br><br></code></pre></td></tr></table></figure>
+
 <ol start="4">
-<li>有些事件是没有冒泡的，如blur, focus, mouseenter, onmouseleave</li>
+<li>有些事件是没有冒泡的，如 blur, focus, mouseenter, onmouseleave</li>
 </ol>
 <p>例如：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>const btn = document.getElementById(&quot;btn&quot;);<br>      btn.addEventListener(&quot;mouseleave&quot;, () =&gt; alert(1));<br>      document.body.addEventListener(&quot;mouseleave&quot;, () =&gt; alert(2));<br>      document.documentElement.addEventListener(&quot;mouseleave&quot;, () =&gt; alert(3));<br>      document.addEventListener(&quot;mouseleave&quot;, () =&gt; alert(4));<br>//当鼠标放在按钮里后，离开按钮，只会弹出1<br><br></code></pre></td></tr></table></figure>
+
 <ol start="5">
 <li>事件冒泡有时候会带来麻烦，可以通过 e.stopPropagation()方法阻止事件冒泡</li>
 </ol>
 <h2 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h2><p>事件处理函数可以带参数，带的参数就是事件对象。</p>
 <p><code> eventTarget.onclick = function(event) &#123;&#125;</code></p>
 <p><code>eventTarget.addEventListener(&quot;click&quot;, function(event)&#123;&#125;)</code></p>
-<p>如上式所示，event就是事件对象，，它代表事件的状态，如键盘按键的状态、鼠标的位置、鼠标按钮的状态等。事件发生后，跟事件相关的一系列信息的集合都在这个对象里面。</p>
+<p>如上式所示，event 就是事件对象，，它代表事件的状态，如键盘按键的状态、鼠标的位置、鼠标按钮的状态等。事件发生后，跟事件相关的一系列信息的集合都在这个对象里面。</p>
 <p style="color:red">不需要传递实参</P>
 
-<p>注册事件时，event对象会被系统自动创建，并依次传递给事件监听器（事件处理函数）。</p>
-<p>在IE6~8中，浏览器不会给方法传递参数，需要的话，要到window.event中获取。</p>
+<p>注册事件时，event 对象会被系统自动创建，并依次传递给事件监听器（事件处理函数）。</p>
+<p>在 IE6~8 中，浏览器不会给方法传递参数，需要的话，要到 window.event 中获取。</p>
 <p>e = e || window.event;</p>
 <h3 id="事件对象的常见属性和方法"><a href="#事件对象的常见属性和方法" class="headerlink" title="事件对象的常见属性和方法"></a>事件对象的常见属性和方法</h3><p><img src="https://pic.imgdb.cn/item/612cc0a644eaada7392c26d3.jpg"></p>
-<p>e.target和this的区别：</p>
-<p>this是事件绑定的元素（匿名函数形式），函数的调用者。</p>
-<p>e.target是事件触发的元素。</p>
+<p>e.target 和 this 的区别：</p>
+<p>this 是事件绑定的元素（匿名函数形式），函数的调用者。</p>
+<p>e.target 是事件触发的元素。</p>
 <p>例子：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>const ul = document.querySelector(&quot;ul&quot;);<br>      ul.addEventListener(&quot;click&quot;, function (e) &#123;<br>          console.log(this);<br>          console.log(e.target);<br>      &#125;);<br>//点击li里面的文字，依次打印出的是ul和li<br><br></code></pre></td></tr></table></figure>
 
@@ -602,14 +604,14 @@
 <p>例子：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>const btn = document.getElementById(&quot;btn&quot;);<br>      btn.addEventListener(&quot;click&quot;, (e) =&gt; &#123;<br>          alert(1);<br>          e.stopPropagation();  //只要在事件处理函数里使用就会执行完这个函数，才阻止冒泡。<br>						  //不过建议放在最后面，更有逻辑性的感觉<br>      &#125;);<br>      document.body.addEventListener(&quot;click&quot;, () =&gt; alert(2));<br>      document.documentElement.addEventListener(&quot;click&quot;, () =&gt; alert(3));<br>      document.addEventListener(&quot;click&quot;, () =&gt; alert(4));<br><br></code></pre></td></tr></table></figure>
 
-<p>没加e.stopPropagation()之前会依次弹出1、2、3、4，在按钮绑定的事件中,加上之后只会弹出1</p>
-<h3 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h3><p>事件委托也被称为事件代理，在jQuery里面称为事件委派。</p>
+<p>没加 e.stopPropagation()之前会依次弹出 1、2、3、4，在按钮绑定的事件中,加上之后只会弹出 1</p>
+<h3 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h3><p>事件委托也被称为事件代理，在 jQuery 里面称为事件委派。</p>
 <h4 id="事件委托原理"><a href="#事件委托原理" class="headerlink" title="事件委托原理"></a>事件委托原理</h4><p>不需要给每个子结点单独设置事件监听器，而是把事件监听器设置在其父节点上，然后利用冒泡原理去影响子节点。</p>
 <p>例子：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>const ul = document.querySelector(&quot;ul&quot;);<br>      ul.addEventListener(&quot;click&quot;, (e) =&gt; e.target.style.color = &quot;red&quot;);<br><br></code></pre></td></tr></table></figure>
 
-<p>上面例子：直接给li的父节点绑定监听器，然后利用e.target找到当前点击的li，点击li，事件会冒泡到ul上，而ul上有注册事件，就会触发事件监听器。</p>
-<h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4><p>只需要操作一次DOM，提高了程序性能。</p>
+<p>上面例子：直接给 li 的父节点绑定监听器，然后利用 e.target 找到当前点击的 li，点击 li，事件会冒泡到 ul 上，而 ul 上有注册事件，就会触发事件监听器。</p>
+<h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4><p>只需要操作一次 DOM，提高了程序性能。</p>
 <h3 id="常用的鼠标事件"><a href="#常用的鼠标事件" class="headerlink" title="常用的鼠标事件"></a>常用的鼠标事件</h3><p><img src="https://pic.imgdb.cn/item/612d849544eaada7399433ab.jpg"></p>
 <p>ontextmenu：鼠标右键菜单，可用于取消默认的菜单</p>
 <p>selectstart：开始选中，可用于禁止选中文字</p>
@@ -618,15 +620,15 @@
 <h3 id="常用的键盘事件"><a href="#常用的键盘事件" class="headerlink" title="常用的键盘事件"></a>常用的键盘事件</h3><p><img src="https://pic.imgdb.cn/item/612d863444eaada73996cc24.jpg"></p>
 <p style="color:red">onkeypress不识别功能键，如ctrl、shift等<br>执行顺序是： keydown-->keypress-->keyup</p>
 
-<p>首先，keyup是弹起时才会触发的，所以顺序是最后的，所以只需要记得keydown优先级更高就行</p>
+<p>首先，keyup 是弹起时才会触发的，所以顺序是最后的，所以只需要记得 keydown 优先级更高就行</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>document.addEventListener(&quot;keyup&quot;, () =&gt; console.log(&quot;up&quot;));<br>      document.addEventListener(&quot;keydown&quot;, () =&gt; console.log(&quot;down&quot;));<br>      document.addEventListener(&quot;keypress&quot;, () =&gt; console.log(&quot;press&quot;));<br>//按非功能键，依次输出顺序down、press、up<br>//按功能键，则依次输出down、up<br><br></code></pre></td></tr></table></figure>
 
-<h4 id="常用键盘事件对象属性"><a href="#常用键盘事件对象属性" class="headerlink" title="常用键盘事件对象属性"></a>常用键盘事件对象属性</h4><p>keyCode:返回该键的ASCII值（数字）</p>
+<h4 id="常用键盘事件对象属性"><a href="#常用键盘事件对象属性" class="headerlink" title="常用键盘事件对象属性"></a>常用键盘事件对象属性</h4><p>keyCode:返回该键的 ASCII 值（数字）</p>
 <p style="color:red">onkeydown和onkeyup不区分字母大小写，onkeypress区分字母大小写</p>
 
 <h3 id="案例-1"><a href="#案例-1" class="headerlink" title="案例"></a>案例</h3><p>模拟京东快递单号查询案例</p>
 <p>参考链接：<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/EventTarget/addEventListener#why_use_addeventlistener.3f">EventTarget.addEventListener()</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Sy4y1C7ha">pink老师前端入门</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Sy4y1C7ha">pink 老师前端入门</a></p>
 
                 
             </div>
@@ -691,8 +693,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Javascript/">
-                                    <span class="chip bg-color">Javascript</span>
+                                <a href="/tags/JavaScript/">
+                                    <span class="chip bg-color">JavaScript</span>
                                 </a>
                             
                         </div>
@@ -1164,12 +1166,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Javascript/">
-                        <span class="chip bg-color">Javascript</span>
-                    </a>
-                    
-                    <a href="/tags/DOM/">
-                        <span class="chip bg-color">DOM</span>
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
                 </div>
@@ -1399,7 +1397,7 @@
       <a href="/about" target="_blank">赤蓝紫</a>
       |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
       <br />
-       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">169k</span>&nbsp;字      
+       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">172.3k</span>&nbsp;字      
       <span id="busuanzi_container_site_pv"> |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次 </span>
        
       <span id="busuanzi_container_site_uv"> |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人 </span>

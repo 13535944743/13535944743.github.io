@@ -422,12 +422,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Javascript/">
-                                <span class="chip bg-color">Javascript</span>
-                            </a>
-                        
-                            <a href="/tags/BOM/">
-                                <span class="chip bg-color">BOM</span>
+                            <a href="/tags/JavaScript/">
+                                <span class="chip bg-color">JavaScript</span>
                             </a>
                         
                     </div>
@@ -487,29 +483,29 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="BOM-浏览器对象模型"><a href="#BOM-浏览器对象模型" class="headerlink" title="BOM(浏览器对象模型)"></a>BOM(浏览器对象模型)</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>BOM(Brower Object Model) 即浏览器对象，它提供了独立于内容而与浏览器窗口进行交互的对象，核心对象是window。</p>
-<p>BOM缺乏标准，Javascript语法的标准化组织是ECMA，DOM的标准化组织是W3C，BOM最初是Netscape浏览器标准的一部分</p>
-<h3 id="BOM和DOM"><a href="#BOM和DOM" class="headerlink" title="BOM和DOM"></a>BOM和DOM</h3><p><img src="https://pic.imgdb.cn/item/612e171044eaada739b68a93.jpg"></p>
-<h3 id="BOM构成"><a href="#BOM构成" class="headerlink" title="BOM构成"></a>BOM构成</h3><p>BOM比DOM更大，它包括DOM。</p>
+                <h1 id="BOM-浏览器对象模型"><a href="#BOM-浏览器对象模型" class="headerlink" title="BOM(浏览器对象模型)"></a>BOM(浏览器对象模型)</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>BOM(Brower Object Model) 即浏览器对象，它提供了独立于内容而与浏览器窗口进行交互的对象，核心对象是 window。</p>
+<p>BOM 缺乏标准，Javascript 语法的标准化组织是 ECMA，DOM 的标准化组织是 W3C，BOM 最初是 Netscape 浏览器标准的一部分</p>
+<h3 id="BOM-和-DOM"><a href="#BOM-和-DOM" class="headerlink" title="BOM 和 DOM"></a>BOM 和 DOM</h3><p><img src="https://pic.imgdb.cn/item/612e171044eaada739b68a93.jpg"></p>
+<h3 id="BOM-构成"><a href="#BOM-构成" class="headerlink" title="BOM 构成"></a>BOM 构成</h3><p>BOM 比 DOM 更大，它包括 DOM。</p>
 <p><img src="https://pic.imgdb.cn/item/612e176e44eaada739b76e73.jpg"></p>
-<p>window对象是浏览器的顶级对象。</p>
+<p>window 对象是浏览器的顶级对象。</p>
 <ol>
-<li>它是JS访问浏览器窗口的一个接口</li>
-<li>它是一个全局对象。定义在全局作用域中的变量函数都会变成window对象的属性和方法。调用时可以省略window,alert()和prompt()都是window对象方法。</li>
+<li>它是 JS 访问浏览器窗口的一个接口</li>
+<li>它是一个全局对象。定义在全局作用域中的变量函数都会变成 window 对象的属性和方法。调用时可以省略 window,alert()和 prompt()都是 window 对象方法。</li>
 </ol>
 <p>例子：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">var num = 1;<br>      console.log(num); //实际console.log(window.num);<br><br>      function fn() &#123;<br>          alert(1); //window.alert(1);<br>      &#125;<br>      fn(); //window.fn();<br><br><br></code></pre></td></tr></table></figure>
 
-<h2 id="window对象的常见事件"><a href="#window对象的常见事件" class="headerlink" title="window对象的常见事件"></a>window对象的常见事件</h2><h3 id="窗口加载事件"><a href="#窗口加载事件" class="headerlink" title="窗口加载事件"></a>窗口加载事件</h3><h4 id="load事件"><a href="#load事件" class="headerlink" title="load事件"></a>load事件</h4><p><code>window.addEventListener(&quot;load&quot;, function()&#123;&#125;);</code></p>
-<p>是窗口（页面）加载事件，当文档内容完全加载完成后会触发事件（包括图像、脚本文件、CSS文件等），就调用的处理函数。</p>
-<p>作用：有了窗口加载事件就可以把JS代码放在页面元素上方。因为load事件是等页面内容完全加载完毕，才去执行事件处理函数。</p>
+<h2 id="window-对象的常见事件"><a href="#window-对象的常见事件" class="headerlink" title="window 对象的常见事件"></a>window 对象的常见事件</h2><h3 id="窗口加载事件"><a href="#窗口加载事件" class="headerlink" title="窗口加载事件"></a>窗口加载事件</h3><h4 id="load-事件"><a href="#load-事件" class="headerlink" title="load 事件"></a>load 事件</h4><p><code>window.addEventListener(&quot;load&quot;, function()&#123;&#125;);</code></p>
+<p>是窗口（页面）加载事件，当文档内容完全加载完成后会触发事件（包括图像、脚本文件、CSS 文件等），就调用的处理函数。</p>
+<p>作用：有了窗口加载事件就可以把 JS 代码放在页面元素上方。因为 load 事件是等页面内容完全加载完毕，才去执行事件处理函数。</p>
 <p>例子：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;!DOCTYPE html&gt;<br>&lt;html lang=&quot;zh-CN&quot;&gt;<br><br>&lt;head&gt;<br>  		&lt;meta charset=&quot;UTF-8&quot;&gt;<br>  		&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;<br>  		&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;<br>  		&lt;title&gt;Myself&lt;/title&gt;<br>  		&lt;script&gt;<br>      		window.addEventListener(&quot;load&quot;, () =&gt; &#123;<br>          		const btn = document.querySelector(&quot;button&quot;);<br>          		btn.addEventListener(&quot;click&quot;, () =&gt; &#123;<br>              		alert(1);<br>          		&#125;);<br>      		&#125;);<br>  		&lt;/script&gt;<br>&lt;/head&gt;<br><br>&lt;body&gt;<br>  		&lt;button&gt;点击&lt;/button&gt;<br><br>&lt;/body&gt;<br><br>&lt;/html&gt;<br><br><br></code></pre></td></tr></table></figure>
 
-<h4 id="DOMContentLoaded事件"><a href="#DOMContentLoaded事件" class="headerlink" title="DOMContentLoaded事件"></a>DOMContentLoaded事件</h4><p><code>document.addEventListener(&quot;DOMContentLoaded&quot;, function()&#123;&#125;);</code></p>
-<p>DOMContentLoaded事件触发时，仅当DOM加载完成时，不包括样式表，图片等。IE9以上才支持。</p>
-<p>应用背景：当页面的图片很多时，从用户访问到onload触发可能需要较长的时间，会影响到用户的体验，此时用DOMContentLoaded事件更合适。</p>
-<p>用法和load事件类似。</p>
+<h4 id="DOMContentLoaded-事件"><a href="#DOMContentLoaded-事件" class="headerlink" title="DOMContentLoaded 事件"></a>DOMContentLoaded 事件</h4><p><code>document.addEventListener(&quot;DOMContentLoaded&quot;, function()&#123;&#125;);</code></p>
+<p>DOMContentLoaded 事件触发时，仅当 DOM 加载完成时，不包括样式表，图片等。IE9 以上才支持。</p>
+<p>应用背景：当页面的图片很多时，从用户访问到 onload 触发可能需要较长的时间，会影响到用户的体验，此时用 DOMContentLoaded 事件更合适。</p>
+<p>用法和 load 事件类似。</p>
 <h3 id="调整窗口大小事件"><a href="#调整窗口大小事件" class="headerlink" title="调整窗口大小事件"></a>调整窗口大小事件</h3><p><code>window.addEventListener(&quot;resize&quot;, function()&#123;&#125;);</code></p>
 <p>只要窗口大小发生变化，就会触发事件。</p>
 <p>例子：</p>
@@ -519,41 +515,41 @@
 <p>用于设置一个定时器，在时间到后执行调用函数。</p>
 <p>注意：</p>
 <ol>
-<li>window可以省略</li>
-<li>延迟的毫秒数默认是0</li>
+<li>window 可以省略</li>
+<li>延迟的毫秒数默认是 0</li>
 <li>一般给定时器一个标识符，方便停止定时器等操作</li>
 </ol>
-<p>调用函数也称为回调函数callback。普通函数按照代码顺序直接调用，而setTimeout需要等待时间，时间到了才调用函数，因此被称为回调函数。</p>
+<p>调用函数也称为回调函数 callback。普通函数按照代码顺序直接调用，而 setTimeout 需要等待时间，时间到了才调用函数，因此被称为回调函数。</p>
 <p>注册事件时的事件处理函数也是回调函数。</p>
 <p>例子：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">let timer = setTimeout(fn, 1000);<br><br>      function fn() &#123;<br>          console.log(&quot;时间到了&quot;);<br>      &#125;<br><br></code></pre></td></tr></table></figure>
 
-<h3 id="停止setTimeout-定时器"><a href="#停止setTimeout-定时器" class="headerlink" title="停止setTimeout()定时器"></a>停止setTimeout()定时器</h3><p><code>window.clearTimeout(timeoutID)</code></p>
+<h3 id="停止-setTimeout-定时器"><a href="#停止-setTimeout-定时器" class="headerlink" title="停止 setTimeout()定时器"></a>停止 setTimeout()定时器</h3><p><code>window.clearTimeout(timeoutID)</code></p>
 <p>例子：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">let timer = setTimeout(fn, 1000);<br><br>      function fn() &#123;<br>          console.log(&quot;时间到了&quot;);<br>      &#125;<br><br>      clearTimeout(timer);<br><br></code></pre></td></tr></table></figure>
 
 <h3 id="setInterval-定时器"><a href="#setInterval-定时器" class="headerlink" title="setInterval()定时器"></a>setInterval()定时器</h3><p><code>window.setInterval(回调函数，[延迟的毫秒数]);</code></p>
-<p>和setTimeout()基本一样，不一样的是，setInterval()会重复调用回调函数，每隔一段时间，就调用一次回调函数。</p>
+<p>和 setTimeout()基本一样，不一样的是，setInterval()会重复调用回调函数，每隔一段时间，就调用一次回调函数。</p>
 <p>注意：第一次执行也是需要等待延迟的毫秒数才会执行</p>
 <p>例子：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">let timer = setInterval(fn, 1000);<br><br>      function fn() &#123;<br>          console.log(&quot;时间到了&quot;);<br>      &#125;<br><br></code></pre></td></tr></table></figure>
 
 <h4 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h4><p>倒计时效果</p>
-<h3 id="停止setInterval-定时器"><a href="#停止setInterval-定时器" class="headerlink" title="停止setInterval()定时器"></a>停止setInterval()定时器</h3><p><code>window.clearInterval(intervalID)</code></p>
-<p>需要注意的是setTimeout()和setInterval()共用一个编号池，技术上，clearTimeout()和 clearInterval() 可以互换。但是，为了避免混淆，不要混用取消定时函数。<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout">来源</a></p>
+<h3 id="停止-setInterval-定时器"><a href="#停止-setInterval-定时器" class="headerlink" title="停止 setInterval()定时器"></a>停止 setInterval()定时器</h3><p><code>window.clearInterval(intervalID)</code></p>
+<p>需要注意的是 setTimeout()和 setInterval()共用一个编号池，技术上，clearTimeout()和 clearInterval() 可以互换。但是，为了避免混淆，不要混用取消定时函数。<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout">来源</a></p>
 <p>例子：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">const start = document.querySelector(&quot;.start&quot;);<br>      const stop = document.querySelector(&quot;.pause&quot;);<br>      let timer = null;<br><br>      start.addEventListener(&quot;click&quot;, () =&gt; &#123;<br>          timer = setInterval(() =&gt; &#123;<br>              console.log(&quot;时间到了&quot;);<br>          &#125;, 1000);<br>      &#125;);<br>      stop.addEventListener(&quot;click&quot;, () =&gt; &#123;<br>          clearInterval(timer);<br>      &#125;);<br><br></code></pre></td></tr></table></figure>
 
 <h4 id="案例-1"><a href="#案例-1" class="headerlink" title="案例"></a>案例</h4><p>发送短信案例</p>
-<h2 id="this指向"><a href="#this指向" class="headerlink" title="this指向"></a>this指向</h2><p>this的指向只有在函数执行的时候才能确定指向，一般情况下this指向的是调用它的对象。</p>
+<h2 id="this-指向"><a href="#this-指向" class="headerlink" title="this 指向"></a>this 指向</h2><p>this 的指向只有在函数执行的时候才能确定指向，一般情况下 this 指向的是调用它的对象。</p>
 <ol>
-<li>全局作用域和普通函数中this指向全局对象window,定时器里面的this也是指向window</li>
+<li>全局作用域和普通函数中 this 指向全局对象 window,定时器里面的 this 也是指向 window</li>
 </ol>
 <p>例子：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">console.log(this);<br><br>      function fn() &#123;<br>          console.log(this);<br>      &#125;<br>      fn();<br><br>      setTimeout(function () &#123;<br>          console.log(this);<br>      &#125;, 200);<br><br></code></pre></td></tr></table></figure>
 
 <ol start="2">
-<li>方法调用中谁调用this，this就指向谁</li>
+<li>方法调用中谁调用 this，this 就指向谁</li>
 </ol>
 <p style ="color: red">注意：匿名函数和箭头函数的区别：匿名函数和传统方式一样会创建独有的this对象（即触发事件的元素），而箭头函数是继承绑定它所在函数的this对象</p>
 
@@ -561,52 +557,52 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">let o = &#123;            sayHi: function () &#123;                console.log(this);            &#125;        &#125;;        o.sayHi();<br></code></pre></td></tr></table></figure>
 
 <ol start="3">
-<li>构造函数中this指向构造函数的实例</li>
+<li>构造函数中 this 指向构造函数的实例</li>
 </ol>
 <p>例子：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">function Student() &#123;            console.log(this);        &#125;        let st = new Student();<br></code></pre></td></tr></table></figure>
 
-<h2 id="JS执行机制"><a href="#JS执行机制" class="headerlink" title="JS执行机制"></a>JS执行机制</h2><p>Javascript语言的一个特点是单线程。</p>
-<h3 id="同步和异步"><a href="#同步和异步" class="headerlink" title="同步和异步"></a>同步和异步</h3><p>单线程会导致所有任务都要排队，即假如有计时器，程序会堵住。为了解决这个问题，利用多核CPU的计算能力，HTML5提出Web Worker标准，允许Javascript开启多个线程，于是，JS出现了同步和异步。</p>
+<h2 id="JS-执行机制"><a href="#JS-执行机制" class="headerlink" title="JS 执行机制"></a>JS 执行机制</h2><p>Javascript 语言的一个特点是单线程。</p>
+<h3 id="同步和异步"><a href="#同步和异步" class="headerlink" title="同步和异步"></a>同步和异步</h3><p>单线程会导致所有任务都要排队，即假如有计时器，程序会堵住。为了解决这个问题，利用多核 CPU 的计算能力，HTML5 提出 Web Worker 标准，允许 Javascript 开启多个线程，于是，JS 出现了同步和异步。</p>
 <p>同步：前一个任务结束后再执行下一个任务。</p>
 <p>异步：可以同时执行多个任务。</p>
-<p>JS为防止任务有排队或者等待时间较长的问题，把任务分为<b>同步任务</b>和<b>异步任务</b>两大类。</p>
+<p>JS 为防止任务有排队或者等待时间较长的问题，把任务分为<b>同步任务</b>和<b>异步任务</b>两大类。</p>
 <p>同步任务都在主线程上执行，形成一个执行栈。</p>
-<p>异步任务：JS的异步时通过回调函数实现的。一般有三种类型。异步任务的相关回调函数放在<b>任务队列</b>(消息队列)中。</p>
+<p>异步任务：JS 的异步时通过回调函数实现的。一般有三种类型。异步任务的相关回调函数放在<b>任务队列</b>(消息队列)中。</p>
 <ol>
-<li>普通事件，如click,resize等</li>
-<li>资源加载，如load,error等</li>
-<li>定时器，如setTimeout,setInterval等</li>
+<li>普通事件，如 click,resize 等</li>
+<li>资源加载，如 load,error 等</li>
+<li>定时器，如 setTimeout,setInterval 等</li>
 </ol>
 <p>例子：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">console.log(1);    //①        setTimeout(function () &#123;            console.log(3);        &#125;, 0);             //②        console.log(2);     //③<br></code></pre></td></tr></table></figure>
 
 <p>分析：</p>
 <ol>
-<li>首先，执行主线程执行栈第一个任务，打印出1</li>
+<li>首先，执行主线程执行栈第一个任务，打印出 1</li>
 <li>第二个任务有回调函数，通过异步进程处理， 满足条件后（即点击事件点击了，定时器事件时间到了），把异步任务（回调函数）添加到任务队列中，但是不执行</li>
-<li>继续执行第三个任务，打印出2；</li>
+<li>继续执行第三个任务，打印出 2；</li>
 <li>如果执行栈中的同步任务执行完后，系统会按顺序读取任务队列的异步任务，被读取的异步任务进入执行栈，执行。</li>
-<li>执行栈中没有任务后，还会一直监听着任务队列（比如click事件，用户一直有点击的可能），又称为”事件循环”,任务队列中有新任务，则该任务进入执行栈。</li>
+<li>执行栈中没有任务后，还会一直监听着任务队列（比如 click 事件，用户一直有点击的可能），又称为”事件循环”,任务队列中有新任务，则该任务进入执行栈。</li>
 </ol>
 <p><img src="https://pic.imgdb.cn/item/6132123344eaada739c8261a.jpg"></p>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Sy4y1C7ha">更详细见P280</a></p>
-<h2 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h2><h3 id="什么是location对象"><a href="#什么是location对象" class="headerlink" title="什么是location对象"></a>什么是location对象</h3><p>window对象给我们提供了一个location属性用于<b style="color:red">获取或设置窗体的URL</b>,并且可以用于<b style="color:red">解析URL</b>。这个属性返回的是一个对象，所以这个属性也称为location对象。</p>
-<h4 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h4><p>统一资源定位符（Uniform Resource Locator, URL）是互联网上标准资源的地址。互联网上每个文件都有一个唯一的URL。</p>
-<p>URL的一般语法格式:</p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Sy4y1C7ha">更详细见 P280</a></p>
+<h2 id="location-对象"><a href="#location-对象" class="headerlink" title="location 对象"></a>location 对象</h2><h3 id="什么是-location-对象"><a href="#什么是-location-对象" class="headerlink" title="什么是 location 对象"></a>什么是 location 对象</h3><p>window 对象给我们提供了一个 location 属性用于<b style="color:red">获取或设置窗体的 URL</b>,并且可以用于<b style="color:red">解析 URL</b>。这个属性返回的是一个对象，所以这个属性也称为 location 对象。</p>
+<h4 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h4><p>统一资源定位符（Uniform Resource Locator, URL）是互联网上标准资源的地址。互联网上每个文件都有一个唯一的 URL。</p>
+<p>URL 的一般语法格式:</p>
 <p><code>protocal://host[:port]/path/[?query]#fragment</code></p>
 <p>样例：<a target="_blank" rel="noopener" href="http://www.itcast.cn/index.html?name=andy&amp;age=18#link">http://www.itcast.cn/index.html?name=andy&amp;age=18#link</a></p>
 <p><img src="https://pic.imgdb.cn/item/61321aca44eaada739d92d9a.jpg"></p>
-<h3 id="location对象的属性"><a href="#location对象的属性" class="headerlink" title="location对象的属性"></a>location对象的属性</h3><table>
+<h3 id="location-对象的属性"><a href="#location-对象的属性" class="headerlink" title="location 对象的属性"></a>location 对象的属性</h3><table>
 <thead>
 <tr>
-<th>location对象属性</th>
+<th>location 对象属性</th>
 <th align="center">返回值</th>
 </tr>
 </thead>
 <tbody><tr>
 <td><b style="color:red">location.href</b></td>
-<td align="center">获取或设置整个URL</td>
+<td align="center">获取或设置整个 URL</td>
 </tr>
 <tr>
 <td>location.host</td>
@@ -626,15 +622,15 @@
 </tr>
 <tr>
 <td>location.hash</td>
-<td align="center">返回片段，上图的fragment部分（#后面内容）</td>
+<td align="center">返回片段，上图的 fragment 部分（#后面内容）</td>
 </tr>
 </tbody></table>
-<h3 id="案例-2"><a href="#案例-2" class="headerlink" title="案例"></a>案例</h3><p>5秒钟之后跳转页面</p>
-<p>获取URL参数</p>
-<h3 id="location对象的方法"><a href="#location对象的方法" class="headerlink" title="location对象的方法"></a>location对象的方法</h3><table>
+<h3 id="案例-2"><a href="#案例-2" class="headerlink" title="案例"></a>案例</h3><p>5 秒钟之后跳转页面</p>
+<p>获取 URL 参数</p>
+<h3 id="location-对象的方法"><a href="#location-对象的方法" class="headerlink" title="location 对象的方法"></a>location 对象的方法</h3><table>
 <thead>
 <tr>
-<th>location对象方法</th>
+<th>location 对象方法</th>
 <th align="center">作用</th>
 </tr>
 </thead>
@@ -651,12 +647,12 @@
 <td align="center">重新加载页面，即刷新页面</td>
 </tr>
 </tbody></table>
-<h2 id="navigator对象"><a href="#navigator对象" class="headerlink" title="navigator对象"></a>navigator对象</h2><p>navigator对象包含有关浏览器的信息，有很多属性，最常用的是userAgent，作用是可以实现通过识别用户使用手机还是电脑打开页面，并跳转到对应的页面。</p>
-<h2 id="history对象"><a href="#history对象" class="headerlink" title="history对象"></a>history对象</h2><p>history对象与浏览器历史记录进行交互。它包含用户在浏览器窗口中访问的URL。</p>
+<h2 id="navigator-对象"><a href="#navigator-对象" class="headerlink" title="navigator 对象"></a>navigator 对象</h2><p>navigator 对象包含有关浏览器的信息，有很多属性，最常用的是 userAgent，作用是可以实现通过识别用户使用手机还是电脑打开页面，并跳转到对应的页面。</p>
+<h2 id="history-对象"><a href="#history-对象" class="headerlink" title="history 对象"></a>history 对象</h2><p>history 对象与浏览器历史记录进行交互。它包含用户在浏览器窗口中访问的 URL。</p>
 <table>
 <thead>
 <tr>
-<th>history对象方法</th>
+<th>history 对象方法</th>
 <th align="center">作用</th>
 </tr>
 </thead>
@@ -669,11 +665,11 @@
 <td align="center">前进功能</td>
 </tr>
 <tr>
-<td>history.go(参数n)</td>
-<td align="center">n&gt;0,前进n个页面；n&lt;0,后退n个页面</td>
+<td>history.go(参数 n)</td>
+<td align="center">n&gt;0,前进 n 个页面；n&lt;0,后退 n 个页面</td>
 </tr>
 </tbody></table>
-<p>参考链接：<br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Sy4y1C7ha">pink老师前端入门</a></p>
+<p>参考链接：<br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Sy4y1C7ha">pink 老师前端入门</a></p>
 
                 
             </div>
@@ -738,12 +734,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Javascript/">
-                                    <span class="chip bg-color">Javascript</span>
-                                </a>
-                            
-                                <a href="/tags/BOM/">
-                                    <span class="chip bg-color">BOM</span>
+                                <a href="/tags/JavaScript/">
+                                    <span class="chip bg-color">JavaScript</span>
                                 </a>
                             
                         </div>
@@ -1166,8 +1158,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Javascript/">
-                        <span class="chip bg-color">Javascript</span>
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
                 </div>
@@ -1215,8 +1207,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/webpack/">
-                        <span class="chip bg-color">webpack</span>
+                    <a href="/tags/Webpack/">
+                        <span class="chip bg-color">Webpack</span>
                     </a>
                     
                 </div>
@@ -1446,7 +1438,7 @@
       <a href="/about" target="_blank">赤蓝紫</a>
       |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
       <br />
-       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">169k</span>&nbsp;字      
+       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">172.3k</span>&nbsp;字      
       <span id="busuanzi_container_site_pv"> |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次 </span>
        
       <span id="busuanzi_container_site_uv"> |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人 </span>

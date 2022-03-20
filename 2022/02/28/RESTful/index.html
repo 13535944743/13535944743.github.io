@@ -422,8 +422,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/HTTP/">
-                                <span class="chip bg-color">HTTP</span>
+                            <a href="/tags/%E6%8E%A5%E5%8F%A3/">
+                                <span class="chip bg-color">接口</span>
                             </a>
                         
                     </div>
@@ -434,8 +434,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                前端
+                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
+                                后端
                             </a>
                         
                     </div>
@@ -483,16 +483,16 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="RESTful接口设计规范"><a href="#RESTful接口设计规范" class="headerlink" title="RESTful接口设计规范"></a>RESTful接口设计规范</h1><ul>
-<li><p><strong>协议</strong>：API与用户的通信协议，尽量使用HTTPS</p>
+                <h1 id="RESTful-接口设计规范"><a href="#RESTful-接口设计规范" class="headerlink" title="RESTful 接口设计规范"></a>RESTful 接口设计规范</h1><ul>
+<li><p><strong>协议</strong>：API 与用户的通信协议，尽量使用 HTTPS</p>
 </li>
-<li><p><strong>域名</strong>：尽量将API部署在专用域名下，如<code> https://api.example.com</code>。如果API很简单，不会有进一步的扩展，则可以放在主域名下，如<code> https://example.com/api/</code></p>
+<li><p><strong>域名</strong>：尽量将 API 部署在专用域名下，如<code> https://api.example.com</code>。如果 API 很简单，不会有进一步的扩展，则可以放在主域名下，如<code> https://example.com/api/</code></p>
 </li>
-<li><p><strong>版本</strong>：将API的版本号放到URL中，如<code> https://api.example.com/v1/</code>。或将版本号放在HTTP头信息中。</p>
+<li><p><strong>版本</strong>：将 API 的版本号放到 URL 中，如<code> https://api.example.com/v1/</code>。或将版本号放在 HTTP 头信息中。</p>
 </li>
-<li><p><strong>路径</strong>：在RESTful架构中，每个网址代表一种资源，即网址中不能有动词，只能有名词，而且使用的名词一般和数据库的表格名对应。如<code>  https://api.example.com/v1/users</code></p>
+<li><p><strong>路径</strong>：在 RESTful 架构中，每个网址代表一种资源，即网址中不能有动词，只能有名词，而且使用的名词一般和数据库的表格名对应。如<code> https://api.example.com/v1/users</code></p>
 </li>
-<li><p><strong>HTTP动词</strong>：资源的具体操作类型</p>
+<li><p><strong>HTTP 动词</strong>：资源的具体操作类型</p>
 <ul>
 <li>GET(读取)：从服务器读取资源</li>
 <li>POST(创建)：在服务器新建资源</li>
@@ -502,14 +502,14 @@
 </ul>
 <p>不常用的两个：</p>
 <ul>
-<li><p>HEAD：获取资源的元数据(和GET类似，只是没有响应体)</p>
+<li><p>HEAD：获取资源的元数据(和 GET 类似，只是没有响应体)</p>
 </li>
 <li><p>OPTIONS：获取信息(关于资源的哪些属性是客户端可以改变的</p>
 </li>
 </ul>
 <p><img src="https://s2.loli.net/2022/02/28/IJUrwTfCnqXvF89.png" alt="image-20220210134816272"></p>
 </li>
-<li><p><strong>过滤信息</strong>：如果记录数量很多，API应该提供参数，过滤返回结果。</p>
+<li><p><strong>过滤信息</strong>：如果记录数量很多，API 应该提供参数，过滤返回结果。</p>
 <p>常见参数：</p>
 <ul>
 <li>?limit=10：指定返回记录的数量</li>
@@ -519,21 +519,21 @@
 <li>?id=1：指定筛选条件</li>
 </ul>
 </li>
-<li><p><strong>状态码</strong>：客户端的每一次请求，服务器都应该给出响应。响应包括HTTP状态码和数据两部分</p>
+<li><p><strong>状态码</strong>：客户端的每一次请求，服务器都应该给出响应。响应包括 HTTP 状态码和数据两部分</p>
 </li>
-<li><p><strong>返回结果</strong>：API返回的数据格式，不应该是纯文本，而应该是JSON对象，这样才可以放回标准的格式化数据。服务器回应的HTTP头部的<code> Content-Type</code>属性也应该设为<code> application/json</code></p>
+<li><p><strong>返回结果</strong>：API 返回的数据格式，不应该是纯文本，而应该是 JSON 对象，这样才可以放回标准的格式化数据。服务器回应的 HTTP 头部的<code> Content-Type</code>属性也应该设为<code> application/json</code></p>
 <p><img src="https://s2.loli.net/2022/02/28/vDzmrRVoL3Wajsf.png" alt="image-20220210135856605"></p>
 </li>
 <li><p><strong>错误处理</strong>：状态码反应发生的错误，具体的错误信息放在数据体中</p>
 <p><img src="https://s2.loli.net/2022/02/28/CFru1mcIayXP8Nl.png" alt="image-20220210140039430"></p>
 </li>
-<li><p><strong>身份认证</strong>：例如基于JWT的接口权限认证</p>
+<li><p><strong>身份认证</strong>：例如基于 JWT 的接口权限认证</p>
 <ul>
 <li>字段名：<code> Authorization</code></li>
 <li>字段值：<code> Bearer token数据</code></li>
 </ul>
 </li>
-<li><p><strong>跨端处理</strong>：在服务端设置CORS以允许客户端跨域资源请求</p>
+<li><p><strong>跨端处理</strong>：在服务端设置 CORS 以允许客户端跨域资源请求</p>
 </li>
 </ul>
 
@@ -600,8 +600,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/HTTP/">
-                                    <span class="chip bg-color">HTTP</span>
+                                <a href="/tags/%E6%8E%A5%E5%8F%A3/">
+                                    <span class="chip bg-color">接口</span>
                                 </a>
                             
                         </div>
@@ -1312,7 +1312,7 @@
       <a href="/about" target="_blank">赤蓝紫</a>
       |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
       <br />
-       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">169k</span>&nbsp;字      
+       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">172.3k</span>&nbsp;字      
       <span id="busuanzi_container_site_pv"> |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次 </span>
        
       <span id="busuanzi_container_site_uv"> |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人 </span>
