@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.clzczh.top/2022/03/20/javascript-toolFunction-2/</loc>
+    
+    <lastmod>2022-03-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.clzczh.top/2021/10/01/webpack/</loc>
     
     <lastmod>2022-03-20</lastmod>
@@ -174,15 +183,6 @@
   
   <url>
     <loc>https://www.clzczh.top/2021/08/19/Chrome-Debug/</loc>
-    
-    <lastmod>2022-03-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.clzczh.top/2022/03/20/javascript-toolFunction-2/</loc>
     
     <lastmod>2022-03-20</lastmod>
     
@@ -848,14 +848,14 @@
 
   
   <url>
-    <loc>https://www.clzczh.top/tags/hexo/</loc>
+    <loc>https://www.clzczh.top/tags/blog/</loc>
     <lastmod>2022-03-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.clzczh.top/tags/blog/</loc>
+    <loc>https://www.clzczh.top/tags/hexo/</loc>
     <lastmod>2022-03-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1030,13 +1030,6 @@
   </url>
   
   <url>
-    <loc>https://www.clzczh.top/tags/Vuex/</loc>
-    <lastmod>2022-03-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.clzczh.top/tags/Webpack/</loc>
     <lastmod>2022-03-20</lastmod>
     <changefreq>weekly</changefreq>
@@ -1052,6 +1045,13 @@
   
   <url>
     <loc>https://www.clzczh.top/tags/WebGL/</loc>
+    <lastmod>2022-03-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.clzczh.top/tags/Vuex/</loc>
     <lastmod>2022-03-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
