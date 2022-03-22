@@ -387,11 +387,11 @@
                 </a>
                 
                 
-                <a href="/tags/JavaScript/" title="JavaScript: 16">
+                <a href="/tags/JavaScript/" title="JavaScript: 17">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             data-tagname="JavaScript" style="background-color: #F8F9F9;">JavaScript
-                        <span class="tag-length">16</span>
+                        <span class="tag-length">17</span>
                     </span>
                 </a>
                 
@@ -680,7 +680,7 @@
   async("/libs/jqcloud/jqcloud-1.0.4.min.js", function() {
     
 
-    $('#tag-wordcloud').jQCloud([{"text":"blog","weight":4,"link":"/tags/blog/"},{"text":"hexo","weight":2,"link":"/tags/hexo/"},{"text":"Chrome Debug","weight":1,"link":"/tags/Chrome-Debug/"},{"text":"布局","weight":4,"link":"/tags/布局/"},{"text":"HTML","weight":2,"link":"/tags/HTML/"},{"text":"JavaScript","weight":16,"link":"/tags/JavaScript/"},{"text":"Python","weight":7,"link":"/tags/Python/"},{"text":"接口","weight":1,"link":"/tags/接口/"},{"text":"SQL","weight":4,"link":"/tags/SQL/"},{"text":"axios","weight":2,"link":"/tags/axios/"},{"text":"计算机网络","weight":6,"link":"/tags/计算机网络/"},{"text":"CSS","weight":3,"link":"/tags/CSS/"},{"text":"Express","weight":4,"link":"/tags/Express/"},{"text":"git","weight":4,"link":"/tags/git/"},{"text":"LeetCode","weight":2,"link":"/tags/LeetCode/"},{"text":"Less","weight":1,"link":"/tags/Less/"},{"text":"Node.js","weight":2,"link":"/tags/Node-js/"},{"text":"VSCode","weight":1,"link":"/tags/VSCode/"},{"text":"php","weight":2,"link":"/tags/php/"},{"text":"Promise","weight":2,"link":"/tags/Promise/"},{"text":"uni-app","weight":1,"link":"/tags/uni-app/"},{"text":"Vue","weight":12,"link":"/tags/Vue/"},{"text":"Vue Router","weight":2,"link":"/tags/Vue-Router/"},{"text":"Vue3","weight":4,"link":"/tags/Vue3/"},{"text":"Vue-router","weight":2,"link":"/tags/Vue-router/"},{"text":"Vuex","weight":1,"link":"/tags/Vuex/"},{"text":"Webpack","weight":2,"link":"/tags/Webpack/"},{"text":"青训营","weight":11,"link":"/tags/青训营/"},{"text":"WebGL","weight":1,"link":"/tags/WebGL/"},{"text":"动画","weight":1,"link":"/tags/动画/"},{"text":"调试","weight":1,"link":"/tags/调试/"},{"text":"HTTP","weight":1,"link":"/tags/HTTP/"},{"text":"Web多媒体","weight":1,"link":"/tags/Web多媒体/"},{"text":"TypeScript","weight":1,"link":"/tags/TypeScript/"},{"text":"安全","weight":1,"link":"/tags/安全/"}], {
+    $('#tag-wordcloud').jQCloud([{"text":"blog","weight":4,"link":"/tags/blog/"},{"text":"hexo","weight":2,"link":"/tags/hexo/"},{"text":"Chrome Debug","weight":1,"link":"/tags/Chrome-Debug/"},{"text":"布局","weight":4,"link":"/tags/布局/"},{"text":"HTML","weight":2,"link":"/tags/HTML/"},{"text":"JavaScript","weight":17,"link":"/tags/JavaScript/"},{"text":"Python","weight":7,"link":"/tags/Python/"},{"text":"接口","weight":1,"link":"/tags/接口/"},{"text":"SQL","weight":4,"link":"/tags/SQL/"},{"text":"axios","weight":2,"link":"/tags/axios/"},{"text":"计算机网络","weight":6,"link":"/tags/计算机网络/"},{"text":"CSS","weight":3,"link":"/tags/CSS/"},{"text":"Express","weight":4,"link":"/tags/Express/"},{"text":"git","weight":4,"link":"/tags/git/"},{"text":"LeetCode","weight":2,"link":"/tags/LeetCode/"},{"text":"Less","weight":1,"link":"/tags/Less/"},{"text":"Node.js","weight":2,"link":"/tags/Node-js/"},{"text":"VSCode","weight":1,"link":"/tags/VSCode/"},{"text":"php","weight":2,"link":"/tags/php/"},{"text":"Promise","weight":2,"link":"/tags/Promise/"},{"text":"uni-app","weight":1,"link":"/tags/uni-app/"},{"text":"Vue","weight":12,"link":"/tags/Vue/"},{"text":"Vue Router","weight":2,"link":"/tags/Vue-Router/"},{"text":"Vue3","weight":4,"link":"/tags/Vue3/"},{"text":"Vue-router","weight":2,"link":"/tags/Vue-router/"},{"text":"Vuex","weight":1,"link":"/tags/Vuex/"},{"text":"Webpack","weight":2,"link":"/tags/Webpack/"},{"text":"青训营","weight":11,"link":"/tags/青训营/"},{"text":"WebGL","weight":1,"link":"/tags/WebGL/"},{"text":"动画","weight":1,"link":"/tags/动画/"},{"text":"调试","weight":1,"link":"/tags/调试/"},{"text":"HTTP","weight":1,"link":"/tags/HTTP/"},{"text":"Web多媒体","weight":1,"link":"/tags/Web多媒体/"},{"text":"TypeScript","weight":1,"link":"/tags/TypeScript/"},{"text":"安全","weight":1,"link":"/tags/安全/"}], {
         autoResize: true
     });
   })
@@ -751,7 +751,7 @@
       <a href="/about" target="_blank">赤蓝紫</a>
       |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
       <br />
-       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">172.3k</span>&nbsp;字      
+       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">175.4k</span>&nbsp;字      
       <span id="busuanzi_container_site_pv"> |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次 </span>
        
       <span id="busuanzi_container_site_uv"> |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人 </span>
@@ -1005,8 +1005,10 @@ $(function () {
 
                           
                               
-                                <script async
-                                  src="/libs/others/busuanzi.pure.mini.js"></script>
+                                <script>
+                                  $.getScript("/libs/others/busuanzi.pure.mini.js")
+                                </script>
+                                
                                 
                                   
                                       
