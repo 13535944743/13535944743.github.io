@@ -2,6 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.clzczh.top/2021/09/09/javascript-Event/</loc>
+    
+    <lastmod>2022-03-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.clzczh.top/2021/09/02/Javascript-DOM-2/</loc>
+    
+    <lastmod>2022-03-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.clzczh.top/2021/08/26/Javascript-DOM-1/</loc>
+    
+    <lastmod>2022-03-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.clzczh.top/2021/10/01/Javascript-BOM/</loc>
+    
+    <lastmod>2022-03-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.clzczh.top/2022/03/25/css-center/</loc>
     
     <lastmod>2022-03-25</lastmod>
@@ -48,24 +84,6 @@
   
   <url>
     <loc>https://www.clzczh.top/2022/01/17/yc-javascript/</loc>
-    
-    <lastmod>2022-03-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.clzczh.top/2021/09/02/Javascript-DOM-2/</loc>
-    
-    <lastmod>2022-03-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.clzczh.top/2021/08/26/Javascript-DOM-1/</loc>
     
     <lastmod>2022-03-20</lastmod>
     
@@ -183,24 +201,6 @@
   
   <url>
     <loc>https://www.clzczh.top/2021/10/03/Javascript-threeSeries/</loc>
-    
-    <lastmod>2022-03-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.clzczh.top/2021/09/09/javascript-Event/</loc>
-    
-    <lastmod>2022-03-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.clzczh.top/2021/10/01/Javascript-BOM/</loc>
     
     <lastmod>2022-03-20</lastmod>
     
@@ -875,6 +875,13 @@
 
   
   <url>
+    <loc>https://www.clzczh.top/tags/hexo/</loc>
+    <lastmod>2022-03-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://www.clzczh.top/tags/blog/</loc>
     <lastmod>2022-03-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -889,13 +896,6 @@
   </url>
   
   <url>
-    <loc>https://www.clzczh.top/tags/hexo/</loc>
-    <lastmod>2022-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.clzczh.top/tags/%E5%B8%83%E5%B1%80/</loc>
     <lastmod>2022-03-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -903,14 +903,14 @@
   </url>
   
   <url>
-    <loc>https://www.clzczh.top/tags/JavaScript/</loc>
+    <loc>https://www.clzczh.top/tags/HTML/</loc>
     <lastmod>2022-03-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.clzczh.top/tags/HTML/</loc>
+    <loc>https://www.clzczh.top/tags/JavaScript/</loc>
     <lastmod>2022-03-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -994,14 +994,14 @@
   </url>
   
   <url>
-    <loc>https://www.clzczh.top/tags/VSCode/</loc>
+    <loc>https://www.clzczh.top/tags/php/</loc>
     <lastmod>2022-03-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.clzczh.top/tags/php/</loc>
+    <loc>https://www.clzczh.top/tags/VSCode/</loc>
     <lastmod>2022-03-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
