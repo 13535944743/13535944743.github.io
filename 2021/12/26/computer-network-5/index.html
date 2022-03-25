@@ -482,109 +482,109 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="计算机网络-五-运输层"><a href="#计算机网络-五-运输层" class="headerlink" title="计算机网络(五)    运输层"></a>计算机网络(五)    运输层</h1><h2 id="1-运输层协议概述"><a href="#1-运输层协议概述" class="headerlink" title="1. 运输层协议概述"></a>1. 运输层协议概述</h2><p>运输层向它上面的应用层提供通信服务，它属于面向通信部份的最高层，也是用户功能中的最低层</p>
-<p><strong>端到端的通信</strong>：进程之间的通信。主机A的某个进程和主机B上的另一个进程进行通信</p>
+                <h1 id="计算机网络-五-运输层"><a href="#计算机网络-五-运输层" class="headerlink" title="计算机网络(五) 运输层"></a>计算机网络(五) 运输层</h1><h2 id="1-运输层协议概述"><a href="#1-运输层协议概述" class="headerlink" title="1. 运输层协议概述"></a>1. 运输层协议概述</h2><p>运输层向它上面的应用层提供通信服务，它属于面向通信部份的最高层，也是用户功能中的最低层</p>
+<p><strong>端到端的通信</strong>：进程之间的通信。主机 A 的某个进程和主机 B 上的另一个进程进行通信</p>
 <p><strong>网络层和运输层的区别</strong>：<strong>网络层是为主机之间提供逻辑通信，运输层是为应用进程之间提供端到端的逻辑通信</strong>。</p>
 <h2 id="2-运输层的两个主要协议"><a href="#2-运输层的两个主要协议" class="headerlink" title="2. 运输层的两个主要协议"></a>2. 运输层的两个主要协议</h2><ul>
-<li>用户数据报协议UDP：传送的数据单位协议是<strong>UDP报文</strong>或<strong>用户数据报</strong></li>
-<li>传输控制协议TCP：传送的数据单位协议是<strong>TCP报文段</strong></li>
+<li>用户数据报协议 UDP：传送的数据单位协议是<strong>UDP 报文</strong>或<strong>用户数据报</strong></li>
+<li>传输控制协议 TCP：传送的数据单位协议是<strong>TCP 报文段</strong></li>
 </ul>
-<h3 id="2-1-用户数据报协议UDP"><a href="#2-1-用户数据报协议UDP" class="headerlink" title="2.1 用户数据报协议UDP"></a>2.1 用户数据报协议UDP</h3><p>UDP在IP的数据报服务之上增加的功能·</p>
+<h3 id="2-1-用户数据报协议-UDP"><a href="#2-1-用户数据报协议-UDP" class="headerlink" title="2.1 用户数据报协议 UDP"></a>2.1 用户数据报协议 UDP</h3><p>UDP 在 IP 的数据报服务之上增加的功能·</p>
 <ul>
 <li>复用和分用的功能</li>
 <li>差错检测的功能</li>
 </ul>
-<h4 id="2-1-1-UDP的主要特点"><a href="#2-1-1-UDP的主要特点" class="headerlink" title="2.1.1 UDP的主要特点"></a>2.1.1 UDP的主要特点</h4><ul>
-<li><strong>UDP是无连接的</strong>：减少了开销和发送数据之前的时延</li>
-<li><strong>UDP尽最大努力交付</strong>：不保证可靠交付</li>
-<li><strong>UDP是面向报文的</strong>：UDP一次交付一个完整的报文</li>
-<li><strong>UDP没有拥塞控制</strong></li>
-<li><strong>UDP支持一对一、一对多、多对一、多对多的交互通信</strong></li>
-<li><strong>UDP的首部开销小</strong>，只有8个字节(由4个字段组成，每个字段都是2个字节)，比TCP的20个字节的首部要短</li>
+<h4 id="2-1-1-UDP-的主要特点"><a href="#2-1-1-UDP-的主要特点" class="headerlink" title="2.1.1 UDP 的主要特点"></a>2.1.1 UDP 的主要特点</h4><ul>
+<li><strong>UDP 是无连接的</strong>：减少了开销和发送数据之前的时延</li>
+<li><strong>UDP 尽最大努力交付</strong>：不保证可靠交付</li>
+<li><strong>UDP 是面向报文的</strong>：UDP 一次交付一个完整的报文</li>
+<li><strong>UDP 没有拥塞控制</strong></li>
+<li><strong>UDP 支持一对一、一对多、多对一、多对多的交互通信</strong></li>
+<li><strong>UDP 的首部开销小</strong>，只有 8 个字节(由 4 个字段组成，每个字段都是 2 个字节)，比 TCP 的 20 个字节的首部要短</li>
 </ul>
-<h3 id="2-2-传输控制协议TCP"><a href="#2-2-传输控制协议TCP" class="headerlink" title="2.2 传输控制协议TCP"></a>2.2 传输控制协议TCP</h3><h4 id="2-2-1-TCP最主要的特点"><a href="#2-2-1-TCP最主要的特点" class="headerlink" title="2.2.1 TCP最主要的特点"></a>2.2.1 TCP最主要的特点</h4><ul>
-<li><p>TCP是<b style="color: red">面向连接</b>的运输层协议</p>
+<h3 id="2-2-传输控制协议-TCP"><a href="#2-2-传输控制协议-TCP" class="headerlink" title="2.2 传输控制协议 TCP"></a>2.2 传输控制协议 TCP</h3><h4 id="2-2-1-TCP-最主要的特点"><a href="#2-2-1-TCP-最主要的特点" class="headerlink" title="2.2.1 TCP 最主要的特点"></a>2.2.1 TCP 最主要的特点</h4><ul>
+<li><p>TCP 是<b style="color: red">面向连接</b>的运输层协议</p>
 </li>
-<li><p>每一条TCP连接<strong>只能由两个端点</strong>，每一条TCP连接都<strong>只能是一对一</strong>的</p>
+<li><p>每一条 TCP 连接<strong>只能由两个端点</strong>，每一条 TCP 连接都<strong>只能是一对一</strong>的</p>
 </li>
-<li><p>TCP提供<b style="color: red">可靠交付</b>的服务</p>
+<li><p>TCP 提供<b style="color: red">可靠交付</b>的服务</p>
 </li>
-<li><p>TCP提供<strong>全双工</strong>通信</p>
+<li><p>TCP 提供<strong>全双工</strong>通信</p>
 </li>
 <li><p><strong>面向字节流</strong>：流指的是流入或流出进程的字节序列</p>
-<p>应用程序和TCP的交互是一次一个数据块，但TCP把应用程序交下来的数据当成一连串无结构的字节流。(接收方应用程序收到的数据块和发送方应用程序发出的<strong>数据块不一定具有对应大小的关系</strong>，但是收到的<strong>字节流完全一样</strong>)</p>
+<p>应用程序和 TCP 的交互是一次一个数据块，但 TCP 把应用程序交下来的数据当成一连串无结构的字节流。(接收方应用程序收到的数据块和发送方应用程序发出的<strong>数据块不一定具有对应大小的关系</strong>，但是收到的<strong>字节流完全一样</strong>)</p>
 </li>
 </ul>
-<h4 id="2-2-2-TCP的连接"><a href="#2-2-2-TCP的连接" class="headerlink" title="2.2..2 TCP的连接"></a>2.2..2 TCP的连接</h4><ul>
-<li><p>每一条TCP连接有<strong>两个端点</strong></p>
+<h4 id="2-2-2-TCP-的连接"><a href="#2-2-2-TCP-的连接" class="headerlink" title="2.2..2 TCP 的连接"></a>2.2..2 TCP 的连接</h4><ul>
+<li><p>每一条 TCP 连接有<strong>两个端点</strong></p>
 </li>
-<li><p><b style="color: red">TCP连接的断点叫做套接字(socket)或插口</b></p>
+<li><p><b style="color: red">TCP 连接的断点叫做套接字(socket)或插口</b></p>
 </li>
-<li><p><strong>端口号拼接到IP地址就构成了套接字</strong>，即套接字socket=(IP地址:端口号)</p>
-<p>例如，套接字socket=(127.0.0.1:8080)</p>
-<p>每一条TCP连接<strong>唯一</strong>地被通信两端的<strong>两个端点</strong>(即两个套接字)所确定。</p>
-<p>例如：TCP连接::= {socket1, socket2} = {(IP1:port1), (IP2, port2)}</p>
+<li><p><strong>端口号拼接到 IP 地址就构成了套接字</strong>，即套接字 socket=(IP 地址:端口号)</p>
+<p>例如，套接字 socket=(127.0.0.1:8080)</p>
+<p>每一条 TCP 连接<strong>唯一</strong>地被通信两端的<strong>两个端点</strong>(即两个套接字)所确定。</p>
+<p>例如：TCP 连接::= {socket1, socket2} = {(IP1:port1), (IP2, port2)}</p>
 </li>
 </ul>
-<p><strong>TCP连接、IP地址、套接字</strong></p>
+<p><strong>TCP 连接、IP 地址、套接字</strong></p>
 <ul>
-<li>TCP连接是由协议软件提供的一种抽象</li>
-<li>TCP连接的端点是个抽象的套接字，即(IP地址:端口号)</li>
-<li>同一个IP地址可以有多个不同的TCP连接</li>
-<li>同一个端口号可以出现在多个不同的TCP连接中</li>
+<li>TCP 连接是由协议软件提供的一种抽象</li>
+<li>TCP 连接的端点是个抽象的套接字，即(IP 地址:端口号)</li>
+<li>同一个 IP 地址可以有多个不同的 TCP 连接</li>
+<li>同一个端口号可以出现在多个不同的 TCP 连接中</li>
 </ul>
 <h3 id="2-3-可靠传输的工作原理"><a href="#2-3-可靠传输的工作原理" class="headerlink" title="2.3 可靠传输的工作原理"></a>2.3 可靠传输的工作原理</h3><h4 id="2-3-1-停止等待协议"><a href="#2-3-1-停止等待协议" class="headerlink" title="2.3.1 停止等待协议"></a>2.3.1 停止等待协议</h4><p>停止等待就是每发送完一个分组就停止发送，等待对方的确认，在收到确认后再发送下一个分组</p>
 <p><img src="https://s2.loli.net/2021/12/26/qZSudAFnCPUQyMN.jpg"></p>
 <p>出现差错：</p>
 <ul>
-<li>接收方B接收M1时检测出了差错，就丢弃M1，不通知发送方A收到有差错的分组</li>
-<li>M1在传输过程中丢失了</li>
+<li>接收方 B 接收 M1 时检测出了差错，就丢弃 M1，不通知发送方 A 收到有差错的分组</li>
+<li>M1 在传输过程中丢失了</li>
 </ul>
-<p>在上面两种情况下，B都不会发送任何信息，但是A必须重发分组，直到B正确接收为止，这样才可以实现可靠通信</p>
-<p>问题：A如何知道B是否1正确收到了M1?</p>
+<p>在上面两种情况下，B 都不会发送任何信息，但是 A 必须重发分组，直到 B 正确接收为止，这样才可以实现可靠通信</p>
+<p>问题：A 如何知道 B 是否 1 正确收到了 M1?</p>
 <p>解决方法：超时重传</p>
 <ol>
-<li>A为每一个已发送的分组都设置了一个<strong>超时计时器</strong></li>
-<li>A只要在计时器到期之前收到了相应的确认，就撤销该超时计时器，继续发送下一个分组M2</li>
-<li>如果A在超时计时器规定时间内没有收到B的确认，就认为分组错误或丢失，所以需要重发该分组</li>
+<li>A 为每一个已发送的分组都设置了一个<strong>超时计时器</strong></li>
+<li>A 只要在计时器到期之前收到了相应的确认，就撤销该超时计时器，继续发送下一个分组 M2</li>
+<li>如果 A 在超时计时器规定时间内没有收到 B 的确认，就认为分组错误或丢失，所以需要重发该分组</li>
 </ol>
-<p>问题：如果分组正确到达B但是B回送的确认丢失或延迟了，A会超时重传，B可能会受到重发的M1，B如何知道收到了重复的分组，需要丢弃。</p>
+<p>问题：如果分组正确到达 B 但是 B 回送的确认丢失或延迟了，A 会超时重传，B 可能会受到重发的 M1，B 如何知道收到了重复的分组，需要丢弃。</p>
 <p>解决方法：编号</p>
 <ol>
-<li>A为每一个发送的分组都进行编号。如果B收到了编号相同的分组，则认为收到了重复分组，丢弃重复的分组，并回传确认</li>
-<li>B也为发送的确认进行编号，指示是对哪一个分组的确认</li>
-<li>A根据确认以及它的编号，可以确定它是对哪一个分组的确认，避免重发。如果是重复的确认，则将其丢弃</li>
+<li>A 为每一个发送的分组都进行编号。如果 B 收到了编号相同的分组，则认为收到了重复分组，丢弃重复的分组，并回传确认</li>
+<li>B 也为发送的确认进行编号，指示是对哪一个分组的确认</li>
+<li>A 根据确认以及它的编号，可以确定它是对哪一个分组的确认，避免重发。如果是重复的确认，则将其丢弃</li>
 </ol>
 <p><b style="color: red">停止等待协议的要点：</b></p>
 <ul>
-<li><strong>停止等待</strong>：发送方每次只发送一个分组，在收到确认后1再发送下一个分组</li>
+<li><strong>停止等待</strong>：发送方每次只发送一个分组，在收到确认后 1 再发送下一个分组</li>
 <li><strong>编号</strong>：对发送的每个分组和确认都进行编号</li>
 <li><strong>自动重传请求</strong>：发送方为每个发送的分组设置一个超时计时器。如果发送方没有在超时计时器到期之前收到确认，则会自动重传分组</li>
 <li>简单，但<strong>信道利用率低</strong></li>
 </ul>
-<h4 id="2-3-2-连续ARQ协议"><a href="#2-3-2-连续ARQ协议" class="headerlink" title="2.3.2 连续ARQ协议"></a>2.3.2 连续ARQ协议</h4><ul>
+<h4 id="2-3-2-连续-ARQ-协议"><a href="#2-3-2-连续-ARQ-协议" class="headerlink" title="2.3.2 连续 ARQ 协议"></a>2.3.2 连续 ARQ 协议</h4><ul>
 <li>发送方一次可以发送<strong>多个分组</strong></li>
 <li>使用<strong>滑动窗口协议</strong>控制发送方和接收方所能发送和接收的分组的数量和编号</li>
 <li>每收到一个确认，发送方就把发送窗口<strong>向前滑动</strong></li>
-<li>采用<strong>回退N</strong>方法进行重传</li>
+<li>采用<strong>回退 N</strong>方法进行重传</li>
 </ul>
 <p><img src="https://s2.loli.net/2021/12/26/QPXtuv5FWGSEcV4.jpg"></p>
 <p>接收方一般采用<strong>累计确认</strong>的方式。即不必对收到的分组逐个发送确认，而是<strong>对按序到达的最后一个分组发送确认</strong>，即<strong>到这个分组为止的所有分组都已经正确收到了</strong></p>
 <p>优点：容易实现，即使确认丢失也不必重传</p>
-<p>缺点：不能向发送方反映出接收方已经正确收到的所有分组的信息(如发送1, 2, 3, 4, 5, 接收方收到1, 2, 4, 5，只能向发送方反映接收到了1, 2分组，不能像发送方确认正确收到4, 5分组)</p>
-<p>如果发送方发送1, 2, 3, 4, 5分组，而中间的第三个分组丢失了，接收方只能对前两个分组发出确认，而发送方无法知道后面三个分组是否发送成功，所以只能把后面的三个分组都在重传一次，这就叫做<strong>回退N</strong>，表示需要回退， 去重传已经发送过的N个分组</p>
+<p>缺点：不能向发送方反映出接收方已经正确收到的所有分组的信息(如发送 1, 2, 3, 4, 5, 接收方收到 1, 2, 4, 5，只能向发送方反映接收到了 1, 2 分组，不能像发送方确认正确收到 4, 5 分组)</p>
+<p>如果发送方发送 1, 2, 3, 4, 5 分组，而中间的第三个分组丢失了，接收方只能对前两个分组发出确认，而发送方无法知道后面三个分组是否发送成功，所以只能把后面的三个分组都在重传一次，这就叫做<strong>回退 N</strong>，表示需要回退， 去重传已经发送过的 N 个分组</p>
 <p><strong>滑动窗口协议</strong>：ppt(p88)</p>
 <p><img src="https://s2.loli.net/2021/12/26/QEcHXNwW3q6y5jg.jpg"></p>
-<h3 id="2-4-TCP报文段的首部格式"><a href="#2-4-TCP报文段的首部格式" class="headerlink" title="2.4 TCP报文段的首部格式"></a>2.4 TCP报文段的首部格式</h3><p>TCP是面向字节流的，但是TCP传送的数据单元却是报文段。</p>
-<p>一个TCP报文段分为首部和数据两部分。<strong>TCP首部的最小长度是20字节</strong></p>
-<h3 id="2-5-TCP可靠传输的实现"><a href="#2-5-TCP可靠传输的实现" class="headerlink" title="2.5 TCP可靠传输的实现"></a>2.5 TCP可靠传输的实现</h3><h4 id="2-5-1-以字节为单位的滑动窗口"><a href="#2-5-1-以字节为单位的滑动窗口" class="headerlink" title="2.5.1 以字节为单位的滑动窗口"></a>2.5.1 以字节为单位的滑动窗口</h4><p>TCP使用流水线传输和滑动窗口协议实现高效、可靠的传输</p>
-<p>TCP的滑动窗口<strong>以字节为单位</strong>，发送方A和发送方B分别维持一个发送窗口和一个接收窗口。</p>
+<h3 id="2-4-TCP-报文段的首部格式"><a href="#2-4-TCP-报文段的首部格式" class="headerlink" title="2.4 TCP 报文段的首部格式"></a>2.4 TCP 报文段的首部格式</h3><p>TCP 是面向字节流的，但是 TCP 传送的数据单元却是报文段。</p>
+<p>一个 TCP 报文段分为首部和数据两部分。<strong>TCP 首部的最小长度是 20 字节</strong></p>
+<h3 id="2-5-TCP-可靠传输的实现"><a href="#2-5-TCP-可靠传输的实现" class="headerlink" title="2.5 TCP 可靠传输的实现"></a>2.5 TCP 可靠传输的实现</h3><h4 id="2-5-1-以字节为单位的滑动窗口"><a href="#2-5-1-以字节为单位的滑动窗口" class="headerlink" title="2.5.1 以字节为单位的滑动窗口"></a>2.5.1 以字节为单位的滑动窗口</h4><p>TCP 使用流水线传输和滑动窗口协议实现高效、可靠的传输</p>
+<p>TCP 的滑动窗口<strong>以字节为单位</strong>，发送方 A 和发送方 B 分别维持一个发送窗口和一个接收窗口。</p>
 <p><strong>发送窗口</strong>在没有收到确认时，可以连续把窗口内的数据全部发送出去；<strong>接收窗口</strong>只允许接收落入窗口内的数据。</p>
 <p>例子：</p>
 <p><img src="https://pic.imgdb.cn/item/61a866552ab3f51d91795cae.jpg"></p>
-<p><strong>如果A的发送窗口内的序号都已用完，但没有收到确认，则必须停止发送。</strong></p>
+<p><strong>如果 A 的发送窗口内的序号都已用完，但没有收到确认，则必须停止发送。</strong></p>
 <p><img src="https://pic.imgdb.cn/item/61a866e02ab3f51d9179ba23.jpg"></p>
-<p>发送方的应用进程把字节流写入TCP的发送缓存，接收方的应用进程从TCP的接收缓存中读取字节流。</p>
+<p>发送方的应用进程把字节流写入 TCP 的发送缓存，接收方的应用进程从 TCP 的接收缓存中读取字节流。</p>
 <p><strong>发送缓存暂时存放</strong>：</p>
 <ul>
 <li>准备发送的数据</li>
@@ -595,33 +595,33 @@
 <li>按序到达的但还没被读取的数据</li>
 <li>不按序到达的数据</li>
 </ul>
-<p>A的发送窗口并不总是和B的接收窗口一样大。</p>
-<p>TCP针对不按序到达的数据的处理：</p>
+<p>A 的发送窗口并不总是和 B 的接收窗口一样大。</p>
+<p>TCP 针对不按序到达的数据的处理：</p>
 <ul>
 <li>先临时存放在接收窗口中</li>
 <li>缺少的数据到达后，再按序交付给上层的应用进程</li>
 </ul>
-<h4 id="2-5-2-超时重传时间的选择"><a href="#2-5-2-超时重传时间的选择" class="headerlink" title="2.5.2 超时重传时间的选择"></a>2.5.2 超时重传时间的选择</h4><p>TCP每发送一个报文段，就对这个报文段设置一次计时器。</p>
+<h4 id="2-5-2-超时重传时间的选择"><a href="#2-5-2-超时重传时间的选择" class="headerlink" title="2.5.2 超时重传时间的选择"></a>2.5.2 超时重传时间的选择</h4><p>TCP 每发送一个报文段，就对这个报文段设置一次计时器。</p>
 <p>如果计时器设置的重传时间到了，但是还没有收到确认，就要重传这一报文段。</p>
-<p>加权平均往返时间、超时重传时间RTO、Karn算法</p>
-<h4 id="2-5-3-选择确认SACK"><a href="#2-5-3-选择确认SACK" class="headerlink" title="2.5.3 选择确认SACK"></a>2.5.3 选择确认SACK</h4><p>场景：收到的报文段没有差错，只是没按序号，中间还缺少某些序号的数据。选择确认SACK可以只传送缺少的数据而不重传已经正确到达接收方的数据。</p>
-<h3 id="2-6-TCP的拥塞控制-PPT-P158"><a href="#2-6-TCP的拥塞控制-PPT-P158" class="headerlink" title="2.6  TCP的拥塞控制(PPT  P158)"></a>2.6  TCP的拥塞控制(PPT  P158)</h3><p><strong>慢开始</strong>、<strong>拥塞避免算法</strong>、<strong>快重传</strong></p>
-<h3 id="2-7-TCP的连接"><a href="#2-7-TCP的连接" class="headerlink" title="2.7 TCP的连接"></a>2.7 TCP的连接</h3><p>TCP是面向连接的协议</p>
-<p>TCP连接有三个阶段：</p>
+<p>加权平均往返时间、超时重传时间 RTO、Karn 算法</p>
+<h4 id="2-5-3-选择确认-SACK"><a href="#2-5-3-选择确认-SACK" class="headerlink" title="2.5.3 选择确认 SACK"></a>2.5.3 选择确认 SACK</h4><p>场景：收到的报文段没有差错，只是没按序号，中间还缺少某些序号的数据。选择确认 SACK 可以只传送缺少的数据而不重传已经正确到达接收方的数据。</p>
+<h3 id="2-6-TCP-的拥塞控制-PPT-P158"><a href="#2-6-TCP-的拥塞控制-PPT-P158" class="headerlink" title="2.6 TCP 的拥塞控制(PPT P158)"></a>2.6 TCP 的拥塞控制(PPT P158)</h3><p><strong>慢开始</strong>、<strong>拥塞避免算法</strong>、<strong>快重传</strong></p>
+<h3 id="2-7-TCP-的连接"><a href="#2-7-TCP-的连接" class="headerlink" title="2.7 TCP 的连接"></a>2.7 TCP 的连接</h3><p>TCP 是面向连接的协议</p>
+<p>TCP 连接有三个阶段：</p>
 <ol>
 <li><strong>连接建立</strong></li>
 <li><strong>数据传送</strong></li>
 <li><strong>连接释放</strong></li>
 </ol>
-<p>TCP连接的建立<strong>采用客户服务器方式</strong>。主动发起连接建立的应用进程叫做<strong>客户端</strong>(client)，被动等待连接建立的应用进程叫做<strong>服务器</strong>(server)</p>
-<h4 id="2-7-1-TCP的连接建立"><a href="#2-7-1-TCP的连接建立" class="headerlink" title="2.7.1 TCP的连接建立"></a>2.7.1 TCP的连接建立</h4><p>TCP建立连接的过程叫做<strong>握手</strong>。握手需要在客户端和服务器之间交换三个TCP报文段，称为<strong>三报文握手</strong></p>
+<p>TCP 连接的建立<strong>采用客户服务器方式</strong>。主动发起连接建立的应用进程叫做<strong>客户端</strong>(client)，被动等待连接建立的应用进程叫做<strong>服务器</strong>(server)</p>
+<h4 id="2-7-1-TCP-的连接建立"><a href="#2-7-1-TCP-的连接建立" class="headerlink" title="2.7.1 TCP 的连接建立"></a>2.7.1 TCP 的连接建立</h4><p>TCP 建立连接的过程叫做<strong>握手</strong>。握手需要在客户端和服务器之间交换三个 TCP 报文段，称为<strong>三报文握手</strong></p>
 <p>采用三报文握手的目的：防止已失效的连接请求报文段突然又传送到了。</p>
 <p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/imsges/202112091438033.png" alt="image-20211209143835954"></p>
 <p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/imsges/202112091440908.png" alt="image-20211209144023848"></p>
 <p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/imsges/202112091440266.png" alt="image-20211209144035208"></p>
 <p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/imsges/202112091440555.png" alt="image-20211209144049512"></p>
 <p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/imsges/202112091441796.png" alt="image-20211209144100735"></p>
-<h4 id="2-7-2-TCP的连接释放"><a href="#2-7-2-TCP的连接释放" class="headerlink" title="2.7.2 TCP的连接释放"></a>2.7.2 TCP的连接释放</h4><p>TCP连接释放过程是<strong>四报文握手</strong></p>
+<h4 id="2-7-2-TCP-的连接释放"><a href="#2-7-2-TCP-的连接释放" class="headerlink" title="2.7.2 TCP 的连接释放"></a>2.7.2 TCP 的连接释放</h4><p>TCP 连接释放过程是<strong>四报文握手</strong></p>
 <p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/imsges/202112091443586.png" alt="image-20211209144315512"></p>
 <p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/imsges/202112091445966.png" alt="image-20211209144553920"></p>
 <p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/imsges/202112091446967.png" alt="image-20211209144600913"></p>
@@ -1394,7 +1394,7 @@
       <a href="/about" target="_blank">赤蓝紫</a>
       |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
       <br />
-       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">179.2k</span>&nbsp;字      
+       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">179.8k</span>&nbsp;字      
       <span id="busuanzi_container_site_pv"> |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次 </span>
        
       <span id="busuanzi_container_site_uv"> |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人 </span>

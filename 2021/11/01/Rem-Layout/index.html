@@ -457,7 +457,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    9 分
                 </div>
                 
 
@@ -482,26 +482,26 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="rem适配布局"><a href="#rem适配布局" class="headerlink" title="rem适配布局"></a>rem适配布局</h1><h2 id="rem单位"><a href="#rem单位" class="headerlink" title="rem单位"></a>rem单位</h2><p>rem是根em(root em)的缩写，是相对于根元素(html元素)的字体大小。</p>
-<p>rem作用于非根元素字体大小时，相对于根元素字体大小；rem作用于根元素字体大小时，相对于其初始字体的大小。</p>
-<p>比如，根元素（html）设置font-size = 12px;非根元素设置width: 2rem;则换成px表示就是24px。</p>
-<p>整个页面只有一个html，通过修改html的文字大小，可以很好的控制页面中元素的大小。</p>
-<h2 id="媒体查询"><a href="#媒体查询" class="headerlink" title="媒体查询"></a>媒体查询</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>媒体查询(Media Query)是CSS3新语法。</p>
+                <h1 id="rem-适配布局"><a href="#rem-适配布局" class="headerlink" title="rem 适配布局"></a>rem 适配布局</h1><h2 id="rem-单位"><a href="#rem-单位" class="headerlink" title="rem 单位"></a>rem 单位</h2><p>rem 是根 em(root em)的缩写，是相对于根元素(html 元素)的字体大小。</p>
+<p>rem 作用于非根元素字体大小时，相对于根元素字体大小；rem 作用于根元素字体大小时，相对于其初始字体的大小。</p>
+<p>比如，根元素（html）设置 font-size = 12px;非根元素设置 width: 2rem;则换成 px 表示就是 24px。</p>
+<p>整个页面只有一个 html，通过修改 html 的文字大小，可以很好的控制页面中元素的大小。</p>
+<h2 id="媒体查询"><a href="#媒体查询" class="headerlink" title="媒体查询"></a>媒体查询</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>媒体查询(Media Query)是 CSS3 新语法。</p>
 <ol>
-<li>使用@media查询，可以针对不同的媒体类型定义不同的样式；</li>
-<li>@media可以针对不同的屏幕尺寸设置不同的样式；</li>
+<li>使用@media 查询，可以针对不同的媒体类型定义不同的样式；</li>
+<li>@media 可以针对不同的屏幕尺寸设置不同的样式；</li>
 <li>重置浏览器大小的过程中，页面也会根据浏览器的宽度和高度重新渲染页面；</li>
-<li>苹果手机、Android手机平板等设备都用得到多媒体查询。</li>
+<li>苹果手机、Android 手机平板等设备都用得到多媒体查询。</li>
 </ol>
 <h3 id="语法规范"><a href="#语法规范" class="headerlink" title="语法规范"></a>语法规范</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">@media mediatype and|not|only (media feature) &#123;<br>	CSS-Code;<br>&#125;<br><br></code></pre></td></tr></table></figure>
 
 <ol>
-<li>用media开头</li>
-<li>media type媒体类型</li>
-<li>关键字and、not、only</li>
-<li>media feature媒体特性必须有小括号包含</li>
+<li>用 media 开头</li>
+<li>media type 媒体类型</li>
+<li>关键字 and、not、only</li>
+<li>media feature 媒体特性必须有小括号包含</li>
 </ol>
-<h4 id="media-type查询类型"><a href="#media-type查询类型" class="headerlink" title="media type查询类型"></a>media type查询类型</h4><p>将不同的终端设备划分成不同的类型。称为媒体类型。</p>
+<h4 id="media-type-查询类型"><a href="#media-type-查询类型" class="headerlink" title="media type 查询类型"></a>media type 查询类型</h4><p>将不同的终端设备划分成不同的类型。称为媒体类型。</p>
 <ol>
 <li>all：用于所有设备</li>
 <li>print：用于打印机和打印预览</li>
@@ -518,35 +518,35 @@
 <p>例子：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;!DOCTYPE html&gt;<br>&lt;html lang=&quot;zh-CN&quot;&gt;<br><br>&lt;head&gt;<br>	&lt;meta charset=&quot;UTF-8&quot;&gt;<br>	&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;<br>	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;<br>	&lt;title&gt;Document&lt;/title&gt;<br>&lt;/head&gt;<br>&lt;style&gt;<br>	@media screen and (max-width: 800px) &#123;<br>		body &#123;<br>			background-color: pink;<br>		&#125;<br>	&#125;<br><br>	@media screen and (max-width: 500px) &#123;<br>		body &#123;<br>			background-color: purple;<br>		&#125;<br>	&#125;<br>&lt;/style&gt;<br><br>&lt;body&gt;<br>&lt;/body&gt;<br><br>&lt;/html&gt;<br><br></code></pre></td></tr></table></figure>
 
-<p>当页面宽度小于等于500px时，页面背景色为紫色；当页面宽度大于500px小于等于800px时，页面背景色为粉色。</p>
+<p>当页面宽度小于等于 500px 时，页面背景色为紫色；当页面宽度大于 500px 小于等于 800px 时，页面背景色为粉色。</p>
 <p>多个媒体特性示例：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">@media screen and (min-width: 540px) and (max-width: 969px) &#123;<br>	body &#123;<br>			background-color: green;<br>	&#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
 
 <h3 id="引入资源"><a href="#引入资源" class="headerlink" title="引入资源"></a>引入资源</h3><p>当样式比较多时，我们可以针对不同的媒体使用不同的样式表。</p>
-<p>原理：直接在link中判断设备的尺寸，然后引用不同的css文件。</p>
+<p>原理：直接在 link 中判断设备的尺寸，然后引用不同的 css 文件。</p>
 <h4 id="语法规范-1"><a href="#语法规范-1" class="headerlink" title="语法规范"></a>语法规范</h4><p><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;mystylesheet.css&quot; media=&quot;media and|not|only (media feature)&quot;&gt;</code></p>
 <p>示例：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;!DOCTYPE html&gt;<br>&lt;html lang=&quot;zh-CN&quot;&gt;<br><br>&lt;head&gt;<br>	&lt;meta charset=&quot;UTF-8&quot;&gt;<br>	&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;<br>	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;<br>	&lt;title&gt;Document&lt;/title&gt;<br>&lt;/head&gt;<br>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/style320.css&quot; media=&quot;screen and (min-width: 320px)&quot;&gt;<br>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/style640.css&quot; media=&quot;screen and (min-width: 640px)&quot;&gt;<br><br>&lt;body&gt;<br>	&lt;div&gt;1&lt;/div&gt;<br>	&lt;div&gt;2&lt;/div&gt;<br>&lt;/body&gt;<br><br>&lt;/html&gt;<br><br></code></pre></td></tr></table></figure>
 
-<h2 id="less"><a href="#less" class="headerlink" title="less"></a>less</h2><h3 id="CSS弊端"><a href="#CSS弊端" class="headerlink" title="CSS弊端"></a>CSS弊端</h3><p>CSS是非程序是语言，没有变量、函数、作用域等概念。</p>
+<h2 id="less"><a href="#less" class="headerlink" title="less"></a>less</h2><h3 id="CSS-弊端"><a href="#CSS-弊端" class="headerlink" title="CSS 弊端"></a>CSS 弊端</h3><p>CSS 是非程序是语言，没有变量、函数、作用域等概念。</p>
 <ol>
-<li>需要大量看似没有逻辑的代码，CSS冗余度较高</li>
+<li>需要大量看似没有逻辑的代码，CSS 冗余度较高</li>
 <li>不方便维护及扩展，不利于复用</li>
 <li>没有良好的计算能力</li>
 </ol>
-<h3 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h3><p>Less（Leaner Style Sheets的缩写）是一门CSS扩展语言，成为CSS预处理器。</p>
-<p>常见的CSS预处理器： Sass、Less、Stylus</p>
-<p>Less作为CSS一种形式上的扩展，没有减少CSS的功能，而是在现有的CSS语法上，加入程序式语言的特性。</p>
-<p>引入了变量、Mixin（混入）、运算以及函数等功能。大大简化了CSS编写，并且降低了CSS的维护成本，可以实现用更少的代码完成更多的事。</p>
-<p>总结：Less是一门CSS预处理1语言，它扩展了CSS的动态特性。</p>
-<p><a target="_blank" rel="noopener" href="http://lesscss.cn/">Less官网</a></p>
+<h3 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h3><p>Less（Leaner Style Sheets 的缩写）是一门 CSS 扩展语言，成为 CSS 预处理器。</p>
+<p>常见的 CSS 预处理器： Sass、Less、Stylus</p>
+<p>Less 作为 CSS 一种形式上的扩展，没有减少 CSS 的功能，而是在现有的 CSS 语法上，加入程序式语言的特性。</p>
+<p>引入了变量、Mixin（混入）、运算以及函数等功能。大大简化了 CSS 编写，并且降低了 CSS 的维护成本，可以实现用更少的代码完成更多的事。</p>
+<p>总结：Less 是一门 CSS 预处理 1 语言，它扩展了 CSS 的动态特性。</p>
+<p><a target="_blank" rel="noopener" href="http://lesscss.cn/">Less 官网</a></p>
 <h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>过程：</p>
 <ol>
-<li>新建后缀名为less的文件，书写less语句</li>
-<li>less编译生成css文件</li>
-<li>引入CSS文件</li>
+<li>新建后缀名为 less 的文件，书写 less 语句</li>
+<li>less 编译生成 css 文件</li>
+<li>引入 CSS 文件</li>
 </ol>
-<h4 id="Less变量"><a href="#Less变量" class="headerlink" title="Less变量"></a>Less变量</h4><p>没有固定的值，可以改变的。颜色和数值经常使用。</p>
+<h4 id="Less-变量"><a href="#Less-变量" class="headerlink" title="Less 变量"></a>Less 变量</h4><p>没有固定的值，可以改变的。颜色和数值经常使用。</p>
 <p><code>@变量名:值;</code></p>
 <p><b>变量命名规范</b></p>
 <ol>
@@ -557,74 +557,73 @@
 </ol>
 <p>使用示例：</p>
 <p><img src="https://pic.imgdb.cn/item/6102825a5132923bf80bbd53.jpg"></p>
-<h4 id="Less编译"><a href="#Less编译" class="headerlink" title="Less编译"></a>Less编译</h4><p>Less包含一套自定义的语法和一个解析器，用户根据这些语法定义自己的样式规则，这些规则最终会通过解析器，编译生成对应的CSS文件。</p>
-<p>VSCode插件：Easy LESS插件可以实现</p>
-<p>安装插件后，重新加载VSCode，之后只要保存less文件，会自动生成对应的CSS文件。</p>
-<h4 id="Less嵌套"><a href="#Less嵌套" class="headerlink" title="Less嵌套"></a>Less嵌套</h4><p>实例：<br>CSS：</p>
+<h4 id="Less-编译"><a href="#Less-编译" class="headerlink" title="Less 编译"></a>Less 编译</h4><p>Less 包含一套自定义的语法和一个解析器，用户根据这些语法定义自己的样式规则，这些规则最终会通过解析器，编译生成对应的 CSS 文件。</p>
+<p>VSCode 插件：Easy LESS 插件可以实现</p>
+<p>安装插件后，重新加载 VSCode，之后只要保存 less 文件，会自动生成对应的 CSS 文件。</p>
+<h4 id="Less-嵌套"><a href="#Less-嵌套" class="headerlink" title="Less 嵌套"></a>Less 嵌套</h4><p>实例：<br>CSS：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">.x .y &#123;<br>  background-color: #fff;<br>&#125;<br><br><br></code></pre></td></tr></table></figure>
 
 <p>Less:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">.x &#123;<br>  .y &#123;<br>	background-color: #fff;<br>  &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
 
-<p>生成的CSS样式和上面的是一样的</p>
+<p>生成的 CSS 样式和上面的是一样的</p>
 <br>
 
 <p style = "color: red">如果遇到交集|伪类|伪元素选择器：<br />如果内层选择器前面没有&符号，则被解析为父选择器的后代；如果有，责备解析为父元素自身或父元素的伪类。</p>
 
-
 <p>CSS:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">.header a:hover &#123;<br>  color: blue;<br>&#125;<br>.header a::before &#123;<br>  content: &quot;&quot;;<br>&#125;<br><br></code></pre></td></tr></table></figure>
 
-<p>Less: </p>
+<p>Less:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">.header a &#123;<br>  &amp;:hover &#123;<br>color: blue;<br>  &#125;<br>&#125;<br>.header a &#123;<br>  &amp;::before &#123;<br>content: &quot;&quot;;<br>  &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
 
-<h4 id="Less运算"><a href="#Less运算" class="headerlink" title="Less运算"></a>Less运算</h4><p>和其他语言运算大同小异</p>
+<h4 id="Less-运算"><a href="#Less-运算" class="headerlink" title="Less 运算"></a>Less 运算</h4><p>和其他语言运算大同小异</p>
 <ol>
 <li>运算符左右两侧各自添加一个空格；</li>
 <li>多个数参与运算，如果只有一个数有单位，则最后就是以这个单位为准；</li>
 <li>多个数参与运算，如果多个数有单位，则最后就是以第一个单位为准；</li>
 </ol>
 <p>用上”/“的式子可能会不起作用，甚至会报错，需要用小括号包住整个式子或者除法的式子。</p>
-<p>另外，Less注释为 <code>//注释内容</code>,并且不会出现在对应的CSS中。</p>
+<p>另外，Less 注释为 <code>//注释内容</code>,并且不会出现在对应的 CSS 中。</p>
 <p>Less:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">@border: 5px;    @size: 50px;    div &#123;      width: 200px + 50;      height: 200px - 50;      border: @border solid #ccc;      margin: 100px auto;    &#125;    p &#123;      width: (82rem / @size + 50px);      height: 82 / 50rem;      // 没有实现运算, height: 30 + 82 / 50rem; 会报错      // 改成 height: (30 + 82 / 50rem)      // 或 height: 30 + (82 / 50rem);      font-size: 82 + 15px + 3rem;    &#125;<br></code></pre></td></tr></table></figure>
 
-<p>生成的CSS:</p>
+<p>生成的 CSS:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">div &#123;      width: 250px;      height: 150px;      border: 5px solid #ccc;      margin: 100px auto;    &#125;    p &#123;      width: 51.64rem;      height: 82 / 50rem;      font-size: 100px;    &#125;<br></code></pre></td></tr></table></figure>
 
-<h2 id="rem适配方案"><a href="#rem适配方案" class="headerlink" title="rem适配方案"></a>rem适配方案</h2><h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><p>让一些不能等比自适应的元素，当设备尺寸发生改变时,等比例适配当前设备。</p>
+<h2 id="rem-适配方案"><a href="#rem-适配方案" class="headerlink" title="rem 适配方案"></a>rem 适配方案</h2><h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><p>让一些不能等比自适应的元素，当设备尺寸发生改变时,等比例适配当前设备。</p>
 <h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><ol>
-<li>使用媒体查询根据不同设备按比例设置html的字体大小</li>
-<li>页面元素使用rem做单位。这样的话，当html字体大小变化（即不同设备）时，元素尺寸也会发生变化，从而达到等比例缩放的适配。</li>
+<li>使用媒体查询根据不同设备按比例设置 html 的字体大小</li>
+<li>页面元素使用 rem 做单位。这样的话，当 html 字体大小变化（即不同设备）时，元素尺寸也会发生变化，从而达到等比例缩放的适配。</li>
 </ol>
-<h3 id="rem实际开发适配方案"><a href="#rem实际开发适配方案" class="headerlink" title="rem实际开发适配方案"></a>rem实际开发适配方案</h3><ol>
-<li>首先选一套标准尺寸750为准</li>
-<li>动态设置html标签font-size大小</li>
+<h3 id="rem-实际开发适配方案"><a href="#rem-实际开发适配方案" class="headerlink" title="rem 实际开发适配方案"></a>rem 实际开发适配方案</h3><ol>
+<li>首先选一套标准尺寸 750 为准</li>
+<li>动态设置 html 标签 font-size 大小</li>
 <li>元素大小取值方法</li>
 </ol>
-<p>①页面元素的rem值=页面元素值（px）/(屏幕宽度/划分的分数)<br>②屏幕宽度/划分的份数就是html&nbsp;&nbsp;font-size大小<br>③页面元素的rem值=页面元素值（px）/html&nbsp;&nbsp;font-size大小</p>
-<p>@import 导入的css文件名：可以把一个样式文件导入到另一个样式文件中。</p>
+<p>① 页面元素的 rem 值=页面元素值（px）/(屏幕宽度/划分的分数)<br>② 屏幕宽度/划分的份数就是 html&nbsp;&nbsp;font-size 大小<br>③ 页面元素的 rem 值=页面元素值（px）/html&nbsp;&nbsp;font-size 大小</p>
+<p>@import 导入的 css 文件名：可以把一个样式文件导入到另一个样式文件中。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">@import &quot;common&quot;;<br></code></pre></td></tr></table></figure>
 
-<p>和link相似，区别：link是把一个样式文件引入到html页面里面。</p>
+<p>和 link 相似，区别：link 是把一个样式文件引入到 html 页面里面。</p>
 <p>示例：</p>
 <p><img src="https://pic.imgdb.cn/item/6107ef055132923bf88d211c.jpg"></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;!DOCTYPE html&gt;    &lt;html lang=&quot;zh-CN&quot;&gt;        &lt;head&gt;    	&lt;meta charset=&quot;UTF-8&quot;&gt;    	&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;    	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;    	&lt;title&gt;Document&lt;/title&gt;    &lt;/head&gt;    &lt;style&gt;    	@media screen and (min-width: 320px) &#123;    		html &#123;    			font-size: 21.33px;    		&#125;    	&#125;        	@media screen and (min-width: 750px) &#123;    		html &#123;    			font-size: 50px;    		&#125;    	&#125;        	div &#123;    		width: 2rem;    		height: 2rem;    		background-color: pink;    	&#125;    &lt;/style&gt;        &lt;body&gt;    	&lt;div&gt;&lt;/div&gt;    &lt;/body&gt;        &lt;/html&gt;<br></code></pre></td></tr></table></figure>
 
-<p>rem适配方案1：</p>
+<p>rem 适配方案 1：</p>
 <ol>
 <li>less</li>
 <li>媒体查询</li>
 <li>rem</li>
-<li>插件easy less</li>
+<li>插件 easy less</li>
 </ol>
-<p>rem适配方案2：</p>
+<p>rem 适配方案 2：</p>
 <ol>
 <li>flexible.js</li>
 <li>rem</li>
-<li>插件cssrem</li>
+<li>插件 cssrem</li>
 </ol>
-<p>参考：<br>pink老师前端入门教程</p>
+<p>参考：<br>pink 老师前端入门教程</p>
 
                 
             </div>
@@ -1393,7 +1392,7 @@
       <a href="/about" target="_blank">赤蓝紫</a>
       |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
       <br />
-       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">179.2k</span>&nbsp;字      
+       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">179.8k</span>&nbsp;字      
       <span id="busuanzi_container_site_pv"> |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次 </span>
        
       <span id="busuanzi_container_site_uv"> |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人 </span>

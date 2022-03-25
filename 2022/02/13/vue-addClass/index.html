@@ -484,20 +484,12 @@
             <div id="articleContent">
                 <h1 id="Vue-按条件添加类"><a href="#Vue-按条件添加类" class="headerlink" title="Vue 按条件添加类"></a>Vue 按条件添加类</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;el-card class=&quot;box-card&quot;&gt;<br>      &lt;div class=&quot;question&quot; ref=&quot;question&quot; v-for=&quot;(question, index) in questionList&quot; :key=&quot;question.id&quot;&gt;<br>        &lt;h4&gt;&#123;&#123;(index+1) +10*(currentPage-1)&#125;&#125;. &#123;&#123;question.ques&#125;&#125;&lt;/h4&gt;<br>        &lt;div v-for=&quot;option in question.options&quot; :key=&quot;option.id&quot; :class=&quot;[<br>                                                                    &#123;&#x27;choose&#x27;: true&#125;,<br>                                                                    &#123;&#x27;wrong&#x27;: option.value[0] === question.useranswer&#125;, <br>                                                                    &#123;&#x27;right&#x27;: option.value[0] === question.answer&#125;<br>                                                                  ]&quot;&gt;<br>          &lt;label&gt;<br>            &lt;span&gt;&#123;&#123;option.value&#125;&#125;&lt;/span&gt;<br>          &lt;/label&gt;<br>        &lt;/div&gt;<br>      &lt;/div&gt;<br>      &lt;el-pagination background layout=&quot;prev, pager, next, jumper&quot; :total=&quot;total&quot; :page-size=&quot;pageLimit&quot; :hide-on-single-page=&quot;noPagination&quot; @current-change=&quot;currentChange&quot;&gt;<br>      &lt;/el-pagination&gt;<br>    &lt;/el-card&gt;<br></code></pre></td></tr></table></figure>
 
-
-
 <p>项目中直接抽出来的(人菜勿喷)</p>
 <p><strong>关键</strong>：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;div :class=&quot;[<br>             &#123;&#x27;red&#x27;: true&#125;,<br>             &#123;&#x27;blue&#x27;: false&#125;<br>             ]&quot;&gt;红色&lt;/div&gt;<br><br>&lt;div :class=&quot;[<br>             &#123;&#x27;red&#x27;: false&#125;,<br>             &#123;&#x27;blue&#x27;: true&#125;<br>             ]&quot;&gt;蓝色&lt;/div&gt;<br></code></pre></td></tr></table></figure>
-
-
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;div :class=&quot;[&#123; red: true &#125;, &#123; blue: false &#125;]&quot;&gt;红色&lt;/div&gt;<br><br>&lt;div :class=&quot;[&#123; red: false &#125;, &#123; blue: true &#125;]&quot;&gt;蓝色&lt;/div&gt;<br></code></pre></td></tr></table></figure>
 
 <p><strong>css</strong>：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.red</span> &#123;<br>  <span class="hljs-attribute">color</span>: red;<br>&#125;<br><br><span class="hljs-selector-class">.blue</span> &#123;<br>  <span class="hljs-attribute">color</span>: blue;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-
-
-
 
 <p><img src="https://s2.loli.net/2022/02/13/G1XUM8Z2fgPj3uV.png" alt="image-20220213191710083"></p>
 
@@ -1272,7 +1264,7 @@
       <a href="/about" target="_blank">赤蓝紫</a>
       |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
       <br />
-       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">179.2k</span>&nbsp;字      
+       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">179.8k</span>&nbsp;字      
       <span id="busuanzi_container_site_pv"> |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次 </span>
        
       <span id="busuanzi_container_site_uv"> |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人 </span>

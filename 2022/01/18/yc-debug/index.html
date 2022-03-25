@@ -461,7 +461,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -487,23 +487,23 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="前端开发调试知识"><a href="#前端开发调试知识" class="headerlink" title="前端开发调试知识"></a>前端开发调试知识</h1><p>参加字节跳动的青训营时写的笔记。这部分是秃头披风侠老师讲的课。</p>
-<h2 id="1-前端Debug特点"><a href="#1-前端Debug特点" class="headerlink" title="1. 前端Debug特点"></a>1. 前端Debug特点</h2><ul>
+<h2 id="1-前端-Debug-特点"><a href="#1-前端-Debug-特点" class="headerlink" title="1. 前端 Debug 特点"></a>1. 前端 Debug 特点</h2><ul>
 <li><strong>多平台</strong>：浏览器、NodeJs、小程序</li>
 <li><strong>多环境</strong>：本地开发环境、线上环境</li>
 <li><strong>多工具</strong>：Chrome devTools、Whistle</li>
 <li><strong>多技巧</strong>：Console、BreakPoint、sourceMap、代理</li>
 </ul>
 <h2 id="2-Chrome-DevTools"><a href="#2-Chrome-DevTools" class="headerlink" title="2. Chrome DevTools"></a>2. Chrome DevTools</h2><h3 id="2-1-动态修改元素和样式"><a href="#2-1-动态修改元素和样式" class="headerlink" title="2.1 动态修改元素和样式"></a>2.1 动态修改元素和样式</h3><ul>
-<li><p>点击.cls开始动态修改元素的class</p>
+<li><p>点击.cls 开始动态修改元素的 class</p>
 </li>
 <li><p>输入类名即可给元素动态添加类名</p>
 <p><img src="https://s2.loli.net/2022/01/18/dMCIWHT1Q9ytfKr.png" alt="image-20220118144027415"></p>
 </li>
 <li><p>勾选/取消类名查看类名生效效果</p>
 </li>
-<li><p>点击Styles下具体的样式值，可以进行编辑，且可以在浏览器中实时预览</p>
+<li><p>点击 Styles 下具体的样式值，可以进行编辑，且可以在浏览器中实时预览</p>
 </li>
-<li><p>Computed下点击样式的箭头可以跳转到Styles下的css规则去</p>
+<li><p>Computed 下点击样式的箭头可以跳转到 Styles 下的 css 规则去</p>
 <p><img src="https://s2.loli.net/2022/01/18/5agmRKDvMzp3qYf.png" alt="image-20220118144618256"></p>
 </li>
 <li><p>强制激活伪类</p>
@@ -511,7 +511,7 @@
 <li><p>选中具有伪类的元素，点击<code>:hov</code></p>
 <p><img src="https://s2.loli.net/2022/01/18/98zMuRA3SJqk5Gf.png" alt="image-20220118144806343"></p>
 </li>
-<li><p>DOM树右键菜单，选择Force State</p>
+<li><p>DOM 树右键菜单，选择 Force State</p>
 <p><img src="https://s2.loli.net/2022/01/18/EzeyCUwJPk2dcs8.png" alt="image-20220118144945504"></p>
 </li>
 </ol>
@@ -523,7 +523,7 @@
 <li>console.error</li>
 <li>console.debug</li>
 <li>console.info</li>
-<li>console.table：具象化地展示JSON和数组数据</li>
+<li>console.table：具象化地展示 JSON 和数组数据</li>
 <li>占位符：用于给日志添加样式，可以突出重要的信息<ul>
 <li>%s：字符串占位符</li>
 <li>%o：对象占位符</li>
@@ -532,26 +532,26 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;log&quot;</span>)<br><span class="hljs-built_in">console</span>.warn(<span class="hljs-string">&quot;warn&quot;</span>)<br><span class="hljs-built_in">console</span>.error(<span class="hljs-string">&quot;error&quot;</span>)<br><span class="hljs-built_in">console</span>.debug(<span class="hljs-string">&quot;debug&quot;</span>)<br><span class="hljs-built_in">console</span>.info(<span class="hljs-string">&quot;info&quot;</span>)<br><br><span class="hljs-keyword">const</span> peoples = [<br>  &#123;<br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;clz&quot;</span>,<br>    <span class="hljs-attr">age</span>: <span class="hljs-number">21</span><br>  &#125;,<br>  &#123;<br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;czh&quot;</span>,<br>    <span class="hljs-attr">age</span>: <span class="hljs-number">22</span><br>  &#125;<br>]<br><span class="hljs-built_in">console</span>.table(peoples)<br><br><span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;%s %c%s&quot;</span>, <span class="hljs-string">&quot;Hello&quot;</span>, <span class="hljs-string">&quot;font-size: 24px;color: red;&quot;</span>, <span class="hljs-string">&quot;World&quot;</span>)<br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;log&quot;</span>);<br><span class="hljs-built_in">console</span>.warn(<span class="hljs-string">&quot;warn&quot;</span>);<br><span class="hljs-built_in">console</span>.error(<span class="hljs-string">&quot;error&quot;</span>);<br><span class="hljs-built_in">console</span>.debug(<span class="hljs-string">&quot;debug&quot;</span>);<br><span class="hljs-built_in">console</span>.info(<span class="hljs-string">&quot;info&quot;</span>);<br><br><span class="hljs-keyword">const</span> peoples = [<br>  &#123;<br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;clz&quot;</span>,<br>    <span class="hljs-attr">age</span>: <span class="hljs-number">21</span>,<br>  &#125;,<br>  &#123;<br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;czh&quot;</span>,<br>    <span class="hljs-attr">age</span>: <span class="hljs-number">22</span>,<br>  &#125;,<br>];<br><span class="hljs-built_in">console</span>.table(peoples);<br><br><span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;%s %c%s&quot;</span>, <span class="hljs-string">&quot;Hello&quot;</span>, <span class="hljs-string">&quot;font-size: 24px;color: red;&quot;</span>, <span class="hljs-string">&quot;World&quot;</span>);<br></code></pre></td></tr></table></figure>
 
 <p><img src="https://s2.loli.net/2022/01/18/OhTrEu2CmDBGIRb.png" alt="image-20220118150413480"></p>
 <h3 id="2-3-Sorce-Tab"><a href="#2-3-Sorce-Tab" class="headerlink" title="2.3 Sorce Tab"></a>2.3 Sorce Tab</h3><p><img src="https://s2.loli.net/2022/01/18/r1DxKLAFanMEhcu.png" alt="image-20220118150447113"></p>
 <ul>
-<li><p>源码中使用关键字debugger或代码预览区域点击行号设置断点</p>
+<li><p>源码中使用关键字 debugger 或代码预览区域点击行号设置断点</p>
 </li>
 <li><p>代码执行到断点处，代码暂停执行</p>
 </li>
-<li><p>展开Breakpoints列表可以查看断点列表，勾选可以激活对应断点</p>
+<li><p>展开 Breakpoints 列表可以查看断点列表，勾选可以激活对应断点</p>
 <p><img src="https://s2.loli.net/2022/01/18/fma5wDF6ZKcY3tW.png" alt="image-20220118150828969"></p>
 </li>
 <li><p>鼠标放在变量上可以查看变量的值</p>
 </li>
-<li><p>在调试器Watch可以添加监听变量</p>
+<li><p>在调试器 Watch 可以添加监听变量</p>
 </li>
 </ul>
-<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures"><strong>Scope</strong></a>：展开Scope可以查看作用域列表(包含闭包)</p>
-<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Glossary/Call_stack"><strong>Call Stack</strong></a>：展开Call Stack可以查看当前JavaScript代码的调用栈</p>
-<p><strong>压缩后的代码调试</strong>：通过Source Map映射源码实现调试，Source Map文件不跟着部署上线，从而实现安全调试。</p>
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures"><strong>Scope</strong></a>：展开 Scope 可以查看作用域列表(包含闭包)</p>
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Glossary/Call_stack"><strong>Call Stack</strong></a>：展开 Call Stack 可以查看当前 JavaScript 代码的调用栈</p>
+<p><strong>压缩后的代码调试</strong>：通过 Source Map 映射源码实现调试，Source Map 文件不跟着部署上线，从而实现安全调试。</p>
 <h3 id="2-4-Performance"><a href="#2-4-Performance" class="headerlink" title="2.4 Performance"></a>2.4 Performance</h3><p>暂时没有用到过，先收藏一波图，方便以后重复查看。</p>
 <p><img src="https://s2.loli.net/2022/01/18/3z81cJrnHvgZFed.png" alt="image-20220118151939298"></p>
 <h3 id="2-5-NetWork"><a href="#2-5-NetWork" class="headerlink" title="2.5 NetWork"></a>2.5 NetWork</h3><p><img src="https://s2.loli.net/2022/01/18/9GTYrm2ZcJsHO8W.png" alt="image-20220118152125528"></p>
@@ -564,20 +564,20 @@
 <li>Cookie</li>
 </ul>
 <p><img src="https://s2.loli.net/2022/01/18/Ot1AJq8SEgfnXQb.png" alt="image-20220118152311271"></p>
-<p>点击Stroage面板下的Clear Site Data可以清除网页的本地存储数据</p>
+<p>点击 Stroage 面板下的 Clear Site Data 可以清除网页的本地存储数据</p>
 <p><img src="https://s2.loli.net/2022/01/18/widKTPfumOpWMNq.png" alt="image-20220118152702648"></p>
 <h3 id="2-7-线上即时修改"><a href="#2-7-线上即时修改" class="headerlink" title="2.7 线上即时修改"></a>2.7 线上即时修改</h3><p>可以实现在浏览器中修改样式，并且刷新页面是，修改不会消失</p>
 <ol>
-<li><p>打开Sources面板下的Overrides</p>
+<li><p>打开 Sources 面板下的 Overrides</p>
 <p><img src="https://s2.loli.net/2022/01/18/XkT39KcFSbs45f2.png" alt="image-20220118154133335"></p>
 </li>
-<li><p>点击Select folders…选择一个本地的空文件夹(可以新建)</p>
+<li><p>点击 Select folders…选择一个本地的空文件夹(可以新建)</p>
 </li>
 <li><p>允许授权</p>
 </li>
 <li><p>修改代码</p>
 </li>
-<li><p>点击DevTools的三点-&gt;More tools-&gt;Changes，就能看到所有修改</p>
+<li><p>点击 DevTools 的三点-&gt;More tools-&gt;Changes，就能看到所有修改</p>
 <p><img src="https://s2.loli.net/2022/01/18/XczjCkP9QKmFYO6.png" alt="image-20220118154836504"></p>
 </li>
 </ol>
@@ -1359,7 +1359,7 @@
       <a href="/about" target="_blank">赤蓝紫</a>
       |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
       <br />
-       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">179.2k</span>&nbsp;字      
+       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">179.8k</span>&nbsp;字      
       <span id="busuanzi_container_site_pv"> |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次 </span>
        
       <span id="busuanzi_container_site_uv"> |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人 </span>

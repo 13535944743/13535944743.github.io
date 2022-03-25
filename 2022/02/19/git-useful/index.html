@@ -482,52 +482,38 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="git命令——少用但有用"><a href="#git命令——少用但有用" class="headerlink" title="git命令——少用但有用"></a>git命令——少用但有用</h1><p>实习开始了，新环境、新电脑，git添加公钥等操作自然也是需要重新设置，为了避免之后还要查找，自己写一下笔记，方便日后使用。</p>
-<p><a target="_blank" rel="noopener" href="https://clz.vercel.app/2021/11/20/git-order/">git常用命令</a></p>
-<p><b style="color: red">以下命令在Git  Bash中执行</b></p>
-<h2 id="1-设置用户名和email"><a href="#1-设置用户名和email" class="headerlink" title="1. 设置用户名和email"></a>1. 设置用户名和email</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">git config --global user.name 用户名<br>git config --global user.email 邮箱<br></code></pre></td></tr></table></figure>
+                <h1 id="git-命令——少用但有用"><a href="#git-命令——少用但有用" class="headerlink" title="git 命令——少用但有用"></a>git 命令——少用但有用</h1><p>实习开始了，新环境、新电脑，git 添加公钥等操作自然也是需要重新设置，为了避免之后还要查找，自己写一下笔记，方便日后使用。</p>
+<p><a target="_blank" rel="noopener" href="https://clz.vercel.app/2021/11/20/git-order/">git 常用命令</a></p>
+<p><b style="color: red">以下命令在 Git  Bash 中执行</b></p>
+<h2 id="1-设置用户名和-email"><a href="#1-设置用户名和-email" class="headerlink" title="1. 设置用户名和 email"></a>1. 设置用户名和 email</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">git config --global user.name 用户名<br>git config --global user.email 邮箱<br></code></pre></td></tr></table></figure>
 
+<h2 id="2-查看用户名和-email"><a href="#2-查看用户名和-email" class="headerlink" title="2. 查看用户名和 email"></a>2. 查看用户名和 email</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell">git config user.name<br>git config user.email<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> 也可以把所有信息都列出来，再找</span><br>git config --list<br></code></pre></td></tr></table></figure>
 
+<h2 id="3-配置-ssh-公私钥"><a href="#3-配置-ssh-公私钥" class="headerlink" title="3. 配置 ssh 公私钥"></a>3. 配置 ssh 公私钥</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">ssh-keygen -o		# 要输入的话直接Enter<br>cat ~/.ssh/id_rsa.pub		# 查看并复制公钥(复制是手动复制全部)<br></code></pre></td></tr></table></figure>
 
-<h2 id="2-查看用户名和email"><a href="#2-查看用户名和email" class="headerlink" title="2. 查看用户名和email"></a>2. 查看用户名和email</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell">git config user.name<br>git config user.email<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> 也可以把所有信息都列出来，再找</span><br>git config --list<br></code></pre></td></tr></table></figure>
-
-
-
-<h2 id="3-配置ssh公私钥"><a href="#3-配置ssh公私钥" class="headerlink" title="3. 配置ssh公私钥"></a>3. 配置ssh公私钥</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">ssh-keygen -o		# 要输入的话直接Enter<br>cat ~/.ssh/id_rsa.pub		# 查看并复制公钥(复制是手动复制全部)<br></code></pre></td></tr></table></figure>
-
-
-
-<p>github进入<code>setting -&gt; SSH and GPG keys -&gt; New SSH key</code></p>
+<p>github 进入<code>setting -&gt; SSH and GPG keys -&gt; New SSH key</code></p>
 <p><img src="https://s2.loli.net/2022/02/18/lbWKsfAohLqZiDz.png" alt="image-20220218231701335"></p>
 <p>输入标题(自定义)以及复制的公钥</p>
 <p>测试</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">ssh -T git@github.com		# 不要改成自己的邮箱，弹出提示的话，输入yes，回车<br></code></pre></td></tr></table></figure>
 
 <p><img src="https://s2.loli.net/2022/02/19/r6j1N7wcPkaO8gx.png" alt="image-20220218232334720"></p>
-<h2 id="4-清空暂存区"><a href="#4-清空暂存区" class="headerlink" title="4. 清空暂存区"></a>4. 清空暂存区</h2><h3 id="4-1-git-rm-–cached-文件"><a href="#4-1-git-rm-–cached-文件" class="headerlink" title="4.1 git rm –cached  文件"></a>4.1 git rm –cached  文件</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">git status		# 查看暂存区文件<br>git rm --cached 文件		# 一次删除，知道空。效率极低<br></code></pre></td></tr></table></figure>
-
-
+<h2 id="4-清空暂存区"><a href="#4-清空暂存区" class="headerlink" title="4. 清空暂存区"></a>4. 清空暂存区</h2><h3 id="4-1-git-rm-–cached-文件"><a href="#4-1-git-rm-–cached-文件" class="headerlink" title="4.1 git rm –cached 文件"></a>4.1 git rm –cached 文件</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">git status		# 查看暂存区文件<br>git rm --cached 文件		# 一次删除，知道空。效率极低<br></code></pre></td></tr></table></figure>
 
 <h3 id="4-2-rm-git-index"><a href="#4-2-rm-git-index" class="headerlink" title="4.2 rm .git/index"></a>4.2 rm .git/index</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">rm .git/index	# 暂存区仅仅是.git目录下的一个index文件,所以只要删除这个文件，就清空暂存区了<br></code></pre></td></tr></table></figure>
 
-
-
 <h3 id="4-2-git-reset"><a href="#4-2-git-reset" class="headerlink" title="4.2 git reset"></a>4.2 git reset</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git reset	# 后面什么都不跟<br></code></pre></td></tr></table></figure>
-
-
 
 <h2 id="5-撤销提交"><a href="#5-撤销提交" class="headerlink" title="5. 撤销提交"></a>5. 撤销提交</h2><p>场景：提交完后，发现漏掉文件没有添加，或者提交信息写错了</p>
 <h3 id="5-1-修改提交信息"><a href="#5-1-修改提交信息" class="headerlink" title="5.1 修改提交信息"></a>5.1 修改提交信息</h3><p>现在提交了一次</p>
 <p><img src="https://s2.loli.net/2022/02/19/l5Jr7X3WLiQ9kwE.png" alt="image-20220218235143317"></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git commit --amend<br></code></pre></td></tr></table></figure>
 
-
-
-<p>进入类似vim的页面</p>
+<p>进入类似 vim 的页面</p>
 <ul>
 <li>输入<code>i</code>，进入编辑模式</li>
 <li>移动光标，修改信息</li>
-<li>esc退出编辑模式</li>
+<li>esc 退出编辑模式</li>
 <li><code>:wq</code>保存</li>
 </ul>
 <p><img src="https://s2.loli.net/2022/02/19/GwLEyRIMX25fJ6H.png" alt="image-20220218235618176"></p>
@@ -1309,7 +1295,7 @@
       <a href="/about" target="_blank">赤蓝紫</a>
       |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
       <br />
-       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">179.2k</span>&nbsp;字      
+       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">179.8k</span>&nbsp;字      
       <span id="busuanzi_container_site_pv"> |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次 </span>
        
       <span id="busuanzi_container_site_uv"> |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人 </span>

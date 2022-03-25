@@ -461,7 +461,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    6 分
                 </div>
                 
 
@@ -486,57 +486,57 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Web多媒体笔记"><a href="#Web多媒体笔记" class="headerlink" title="Web多媒体笔记"></a>Web多媒体笔记</h1><p>参加字节跳动的青训营时写的笔记。这部分是刘立国老师讲的课。</p>
+                <h1 id="Web-多媒体笔记"><a href="#Web-多媒体笔记" class="headerlink" title="Web 多媒体笔记"></a>Web 多媒体笔记</h1><p>参加字节跳动的青训营时写的笔记。这部分是刘立国老师讲的课。</p>
 <h2 id="1-前置知识"><a href="#1-前置知识" class="headerlink" title="1. 前置知识"></a>1. 前置知识</h2><h3 id="1-1-图像基本概念"><a href="#1-1-图像基本概念" class="headerlink" title="1.1 图像基本概念"></a>1.1 图像基本概念</h3><p><strong>图像分辨率</strong>：图像的像素数据，指在水平和垂直方向上图像所具有的像素个数</p>
-<p><strong>图像深度</strong>：指存储每个像素所需要的比特数。图像深度决定了图像的每个像素可能的颜色数，或可能的灰度数(单色图像)。例如彩色图像每个像素用R, G, B三个分量来表示，每个分量用8为所以像素深度是24位，可以表示的颜色数目是2^24。单色图像每个像素需要8位，则图像的像素深度是8位，灰度数目为2^8。</p>
+<p><strong>图像深度</strong>：指存储每个像素所需要的比特数。图像深度决定了图像的每个像素可能的颜色数，或可能的灰度数(单色图像)。例如彩色图像每个像素用 R, G, B 三个分量来表示，每个分量用 8 为所以像素深度是 24 位，可以表示的颜色数目是 2^24。单色图像每个像素需要 8 位，则图像的像素深度是 8 位，灰度数目为 2^8。</p>
 <p><strong>图像的大小不仅要看图像的分辨率，还要看图像深度</strong></p>
 <h3 id="1-2-视频基本概念"><a href="#1-2-视频基本概念" class="headerlink" title="1.2 视频基本概念"></a>1.2 视频基本概念</h3><p><strong>分辨率</strong>：每一帧的图像分辨率</p>
 <p><strong>帧率</strong>：视频单位时间内包含的视频帧的数量</p>
-<p><strong>码率</strong>：视频单位时间内传输的数据量，一般用kbps(千位每秒)表示。</p>
+<p><strong>码率</strong>：视频单位时间内传输的数据量，一般用 kbps(千位每秒)表示。</p>
 <p><strong>视频的大小不仅要看图像的分辨率，还要看码率</strong></p>
 <h2 id="2-编码"><a href="#2-编码" class="headerlink" title="2. 编码"></a>2. 编码</h2><h3 id="2-1-为什么需要编码"><a href="#2-1-为什么需要编码" class="headerlink" title="2.1 为什么需要编码"></a>2.1 为什么需要编码</h3><p><strong>如果不编码</strong>：</p>
-<p>假设一部电影的每一帧的分辨率都是1920 × 1080。</p>
-<p>那么每一帧的大小为1920 * 1080 * 24 / 8 = 6220800 byte = 5.9M (24就是上面的图像像素深度)</p>
-<p>假设帧率为30FPS，时长为90分钟，那么这部电影大小就是 5.9 * 30 * 60 * 90 = 933G(我的电脑竟一部电影都下不了)</p>
-<h3 id="2-2-DTS和PTS"><a href="#2-2-DTS和PTS" class="headerlink" title="2.2 DTS和PTS"></a>2.2 DTS和PTS</h3><p><strong>DTS</strong>：解码时间戳，用来告诉播放器该在什么时候解码这一帧的数据</p>
+<p>假设一部电影的每一帧的分辨率都是 1920 × 1080。</p>
+<p>那么每一帧的大小为 1920 _ 1080 _ 24 / 8 = 6220800 byte = 5.9M (24 就是上面的图像像素深度)</p>
+<p>假设帧率为 30FPS，时长为 90 分钟，那么这部电影大小就是 5.9 _ 30 _ 60 * 90 = 933G(我的电脑竟一部电影都下不了)</p>
+<h3 id="2-2-DTS-和-PTS"><a href="#2-2-DTS-和-PTS" class="headerlink" title="2.2 DTS 和 PTS"></a>2.2 DTS 和 PTS</h3><p><strong>DTS</strong>：解码时间戳，用来告诉播放器该在什么时候解码这一帧的数据</p>
 <p><strong>PTS</strong>：显示时间戳，用来告诉播放器该在什么时候显示这一帧的数据。</p>
-<p><strong>I帧</strong>：帧内编码帧、关键帧，不需要参考其他帧。</p>
-<p><strong>P帧</strong>：前向预测编码帧。P帧由它的<strong>前一P帧或I帧</strong>预测而来。</p>
-<p><strong>B帧</strong>：双向预测内插编码帧。B帧由它的**前一帧以及后一帧预测而来。</p>
+<p><strong>I 帧</strong>：帧内编码帧、关键帧，不需要参考其他帧。</p>
+<p><strong>P 帧</strong>：前向预测编码帧。P 帧由它的<strong>前一 P 帧或 I 帧</strong>预测而来。</p>
+<p><strong>B 帧</strong>：双向预测内插编码帧。B 帧由它的**前一帧以及后一帧预测而来。</p>
 <p>实例：</p>
 <p><img src="https://s2.loli.net/2022/01/26/OyhRCjGIPgB5Xz8.png" alt="image-20220126205313369"></p>
-<p>首先，<b style="color: red">PTS是1、2、3、4、5、6</b></p>
-<p>因为P帧需要由前一P帧或I帧预测而来，I帧不需要参考其他帧。所以先解码第1帧，解码完第1帧后，第2帧的P帧才可以解码，依次类推。所以，<b style="color: red">DTS是1、2、3、4、5、6</b></p>
+<p>首先，<b style="color: red">PTS 是 1、2、3、4、5、6</b></p>
+<p>因为 P 帧需要由前一 P 帧或 I 帧预测而来，I 帧不需要参考其他帧。所以先解码第 1 帧，解码完第 1 帧后，第 2 帧的 P 帧才可以解码，依次类推。所以，<b style="color: red">DTS 是 1、2、3、4、5、6</b></p>
 <p><img src="https://s2.loli.net/2022/02/09/2Xchkan9CtLxoAs.png" alt="image-20220126205857425"></p>
-<p>首先，<b style="color: red">PTS是1、2、3、4、5、6</b></p>
-<p>由上一个例子，依次解码第1帧、第2帧，想继续解码第3帧，发现第3帧是B帧，所以就去解码第3帧的后一帧(第4帧)，所以DTS的前面部份是1、2、4、3。同理，解码第5帧又会先去解码第6帧。所以，<b style="color: red">DTS是1、2、4、3、6、5</b></p>
-<h3 id="2-3-GOP"><a href="#2-3-GOP" class="headerlink" title="2.3 GOP"></a>2.3 GOP</h3><p>GOP(group of picture)：两个I帧之间的间隔</p>
+<p>首先，<b style="color: red">PTS 是 1、2、3、4、5、6</b></p>
+<p>由上一个例子，依次解码第 1 帧、第 2 帧，想继续解码第 3 帧，发现第 3 帧是 B 帧，所以就去解码第 3 帧的后一帧(第 4 帧)，所以 DTS 的前面部份是 1、2、4、3。同理，解码第 5 帧又会先去解码第 6 帧。所以，<b style="color: red">DTS 是 1、2、4、3、6、5</b></p>
+<h3 id="2-3-GOP"><a href="#2-3-GOP" class="headerlink" title="2.3 GOP"></a>2.3 GOP</h3><p>GOP(group of picture)：两个 I 帧之间的间隔</p>
 <p><img src="https://s2.loli.net/2022/02/09/cJTMGYsK6gHxQRw.png" alt="image-20220126210639852"></p>
-<p><strong>每个group的第一帧是I帧(关键帧)，每个GOP内的帧的解码不依赖于其他GOP的帧。</strong></p>
-<p>GOP一般2到4s。首先，I帧是帧内压缩，占用存储空间大。所以I帧不适宜过多。如果I帧太少，也不行。比如一共有1000帧，我需要解码第500帧，如果只有一个I帧，则要解码第1帧、第2帧…第499帧。(这个场景可能是用户点击进度条时)</p>
+<p><strong>每个 group 的第一帧是 I 帧(关键帧)，每个 GOP 内的帧的解码不依赖于其他 GOP 的帧。</strong></p>
+<p>GOP 一般 2 到 4s。首先，I 帧是帧内压缩，占用存储空间大。所以 I 帧不适宜过多。如果 I 帧太少，也不行。比如一共有 1000 帧，我需要解码第 500 帧，如果只有一个 I 帧，则要解码第 1 帧、第 2 帧…第 499 帧。(这个场景可能是用户点击进度条时)</p>
 <h3 id="2-4-各种冗余"><a href="#2-4-各种冗余" class="headerlink" title="2.4 各种冗余"></a>2.4 各种冗余</h3><h4 id="2-4-1-空间冗余"><a href="#2-4-1-空间冗余" class="headerlink" title="2.4.1 空间冗余"></a>2.4.1 空间冗余</h4><p><img src="https://s2.loli.net/2022/01/26/yXjMlaoPzBJ4Q95.png" alt="image-20220126212737399"></p>
 <p><b style="color: red">重复的只存储一次</b></p>
 <h4 id="2-4-2-时间冗余"><a href="#2-4-2-时间冗余" class="headerlink" title="2.4.2 时间冗余"></a>2.4.2 时间冗余</h4><p><img src="https://s2.loli.net/2022/02/09/o1bQ2UROdHTaijE.png" alt="image-20220126212937820"></p>
 <p><b style="color: red">只多存储有变化的</b></p>
 <h4 id="2-4-3-编码冗余"><a href="#2-4-3-编码冗余" class="headerlink" title="2.4.3 编码冗余"></a>2.4.3 编码冗余</h4><p><img src="https://s2.loli.net/2022/01/26/VZ4dhGtQ6nrz9FD.png" alt="image-20220126213139572"></p>
 <p><b style="color: red">不同像素值出现的概率不同，概率高的用的字节少，概率低的用的字节多</b>(霍夫曼编码)</p>
-<p>上面的demo：每一个像素值需要24位。上面例子，蓝色用1表示，白色用0表示。则只需要2位。</p>
+<p>上面的 demo：每一个像素值需要 24 位。上面例子，蓝色用 1 表示，白色用 0 表示。则只需要 2 位。</p>
 <h4 id="2-4-4-视觉冗余"><a href="#2-4-4-视觉冗余" class="headerlink" title="2.4.4 视觉冗余"></a>2.4.4 视觉冗余</h4><p><img src="https://s2.loli.net/2022/02/09/2ki7t8WZadsrzq6.png" alt="image-20220126213341161"></p>
 <p><b style="color: red">人的视觉系统对某些细节不敏感，所以可以把人眼看不到的部分去除掉。</b></p>
 <h3 id="2-5-编码流程"><a href="#2-5-编码流程" class="headerlink" title="2.5 编码流程"></a>2.5 编码流程</h3><p><img src="https://s2.loli.net/2022/01/26/WDFAz7kehPiut34.png" alt="image-20220126213622028"></p>
 <h3 id="2-6-编码格式"><a href="#2-6-编码格式" class="headerlink" title="2.6 编码格式"></a>2.6 编码格式</h3><p><img src="https://s2.loli.net/2022/01/26/1xE6IotejvUFGrp.png" alt="image-20220126213747091"></p>
 <h2 id="3-封装"><a href="#3-封装" class="headerlink" title="3. 封装"></a>3. 封装</h2><p>封装格式的主要作用是把视频码流和音频码流按照一定的格式存储在一个文件中。(可能还有字幕信息)</p>
 <p><img src="https://s2.loli.net/2022/01/26/ZoDWdyXTUgjA4LN.png" alt="image-20220126214123491"></p>
-<h2 id="4-多媒体元素和扩展API"><a href="#4-多媒体元素和扩展API" class="headerlink" title="4. 多媒体元素和扩展API"></a>4. 多媒体元素和扩展API</h2><h3 id="4-1-video和audio"><a href="#4-1-video和audio" class="headerlink" title="4.1 video和audio"></a>4.1 video和audio</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;getLength()&quot;</span>&gt;</span>获取视频长度<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">video</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;http://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/byted-player-videos/1.0.0/xgplayer-demo.mp4&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;540px&quot;</span> <span class="hljs-attr">controls</span> <span class="hljs-attr">muted</span> <span class="hljs-attr">autoplay</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">video</span>&gt;</span><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"></span><br><span class="javascript">    <span class="hljs-keyword">let</span> v = <span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">&quot;video&quot;</span>)[<span class="hljs-number">0</span>]</span><br><span class="javascript">    v.playbackRate = <span class="hljs-string">&quot;1.5&quot;</span></span><br><span class="javascript"></span><br><span class="javascript">    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getLength</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="javascript">      <span class="hljs-keyword">let</span> length = <span class="hljs-built_in">Math</span>.floor(v.duration)</span><br><span class="javascript"></span><br><span class="javascript">      <span class="hljs-keyword">let</span> minute = <span class="hljs-built_in">Math</span>.floor(length / <span class="hljs-number">60</span>)</span><br><span class="javascript">      <span class="hljs-keyword">let</span> second = length % <span class="hljs-number">60</span></span><br><span class="javascript"></span><br><span class="javascript">      <span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">&quot;p&quot;</span>)[<span class="hljs-number">0</span>].innerHTML = <span class="hljs-string">`视频长度为<span class="hljs-subst">$&#123;minute&#125;</span>分<span class="hljs-subst">$&#123;second&#125;</span>秒`</span></span><br><span class="javascript">    &#125;</span><br><span class="javascript">  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h2 id="4-多媒体元素和扩展-API"><a href="#4-多媒体元素和扩展-API" class="headerlink" title="4. 多媒体元素和扩展 API"></a>4. 多媒体元素和扩展 API</h2><h3 id="4-1-video-和-audio"><a href="#4-1-video-和-audio" class="headerlink" title="4.1 video 和 audio"></a>4.1 video 和 audio</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;getLength()&quot;</span>&gt;</span>获取视频长度<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">video</span></span><br><span class="hljs-tag">    <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;http://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/byted-player-videos/1.0.0/xgplayer-demo.mp4&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;540px&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">controls</span></span><br><span class="hljs-tag">    <span class="hljs-attr">muted</span></span><br><span class="hljs-tag">    <span class="hljs-attr">autoplay</span></span><br><span class="hljs-tag">  &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">video</span>&gt;</span><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"></span><br><span class="javascript">    <span class="hljs-keyword">let</span> v = <span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">&quot;video&quot;</span>)[<span class="hljs-number">0</span>];</span><br><span class="javascript">    v.playbackRate = <span class="hljs-string">&quot;1.5&quot;</span>;</span><br><span class="javascript"></span><br><span class="javascript">    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getLength</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="javascript">      <span class="hljs-keyword">let</span> length = <span class="hljs-built_in">Math</span>.floor(v.duration);</span><br><span class="javascript"></span><br><span class="javascript">      <span class="hljs-keyword">let</span> minute = <span class="hljs-built_in">Math</span>.floor(length / <span class="hljs-number">60</span>);</span><br><span class="javascript">      <span class="hljs-keyword">let</span> second = length % <span class="hljs-number">60</span>;</span><br><span class="javascript"></span><br><span class="javascript">      <span class="hljs-built_in">document</span>.getElementsByTagName(</span><br><span class="javascript">        <span class="hljs-string">&quot;p&quot;</span></span><br><span class="javascript">      )[<span class="hljs-number">0</span>].innerHTML = <span class="hljs-string">`视频长度为<span class="hljs-subst">$&#123;minute&#125;</span>分<span class="hljs-subst">$&#123;second&#125;</span>秒`</span>;</span><br><span class="javascript">    &#125;</span><br><span class="javascript">  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 <p><img src="https://s2.loli.net/2022/01/26/lwsW9KXdOIhrbLD.gif" alt="video"></p>
-<p>除了上面的形式还可以用下面的source的形式，这样就可以添加多个不同格式的视频。当浏览器不支持时，可以换一个。</p>
+<p>除了上面的形式还可以用下面的 source 的形式，这样就可以添加多个不同格式的视频。当浏览器不支持时，可以换一个。</p>
 <p><img src="https://s2.loli.net/2022/01/26/HqOh8E7wL6mzPlB.png" alt="image-20220126222501539"></p>
-<p>audio和video类似就不多说了。</p>
+<p>audio 和 video 类似就不多说了。</p>
 <p>属性、事件不多说了，链接奉上。<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/video">MDN video</a>、<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/ref-av-dom.html">表格版</a></p>
 <p><strong>缺陷</strong>：</p>
 <ul>
-<li>不支持直接播放hls、flv等视频格式</li>
+<li>不支持直接播放 hls、flv 等视频格式</li>
 <li>视频资源的请求和加载无法通过代码控制<ul>
 <li>分段加载(节省流量)</li>
 <li>清晰度无缝切换</li>
@@ -544,18 +544,18 @@
 </ul>
 </li>
 </ul>
-<h3 id="4-2-MSE"><a href="#4-2-MSE" class="headerlink" title="4.2 MSE"></a>4.2 MSE</h3><p>媒体源扩展API(Media Source Extensions)</p>
+<h3 id="4-2-MSE"><a href="#4-2-MSE" class="headerlink" title="4.2 MSE"></a>4.2 MSE</h3><p>媒体源扩展 API(Media Source Extensions)</p>
 <ul>
-<li>无插件在web端播放流媒体</li>
-<li>支持hls、flv、mp4等格式视频</li>
+<li>无插件在 web 端播放流媒体</li>
+<li>支持 hls、flv、mp4 等格式视频</li>
 <li>可实现视频分段加载、清晰度无缝切换、自适应码率、精确加载</li>
 </ul>
 <h4 id="4-2-1-使用"><a href="#4-2-1-使用" class="headerlink" title="4.2.1 使用"></a>4.2.1 使用</h4><p><img src="https://s2.loli.net/2022/01/26/BA2k8ULI6xqh3DF.png" alt="image-20220126220350669"></p>
-<h4 id="4-2-2-MSE播放流程"><a href="#4-2-2-MSE播放流程" class="headerlink" title="4.2.2 MSE播放流程"></a>4.2.2 MSE播放流程</h4><p><img src="https://s2.loli.net/2022/01/26/ayB9zSTvZtGdCm2.png" alt="image-20220126220416302"></p>
+<h4 id="4-2-2-MSE-播放流程"><a href="#4-2-2-MSE-播放流程" class="headerlink" title="4.2.2 MSE 播放流程"></a>4.2.2 MSE 播放流程</h4><p><img src="https://s2.loli.net/2022/01/26/ayB9zSTvZtGdCm2.png" alt="image-20220126220416302"></p>
 <h3 id="4-3-播放器播放流程"><a href="#4-3-播放器播放流程" class="headerlink" title="4.3 播放器播放流程"></a>4.3 播放器播放流程</h3><p><img src="https://s2.loli.net/2022/01/26/42flrz8tH3s1oZq.png" alt="image-20220126220523143"></p>
 <h2 id="5-流媒体协议"><a href="#5-流媒体协议" class="headerlink" title="5. 流媒体协议"></a>5. 流媒体协议</h2><p><strong>流媒体</strong>是指将一连串数据压缩后，经过网络分段发送，即时传输以供观看音视频的一种技术。</p>
 <p><strong>流媒体协议</strong>是一种标准化的传递方法，用于将视频分解为多个块，将其发送给视频播放器，播放器重新组合播放。</p>
-<p>例子：HLS(HTTP Live Streaming)，是Apple公司提出的基于HTTP的媒体流传输协议，用于实时音视频流的传输。目前被广泛用于视频点播和直播领域。</p>
+<p>例子：HLS(HTTP Live Streaming)，是 Apple 公司提出的基于 HTTP 的媒体流传输协议，用于实时音视频流的传输。目前被广泛用于视频点播和直播领域。</p>
 <p><img src="https://s2.loli.net/2022/01/26/q2ZkJcIUAhGHXBY.png" alt="image-20220126221619029"></p>
 <h2 id="6-应用场景"><a href="#6-应用场景" class="headerlink" title="6. 应用场景"></a>6. 应用场景</h2><p><img src="https://s2.loli.net/2022/01/26/pwvlXYhBHb4zQxi.png" alt="image-20220126221925477"></p>
 
@@ -1338,7 +1338,7 @@
       <a href="/about" target="_blank">赤蓝紫</a>
       |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
       <br />
-       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">179.2k</span>&nbsp;字      
+       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">179.8k</span>&nbsp;字      
       <span id="busuanzi_container_site_pv"> |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次 </span>
        
       <span id="busuanzi_container_site_uv"> |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人 </span>

@@ -482,24 +482,24 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="LeanCloud国际版遇到的问题及解决方案"><a href="#LeanCloud国际版遇到的问题及解决方案" class="headerlink" title="LeanCloud国际版遇到的问题及解决方案"></a>LeanCloud国际版遇到的问题及解决方案</h1><p>首先，为什么要用<code> LeanCloud国际版</code>呢？就是因为设置邮件提醒功能时，需要绑定访问域名来唤醒leancloud，而国际版提供免费域名，国内的需要备案域名。</p>
+                <h1 id="LeanCloud-国际版遇到的问题及解决方案"><a href="#LeanCloud-国际版遇到的问题及解决方案" class="headerlink" title="LeanCloud 国际版遇到的问题及解决方案"></a>LeanCloud 国际版遇到的问题及解决方案</h1><p>首先，为什么要用<code> LeanCloud国际版</code>呢？就是因为设置邮件提醒功能时，需要绑定访问域名来唤醒 leancloud，而国际版提供免费域名，国内的需要备案域名。</p>
 <p><img src="https://s2.loli.net/2022/03/07/52vX34VkWodfMUj.png" alt="image-20220307123838756"></p>
 <p><br />只能说弄这个博客，真的是非常能感受到迭代的快(虽然遇到的不是技术点上的)：</p>
 <ul>
-<li>搭建博客时，刚好遇上github默认分支从<code> master</code>变为<code> master</code>，然后网上的教程都还是<code> master</code></li>
-<li>这次的问题也是因为us.avoscloud.com这个域名被弃用了，然而报错提示的确实跨域问题</li>
+<li>搭建博客时，刚好遇上 github 默认分支从<code> master</code>变为<code> master</code>，然后网上的教程都还是<code> master</code></li>
+<li>这次的问题也是因为 us.avoscloud.com 这个域名被弃用了，然而报错提示的确实跨域问题</li>
 </ul>
 <p><img src="https://s2.loli.net/2022/03/07/zpYQtBL8f2Fq5ng.png" alt="img"></p>
 <p>这一次属于是长教训了，不看公告，一个月前的事情现在才知道</p>
 <p><img src="https://s2.loli.net/2022/03/07/gLp8f4vniyNwt6D.png" alt="image-20220307122010510"></p>
-<p>最后通过到leancloud社区直接询问，通过<a target="_blank" rel="noopener" href="https://forum.leancloud.cn/users/shifuchen">shifuchen大佬</a>的回答解决问题</p>
+<p>最后通过到 leancloud 社区直接询问，通过<a target="_blank" rel="noopener" href="https://forum.leancloud.cn/users/shifuchen">shifuchen 大佬</a>的回答解决问题</p>
 <p>那么怎么解决这个问题呢？</p>
 <ul>
 <li><p>首先，登录<a target="_blank" rel="noopener" href="https://console.leancloud.app/apps">LeanCloud</a>，进入自己的应用。然后进入<code> 设置 -&gt; 应用凭证</code>，复制<strong>REST API 服务器地址</strong></p>
 <p><img src="https://s2.loli.net/2022/03/07/jFlm6HG42sVtfwM.png" alt="image-20220307122544336"></p>
 <p><img src="https://s2.loli.net/2022/03/07/owuWH5fLhX9T7nm.png" alt="image-20220307122650723"></p>
 </li>
-<li><p>然后，回到你的博客的主题文件夹中，找到使用valine部分，<a target="_blank" rel="noopener" href="https://github.com/blinkfox/hexo-theme-matery">Matery</a>主题的就在<code> layout \ _partial \ valine.ejs</code>中</p>
+<li><p>然后，回到你的博客的主题文件夹中，找到使用 valine 部分，<a target="_blank" rel="noopener" href="https://github.com/blinkfox/hexo-theme-matery">Matery</a>主题的就在<code> layout \ _partial \ valine.ejs</code>中</p>
 <p><img src="https://s2.loli.net/2022/03/07/uaCetFqbYPLDXpf.png" alt="image-20220307123020590"></p>
 </li>
 <li><p>新建<code>Valine</code>实例时，添加<code> serverURLs</code>属性，值为刚刚复制的地址</p>
@@ -1284,7 +1284,7 @@
       <a href="/about" target="_blank">赤蓝紫</a>
       |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
       <br />
-       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">179.2k</span>&nbsp;字      
+       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">179.8k</span>&nbsp;字      
       <span id="busuanzi_container_site_pv"> |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次 </span>
        
       <span id="busuanzi_container_site_uv"> |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人 </span>

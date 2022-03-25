@@ -461,7 +461,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    7 分
                 </div>
                 
 
@@ -486,36 +486,36 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Webpack笔记"><a href="#Webpack笔记" class="headerlink" title="Webpack笔记"></a>Webpack笔记</h1><p>参加字节跳动的青训营时写的笔记。这部分是范文杰老师讲的课。</p>
+                <h1 id="Webpack-笔记"><a href="#Webpack-笔记" class="headerlink" title="Webpack 笔记"></a>Webpack 笔记</h1><p>参加字节跳动的青训营时写的笔记。这部分是范文杰老师讲的课。</p>
 <p>插一嘴：范文杰老师的公众号<strong>Tecvan</strong>有很多干活，可以关注一下。(下面的部分有好多都有很有用的扩展链接，偷懒，就直接把老师的公众号贴出来)</p>
 <h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h2><p><img src="https://s2.loli.net/2022/02/06/IkXns8yYKHgZrzp.png" alt="image-20220123215526028"></p>
-<p>Webpack本质上是一种前端资源编译、打包工具。</p>
+<p>Webpack 本质上是一种前端资源编译、打包工具。</p>
 <p>功能：</p>
 <ul>
-<li>多份资源文件打包成一个Bundle</li>
-<li>支持Less、Babel、Eslint、TypeScript</li>
-<li>支持模块化处理css、图片等资源文件</li>
-<li>支持HMR(热更新)</li>
-<li>支持Tree-shaking</li>
-<li>支持SourceMap</li>
+<li>多份资源文件打包成一个 Bundle</li>
+<li>支持 Less、Babel、Eslint、TypeScript</li>
+<li>支持模块化处理 css、图片等资源文件</li>
+<li>支持 HMR(热更新)</li>
+<li>支持 Tree-shaking</li>
+<li>支持 SourceMap</li>
 <li>,,,</li>
 </ul>
-<h2 id="2-使用Webpack"><a href="#2-使用Webpack" class="headerlink" title="2. 使用Webpack"></a>2. 使用Webpack</h2><h3 id="2-1-使用步骤"><a href="#2-1-使用步骤" class="headerlink" title="2.1 使用步骤"></a>2.1 使用步骤</h3><ol>
+<h2 id="2-使用-Webpack"><a href="#2-使用-Webpack" class="headerlink" title="2. 使用 Webpack"></a>2. 使用 Webpack</h2><h3 id="2-1-使用步骤"><a href="#2-1-使用步骤" class="headerlink" title="2.1 使用步骤"></a>2.1 使用步骤</h3><ol>
 <li><p>安装，<code> npm install webpack webpack-cli -D</code></p>
 </li>
 <li><p>编辑配置文件(webpack.config.js)</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;path&#x27;</span>);<br><br><span class="hljs-built_in">module</span>.exports = &#123;<br>  <span class="hljs-attr">entry</span>: path.join(__dirname, <span class="hljs-string">&#x27;src&#x27;</span>, <span class="hljs-string">&#x27;index.js&#x27;</span>),<br>  <span class="hljs-attr">mode</span>: <span class="hljs-string">&#x27;development&#x27;</span>,<br>  <span class="hljs-attr">output</span>: &#123;<br>    <span class="hljs-attr">filename</span>: <span class="hljs-string">&#x27;bundle.js&#x27;</span>,<br>    <span class="hljs-attr">path</span>: path.join(__dirname, <span class="hljs-string">&#x27;dist&#x27;</span>)<br>  &#125;,<br>&#125;<br></code></pre></td></tr></table></figure></li>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;path&quot;</span>);<br><br><span class="hljs-built_in">module</span>.exports = &#123;<br>  <span class="hljs-attr">entry</span>: path.join(__dirname, <span class="hljs-string">&quot;src&quot;</span>, <span class="hljs-string">&quot;index.js&quot;</span>),<br>  <span class="hljs-attr">mode</span>: <span class="hljs-string">&quot;development&quot;</span>,<br>  <span class="hljs-attr">output</span>: &#123;<br>    <span class="hljs-attr">filename</span>: <span class="hljs-string">&quot;bundle.js&quot;</span>,<br>    <span class="hljs-attr">path</span>: path.join(__dirname, <span class="hljs-string">&quot;dist&quot;</span>),<br>  &#125;,<br>&#125;;<br></code></pre></td></tr></table></figure></li>
 <li><p>执行编译命令，<code> npx webpack</code></p>
 </li>
 </ol>
 <h3 id="2-2-核心流程"><a href="#2-2-核心流程" class="headerlink" title="2.2 核心流程"></a>2.2 核心流程</h3><ol>
 <li><strong>入口处理</strong>：从入口文件开始启动编译流程</li>
 <li><strong>依赖解析</strong>：根据<code> require</code>或<code> import</code>等语句找到依赖资源</li>
-<li><strong>资源解析</strong>：根据<code> module</code>配置，调用资源加载器，把css、less、png等非标准JS资源转译成JS内容(Webpack只认识JS)</li>
-<li><strong>资源合并打包</strong>：将转译后的资源合并打包为可以直接在浏览器运行的JS文件，包括代码混淆、代码压缩等操作。</li>
+<li><strong>资源解析</strong>：根据<code> module</code>配置，调用资源加载器，把 css、less、png 等非标准 JS 资源转译成 JS 内容(Webpack 只认识 JS)</li>
+<li><strong>资源合并打包</strong>：将转译后的资源合并打包为可以直接在浏览器运行的 JS 文件，包括代码混淆、代码压缩等操作。</li>
 </ol>
-<p><b style="color: red">递归调用2、3，直到所有资源处理完毕。因为依赖资源可能也会依赖其他资源。</b></p>
-<h3 id="2-3-分类"><a href="#2-3-分类" class="headerlink" title="2.3 分类"></a>2.3 分类</h3><p>Webpack的使用基本都围绕<strong>配置</strong>展开，而配置大致可分为两类：</p>
+<p><b style="color: red">递归调用 2、3，直到所有资源处理完毕。因为依赖资源可能也会依赖其他资源。</b></p>
+<h3 id="2-3-分类"><a href="#2-3-分类" class="headerlink" title="2.3 分类"></a>2.3 分类</h3><p>Webpack 的使用基本都围绕<strong>配置</strong>展开，而配置大致可分为两类：</p>
 <ul>
 <li><strong>流程类</strong>：作用于流程中，直接影响打包效果的配置项</li>
 <li><strong>工具类</strong>：主流程之外，提供更多工程化能力的配置项</li>
@@ -527,50 +527,48 @@
 </ol>
 <p><img src="https://s2.loli.net/2022/02/06/6tYolBpqW85Niab.png" alt="image-20220124174656480"></p>
 <ol start="2">
-<li><p>编辑webpack配置文件</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;path&#x27;</span>);<br><br><span class="hljs-built_in">module</span>.exports = &#123;<br>  <span class="hljs-attr">entry</span>: path.join(__dirname, <span class="hljs-string">&#x27;src&#x27;</span>, <span class="hljs-string">&#x27;index.js&#x27;</span>),<br>  <span class="hljs-attr">mode</span>: <span class="hljs-string">&#x27;development&#x27;</span>,<br>  <span class="hljs-attr">output</span>: &#123;<br>    <span class="hljs-attr">filename</span>: <span class="hljs-string">&#x27;bundle.js&#x27;</span>,<br>    <span class="hljs-attr">path</span>: path.join(__dirname, <span class="hljs-string">&#x27;dist&#x27;</span>)<br>  &#125;,<br>&#125;<br></code></pre></td></tr></table></figure></li>
+<li><p>编辑 webpack 配置文件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;path&quot;</span>);<br><br><span class="hljs-built_in">module</span>.exports = &#123;<br>  <span class="hljs-attr">entry</span>: path.join(__dirname, <span class="hljs-string">&quot;src&quot;</span>, <span class="hljs-string">&quot;index.js&quot;</span>),<br>  <span class="hljs-attr">mode</span>: <span class="hljs-string">&quot;development&quot;</span>,<br>  <span class="hljs-attr">output</span>: &#123;<br>    <span class="hljs-attr">filename</span>: <span class="hljs-string">&quot;bundle.js&quot;</span>,<br>    <span class="hljs-attr">path</span>: path.join(__dirname, <span class="hljs-string">&quot;dist&quot;</span>),<br>  &#125;,<br>&#125;;<br></code></pre></td></tr></table></figure></li>
 <li><p>执行<code> npx webpack</code></p>
 <p><img src="https://s2.loli.net/2022/02/06/Vf2e5YPjGB6QHNc.png" alt="image-20220124175243382"></p>
 </li>
 </ol>
-<h4 id="2-4-2-处理CSS"><a href="#2-4-2-处理CSS" class="headerlink" title="2.4.2 处理CSS"></a>2.4.2 处理CSS</h4><p><img src="https://s2.loli.net/2022/02/06/hdKWLnOr4SicsN7.png" alt="image-20220124180035396"></p>
-<p>按2.4.1的步骤直接执行，会发现出错</p>
+<h4 id="2-4-2-处理-CSS"><a href="#2-4-2-处理-CSS" class="headerlink" title="2.4.2 处理 CSS"></a>2.4.2 处理 CSS</h4><p><img src="https://s2.loli.net/2022/02/06/hdKWLnOr4SicsN7.png" alt="image-20220124180035396"></p>
+<p>按 2.4.1 的步骤直接执行，会发现出错</p>
 <p><img src="https://s2.loli.net/2022/02/06/qfrm5LzBx7YMtCD.png" alt="image-20220124180151225"></p>
-<p><b style="color: red">原因：Webpack只认识JS，所以需要使用Loader将对应非JS资源转译成JS</b></p>
+<p><b style="color: red">原因：Webpack 只认识 JS，所以需要使用 Loader 将对应非 JS 资源转译成 JS</b></p>
 <ol>
-<li><p>安装Loader</p>
+<li><p>安装 Loader</p>
 <p><code> npm install css-loader style-loader -D</code></p>
 </li>
-<li><p>添加<code> module</code>，使用Loader处理CSS文件</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;path&#x27;</span>);<br><br><span class="hljs-built_in">module</span>.exports = &#123;<br>  <span class="hljs-attr">entry</span>: path.join(__dirname, <span class="hljs-string">&#x27;src&#x27;</span>, <span class="hljs-string">&#x27;index.js&#x27;</span>),<br>  <span class="hljs-attr">mode</span>: <span class="hljs-string">&#x27;development&#x27;</span>,<br>  <span class="hljs-attr">output</span>: &#123;<br>    <span class="hljs-attr">filename</span>: <span class="hljs-string">&#x27;bundle.js&#x27;</span>,<br>    <span class="hljs-attr">path</span>: path.join(__dirname, <span class="hljs-string">&#x27;dist&#x27;</span>)<br>  &#125;,<br>  <span class="hljs-attr">module</span>: &#123;<br>    <span class="hljs-attr">rules</span>: [<br>      &#123;<br>        <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.css$/</span>,<br>        use: [<span class="hljs-string">&#x27;style-loader&#x27;</span>, <span class="hljs-string">&#x27;css-loader&#x27;</span>]<br>      &#125;<br>    ]<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+<li><p>添加<code> module</code>，使用 Loader 处理 CSS 文件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;path&quot;</span>);<br><br><span class="hljs-built_in">module</span>.exports = &#123;<br>  <span class="hljs-attr">entry</span>: path.join(__dirname, <span class="hljs-string">&quot;src&quot;</span>, <span class="hljs-string">&quot;index.js&quot;</span>),<br>  <span class="hljs-attr">mode</span>: <span class="hljs-string">&quot;development&quot;</span>,<br>  <span class="hljs-attr">output</span>: &#123;<br>    <span class="hljs-attr">filename</span>: <span class="hljs-string">&quot;bundle.js&quot;</span>,<br>    <span class="hljs-attr">path</span>: path.join(__dirname, <span class="hljs-string">&quot;dist&quot;</span>),<br>  &#125;,<br>  <span class="hljs-attr">module</span>: &#123;<br>    <span class="hljs-attr">rules</span>: [<br>      &#123;<br>        <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.css$/</span>,<br>        use: [<span class="hljs-string">&quot;style-loader&quot;</span>, <span class="hljs-string">&quot;css-loader&quot;</span>],<br>      &#125;,<br>    ],<br>  &#125;,<br>&#125;;<br></code></pre></td></tr></table></figure></li>
 <li><p>执行<code> npx webpack</code>，成功</p>
 <p><img src="https://s2.loli.net/2022/02/06/k2VSJy5rPZ8jpYA.png" alt="image-20220124180951673"></p>
 </li>
 </ol>
-<h4 id="2-4-3-使用Babel"><a href="#2-4-3-使用Babel" class="headerlink" title="2.4.3 使用Babel"></a>2.4.3 使用Babel</h4><p>Babel用于将使用ES6语法编写的JS代码转换为向后兼容的JavaScript语法，以便能够运行在当前和旧版本的浏览器或其他环境中。</p>
+<h4 id="2-4-3-使用-Babel"><a href="#2-4-3-使用-Babel" class="headerlink" title="2.4.3 使用 Babel"></a>2.4.3 使用 Babel</h4><p>Babel 用于将使用 ES6 语法编写的 JS 代码转换为向后兼容的 JavaScript 语法，以便能够运行在当前和旧版本的浏览器或其他环境中。</p>
 <ol>
 <li><p>安装依赖。</p>
 <p><code> npm install @babel/core @babel/preset-env babel-loader</code></p>
 </li>
 <li><p>配置。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;path&#x27;</span>);<br><br><span class="hljs-built_in">module</span>.exports = &#123;<br>  <span class="hljs-attr">entry</span>: path.join(__dirname, <span class="hljs-string">&#x27;src&#x27;</span>, <span class="hljs-string">&#x27;index.js&#x27;</span>),<br>  <span class="hljs-attr">mode</span>: <span class="hljs-string">&#x27;development&#x27;</span>,<br>  <span class="hljs-attr">output</span>: &#123;<br>    <span class="hljs-attr">filename</span>: <span class="hljs-string">&#x27;bundle.js&#x27;</span>,<br>    <span class="hljs-attr">path</span>: path.join(__dirname, <span class="hljs-string">&#x27;dist&#x27;</span>)<br>  &#125;,<br>  <span class="hljs-attr">module</span>: &#123;<br>    <span class="hljs-attr">rules</span>: [<br>      &#123;<br>        <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.js$/</span>,<br>        use: [&#123;<br>          <span class="hljs-attr">loader</span>: <span class="hljs-string">&#x27;babel-loader&#x27;</span>,<br>          <span class="hljs-attr">options</span>: &#123;<br>            <span class="hljs-attr">presets</span>: [<br>              [<br>                <span class="hljs-string">&#x27;@babel/preset-env&#x27;</span><br>              ]<br>            ]<br>          &#125;<br>        &#125;]<br>      &#125;<br>    ]<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;path&quot;</span>);<br><br><span class="hljs-built_in">module</span>.exports = &#123;<br>  <span class="hljs-attr">entry</span>: path.join(__dirname, <span class="hljs-string">&quot;src&quot;</span>, <span class="hljs-string">&quot;index.js&quot;</span>),<br>  <span class="hljs-attr">mode</span>: <span class="hljs-string">&quot;development&quot;</span>,<br>  <span class="hljs-attr">output</span>: &#123;<br>    <span class="hljs-attr">filename</span>: <span class="hljs-string">&quot;bundle.js&quot;</span>,<br>    <span class="hljs-attr">path</span>: path.join(__dirname, <span class="hljs-string">&quot;dist&quot;</span>),<br>  &#125;,<br>  <span class="hljs-attr">module</span>: &#123;<br>    <span class="hljs-attr">rules</span>: [<br>      &#123;<br>        <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.js$/</span>,<br>        use: [<br>          &#123;<br>            <span class="hljs-attr">loader</span>: <span class="hljs-string">&quot;babel-loader&quot;</span>,<br>            <span class="hljs-attr">options</span>: &#123;<br>              <span class="hljs-attr">presets</span>: [[<span class="hljs-string">&quot;@babel/preset-env&quot;</span>]],<br>            &#125;,<br>          &#125;,<br>        ],<br>      &#125;,<br>    ],<br>  &#125;,<br>&#125;;<br></code></pre></td></tr></table></figure></li>
 <li><p><code> npx webpack</code></p>
 <p><strong>源代码</strong>：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> add = <span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> a + b;<br></code></pre></td></tr></table></figure>
-
-
 
 <p><strong>转换后的</strong>：</p>
 <p><img src="https://s2.loli.net/2022/02/06/H3SOZeTbsQWc1af.png" alt="image-20220124191225084"></p>
 </li>
 </ol>
-<h4 id="2-4-4-生成HTML"><a href="#2-4-4-生成HTML" class="headerlink" title="2.4.4 生成HTML"></a>2.4.4 生成HTML</h4><ol>
+<h4 id="2-4-4-生成-HTML"><a href="#2-4-4-生成-HTML" class="headerlink" title="2.4.4 生成 HTML"></a>2.4.4 生成 HTML</h4><ol>
 <li><p>安装依赖</p>
 <p><code> npm install html-webpack-plugin -D</code></p>
 </li>
-<li><p>配置。因为这个不是loader，而是plugin(插件)，所以配置需要引入插件，然后在<code> plugins</code>中实例化插件</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;path&#x27;</span>);<br><span class="hljs-keyword">const</span> HtmlWebpackPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;html-webpack-plugin&#x27;</span>);<br><br><span class="hljs-built_in">module</span>.exports = &#123;<br>  <span class="hljs-attr">entry</span>: path.join(__dirname, <span class="hljs-string">&#x27;src&#x27;</span>, <span class="hljs-string">&#x27;index.js&#x27;</span>),<br>  <span class="hljs-attr">mode</span>: <span class="hljs-string">&#x27;development&#x27;</span>,<br>  <span class="hljs-attr">output</span>: &#123;<br>    <span class="hljs-attr">filename</span>: <span class="hljs-string">&#x27;bundle.js&#x27;</span>,<br>    <span class="hljs-attr">path</span>: path.join(__dirname, <span class="hljs-string">&#x27;dist&#x27;</span>)<br>  &#125;,<br>  <span class="hljs-attr">plugins</span>: [<span class="hljs-keyword">new</span> HtmlWebpackPlugin()]<br><br>&#125;<br></code></pre></td></tr></table></figure></li>
-<li><p><code>npx webpack</code> </p>
+<li><p>配置。因为这个不是 loader，而是 plugin(插件)，所以配置需要引入插件，然后在<code> plugins</code>中实例化插件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;path&quot;</span>);<br><span class="hljs-keyword">const</span> HtmlWebpackPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;html-webpack-plugin&quot;</span>);<br><br><span class="hljs-built_in">module</span>.exports = &#123;<br>  <span class="hljs-attr">entry</span>: path.join(__dirname, <span class="hljs-string">&quot;src&quot;</span>, <span class="hljs-string">&quot;index.js&quot;</span>),<br>  <span class="hljs-attr">mode</span>: <span class="hljs-string">&quot;development&quot;</span>,<br>  <span class="hljs-attr">output</span>: &#123;<br>    <span class="hljs-attr">filename</span>: <span class="hljs-string">&quot;bundle.js&quot;</span>,<br>    <span class="hljs-attr">path</span>: path.join(__dirname, <span class="hljs-string">&quot;dist&quot;</span>),<br>  &#125;,<br>  <span class="hljs-attr">plugins</span>: [<span class="hljs-keyword">new</span> HtmlWebpackPlugin()],<br>&#125;;<br></code></pre></td></tr></table></figure></li>
+<li><p><code>npx webpack</code></p>
 <p><img src="https://s2.loli.net/2022/02/06/dI1ilLcGVvgxU2k.png" alt="image-20220124192212302"></p>
 </li>
 </ol>
@@ -579,27 +577,27 @@
 <li><p>安装依赖</p>
 <p><code> npm install webpack-dev-server -D</code></p>
 </li>
-<li><p>开启HMR</p>
+<li><p>开启 HMR</p>
 </li>
 </ol>
 <p><img src="https://s2.loli.net/2022/02/06/YUXrOxTcFPyupEk.png" alt="image-20220124193400240"></p>
 <ol start="3">
-<li>启动Webpack</li>
+<li>启动 Webpack</li>
 </ol>
-<p><code> npx webpack serve</code> </p>
+<p><code> npx webpack serve</code></p>
 <p><img src="https://s2.loli.net/2022/02/06/uIROe6HBP1vUSVa.gif" alt="动画"></p>
 <p><img src="https://s2.loli.net/2022/02/06/lsMdryi2bhXZnI6.png" alt="image-20220124194101445"></p>
-<h4 id="2-4-6-Tree-Shaking"><a href="#2-4-6-Tree-Shaking" class="headerlink" title="2.4.6 Tree-Shaking"></a>2.4.6 Tree-Shaking</h4><p><strong>Tree-shaking</strong>：树摇，用于删除Dead Code</p>
+<h4 id="2-4-6-Tree-Shaking"><a href="#2-4-6-Tree-Shaking" class="headerlink" title="2.4.6 Tree-Shaking"></a>2.4.6 Tree-Shaking</h4><p><strong>Tree-shaking</strong>：树摇，用于删除 Dead Code</p>
 <p>Dead Code：</p>
 <ul>
 <li>代码没有被用到</li>
 <li>代码只读不写</li>
 </ul>
-<p>Dead Code例子：</p>
+<p>Dead Code 例子：</p>
 <p><img src="https://s2.loli.net/2022/02/06/ngbMeHsGUJpLSBQ.png" alt="image-20220124232306850"></p>
-<p>没有使用Tree-Shaking时：</p>
+<p>没有使用 Tree-Shaking 时：</p>
 <p><img src="https://s2.loli.net/2022/02/06/YHcrp6QUniOGWo3.png" alt="image-20220124232435821"></p>
-<p>修改配置文件，开启Tree-Shaking：</p>
+<p>修改配置文件，开启 Tree-Shaking：</p>
 <p><img src="https://s2.loli.net/2022/02/06/cCYBrLUlqyxI7fk.png" alt="image-20220124233227128"></p>
 <p>结果：</p>
 <p><img src="https://s2.loli.net/2022/02/06/XBPMrJuknAVjYFD.png" alt="image-20220124233301693"></p>
@@ -611,50 +609,44 @@
 <li>代码压缩</li>
 <li>分包</li>
 </ul>
-<h2 id="3-Loader"><a href="#3-Loader" class="headerlink" title="3. Loader"></a>3. Loader</h2><p>作用：<strong>将资源转译成标准JS</strong>。(因为Webpack只认识JS)</p>
-<h3 id="3-1-Loader使用示例"><a href="#3-1-Loader使用示例" class="headerlink" title="3.1 Loader使用示例"></a>3.1 Loader使用示例</h3><p>使用Loader(处理less)：</p>
+<h2 id="3-Loader"><a href="#3-Loader" class="headerlink" title="3. Loader"></a>3. Loader</h2><p>作用：<strong>将资源转译成标准 JS</strong>。(因为 Webpack 只认识 JS)</p>
+<h3 id="3-1-Loader-使用示例"><a href="#3-1-Loader-使用示例" class="headerlink" title="3.1 Loader 使用示例"></a>3.1 Loader 使用示例</h3><p>使用 Loader(处理 less)：</p>
 <ol>
-<li><p>安装Loader</p>
+<li><p>安装 Loader</p>
 <p><code> npm install style-loader css-loader less-loader -D</code></p>
 </li>
 <li><p>添加<code> module</code>处理</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;path&#x27;</span>);<br><br><span class="hljs-built_in">module</span>.exports = &#123;<br>  <span class="hljs-attr">entry</span>: path.join(__dirname, <span class="hljs-string">&#x27;src&#x27;</span>, <span class="hljs-string">&#x27;index.js&#x27;</span>),<br>  <span class="hljs-attr">mode</span>: <span class="hljs-string">&#x27;development&#x27;</span>,<br>  <span class="hljs-attr">output</span>: &#123;<br>    <span class="hljs-attr">filename</span>: <span class="hljs-string">&#x27;bundle.js&#x27;</span>,<br>    <span class="hljs-attr">path</span>: path.join(__dirname, <span class="hljs-string">&#x27;dist&#x27;</span>)<br>  &#125;,<br>  <span class="hljs-attr">module</span>: &#123;<br>    <span class="hljs-attr">rules</span>: [<br>      &#123;<br>        <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.less$/</span>,<br>        use: [<span class="hljs-string">&#x27;style-loader&#x27;</span>, <span class="hljs-string">&#x27;css-loader&#x27;</span>, <span class="hljs-string">&#x27;less-loader&#x27;</span>]<br>      &#125;<br>    ]<br>  &#125;,<br><br>&#125;<br></code></pre></td></tr></table></figure></li>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;path&quot;</span>);<br><br><span class="hljs-built_in">module</span>.exports = &#123;<br>  <span class="hljs-attr">entry</span>: path.join(__dirname, <span class="hljs-string">&quot;src&quot;</span>, <span class="hljs-string">&quot;index.js&quot;</span>),<br>  <span class="hljs-attr">mode</span>: <span class="hljs-string">&quot;development&quot;</span>,<br>  <span class="hljs-attr">output</span>: &#123;<br>    <span class="hljs-attr">filename</span>: <span class="hljs-string">&quot;bundle.js&quot;</span>,<br>    <span class="hljs-attr">path</span>: path.join(__dirname, <span class="hljs-string">&quot;dist&quot;</span>),<br>  &#125;,<br>  <span class="hljs-attr">module</span>: &#123;<br>    <span class="hljs-attr">rules</span>: [<br>      &#123;<br>        <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.less$/</span>,<br>        use: [<span class="hljs-string">&quot;style-loader&quot;</span>, <span class="hljs-string">&quot;css-loader&quot;</span>, <span class="hljs-string">&quot;less-loader&quot;</span>],<br>      &#125;,<br>    ],<br>  &#125;,<br>&#125;;<br></code></pre></td></tr></table></figure></li>
 </ol>
 <p>分析：</p>
 <ul>
-<li>less-loader：实现less -&gt; css的转换</li>
-<li>css-loader：将css转换成module.eports = “${css}”的形式，符合JS的语法(直截了当来说的话，就是把css用js表示)</li>
-<li>style-loader：将css模块包进require语句，并在运行时调用injectStyle等函数<b style="color: red">将内容注入到页面的style标签</b></li>
+<li>less-loader：实现 less -&gt; css 的转换</li>
+<li>css-loader：将 css 转换成 module.eports = “${css}”的形式，符合 JS 的语法(直截了当来说的话，就是把 css 用 js 表示)</li>
+<li>style-loader：将 css 模块包进 require 语句，并在运行时调用 injectStyle 等函数<b style="color: red">将内容注入到页面的 style 标签</b></li>
 </ul>
-<h3 id="3-2-Loader其他特性"><a href="#3-2-Loader其他特性" class="headerlink" title="3.2 Loader其他特性"></a>3.2 Loader其他特性</h3><p><img src="https://s2.loli.net/2022/02/06/Vh7MUkZBvEDjNwT.png" alt="image-20220124235232348"></p>
+<h3 id="3-2-Loader-其他特性"><a href="#3-2-Loader-其他特性" class="headerlink" title="3.2 Loader 其他特性"></a>3.2 Loader 其他特性</h3><p><img src="https://s2.loli.net/2022/02/06/Vh7MUkZBvEDjNwT.png" alt="image-20220124235232348"></p>
 <ul>
 <li><strong>链式执行</strong>(过程的输出刚好是下一个过程的输入)</li>
 <li><strong>支持异步执行</strong></li>
-<li>分normal、pitch两种模式(<b style="color: red">这部分没有什么概念</b>)</li>
+<li>分 normal、pitch 两种模式(<b style="color: red">这部分没有什么概念</b>)</li>
 </ul>
-<h3 id="3-3-编写简单Loader"><a href="#3-3-编写简单Loader" class="headerlink" title="3.3 编写简单Loader"></a>3.3 编写简单Loader</h3><h4 id="3-3-1-Loader形式"><a href="#3-3-1-Loader形式" class="headerlink" title="3.3.1 Loader形式"></a>3.3.1 Loader形式</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">source, sourceMap?, data?</span>) </span>&#123;	<span class="hljs-comment">// ?代表参数可有可无</span><br>    <span class="hljs-comment">// source是loader的输入。可能是文件内容或上一个loader处理的结果</span><br>    <br>    <span class="hljs-comment">// ......</span><br>    <br>    <span class="hljs-keyword">return</span> source;		<span class="hljs-comment">// 此时的source是指经loader处理后的source(不处理则是原来的source，如eslint-loader)</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="3-3-编写简单-Loader"><a href="#3-3-编写简单-Loader" class="headerlink" title="3.3 编写简单 Loader"></a>3.3 编写简单 Loader</h3><h4 id="3-3-1-Loader-形式"><a href="#3-3-1-Loader-形式" class="headerlink" title="3.3.1 Loader 形式"></a>3.3.1 Loader 形式</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">source, sourceMap?, data?</span>) </span>&#123;<br>  <span class="hljs-comment">// ?代表参数可有可无</span><br>  <span class="hljs-comment">// source是loader的输入。可能是文件内容或上一个loader处理的结果</span><br><br>  <span class="hljs-comment">// ......</span><br><br>  <span class="hljs-keyword">return</span> source; <span class="hljs-comment">// 此时的source是指经loader处理后的source(不处理则是原来的source，如eslint-loader)</span><br>&#125;;<br></code></pre></td></tr></table></figure>
 
 <h4 id="3-3-2-开始动手"><a href="#3-3-2-开始动手" class="headerlink" title="3.3.2 开始动手"></a>3.3.2 开始动手</h4><p><strong>目录结构</strong></p>
 <p><img src="https://s2.loli.net/2022/02/06/ekhqvYgz78Topy1.png" alt="image-20220125154719915"></p>
 <p><strong>index.js</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> t1 = <span class="hljs-string">&quot;Hello&quot;</span>;<br></code></pre></td></tr></table></figure>
 
-
-
-<p><strong>自编简单loader</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">source</span>) </span>&#123;<br>  <span class="hljs-built_in">console</span>.log(source);<br>  source += <span class="hljs-string">` let t2 = &#x27; World&#x27;;</span><br><span class="hljs-string">              console.log(t1 + t2);`</span><br>  <span class="hljs-keyword">return</span> source;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-
+<p><strong>自编简单 loader</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">source</span>) </span>&#123;<br>  <span class="hljs-built_in">console</span>.log(source);<br>  source += <span class="hljs-string">` let t2 = &#x27; World&#x27;;</span><br><span class="hljs-string">              console.log(t1 + t2);`</span>;<br>  <span class="hljs-keyword">return</span> source;<br>&#125;;<br></code></pre></td></tr></table></figure>
 
 <p><strong>配置文件</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;path&#x27;</span>);<br><br><span class="hljs-built_in">module</span>.exports = &#123;<br>  <span class="hljs-attr">entry</span>: path.join(__dirname, <span class="hljs-string">&#x27;src&#x27;</span>, <span class="hljs-string">&#x27;index.js&#x27;</span>),<br>  <span class="hljs-attr">mode</span>: <span class="hljs-string">&#x27;production&#x27;</span>,<br>  <span class="hljs-attr">output</span>: &#123;<br>    <span class="hljs-attr">filename</span>: <span class="hljs-string">&#x27;bundle.js&#x27;</span>,<br>    <span class="hljs-attr">path</span>: path.join(__dirname, <span class="hljs-string">&#x27;dist&#x27;</span>)<br>  &#125;,<br>  <span class="hljs-attr">module</span>: &#123;<br>    <span class="hljs-attr">rules</span>: [<br>      &#123;<br>        <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.js$/</span>,<br>        use: path.join(__dirname, <span class="hljs-string">&#x27;loader&#x27;</span>, <span class="hljs-string">&#x27;myloader.js&#x27;</span>)<br>      &#125;<br>    ]<br>  &#125;,<br><br>&#125;<br></code></pre></td></tr></table></figure>
-
-
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;path&quot;</span>);<br><br><span class="hljs-built_in">module</span>.exports = &#123;<br>  <span class="hljs-attr">entry</span>: path.join(__dirname, <span class="hljs-string">&quot;src&quot;</span>, <span class="hljs-string">&quot;index.js&quot;</span>),<br>  <span class="hljs-attr">mode</span>: <span class="hljs-string">&quot;production&quot;</span>,<br>  <span class="hljs-attr">output</span>: &#123;<br>    <span class="hljs-attr">filename</span>: <span class="hljs-string">&quot;bundle.js&quot;</span>,<br>    <span class="hljs-attr">path</span>: path.join(__dirname, <span class="hljs-string">&quot;dist&quot;</span>),<br>  &#125;,<br>  <span class="hljs-attr">module</span>: &#123;<br>    <span class="hljs-attr">rules</span>: [<br>      &#123;<br>        <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.js$/</span>,<br>        use: path.join(__dirname, <span class="hljs-string">&quot;loader&quot;</span>, <span class="hljs-string">&quot;myloader.js&quot;</span>),<br>      &#125;,<br>    ],<br>  &#125;,<br>&#125;;<br></code></pre></td></tr></table></figure>
 
 <p><img src="https://s2.loli.net/2022/02/06/rzc7MKgAXqlEebV.png" alt="image-20220125154908116"></p>
 <p><img src="https://s2.loli.net/2022/02/06/HLW1AXUMh3u9QNI.png" alt="image-20220125154931895"></p>
-<h3 id="3-4-常见Loader"><a href="#3-4-常见Loader" class="headerlink" title="3.4 常见Loader"></a>3.4 常见Loader</h3><p><img src="https://s2.loli.net/2022/01/25/s2kMWbN3cOEwtrf.png" alt="image-20220125155015086"></p>
-<h2 id="4-Plugin-插件"><a href="#4-Plugin-插件" class="headerlink" title="4. Plugin(插件)"></a>4. Plugin(插件)</h2><p>使用如2.4.4所示</p>
+<h3 id="3-4-常见-Loader"><a href="#3-4-常见-Loader" class="headerlink" title="3.4 常见 Loader"></a>3.4 常见 Loader</h3><p><img src="https://s2.loli.net/2022/01/25/s2kMWbN3cOEwtrf.png" alt="image-20220125155015086"></p>
+<h2 id="4-Plugin-插件"><a href="#4-Plugin-插件" class="headerlink" title="4. Plugin(插件)"></a>4. Plugin(插件)</h2><p>使用如 2.4.4 所示</p>
 <p>写插件，暂时无能为力，先把课件上的干货放出来(方便以后查看)</p>
 <p><img src="https://s2.loli.net/2022/01/25/v9gXo8siF7eDmct.png" alt="image-20220125155439723"></p>
 <p><img src="https://s2.loli.net/2022/01/25/xMPJvrSybXOgkBz.png" alt="image-20220125155456498"></p>
@@ -1442,7 +1434,7 @@
       <a href="/about" target="_blank">赤蓝紫</a>
       |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
       <br />
-       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">179.2k</span>&nbsp;字      
+       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">179.8k</span>&nbsp;字      
       <span id="busuanzi_container_site_pv"> |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次 </span>
        
       <span id="busuanzi_container_site_uv"> |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人 </span>

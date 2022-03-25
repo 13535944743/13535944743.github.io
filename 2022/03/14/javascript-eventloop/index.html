@@ -482,18 +482,18 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="详解JavaScript-执行机制"><a href="#详解JavaScript-执行机制" class="headerlink" title="详解JavaScript 执行机制"></a>详解JavaScript 执行机制</h1><h2 id="热身"><a href="#热身" class="headerlink" title="热身"></a>热身</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">/* 先打印1， 3， 2s后打印2 */</span><br><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span>)<br><span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-number">2</span>)<br>&#125;, <span class="hljs-number">1000</span>)<br><span class="hljs-built_in">console</span>.log(<span class="hljs-number">3</span>)<br><br><br><span class="hljs-comment">/* 先打印1， 3， 后打印2 */</span><br><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span>)<br><span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-number">2</span>)<br>&#125;, <span class="hljs-number">0</span>)<br><span class="hljs-built_in">console</span>.log(<span class="hljs-number">3</span>)<br></code></pre></td></tr></table></figure>
+                <h1 id="详解-JavaScript-执行机制"><a href="#详解-JavaScript-执行机制" class="headerlink" title="详解 JavaScript 执行机制"></a>详解 JavaScript 执行机制</h1><h2 id="热身"><a href="#热身" class="headerlink" title="热身"></a>热身</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">/* 先打印1， 3， 2s后打印2 */</span><br><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span>);<br><span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-number">2</span>);<br>&#125;, <span class="hljs-number">1000</span>);<br><span class="hljs-built_in">console</span>.log(<span class="hljs-number">3</span>);<br><br><span class="hljs-comment">/* 先打印1， 3， 后打印2 */</span><br><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span>);<br><span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-number">2</span>);<br>&#125;, <span class="hljs-number">0</span>);<br><span class="hljs-built_in">console</span>.log(<span class="hljs-number">3</span>);<br></code></pre></td></tr></table></figure>
 
-<p>第一个例子的话不难理解，定时器函数就是1s后才调用回调函数.</p>
-<p>而第二个例子则可能优点小问题，JavaScript从上到下执行，那么遇到0s的计时器函数，就应该先输出2才对啊。这就是因为后面要提到的JavaScript执行机制导致的啦，因为setTimeout是异步任务。</p>
-<h2 id="JavaScript是单线程"><a href="#JavaScript是单线程" class="headerlink" title="JavaScript是单线程"></a>JavaScript是单线程</h2><p>JavaScript的核心特征就是<strong>单线程</strong>，即同一时间只能做一件事。</p>
-<p>为什么它是单线程呢？因为JavaScript作为浏览器脚本语言，它的主要用途就是与用户互动、操作DOM。既然如此，如果它不是单线程的话，假如一个线程在DOM节点上添加内容，同时另一个线程删除这个节点。可以看出，如果JavaScript不是单线程的话，那么将会导致同步问题。</p>
+<p>第一个例子的话不难理解，定时器函数就是 1s 后才调用回调函数.</p>
+<p>而第二个例子则可能优点小问题，JavaScript 从上到下执行，那么遇到 0s 的计时器函数，就应该先输出 2 才对啊。这就是因为后面要提到的 JavaScript 执行机制导致的啦，因为 setTimeout 是异步任务。</p>
+<h2 id="JavaScript-是单线程"><a href="#JavaScript-是单线程" class="headerlink" title="JavaScript 是单线程"></a>JavaScript 是单线程</h2><p>JavaScript 的核心特征就是<strong>单线程</strong>，即同一时间只能做一件事。</p>
+<p>为什么它是单线程呢？因为 JavaScript 作为浏览器脚本语言，它的主要用途就是与用户互动、操作 DOM。既然如此，如果它不是单线程的话，假如一个线程在 DOM 节点上添加内容，同时另一个线程删除这个节点。可以看出，如果 JavaScript 不是单线程的话，那么将会导致同步问题。</p>
 <br>
 
-<h2 id="任务队列"><a href="#任务队列" class="headerlink" title="任务队列"></a>任务队列</h2><p>JavaScript是单线程语言，这也就导致了如果有一个任务等待很长的时间，这个时候就会导致阻塞，程序就会“卡死”，用户体验非常差。所以JavaScript需要异步任务。</p>
+<h2 id="任务队列"><a href="#任务队列" class="headerlink" title="任务队列"></a>任务队列</h2><p>JavaScript 是单线程语言，这也就导致了如果有一个任务等待很长的时间，这个时候就会导致阻塞，程序就会“卡死”，用户体验非常差。所以 JavaScript 需要异步任务。</p>
 <br>
 
-<p>那么，为什么JavsScript明明是单线程的，为什么能异步呢？这是因为浏览器是多线程的，通过事件循环<code> Event Loop</code>即可实现异步。</p>
+<p>那么，为什么 JavsScript 明明是单线程的，为什么能异步呢？这是因为浏览器是多线程的，通过事件循环<code> Event Loop</code>即可实现异步。</p>
 <br>
 
 <p>所有任务都可以分成两种。</p>
@@ -505,14 +505,14 @@
 
 <p><strong>常见异步任务</strong>：</p>
 <ul>
-<li>JS事件</li>
-<li>AJAX请求</li>
-<li>setTimeout和setInterval</li>
-<li>Promise(<b style="color: red">Promise定义部分为同步任务，回调部分为异步任务</b>)</li>
+<li>JS 事件</li>
+<li>AJAX 请求</li>
+<li>setTimeout 和 setInterval</li>
+<li>Promise(<b style="color: red">Promise 定义部分为同步任务，回调部分为异步任务</b>)</li>
 </ul>
 <br>
 
-<h2 id="Event-Loop事件循环机制1"><a href="#Event-Loop事件循环机制1" class="headerlink" title="Event Loop事件循环机制1"></a>Event Loop事件循环机制1</h2><ol>
+<h2 id="Event-Loop-事件循环机制-1"><a href="#Event-Loop-事件循环机制-1" class="headerlink" title="Event Loop 事件循环机制 1"></a>Event Loop 事件循环机制 1</h2><ol>
 <li>所有同步任务进入主线程，而异步任务则是进入<code> Event Table</code>注册回调函数</li>
 <li>当异步任务的<b style="color: red">触发条件满足</b>时，异步任务注册的回调函数将会从<code> Event Table</code>移入到任务队列<code> Event Queue</code>中</li>
 <li>当主线程中的所有同步任务执行完毕后，系统就会去看看<code> Event Queue</code>中看看有没有回调函数，有的话就推到主线程中</li>
@@ -525,11 +525,11 @@
 <ul>
 <li>当宏任务队列中的任务全部都执行完之后，如果微任务队列不为空，则先执行微任务队列中的所有任务</li>
 </ul>
-<h3 id="微任务"><a href="#微任务" class="headerlink" title="微任务"></a>微任务</h3><p>Promise回调部分、process.nextTick</p>
+<h3 id="微任务"><a href="#微任务" class="headerlink" title="微任务"></a>微任务</h3><p>Promise 回调部分、process.nextTick</p>
 <ul>
 <li>在上一个宏任务队列执行完毕后如果有微任务就会执行微任务队列中的所有元素</li>
 </ul>
-<h2 id="Event-Loop事件循环机制2"><a href="#Event-Loop事件循环机制2" class="headerlink" title="Event Loop事件循环机制2"></a>Event Loop事件循环机制2</h2><ol>
+<h2 id="Event-Loop-事件循环机制-2"><a href="#Event-Loop-事件循环机制-2" class="headerlink" title="Event Loop 事件循环机制 2"></a>Event Loop 事件循环机制 2</h2><ol>
 <li>首先执行<code> script</code>下的同步任务</li>
 <li>执行过程中，如果遇到异步任务，则需要把它放到对应的任务队列中(遇到宏任务，则放到宏任务中；遇到微任务，则放到微任务队列中)</li>
 <li>同步任务执行完毕，查看微任务队列<ul>
@@ -539,85 +539,85 @@
 </li>
 </ol>
 <p><img src="https://s2.loli.net/2022/03/14/xzo2leVm165AkLd.png" alt="preview"></p>
-<h3 id="练手1"><a href="#练手1" class="headerlink" title="练手1"></a>练手1</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span>)<br><br><span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-number">2</span>)<br>&#125;, <span class="hljs-number">0</span>)<br><br><span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;<br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">3</span>; i &lt; <span class="hljs-number">6</span>; i++) &#123;<br>    <span class="hljs-built_in">console</span>.log(i)<br>  &#125;<br>  resolve()<br>&#125;).then(<span class="hljs-function">() =&gt;</span> &#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-number">6</span>)<br>&#125;)<br><br><span class="hljs-built_in">console</span>.log(<span class="hljs-number">7</span>)<br></code></pre></td></tr></table></figure>
+<h3 id="练手-1"><a href="#练手-1" class="headerlink" title="练手 1"></a>练手 1</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span>);<br><br><span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-number">2</span>);<br>&#125;, <span class="hljs-number">0</span>);<br><br><span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;<br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">3</span>; i &lt; <span class="hljs-number">6</span>; i++) &#123;<br>    <span class="hljs-built_in">console</span>.log(i);<br>  &#125;<br>  resolve();<br>&#125;).then(<span class="hljs-function">() =&gt;</span> &#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-number">6</span>);<br>&#125;);<br><br><span class="hljs-built_in">console</span>.log(<span class="hljs-number">7</span>);<br></code></pre></td></tr></table></figure>
 
 <p>打印顺序：1, 3, 4, 5, 7, 6, 2</p>
 <br>
 
 <p>解析：</p>
 <ol>
-<li>首先，程序从上往下走，直接输出1，遇到<code> setTimeout</code>后，把它放到宏任务队列中<ul>
+<li>首先，程序从上往下走，直接输出 1，遇到<code> setTimeout</code>后，把它放到宏任务队列中<ul>
 <li>此时，宏任务队列中为<code>[setTimeout]</code>(<strong>这里用数组表示任务队列，左边代表先进入的任务队列</strong>)</li>
 </ul>
 </li>
-<li>继续往下跑，遇到<code> Promise</code>，因为<b style="color: red">Promise定义部分为同步任务</b>，依次输出3, 4, 5，遇到<code> Promise.then()</code>，把它放到微任务队列中<ul>
+<li>继续往下跑，遇到<code> Promise</code>，因为<b style="color: red">Promise 定义部分为同步任务</b>，依次输出 3, 4, 5，遇到<code> Promise.then()</code>，把它放到微任务队列中<ul>
 <li>此时，宏任务队列为<code>[setTimeout]</code></li>
 <li>此时，微任务队列为<code>[Promise.then()]</code></li>
 </ul>
 </li>
-<li>输出7后，执行微任务队列中全部的任务，输出6， 再执行宏任务队列中的任务，输出2</li>
+<li>输出 7 后，执行微任务队列中全部的任务，输出 6， 再执行宏任务队列中的任务，输出 2</li>
 </ol>
-<h3 id="练手2"><a href="#练手2" class="headerlink" title="练手2"></a>练手2</h3><p><strong>题目是本人自己想的，分析有误请见谅(希望评论指示)</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span>)<br><br><span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-number">2</span>)<br>  <span class="hljs-built_in">Promise</span>.resolve().then(<span class="hljs-function">() =&gt;</span> &#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-number">3</span>)<br>  &#125;)<br>&#125;, <span class="hljs-number">10</span>)<br><br><span class="hljs-keyword">const</span> p = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-number">4</span>)<br>  resolve(<span class="hljs-number">5</span>)<br>&#125;).then(<span class="hljs-function">(<span class="hljs-params">value</span>) =&gt;</span> &#123;<br>  <span class="hljs-built_in">console</span>.log(value)<br>  <span class="hljs-built_in">Promise</span>.resolve().then(<span class="hljs-function">() =&gt;</span> &#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-number">6</span>)<br>  &#125;)<br>  <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-number">7</span>)<br>  &#125;)<br>&#125;).then(<span class="hljs-function">() =&gt;</span> &#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-number">8</span>)<br>&#125;)<br><br><span class="hljs-built_in">console</span>.log(<span class="hljs-number">9</span>)<br></code></pre></td></tr></table></figure>
+<h3 id="练手-2"><a href="#练手-2" class="headerlink" title="练手 2"></a>练手 2</h3><p><strong>题目是本人自己想的，分析有误请见谅(希望评论指示)</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span>);<br><br><span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-number">2</span>);<br>  <span class="hljs-built_in">Promise</span>.resolve().then(<span class="hljs-function">() =&gt;</span> &#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-number">3</span>);<br>  &#125;);<br>&#125;, <span class="hljs-number">10</span>);<br><br><span class="hljs-keyword">const</span> p = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-number">4</span>);<br>  resolve(<span class="hljs-number">5</span>);<br>&#125;)<br>  .then(<span class="hljs-function">(<span class="hljs-params">value</span>) =&gt;</span> &#123;<br>    <span class="hljs-built_in">console</span>.log(value);<br>    <span class="hljs-built_in">Promise</span>.resolve().then(<span class="hljs-function">() =&gt;</span> &#123;<br>      <span class="hljs-built_in">console</span>.log(<span class="hljs-number">6</span>);<br>    &#125;);<br>    <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>      <span class="hljs-built_in">console</span>.log(<span class="hljs-number">7</span>);<br>    &#125;);<br>  &#125;)<br>  .then(<span class="hljs-function">() =&gt;</span> &#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-number">8</span>);<br>  &#125;);<br><br><span class="hljs-built_in">console</span>.log(<span class="hljs-number">9</span>);<br></code></pre></td></tr></table></figure>
 
 <p>输出顺序：1, 4, 9, 5, 6, 8, 7, 2, 3</p>
 <br>
 
 <p>解析：</p>
 <ol>
-<li><strong>先输出1</strong>， 遇到定时器，但是此时并不满足触发条件，所以2(后面还有其他的内容)只能存放在<code> Event Table</code>中<ul>
-<li>此时，<code> Event Table</code>中有<code> [2(后面还有其他的内容)]</code>。<b style="color: red"><code> Event Table</code>中没有顺序，满足触发条件后，就会进入对应的任务队列</b></li>
+<li><strong>先输出 1</strong>， 遇到定时器，但是此时并不满足触发条件，所以 2(后面还有其他的内容)只能存放在<code> Event Table</code>中<ul>
+<li>此时，<code> Event Table</code>中有<code> [2(后面还有其他的内容)]</code>。<b style="color: red"><code> Event Table</code>中没有顺序，满足触发条件后，就会进入对应的任务队列</b></li>
 </ul>
 </li>
-<li><strong>输出4</strong>，5(后面还有内容)进入微任务队列<ul>
+<li><strong>输出 4</strong>，5(后面还有内容)进入微任务队列<ul>
 <li>此时，<code> Event Table</code>中有<code> [2(后面还有其他的内容)]</code></li>
 <li>微任务队列为[5(后面还有内容)]</li>
 </ul>
 </li>
-<li>8进入微任务队列<ul>
+<li>8 进入微任务队列<ul>
 <li>此时，<code> Event Table</code>中有<code> [2(后面还有其他的内容)]</code></li>
 <li>微任务队列为[5(后面还有内容), 8]</li>
 </ul>
 </li>
-<li><strong>输出9</strong>， 然后执行微任务中的任务<ol>
-<li><strong>输出5</strong>， 6进入微任务队列, 7进入宏任务队列<ul>
+<li><strong>输出 9</strong>， 然后执行微任务中的任务<ol>
+<li><strong>输出 5</strong>， 6 进入微任务队列, 7 进入宏任务队列<ul>
 <li>此时，<code> Event Table</code>中有<code> [2(后面还有其他的内容)]</code></li>
-<li>微任务队列为<code>[6, 8]</code>，<b style="color: red">6会在8之前，因为6是微任务队列5里的微任务</b></li>
+<li>微任务队列为<code>[6, 8]</code>，<b style="color: red">6 会在 8 之前，因为 6 是微任务队列 5 里的微任务</b></li>
 <li>宏任务队列为[7]</li>
 </ul>
 </li>
-<li>依次执行完微任务队列中的任务，然后再执行宏任务队列的任务。<strong>输出顺序为6，8，7</strong></li>
+<li>依次执行完微任务队列中的任务，然后再执行宏任务队列的任务。<strong>输出顺序为 6，8，7</strong></li>
 </ol>
 </li>
-<li>10ms后，满足触发条件，进入宏任务队列，此时，宏任务队列和微任务队列中都没有任务，所以直接执行。<strong>输出2</strong>，3进入微任务队列，<strong>输出3</strong></li>
+<li>10ms 后，满足触发条件，进入宏任务队列，此时，宏任务队列和微任务队列中都没有任务，所以直接执行。<strong>输出 2</strong>，3 进入微任务队列，<strong>输出 3</strong></li>
 </ol>
 <br>
 
 <h2 id="async-await"><a href="#async-await" class="headerlink" title="async, await"></a>async, await</h2><blockquote>
-<p>async/await本质上还是基于Promise的一些封装，而Promise是属于微任务的一种。所以在使用await关键字与Promise.then相同。<br>async函数在await之前的代码都是同步执行的，await之后的代码则是属于微任务(类似于Promise)<b style="color: red">await的表达式还是属于同步任务</b></p>
+<p>async/await 本质上还是基于 Promise 的一些封装，而 Promise 是属于微任务的一种。所以在使用 await 关键字与 Promise.then 相同。<br>async 函数在 await 之前的代码都是同步执行的，await 之后的代码则是属于微任务(类似于 Promise)<b style="color: red">await 的表达式还是属于同步任务</b></p>
 </blockquote>
 <p>下面就继续练手</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span>)<br><br><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">async1</span>(<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-number">2</span>)<br>  <span class="hljs-keyword">await</span> async2()<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-number">3</span>)<br>&#125;<br>async1()<br><br><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">async2</span>(<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-number">4</span>)<br><br>  <span class="hljs-keyword">await</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-number">5</span>)<br>    resolve(<span class="hljs-number">6</span>)<br>  &#125;).then(<span class="hljs-function">(<span class="hljs-params">value</span>) =&gt;</span> &#123;<br>    <span class="hljs-built_in">console</span>.log(value)<br>  &#125;)<br><br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-number">7</span>)<br>&#125;<br><br><span class="hljs-built_in">console</span>.log(<span class="hljs-number">8</span>)<br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span>);<br><br><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">async1</span>(<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-number">2</span>);<br>  <span class="hljs-keyword">await</span> async2();<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-number">3</span>);<br>&#125;<br>async1();<br><br><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">async2</span>(<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-number">4</span>);<br><br>  <span class="hljs-keyword">await</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-number">5</span>);<br>    resolve(<span class="hljs-number">6</span>);<br>  &#125;).then(<span class="hljs-function">(<span class="hljs-params">value</span>) =&gt;</span> &#123;<br>    <span class="hljs-built_in">console</span>.log(value);<br>  &#125;);<br><br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-number">7</span>);<br>&#125;<br><br><span class="hljs-built_in">console</span>.log(<span class="hljs-number">8</span>);<br></code></pre></td></tr></table></figure>
 
 <p>输出顺序为：1, 2, 4, 5, 8, 6, 7, 3</p>
 <br>
 
 <p>分析：</p>
 <ol>
-<li><strong>先输出1</strong>，调用<code> async1</code>函数，因为<code> await</code>之前包括<code> await</code>的表达式都是同步任务，所以，<strong>输出2</strong>后，进入到<code> async2</code>函数中</li>
-<li><strong>输出4</strong>，<code>await</code>一个<code> Promise</code>也是同理，<strong>输出5</strong>，6进入微任务队列，因为<b style="color: red">await之后的代码则是属于微任务(不包括await的表达式)</b>，所以7进入微任务队列<ul>
+<li><strong>先输出 1</strong>，调用<code> async1</code>函数，因为<code> await</code>之前包括<code> await</code>的表达式都是同步任务，所以，<strong>输出 2</strong>后，进入到<code> async2</code>函数中</li>
+<li><strong>输出 4</strong>，<code>await</code>一个<code> Promise</code>也是同理，<strong>输出 5</strong>，6 进入微任务队列，因为<b style="color: red">await 之后的代码则是属于微任务(不包括 await 的表达式)</b>，所以 7 进入微任务队列<ul>
 <li>此时，微任务队列为[6, 7]</li>
 </ul>
 </li>
-<li>执行完<code> async2</code>函数后，回到<code> async1</code>函数中，之后的3进入微任务队列<ul>
+<li>执行完<code> async2</code>函数后，回到<code> async1</code>函数中，之后的 3 进入微任务队列<ul>
 <li>此时，微任务队列为[6, 7, 3]</li>
 </ul>
 </li>
-<li><strong>输出8</strong>，执行微任务队列中的任务，<strong>输出6, 7, 3</strong></li>
+<li><strong>输出 8</strong>，执行微任务队列中的任务，<strong>输出 6, 7, 3</strong></li>
 </ol>
 <br>
 
-<p>参考链接：<br><a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2014/10/event-loop.html">JavaScript 运行机制详解：再谈Event Loop</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/379475079">彻底搞懂 JavaScript 执行机制</a><br><a target="_blank" rel="noopener" href="https://juejin.cn/post/7020328988715270157">JavaScript之彻底理解EventLoop</a><br><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000012806637">10分钟理解JS引擎的执行机制</a></p>
+<p>参考链接：<br><a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2014/10/event-loop.html">JavaScript 运行机制详解：再谈 Event Loop</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/379475079">彻底搞懂 JavaScript 执行机制</a><br><a target="_blank" rel="noopener" href="https://juejin.cn/post/7020328988715270157">JavaScript 之彻底理解 EventLoop</a><br><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000012806637">10 分钟理解 JS 引擎的执行机制</a></p>
 
                 
             </div>
@@ -1390,7 +1390,7 @@
       <a href="/about" target="_blank">赤蓝紫</a>
       |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
       <br />
-       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">179.2k</span>&nbsp;字      
+       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">179.8k</span>&nbsp;字      
       <span id="busuanzi_container_site_pv"> |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次 </span>
        
       <span id="busuanzi_container_site_uv"> |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人 </span>

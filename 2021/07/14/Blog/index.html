@@ -421,12 +421,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/hexo/">
-                                <span class="chip bg-color">hexo</span>
-                            </a>
-                        
                             <a href="/tags/blog/">
                                 <span class="chip bg-color">blog</span>
+                            </a>
+                        
+                            <a href="/tags/hexo/">
+                                <span class="chip bg-color">hexo</span>
                             </a>
                         
                     </div>
@@ -491,21 +491,21 @@
 2. 登录GitHub
 3. 新建仓库
 </code></pre>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/c12733a9a85d5898fd728ddc77b792bb.png" alt="Snipaste_2021-06-21_12-08-29.png"><br>4. 配置SSH-Key<br><a target="_blank" rel="noopener" href="https://jingyan.baidu.com/article/a65957f4e91ccf24e77f9b11.html">参考步骤</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36992688/article/details/102665783">扩展：git配置多个ssh-key</a></p>
-<h2 id="3-安装Hexo"><a href="#3-安装Hexo" class="headerlink" title="3. 安装Hexo"></a>3. 安装Hexo</h2><pre><code>1. 创建文件夹并进入
+<p><img src="https://img-blog.csdnimg.cn/img_convert/c12733a9a85d5898fd728ddc77b792bb.png" alt="Snipaste_2021-06-21_12-08-29.png"> 4. 配置 SSH-Key<br><a target="_blank" rel="noopener" href="https://jingyan.baidu.com/article/a65957f4e91ccf24e77f9b11.html">参考步骤</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36992688/article/details/102665783">扩展：git 配置多个 ssh-key</a></p>
+<h2 id="3-安装-Hexo"><a href="#3-安装-Hexo" class="headerlink" title="3. 安装 Hexo"></a>3. 安装 Hexo</h2><pre><code>1. 创建文件夹并进入
 2. git Bash
 3. 执行命令
 </code></pre>
-<p><code>npm install -g hexo-cli</code><br>    4. 初始化框架<br><code>hexo init blog</code><br>blog是装博客的文件夹<br>    5. 进入blog文件夹<br><code>cd blog</code><br>    6. 执行<br><code>npm install</code><br>    7. 执行<br><code>hexo server</code> 或者 <code>hexo s</code><br>成功的话，能在<a href="http://localhost:4000，">http://localhost:4000，</a> 能看到下图页面<br><img src="https://img-blog.csdnimg.cn/img_convert/949b947b54217805f7289c28f243f565.png" alt="blog.png"></p>
-<h2 id="4-关联GitHub"><a href="#4-关联GitHub" class="headerlink" title="4. 关联GitHub"></a>4. 关联GitHub</h2><ol>
-<li>修改配置文件<br>找到本地blog文件夹下_config.yml，打开后滑到最后， 修改成下图样子, 冒号后都要有空格</li>
+<p><code>npm install -g hexo-cli</code> 4. 初始化框架<br><code>hexo init blog</code><br>blog 是装博客的文件夹 5. 进入 blog 文件夹<br><code>cd blog</code> 6. 执行<br><code>npm install</code> 7. 执行<br><code>hexo server</code> 或者 <code>hexo s</code><br>成功的话，能在 <a href="http://localhost:4000，">http://localhost:4000，</a> 能看到下图页面<br><img src="https://img-blog.csdnimg.cn/img_convert/949b947b54217805f7289c28f243f565.png" alt="blog.png"></p>
+<h2 id="4-关联-GitHub"><a href="#4-关联-GitHub" class="headerlink" title="4. 关联 GitHub"></a>4. 关联 GitHub</h2><ol>
+<li>修改配置文件<br>找到本地 blog 文件夹下_config.yml，打开后滑到最后， 修改成下图样子, 冒号后都要有空格</li>
 </ol>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/1502530d461a1980f83689f85658853d.png" alt="1.png"><br><br><font color = "#dd001b">注意：2020年10月1日起，所有”master”分支都改名为”main”，而网上的教程大部分是”master”</font><br>题外话：原因：使这家公司摆脱任何提及奴隶制的印象，换成不会有误解的包容性术语<br>2. blog目录下执行<br><code>npm install hexo-deployer-git --save</code><br>3. 执行<code>hexo  generate</code> 和 <code>hexo deploy</code>指令或者<br><code>hexo g -d</code>指令<br>其中，<code>hexo  generate</code> 作用是生成静态文件<br><code>hexo  deploy</code> 作用是实现部署到远程站点<br>4. 发布新帖子<br><code>hexo new &quot;My New Post</code><br>会在blog\source_posts下创建新文件My-New-Post.md<br>5. 执行<code>hexo g</code><br>可以在blog\source_posts\日期文件夹中发现生成了新文件夹My-New-Post<br>6. 执行<code>hexo d</code><br><img src="https://img-blog.csdnimg.cn/img_convert/f5c543454c7ee0c674e5334a1cf162ba.png" alt="image.png"></p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/1502530d461a1980f83689f85658853d.png" alt="1.png"><br><br><font color = "#dd001b">注意：2020 年 10 月 1 日起，所有”master”分支都改名为”main”，而网上的教程大部分是”master”</font><br>题外话：原因：使这家公司摆脱任何提及奴隶制的印象，换成不会有误解的包容性术语 2. blog 目录下执行<br><code>npm install hexo-deployer-git --save</code> 3. 执行<code>hexo generate</code> 和 <code>hexo deploy</code>指令或者<br><code>hexo g -d</code>指令<br>其中，<code>hexo generate</code> 作用是生成静态文件<br><code>hexo deploy</code> 作用是实现部署到远程站点 4. 发布新帖子<br><code>hexo new &quot;My New Post</code><br>会在 blog\source_posts 下创建新文件 My-New-Post.md 5. 执行<code>hexo g</code><br>可以在 blog\source_posts\日期文件夹中发现生成了新文件夹 My-New-Post 6. 执行<code>hexo d</code><br><img src="https://img-blog.csdnimg.cn/img_convert/f5c543454c7ee0c674e5334a1cf162ba.png" alt="image.png"></p>
 <h2 id="5-主题"><a href="#5-主题" class="headerlink" title="5. 主题"></a>5. 主题</h2><ol>
-<li>下载主题<a target="_blank" rel="noopener" href="https://hexo.io/themes/">hexo主题</a></li>
+<li>下载主题<a target="_blank" rel="noopener" href="https://hexo.io/themes/">hexo 主题</a></li>
 <li>安装教程可查看对应主题的安装教程</li>
 <li>修改主题文件夹的配置文件（_config.yml）添加想要的功能和取消不想要的功能</li>
-<li>修改样式<br>①电脑端浏览器打开博客，右键选择检查<br>②点击下图红框框，记录好想修改的部分的class名、id名，用vscode打开theme文件夹中的css文件夹的css文件，ctrl+f查找class名、id名，修改；<br><img src="https://img-blog.csdnimg.cn/img_convert/a7f6be8ce7c7197b161716832cde7c7f.png" alt="hexo_theme.png"><br>③搜索不到：打开空css文件或者直接在原css文件最下面添加，修改后可能没有变化，可以在后面添加!important覆盖原本的样式（这个方法有可能会有问题，暂未遇到）</li>
+<li>修改样式<br>① 电脑端浏览器打开博客，右键选择检查<br>② 点击下图红框框，记录好想修改的部分的 class 名、id 名，用 vscode 打开 theme 文件夹中的 css 文件夹的 css 文件，ctrl+f 查找 class 名、id 名，修改；<br><img src="https://img-blog.csdnimg.cn/img_convert/a7f6be8ce7c7197b161716832cde7c7f.png" alt="hexo_theme.png"><br>③ 搜索不到：打开空 css 文件或者直接在原 css 文件最下面添加，修改后可能没有变化，可以在后面添加!important 覆盖原本的样式（这个方法有可能会有问题，暂未遇到）</li>
 </ol>
 <p>参考链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/guoxiaorui666/article/details/99623023">https://blog.csdn.net/guoxiaorui666/article/details/99623023</a></p>
 
@@ -572,12 +572,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/hexo/">
-                                    <span class="chip bg-color">hexo</span>
-                                </a>
-                            
                                 <a href="/tags/blog/">
                                     <span class="chip bg-color">blog</span>
+                                </a>
+                            
+                                <a href="/tags/hexo/">
+                                    <span class="chip bg-color">hexo</span>
                                 </a>
                             
                         </div>
@@ -1050,12 +1050,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
-                    </a>
-                    
                     <a href="/tags/blog/">
                         <span class="chip bg-color">blog</span>
+                    </a>
+                    
+                    <a href="/tags/hexo/">
+                        <span class="chip bg-color">hexo</span>
                     </a>
                     
                 </div>
@@ -1285,7 +1285,7 @@
       <a href="/about" target="_blank">赤蓝紫</a>
       |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
       <br />
-       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">179.2k</span>&nbsp;字      
+       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">179.8k</span>&nbsp;字      
       <span id="busuanzi_container_site_pv"> |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次 </span>
        
       <span id="busuanzi_container_site_uv"> |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人 </span>

@@ -488,7 +488,7 @@
 
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">begin</span> transaction<br>	<span class="hljs-keyword">sql</span>语句<br><span class="hljs-keyword">rollback</span><br># 事务异常终止，事务回到开始的状态<br></code></pre></td></tr></table></figure>
 
-<h3 id="1-2-事务的特性"><a href="#1-2-事务的特性" class="headerlink" title="1.2 事务的特性"></a>1.2 事务的特性</h3><p>ACID特性</p>
+<h3 id="1-2-事务的特性"><a href="#1-2-事务的特性" class="headerlink" title="1.2 事务的特性"></a>1.2 事务的特性</h3><p>ACID 特性</p>
 <ul>
 <li><p><strong>原子性</strong></p>
 <p>事务是数据库的逻辑工作单位。事务中的操作要么都做，要么都不做</p>
@@ -510,7 +510,7 @@
 <li>数据库没有被破坏，但是数据可能不正确</li>
 </ol>
 <ul>
-<li><p><strong>事务故障</strong>：事务没有达到预期的终点(commit 或显式的rollback)、数据库可能处于不正确状态</p>
+<li><p><strong>事务故障</strong>：事务没有达到预期的终点(commit 或显式的 rollback)、数据库可能处于不正确状态</p>
 <p>恢复：<strong>事务撤销</strong>，强行回滚(rollback)该事务</p>
 </li>
 <li><p><strong>系统故障</strong>：造成系统停止运转的任何事件，使得系统要重新启动</p>
@@ -566,50 +566,50 @@
 </ul>
 <p>并发操作带来的数据不一致性：</p>
 <ol>
-<li>丢失修改：两个事务T1和T2读取同一数据并修改，T2的提交结果可能会破坏T1的结果，导致T1的修改被丢失</li>
-<li>不可重复读：事务T1读取数据后，T2对数据进行了修改等操作，事务T1再次读该数据时，得到与前一次不同的值</li>
-<li>读脏数据：nT1将C值修改为200，T2读到C为200。T1撤销，C恢复原值，但是T2读到的C为200，T2读到的C就是脏数据。</li>
+<li>丢失修改：两个事务 T1 和 T2 读取同一数据并修改，T2 的提交结果可能会破坏 T1 的结果，导致 T1 的修改被丢失</li>
+<li>不可重复读：事务 T1 读取数据后，T2 对数据进行了修改等操作，事务 T1 再次读该数据时，得到与前一次不同的值</li>
+<li>读脏数据：nT1 将 C 值修改为 200，T2 读到 C 为 200。T1 撤销，C 恢复原值，但是 T2 读到的 C 为 200，T2 读到的 C 就是脏数据。</li>
 </ol>
 <h3 id="2-2-封锁"><a href="#2-2-封锁" class="headerlink" title="2.2 封锁"></a>2.2 封锁</h3><p>基本封锁类型：</p>
 <ul>
-<li>**排他锁(又称写锁，X锁)**：<ul>
-<li>若事务T对数据对象A加上<strong>X锁</strong>，则只允许T读取和修改A，其他任何事务都<strong>不能再对A加任何类型的锁</strong>，直到T释放A上的锁</li>
-<li>作用：保证其他事务在T释放A上的锁之前<strong>不能再读取和修改A</strong></li>
+<li>**排他锁(又称写锁，X 锁)**：<ul>
+<li>若事务 T 对数据对象 A 加上<strong>X 锁</strong>，则只允许 T 读取和修改 A，其他任何事务都<strong>不能再对 A 加任何类型的锁</strong>，直到 T 释放 A 上的锁</li>
+<li>作用：保证其他事务在 T 释放 A 上的锁之前<strong>不能再读取和修改 A</strong></li>
 </ul>
 </li>
-<li><strong>共享锁(又称读锁，S锁)</strong><ul>
-<li>若事务T对数据对象A加上S锁，则事务T可以读A但不能修改A，其他事务<strong>只能再对A加S锁，而不能加X锁</strong>，直到T释放A上的S锁</li>
-<li>作用：保证其他事务可以读A，但在T释放A上的S锁之前不能对A做任何修改</li>
+<li><strong>共享锁(又称读锁，S 锁)</strong><ul>
+<li>若事务 T 对数据对象 A 加上 S 锁，则事务 T 可以读 A 但不能修改 A，其他事务<strong>只能再对 A 加 S 锁，而不能加 X 锁</strong>，直到 T 释放 A 上的 S 锁</li>
+<li>作用：保证其他事务可以读 A，但在 T 释放 A 上的 S 锁之前不能对 A 做任何修改</li>
 </ul>
 </li>
 </ul>
-<h3 id="2-3-封锁协议"><a href="#2-3-封锁协议" class="headerlink" title="2.3 封锁协议"></a>2.3 封锁协议</h3><h4 id="2-3-1-一级封锁协议"><a href="#2-3-1-一级封锁协议" class="headerlink" title="2.3.1 一级封锁协议"></a>2.3.1 一级封锁协议</h4><p>事务T在修改数据R之前，必须先对它加上X锁，直到事务结束才释放。(结束包括正常结束commit和非正常结束rollback)</p>
+<h3 id="2-3-封锁协议"><a href="#2-3-封锁协议" class="headerlink" title="2.3 封锁协议"></a>2.3 封锁协议</h3><h4 id="2-3-1-一级封锁协议"><a href="#2-3-1-一级封锁协议" class="headerlink" title="2.3.1 一级封锁协议"></a>2.3.1 一级封锁协议</h4><p>事务 T 在修改数据 R 之前，必须先对它加上 X 锁，直到事务结束才释放。(结束包括正常结束 commit 和非正常结束 rollback)</p>
 <p><img src="https://pic.imgdb.cn/item/618666d72ab3f51d91145cde.jpg"></p>
 <p>作用：<strong>防止丢失修改</strong></p>
-<h4 id="2-3-2-二级封锁协议"><a href="#2-3-2-二级封锁协议" class="headerlink" title="2.3.2 二级封锁协议"></a>2.3.2 二级封锁协议</h4><p>一级封锁协议加上事务T在读取数据R之前必须先对它加S锁，<strong>读完后就可以释放S锁</strong></p>
+<h4 id="2-3-2-二级封锁协议"><a href="#2-3-2-二级封锁协议" class="headerlink" title="2.3.2 二级封锁协议"></a>2.3.2 二级封锁协议</h4><p>一级封锁协议加上事务 T 在读取数据 R 之前必须先对它加 S 锁，<strong>读完后就可以释放 S 锁</strong></p>
 <p><img src="https://pic.imgdb.cn/item/6186660c2ab3f51d91132d46.jpg"></p>
 <p>作用：<strong>防止丢失修改和读脏数据</strong></p>
-<h4 id="2-3-三级封锁协议"><a href="#2-3-三级封锁协议" class="headerlink" title="2.3 三级封锁协议"></a>2.3 三级封锁协议</h4><p>一级封锁协议加上事务T在读取数据R之前必须先对它加S锁，<strong>直到事务结束，才可以释放S锁</strong></p>
+<h4 id="2-3-三级封锁协议"><a href="#2-3-三级封锁协议" class="headerlink" title="2.3 三级封锁协议"></a>2.3 三级封锁协议</h4><p>一级封锁协议加上事务 T 在读取数据 R 之前必须先对它加 S 锁，<strong>直到事务结束，才可以释放 S 锁</strong></p>
 <p><img src="https://pic.imgdb.cn/item/6186686d2ab3f51d9116e1dc.jpg"></p>
 <p>作用：<strong>防止丢失修改、读脏数据和不可重复读</strong></p>
 <p><img src="https://pic.imgdb.cn/item/618668992ab3f51d91172619.jpg"></p>
 <h3 id="2-4-活锁和死锁"><a href="#2-4-活锁和死锁" class="headerlink" title="2.4 活锁和死锁"></a>2.4 活锁和死锁</h3><h4 id="2-4-1-活锁"><a href="#2-4-1-活锁" class="headerlink" title="2.4.1 活锁"></a>2.4.1 活锁</h4><ul>
-<li>事务T1封锁了数据R</li>
-<li>事务T2请求封锁R，等待，</li>
-<li>T3也请求封锁R</li>
-<li>T1释放R上的封锁后，系统先批准T3的请求，T2继续等</li>
-<li>T4请求封锁R</li>
-<li>T3释放R上的封锁后，系统先批准T4的请求，T2继续等。。。</li>
+<li>事务 T1 封锁了数据 R</li>
+<li>事务 T2 请求封锁 R，等待，</li>
+<li>T3 也请求封锁 R</li>
+<li>T1 释放 R 上的封锁后，系统先批准 T3 的请求，T2 继续等</li>
+<li>T4 请求封锁 R</li>
+<li>T3 释放 R 上的封锁后，系统先批准 T4 的请求，T2 继续等。。。</li>
 </ul>
-<p>活锁：T2有可能永远等待</p>
+<p>活锁：T2 有可能永远等待</p>
 <p>采用<strong>先来先服务</strong>的策略可以避免活锁</p>
 <p><img src="https://pic.imgdb.cn/item/61866a642ab3f51d911a40c8.jpg"></p>
 <h4 id="2-4-2-死锁"><a href="#2-4-2-死锁" class="headerlink" title="2.4.2 死锁"></a>2.4.2 死锁</h4><ul>
-<li>T1封锁了数据R1，T2封锁了数据R2</li>
-<li>T1请求封锁R2，因为T2封锁了R2，所以T1等待T2释放R2上的锁</li>
-<li>T2请求封锁R1，因为T1封锁了R1，所以T2等待T1释放R1上的锁</li>
+<li>T1 封锁了数据 R1，T2 封锁了数据 R2</li>
+<li>T1 请求封锁 R2，因为 T2 封锁了 R2，所以 T1 等待 T2 释放 R2 上的锁</li>
+<li>T2 请求封锁 R1，因为 T1 封锁了 R1，所以 T2 等待 T1 释放 R1 上的锁</li>
 </ul>
-<p>死锁：T1在等待T2，T2在等待T1，T1和T2两个事务永远不能结束</p>
+<p>死锁：T1 在等待 T2，T2 在等待 T1，T1 和 T2 两个事务永远不能结束</p>
 <p><strong>死锁的诊断</strong>：</p>
 <ul>
 <li><p>超时法：如果一个事务的等待时间超过了规定的时限，就认为发生了死锁。</p>
@@ -1397,7 +1397,7 @@
       <a href="/about" target="_blank">赤蓝紫</a>
       |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
       <br />
-       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">179.2k</span>&nbsp;字      
+       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">179.8k</span>&nbsp;字      
       <span id="busuanzi_container_site_pv"> |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次 </span>
        
       <span id="busuanzi_container_site_uv"> |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人 </span>

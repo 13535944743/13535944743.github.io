@@ -482,30 +482,30 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="github-io遇到的问题"><a href="#github-io遇到的问题" class="headerlink" title="github.io遇到的问题"></a>github.io遇到的问题</h1><h2 id="1-你的连接不是专用连接"><a href="#1-你的连接不是专用连接" class="headerlink" title="1. 你的连接不是专用连接"></a>1. 你的连接不是专用连接</h2><p>放假回家后打开自己的博客，发现无法打开博客，一开始以为是调样式时不小心搞坏了，打开别人的githunb.io博客发现都会出问题，并且用手机不连接wifi可以正常打开<br>解决办法：</p>
+                <h1 id="github-io-遇到的问题"><a href="#github-io-遇到的问题" class="headerlink" title="github.io 遇到的问题"></a>github.io 遇到的问题</h1><h2 id="1-你的连接不是专用连接"><a href="#1-你的连接不是专用连接" class="headerlink" title="1. 你的连接不是专用连接"></a>1. 你的连接不是专用连接</h2><p>放假回家后打开自己的博客，发现无法打开博客，一开始以为是调样式时不小心搞坏了，打开别人的 githunb.io 博客发现都会出问题，并且用手机不连接 wifi 可以正常打开<br>解决办法：</p>
 <h3 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h3><ol>
 <li>首先调整键盘为英文；</li>
-<li>鼠标点击当前页面任意位置，然后输入thisisunsafe<br>输入完成后页面会自动刷新<br>注意是直接输入，不要地址栏输入<br>这个方法和输入的暗示一样，是方便但不安全的，而且也会定期更改，从badidea更改为thisisunsafe</li>
+<li>鼠标点击当前页面任意位置，然后输入 thisisunsafe<br>输入完成后页面会自动刷新<br>注意是直接输入，不要地址栏输入<br>这个方法和输入的暗示一样，是方便但不安全的，而且也会定期更改，从 badidea 更改为 thisisunsafe</li>
 </ol>
 <h3 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h3><ol>
 <li>进入<a>chrome://net-internals/#hsts</a>页面</li>
-<li>点击Domain Security Policy</li>
+<li>点击 Domain Security Policy</li>
 <li>在下图区域输入域名，点击”Delete”按钮<br><img src="https://img-blog.csdnimg.cn/img_convert/83bcac2264e44f0a7a69b89f7d9ebc3d.png"></li>
 <li>在下图区域输入域名，点击”Query”按钮，结果应为”Not found”.<br><img src="https://img-blog.csdnimg.cn/img_convert/900c6ee399ec5bb42f9cb6f6f67920aa.png"></li>
 </ol>
-<h2 id="2-访问xxx-github-io-被拒绝"><a href="#2-访问xxx-github-io-被拒绝" class="headerlink" title="2. 访问xxx.github.io 被拒绝"></a>2. 访问xxx.github.io 被拒绝</h2><p>原因：国内运营商DNS污染，域名指向不正确的ip地址<br>拓展：DNS(Domain Name System) 域名系统<br>在网络上访问网站，通过DNS服务器，把域名转换成ip地址<br>（1）系统会先查找本地的hosts文件，确认是否有与域名对应的ip地址，若有，则直接访问ip地址对应的域名服务器<br>（2）本地hosts文件没有与域名对应的ip地址，向已知的DNS服务器提出域名解析<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/yihr/p/9720715.html">更多</a></p>
-<h3 id="方法1："><a href="#方法1：" class="headerlink" title="方法1："></a>方法1：</h3><ol>
-<li>查找ip地址，通过<a><a target="_blank" rel="noopener" href="http://tool.chinaz.com/dns">http://tool.chinaz.com/dns</a></a>,复制ip地址<br><img src="https://img-blog.csdnimg.cn/img_convert/cdb1543eb19b805bb91d38356fd8a713.png"></li>
-<li>打开hosts文件，路径：C:\Windows\System32\drivers\etc<br>按下图示例把ip地址和域名输入后保存，需要管理员权限<br><img src="https://img-blog.csdnimg.cn/img_convert/04229be8d57810ba531f3072bd6650cb.png"><br><img src="https://img-blog.csdnimg.cn/img_convert/a8d3540d896b6427d57061d8d088b2f1.png"></li>
-<li>重新访问，正常<br>注意：该方法只能使对应的域名可以正常访问，其他没有添加进去hosts文件的域名还是会出现问题</li>
+<h2 id="2-访问-xxx-github-io-被拒绝"><a href="#2-访问-xxx-github-io-被拒绝" class="headerlink" title="2. 访问 xxx.github.io 被拒绝"></a>2. 访问 xxx.github.io 被拒绝</h2><p>原因：国内运营商 DNS 污染，域名指向不正确的 ip 地址<br>拓展：DNS(Domain Name System) 域名系统<br>在网络上访问网站，通过 DNS 服务器，把域名转换成 ip 地址<br>（1）系统会先查找本地的 hosts 文件，确认是否有与域名对应的 ip 地址，若有，则直接访问 ip 地址对应的域名服务器<br>（2）本地 hosts 文件没有与域名对应的 ip 地址，向已知的 DNS 服务器提出域名解析<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/yihr/p/9720715.html">更多</a></p>
+<h3 id="方法-1："><a href="#方法-1：" class="headerlink" title="方法 1："></a>方法 1：</h3><ol>
+<li>查找 ip 地址，通过<a><a target="_blank" rel="noopener" href="http://tool.chinaz.com/dns">http://tool.chinaz.com/dns</a></a>,复制 ip 地址<br><img src="https://img-blog.csdnimg.cn/img_convert/cdb1543eb19b805bb91d38356fd8a713.png"></li>
+<li>打开 hosts 文件，路径：C:\Windows\System32\drivers\etc<br>按下图示例把 ip 地址和域名输入后保存，需要管理员权限<br><img src="https://img-blog.csdnimg.cn/img_convert/04229be8d57810ba531f3072bd6650cb.png"><br><img src="https://img-blog.csdnimg.cn/img_convert/a8d3540d896b6427d57061d8d088b2f1.png"></li>
+<li>重新访问，正常<br>注意：该方法只能使对应的域名可以正常访问，其他没有添加进去 hosts 文件的域名还是会出现问题</li>
 </ol>
-<h3 id="方法2："><a href="#方法2：" class="headerlink" title="方法2："></a>方法2：</h3><p>使用<a target="_blank" rel="noopener" href="https://gitee.com/docmirror/dev-sidecar">dev-sidecar工具</a><br>功能：</p>
+<h3 id="方法-2："><a href="#方法-2：" class="headerlink" title="方法 2："></a>方法 2：</h3><p>使用<a target="_blank" rel="noopener" href="https://gitee.com/docmirror/dev-sidecar">dev-sidecar 工具</a><br>功能：</p>
 <ol>
-<li>dns优选</li>
-<li>github加速</li>
-<li>npm加速<br>等等<br>可以实现解决所有的访问github.io被拒绝的问题，非常好用的工具</li>
+<li>dns 优选</li>
+<li>github 加速</li>
+<li>npm 加速<br>等等<br>可以实现解决所有的访问 github.io 被拒绝的问题，非常好用的工具</li>
 </ol>
-<h3 id="方法3："><a href="#方法3：" class="headerlink" title="方法3："></a>方法3：</h3><p>手动修改DNS，尝试过很多个DNS解析服务，只有首选DNS服务器设置为114.114.114.114，备用设置为208.67.222.222成功了一个下午，之后莫名打回原形， 使用<a target="_blank" rel="noopener" href="https://www.sordum.org/7952/dns-jumper-v2-2/">DNS jupmper</a>一键设置也没有成功，猜测：DNS服务器不稳定，未找到解决方案。</p>
+<h3 id="方法-3："><a href="#方法-3：" class="headerlink" title="方法 3："></a>方法 3：</h3><p>手动修改 DNS，尝试过很多个 DNS 解析服务，只有首选 DNS 服务器设置为 114.114.114.114，备用设置为 208.67.222.222 成功了一个下午，之后莫名打回原形， 使用<a target="_blank" rel="noopener" href="https://www.sordum.org/7952/dns-jumper-v2-2/">DNS jupmper</a>一键设置也没有成功，猜测：DNS 服务器不稳定，未找到解决方案。</p>
 <p>参考链接：<a><a target="_blank" rel="noopener" href="https://www.itranslater.com/qa/details/2582179179139695616">https://www.itranslater.com/qa/details/2582179179139695616</a></a><br><a><a target="_blank" rel="noopener" href="https://blog.csdn.net/milk_aquarium/article/details/113766559">https://blog.csdn.net/milk_aquarium/article/details/113766559</a></a></p>
 
                 
@@ -1044,12 +1044,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
-                    </a>
-                    
                     <a href="/tags/blog/">
                         <span class="chip bg-color">blog</span>
+                    </a>
+                    
+                    <a href="/tags/hexo/">
+                        <span class="chip bg-color">hexo</span>
                     </a>
                     
                 </div>
@@ -1279,7 +1279,7 @@
       <a href="/about" target="_blank">赤蓝紫</a>
       |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
       <br />
-       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">179.2k</span>&nbsp;字      
+       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">179.8k</span>&nbsp;字      
       <span id="busuanzi_container_site_pv"> |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次 </span>
        
       <span id="busuanzi_container_site_uv"> |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人 </span>
