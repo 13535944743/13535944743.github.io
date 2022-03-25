@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="python Python">
+    <meta name="keywords" content="居中对齐的几种方法, 赤蓝紫">
     <meta name="description" content="One Plus One Equals Two.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -30,7 +30,7 @@
 </script>
 
 
-    <title>python(五) | 赤蓝紫</title>
+    <title>居中对齐的几种方法 | 赤蓝紫</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -302,12 +302,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">python(五)</h1>
+                    <h1 class="description center-align post-title">居中对齐的几种方法</h1>
                 </div>
             </div>
         </div>
@@ -422,8 +422,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Python/">
-                                <span class="chip bg-color">Python</span>
+                            <a href="/tags/CSS/">
+                                <span class="chip bg-color">CSS</span>
                             </a>
                         
                     </div>
@@ -434,8 +434,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Python/" class="post-category">
-                                Python
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
                             </a>
                         
                     </div>
@@ -447,7 +447,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-01-23
+                    2022-03-25
                 </div>
                 
 
@@ -458,7 +458,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    4 分
                 </div>
                 
 
@@ -483,59 +483,77 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="python-五"><a href="#python-五" class="headerlink" title="python(五)"></a>python(五)</h1><h2 id="1-GUI编程"><a href="#1-GUI编程" class="headerlink" title="1. GUI编程"></a>1. GUI编程</h2><h3 id="tkinter标准库"><a href="#tkinter标准库" class="headerlink" title="tkinter标准库"></a>tkinter标准库</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> tkinter<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">show</span>():</span><br>    <span class="hljs-built_in">print</span>(<span class="hljs-number">1</span>)<br><br>root = tkinter.Tk()     <span class="hljs-comment"># 创建tkinter应用程序主窗口</span><br>button = tkinter.Button(root, text=<span class="hljs-string">&quot;点击&quot;</span>, command=show)<br>button.place(x=<span class="hljs-number">10</span>, y=<span class="hljs-number">20</span>, width=<span class="hljs-number">100</span>, height=<span class="hljs-number">100</span>)<br><br>root.mainloop()         <span class="hljs-comment"># 启动主循环，启动应用程序</span><br><br><br></code></pre></td></tr></table></figure>
+                <h1 id="居中对齐的几种方法"><a href="#居中对齐的几种方法" class="headerlink" title="居中对齐的几种方法"></a>居中对齐的几种方法</h1><p>看面试题，自己总结了下，顺便写了对应例子，加深印象。</p>
+<h2 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h2><h3 id="给-div设置一个宽度，再添加-margin-0-auto"><a href="#给-div设置一个宽度，再添加-margin-0-auto" class="headerlink" title="给 div设置一个宽度，再添加 margin: 0 auto"></a>给<code> div</code>设置一个宽度，再添加<code> margin: 0 auto</code></h3><p><b style="color: red">必须要添加宽度，只对块级元素有效</b></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"></span><br><span class="css">  <span class="hljs-selector-class">.container</span> &#123;</span><br><span class="css">    <span class="hljs-attribute">width</span>: <span class="hljs-number">400px</span>;</span><br><span class="css">    <span class="hljs-attribute">height</span>: <span class="hljs-number">400px</span>;</span><br><span class="css">    <span class="hljs-attribute">background-color</span>: pink;</span><br><span class="css">    <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;</span><br><span class="css">  &#125;</span><br><span class="css"></span><br><span class="css">  <span class="hljs-selector-class">.box</span> &#123;</span><br><span class="css">    <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;</span><br><span class="css">    <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;</span><br><span class="css">    <span class="hljs-attribute">background-color</span>: purple;</span><br><span class="css">    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> auto;</span><br><span class="css">  &#125;</span><br><span class="css"></span><br><span class="css">  <span class="hljs-selector-class">.inline-block-box</span> &#123;</span><br><span class="css">    <span class="hljs-attribute">display</span>: inline-block;</span><br><span class="css">    <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;</span><br><span class="css">    <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;</span><br><span class="css">    <span class="hljs-attribute">background-color</span>: purple;</span><br><span class="css">    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> auto;</span><br><span class="css">  &#125;</span><br><span class="css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box&quot;</span>&gt;</span>块级元素<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;inline-block-box&quot;</span>&gt;</span>行内块元素<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>行内元素<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
-<h2 id="2-多线程与多线程编程"><a href="#2-多线程与多线程编程" class="headerlink" title="2. 多线程与多线程编程"></a>2. 多线程与多线程编程</h2><h4 id="2-1Thread对象"><a href="#2-1Thread对象" class="headerlink" title="2.1Thread对象"></a>2.1Thread对象</h4><p><strong>threading模块</strong>是Python支持多线程编程的重要模块</p>
-<p>Thread类支持使用两种方法来创建线程</p>
+<p><img src="https://s2.loli.net/2022/03/24/d3PXbaQ47yeNMcB.png" alt="image-20220324213321588"></p>
+<br>
+
+<h3 id="给父元素添加-text-aligin-center"><a href="#给父元素添加-text-aligin-center" class="headerlink" title="给父元素添加 text-aligin: center"></a>给父元素添加<code> text-aligin: center</code></h3><p><b style="color: red">只对行内块元素、行内元素有效</b></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.container</span> &#123;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">400px</span>;<br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">400px</span>;<br>  <span class="hljs-attribute">background-color</span>: pink;<br>  <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;<br>  <span class="hljs-attribute">text-align</span>: center;<br>&#125;<br><br><span class="hljs-selector-class">.box</span> &#123;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;<br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;<br>  <span class="hljs-attribute">background-color</span>: purple;<br>&#125;<br><br><span class="hljs-selector-class">.inline-block-box</span> &#123;<br>  <span class="hljs-attribute">display</span>: inline-block;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;<br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;<br>  <span class="hljs-attribute">background-color</span>: purple;<br>&#125;<br><br><span class="hljs-selector-tag">span</span> &#123;<br>  <span class="hljs-attribute">background-color</span>: skyblue;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/03/24/34np6EksUagW8X5.png" alt="image-20220324214157484"></p>
+<br>
+
+<h2 id="水平垂直居中"><a href="#水平垂直居中" class="headerlink" title="水平垂直居中"></a>水平垂直居中</h2><h3 id="计算法"><a href="#计算法" class="headerlink" title="计算法"></a>计算法</h3><h4 id="父元素跟着子元素margin-top移动问题"><a href="#父元素跟着子元素margin-top移动问题" class="headerlink" title="父元素跟着子元素margin-top移动问题"></a>父元素跟着子元素margin-top移动问题</h4><p>开始之前，先看下一个小问题</p>
+<p>下面的例子中，我们想要让子元素离父元素有距离</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"></span><br><span class="css">  <span class="hljs-selector-class">.container</span> &#123;</span><br><span class="css">    <span class="hljs-attribute">width</span>: <span class="hljs-number">600px</span>;</span><br><span class="css">    <span class="hljs-attribute">height</span>: <span class="hljs-number">400px</span>;</span><br><span class="css">    <span class="hljs-attribute">background-color</span>: pink;</span><br><span class="css">    <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;</span><br><span class="css">  &#125;</span><br><span class="css"></span><br><span class="css">  <span class="hljs-selector-class">.box</span> &#123;</span><br><span class="css">    <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;</span><br><span class="css">    <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;</span><br><span class="css">    <span class="hljs-attribute">background-color</span>: purple;</span><br><span class="css">    <span class="hljs-attribute">margin</span>: <span class="hljs-number">150px</span> auto;</span><br><span class="css">  &#125;</span><br><span class="css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/03/24/Lwy6iaJDdVrYnKm.png" alt="image-20220324220516244"></p>
+<br>
+
+<p>结果，子元素并没有外边距效果，反而是父元素出现了外边距的效果。</p>
+<p>这是因为，根据规范，父元素的子元素的上边距(<code> margin-top</code>)，如果碰不到有效的<code> border</code>或者<code> padding</code>，就会一层一层的找自己的祖先元素，直到找到祖先元素有有效的<code> border</code>或<code>border</code>为止</p>
+<br>
+
+<p>解决方案：</p>
+<ol>
+<li>给父元素添加<code> padding-top</code></li>
+<li>给父元素添加<code> border-top</code></li>
+<li><strong>给父元素添加<code> overflow: hidden</code></strong>(<b style="color: red">)</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.container</span> &#123;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">600px</span>;<br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">400px</span>;<br>  <span class="hljs-attribute">background-color</span>: pink;<br>  <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;<br><br>  <span class="hljs-comment">/* padding-top: 1px; */</span><br>  <span class="hljs-comment">/* border-top: 1px solid transparent; */</span><br>  <span class="hljs-attribute">overflow</span>: hidden;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<br>
+
+<h4 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h4><p>首先<code> margin</code>左右可以直接设置<code> auto</code>实现居中，但是的上下不行。</p>
+<p>计算法：<code>margin上下值 = (父元素高度-子元素高度)/2</code></p>
+<p>在这个例子中，父元素的高度为<code> 400px</code>，子元素的高度为<code> 100px</code>，所以<code> margin上下值</code>设置为<code> 150px</code></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.container</span> &#123;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">600px</span>;<br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">400px</span>;<br>  <span class="hljs-attribute">background-color</span>: pink;<br>  <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;<br>  <span class="hljs-attribute">overflow</span>: hidden;<br>&#125;<br><br><span class="hljs-selector-class">.box</span> &#123;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;<br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;<br>  <span class="hljs-attribute">background-color</span>: purple;<br>  <span class="hljs-attribute">margin</span>: <span class="hljs-number">150px</span> auto;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/03/24/zV8YmsNHEGtWyXP.png" alt="image-20220324222200326"></p>
+<br>
+
+<h3 id="绝对定位四0法"><a href="#绝对定位四0法" class="headerlink" title="绝对定位四0法"></a>绝对定位四0法</h3><p><strong>设置四个方向都为0，然后设置<code> margin</code>为<code> auto</code>，因为宽高固定，所以对应方向平分，可以实现水平垂直居中</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs js">.container &#123;<br>  <span class="hljs-attr">position</span>: relative;<br>  width: 600px;<br>  height: 400px;<br>  background-color: pink;<br>  color: #fff;<br>&#125;<br><br>.box &#123;<br>  <span class="hljs-attr">position</span>: absolute;<br>  width: 200px;<br>  height: 100px;<br>  top: <span class="hljs-number">0</span>;<br>  right: <span class="hljs-number">0</span>;<br>  bottom: <span class="hljs-number">0</span>;<br>  left: <span class="hljs-number">0</span>;<br>  margin: auto;<br>  background-color: purple;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<br>
+
+<h3 id="绝对定位-计算法-margin负值"><a href="#绝对定位-计算法-margin负值" class="headerlink" title="绝对定位 + 计算法( margin负值)"></a>绝对定位 + 计算法(<code> margin</code>负值)</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.container</span> &#123;<br>  <span class="hljs-attribute">position</span>: relative;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">600px</span>;<br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">400px</span>;<br>  <span class="hljs-attribute">background-color</span>: pink;<br>  <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;<br>&#125;<br><br><span class="hljs-selector-class">.box</span> &#123;<br>  <span class="hljs-attribute">position</span>: absolute;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;<br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;<br>  <span class="hljs-attribute">top</span>: <span class="hljs-number">50%</span>;<br>  <span class="hljs-attribute">left</span>: <span class="hljs-number">50%</span>;<br>  <span class="hljs-attribute">margin</span>: -<span class="hljs-number">50px</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> -<span class="hljs-number">100px</span>;<br>  <span class="hljs-comment">/* margin-top、margin-left 分别是该子元素高宽的一半(负值)*/</span><br>  <span class="hljs-attribute">background-color</span>: purple;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="绝对定位-transform"><a href="#绝对定位-transform" class="headerlink" title="绝对定位 +  transform"></a>绝对定位 + <code> transform</code></h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.container</span> &#123;<br>  <span class="hljs-attribute">position</span>: relative;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">600px</span>;<br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">400px</span>;<br>  <span class="hljs-attribute">background-color</span>: pink;<br>  <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;<br>&#125;<br><br><span class="hljs-selector-class">.box</span> &#123;<br>  <span class="hljs-attribute">position</span>: absolute;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;<br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;<br>  <span class="hljs-attribute">top</span>: <span class="hljs-number">50%</span>;<br>  <span class="hljs-attribute">left</span>: <span class="hljs-number">50%</span>;<br>  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translate</span>(-<span class="hljs-number">50%</span>, -<span class="hljs-number">50%</span>);<br>  <span class="hljs-attribute">background-color</span>: purple;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="flex布局法"><a href="#flex布局法" class="headerlink" title="flex布局法"></a>flex布局法</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.container</span> &#123;<br>  <span class="hljs-attribute">display</span>: flex;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">600px</span>;<br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">400px</span>;<br>  <span class="hljs-attribute">background-color</span>: pink;<br>  <span class="hljs-comment">/* 垂直居中 */</span><br>  <span class="hljs-attribute">align-items</span>: center;<br>  <span class="hljs-comment">/* 水平居中 */</span><br>  <span class="hljs-attribute">justify-content</span>: center;<br><br>&#125;<br><br><span class="hljs-selector-class">.box</span> &#123;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;<br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;<br>  <span class="hljs-attribute">background-color</span>: purple;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<br>
+
+<p>对于<strong>宽高不定</strong>的元素，后面两种方法(<b style="color: red">绝对定位+<code> transform</code>、<code> flex</code>布局法</b>)，可以实现元素的水平垂直居中。</p>
+<br>
+
+<p>参考资料：</p>
 <ul>
-<li>使用一个可调用对象做参数创建对象</li>
-<li>继承Thread类，并在派生类中重写<code>__init__()</code>和<code>run()</code>方法</li>
+<li><p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000022021557">104道 CSS 面试题，助你查漏补缺</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45786214/article/details/106297864">父盒子跟随子盒子margin-top移动问题</a></p>
+</li>
 </ul>
-<p>创建线程对象以后，可以调用它的start()方法来启动，该方法自动调用该类对象的run()方法。</p>
-<p><strong>创建多线程</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> threading<br><span class="hljs-keyword">import</span> time<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fun1</span>(<span class="hljs-params">x, y</span>):</span><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(x, y):<br>        <span class="hljs-built_in">print</span>(i)<br>        time.sleep(<span class="hljs-number">1</span>)<br><br><br>t1 = threading.Thread(target=fun1, args=(<span class="hljs-number">15</span>, <span class="hljs-number">20</span>))<br>t1.start()<br><br>t2 = threading.Thread(target=fun1, args=(<span class="hljs-number">5</span>, <span class="hljs-number">10</span>))<br>t2.start()<br></code></pre></td></tr></table></figure>
-
-<p>结果不一，因为多线程不是同步执行，而是异步执行</p>
-<h3 id="2-2-线程同步技术"><a href="#2-2-线程同步技术" class="headerlink" title="2.2 线程同步技术"></a>2.2 线程同步技术</h3><h4 id="2-2-1-Lock-RLock对象"><a href="#2-2-1-Lock-RLock对象" class="headerlink" title="2.2.1 Lock/RLock对象"></a>2.2.1 Lock/RLock对象</h4><p>一个锁有两个状态：locked和unlocked。</p>
-<p>如果锁处于unlocked状态，<strong>acquire()方法</strong>将其修改为locked并立即返回，如果锁已经处于locked状态，则阻塞当前线程并等待其他线程锁解锁，然后将其修改为locked并立即返回。</p>
-<p><strong>release()方法</strong>用来将锁的状态由locked修改为unclocked并立即返回，如果锁的状态已经是unclocked，调用该方法会抛出异常</p>
-<p>RLock对象可被同一个线程**acquire()**多次，RLock对象的acquire()/release()调用对可以嵌套，仅当最后一个或最外层的release()执行结束后，锁才会被设置为unclocked状态</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> threading<br><span class="hljs-keyword">import</span> time<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">myThread</span>(<span class="hljs-params">threading.Thread</span>):</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span>(<span class="hljs-params">self</span>):</span><br>        threading.Thread.__init__(self)<br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">run</span>(<span class="hljs-params">self</span>):</span><br>        <span class="hljs-keyword">global</span> x<br>        lock.acquire()      <span class="hljs-comment"># 上锁， 没开锁之前，会阻塞其他线程，直到开锁</span><br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">3</span>):<br>            x += i<br>        time.sleep(<span class="hljs-number">2</span>)<br>        <span class="hljs-built_in">print</span>(x)<br>        lock.release()      <span class="hljs-comment"># 开锁</span><br><br>lock = threading.RLock()<br>t1 = []<br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">5</span>):<br>    t = myThread()<br>    t1.append(t)<br>x = <span class="hljs-number">0</span><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> t1:<br>    i.start()<br></code></pre></td></tr></table></figure>
-
-<h4 id="2-2-2-Condition对象"><a href="#2-2-2-Condition对象" class="headerlink" title="2.2.2 Condition对象"></a>2.2.2 Condition对象</h4><p>使用Condition对象可以在某些事件触发后才处理数据，可以用于不同线程之间的通信或通知，以实现更高级别的同步。</p>
-<p>生产者消费者问题</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> threading<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Producer</span>(<span class="hljs-params">threading.Thread</span>):</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span>(<span class="hljs-params">self, threadName</span>):</span><br>        threading.Thread.__init__(self, name=threadName)<br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">run</span>(<span class="hljs-params">self</span>):</span><br>        <span class="hljs-keyword">global</span> x<br>        con.acquire()           <span class="hljs-comment"># 类似上锁</span><br>        <span class="hljs-keyword">if</span> x == <span class="hljs-number">20</span>:<br>            con.wait()<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Producer: &#x27;</span>, end=<span class="hljs-string">&#x27;&#x27;</span>)<br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">20</span>):<br>            <span class="hljs-built_in">print</span>(x, end=<span class="hljs-string">&#x27; &#x27;</span>)<br>            x = x + <span class="hljs-number">1</span><br>        <span class="hljs-built_in">print</span>(x)<br>        con.notify()    <span class="hljs-comment"># 唤醒在等待的单个线程</span><br>        con.release()           <span class="hljs-comment"># 类似开锁</span><br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Consumer</span>(<span class="hljs-params">threading.Thread</span>):</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span>(<span class="hljs-params">self, threadName</span>):</span><br>        threading.Thread.__init__(self, name=threadName)<br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">run</span>(<span class="hljs-params">self</span>):</span><br>        <span class="hljs-keyword">global</span> x<br>        con.acquire()<br>        <span class="hljs-keyword">if</span> x == <span class="hljs-number">0</span>:<br>            con.wait()<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Consumer: &#x27;</span>, end=<span class="hljs-string">&#x27; &#x27;</span>)<br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">20</span>):<br>            <span class="hljs-built_in">print</span>(x, end=<span class="hljs-string">&#x27; &#x27;</span>)<br>            x = x - <span class="hljs-number">1</span><br>        <span class="hljs-built_in">print</span>(x)<br>        con.notify()<br>        con.release()<br><br>con = threading.Condition()<br>x = <span class="hljs-number">0</span><br>p = Producer(<span class="hljs-string">&#x27;Producer&#x27;</span>)<br>c = Consumer(<span class="hljs-string">&#x27;Consumer&#x27;</span>)<br>p.start()<br>c.start()<br>p.join()<br>c.join()<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;After Producer and Consumer all done: &#x27;</span>, x)<br></code></pre></td></tr></table></figure>
-
-<h4 id="2-2-3-queue对象"><a href="#2-2-3-queue对象" class="headerlink" title="2.2.3 queue对象"></a>2.2.3 queue对象</h4><p>queue模块实现了多生产者-多消费者队列，非常适合需要在多个线程之间进行信息交换的场所。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> threading<br><span class="hljs-keyword">import</span> time<br><span class="hljs-keyword">import</span> queue<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Producer</span>(<span class="hljs-params">threading.Thread</span>):</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span>(<span class="hljs-params">self, threadName</span>):</span><br>        threading.Thread.__init__(self, name=threadName)<br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">run</span>(<span class="hljs-params">self</span>):</span><br>        <span class="hljs-keyword">global</span> myqueue<br>        myqueue.put(self.name)     <span class="hljs-comment"># 在队列尾部追加元素</span><br>        <span class="hljs-built_in">print</span>(self.name, <span class="hljs-string">&#x27;put &#x27;</span>, self.name, <span class="hljs-string">&#x27; to queue.&#x27;</span>)<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Consumer</span>(<span class="hljs-params">threading.Thread</span>):</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span>(<span class="hljs-params">self, threadName</span>):</span><br>        threading.Thread.__init__(self, name=threadName)<br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">run</span>(<span class="hljs-params">self</span>):</span><br>        <span class="hljs-keyword">global</span> myqueue<br>        <span class="hljs-built_in">print</span>(self.name, <span class="hljs-string">&#x27;get &#x27;</span>, myqueue.get(), <span class="hljs-string">&#x27; from queue.&#x27;</span>)	 <span class="hljs-comment"># get()获取队列头部的元素</span><br><br>myqueue = queue.Queue()<br>plist = []<br>clist = []<br><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>):<br>    p = Producer(<span class="hljs-string">&#x27;Producer&#x27;</span> + <span class="hljs-built_in">str</span>(i))<br>    plist.append(p)<br>    c = Consumer(<span class="hljs-string">&#x27;Consumer&#x27;</span>+<span class="hljs-built_in">str</span>(i))<br>    clist.append(c)<br><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> plist:<br>    i.start()<br>    i.join()<br><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> clist:<br>    i.start()<br>    i.join()<br></code></pre></td></tr></table></figure>
-
-<h3 id="2-3-多进程编程"><a href="#2-3-多进程编程" class="headerlink" title="2.3 多进程编程"></a>2.3 多进程编程</h3><h4 id="2-3-1-创建与启动进程"><a href="#2-3-1-创建与启动进程" class="headerlink" title="2.3.1 创建与启动进程"></a>2.3.1 创建与启动进程</h4><ul>
-<li><strong>通过创建Process对象来创建一个进程</strong></li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> multiprocessing <span class="hljs-keyword">import</span> Process<br><span class="hljs-keyword">import</span> os<br><br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">f</span>(<span class="hljs-params">name</span>):</span><br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;module name: &#x27;</span>, __name__)<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;parent process: &#x27;</span>, os.getppid())  <span class="hljs-comment"># 查看父进程ID</span><br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;process id: &#x27;</span>, os.getpid())  <span class="hljs-comment"># 查看当前进程ID</span><br><br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;hello &#x27;</span>, name)<br><br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    p = Process(target=f, args=(<span class="hljs-string">&#x27;bob&#x27;</span>,))<br>    p.start()<br>    p.join()<br><br></code></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>创建自定义类并继承Process类，并实现run()方法</strong></li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> multiprocessing <span class="hljs-keyword">import</span> Process<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyProcess</span>(<span class="hljs-params">Process</span>):</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span>(<span class="hljs-params">self</span>):</span><br>        Process.__init__(self)<br><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">run</span>(<span class="hljs-params">self</span>):</span><br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;ok&#x27;</span>)<br><br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    p = MyProcess()<br>    p.start()<br></code></pre></td></tr></table></figure>
-
-<h2 id="3-网络编程"><a href="#3-网络编程" class="headerlink" title="3. 网络编程"></a>3. 网络编程</h2><h3 id="3-1-UDP编程"><a href="#3-1-UDP编程" class="headerlink" title="3.1 UDP编程"></a>3.1 UDP编程</h3><p>接收端代码:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> socket<br>s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)<br><br>s.bind((<span class="hljs-string">&#x27;&#x27;</span>, <span class="hljs-number">5000</span>))<br><span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>    data, addr = s.recvfrom(<span class="hljs-number">1024</span>)<br>    data = data.decode()<br><br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;received message:&#123;0&#125; from &#123;1[1]&#125; on &#123;1[0]&#125;&#x27;</span>.<span class="hljs-built_in">format</span>(data, addr))<br>    <span class="hljs-keyword">if</span> data.lower() == <span class="hljs-string">&#x27;bye&#x27;</span>:<br>        <span class="hljs-keyword">break</span><br>s.close()<br></code></pre></td></tr></table></figure>
-
-<p>发送端代码:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> socket<br><span class="hljs-keyword">import</span> sys<br><br>s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)<br><br><span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>    message = <span class="hljs-built_in">input</span>(<span class="hljs-string">&#x27;请输入要发送的信息: &#x27;</span>)<br>    s.sendto(message.encode(), (<span class="hljs-string">&#x27;127.0.0.1&#x27;</span>, <span class="hljs-number">5000</span>))<br>    <span class="hljs-keyword">if</span> message == <span class="hljs-string">&#x27;bye&#x27;</span>:<br>        <span class="hljs-keyword">break</span><br><br>s.close()<br></code></pre></td></tr></table></figure>
-
-<p>输入bye会结束收发信息</p>
-<h3 id="3-2-TCP编程"><a href="#3-2-TCP编程" class="headerlink" title="3.2 TCP编程"></a>3.2 TCP编程</h3><p>服务端:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> socket<br><br>words = &#123;<span class="hljs-string">&#x27;how are you&#x27;</span> : <span class="hljs-string">&#x27;Fine, thank you.&#x27;</span>, <span class="hljs-string">&#x27;how old are you?&#x27;</span> : <span class="hljs-string">&#x27;21&#x27;</span>,<br>         <span class="hljs-string">&#x27;what is your name?&#x27;</span> : <span class="hljs-string">&#x27;czh&#x27;</span>, <span class="hljs-string">&quot;what&#x27;s your name?&quot;</span> : <span class="hljs-string">&#x27;CZH&#x27;</span>,<br>         <span class="hljs-string">&#x27;where do you work?&#x27;</span> : <span class="hljs-string">&#x27;Shenzhen&#x27;</span>, <span class="hljs-string">&#x27;bye&#x27;</span>: <span class="hljs-string">&#x27;bye&#x27;</span>&#125;<br><br>HOST = <span class="hljs-string">&#x27;&#x27;</span><br>PORT = <span class="hljs-number">50007</span><br>s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)<br><br>s.bind((HOST, PORT))<br><br>s.listen(<span class="hljs-number">1</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Listening at port: &#x27;</span>, PORT)<br>conn, addr = s.accept()<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Connected by &#x27;</span>, addr)<br><span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>    data = conn.recv(<span class="hljs-number">1024</span>).decode()<br>    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> data:<br>        <span class="hljs-keyword">break</span><br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Received message: &#x27;</span>, data)<br>    conn.sendall(words.get(data, <span class="hljs-string">&#x27;Nothing&#x27;</span>).encode())<br><br>conn.close()<br>s.close()<br><br></code></pre></td></tr></table></figure>
-
-<p>客户端:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">import sys<br>import socket<br><br>HOST = &#x27;127.0.0.1&#x27;<br>PORT = 50007<br><br>s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)<br>try:<br>    s.connect((HOST, PORT))<br>except Exception as e:<br>    print(&#x27;Server not found or not open&#x27;)<br>    sys.exit()<br>while True:<br>    c = input(&#x27;输入要发送的信息: &#x27;)<br>    s.sendall(c.encode())<br>    data = s.recv(1024).decode()<br>    print(&#x27;Received: &#x27;, data)<br>    if c.lower() == &#x27;bye&#x27;:<br>        break<br>s.close()<br></code></pre></td></tr></table></figure>
-
-<p><b style="color: red">先运行服务端程序，开始监听后，再运行客户端程序</b>，可以实现超简单的自动回复功能。</p>
-<p><img src="https://s2.loli.net/2022/01/23/c9oCDwEPHIK6nL4.png" alt="image-20220123210445377"></p>
-<h3 id="3-3-简单网页内容爬取"><a href="#3-3-简单网页内容爬取" class="headerlink" title="3.3 简单网页内容爬取"></a>3.3 简单网页内容爬取</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> urllib.request<br><br>fp = urllib.request.urlopen(<span class="hljs-string">r&#x27;https://13535944743.github.io/&#x27;</span>)<br><span class="hljs-comment"># print(fp.read(100))</span><br><span class="hljs-built_in">print</span>(fp.read().decode())<br>fp.close()<br></code></pre></td></tr></table></figure>
-
 
                 
             </div>
@@ -562,7 +580,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.clzczh.top/2022/01/23/python-5/">https://www.clzczh.top/2022/01/23/python-5/</a>
+                    <a href="https://www.clzczh.top/2022/03/25/css-center/">https://www.clzczh.top/2022/03/25/css-center/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -600,8 +618,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Python/">
-                                    <span class="chip bg-color">Python</span>
+                                <a href="/tags/CSS/">
+                                    <span class="chip bg-color">CSS</span>
                                 </a>
                             
                         </div>
@@ -986,17 +1004,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/01/24/yc-WebGL/">
+                <a href="/2022/03/25/css-center/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="WebGL基础笔记">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="居中对齐的几种方法">
                         
-                        <span class="card-title">WebGL基础笔记</span>
+                        <span class="card-title">居中对齐的几种方法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1006,9 +1025,59 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-24
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-25
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/CSS/">
+                        <span class="chip bg-color">CSS</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/03/24/vue-mustache/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Vue源码之mustache模板引擎(一)">
+                        
+                        <span class="card-title">Vue源码之mustache模板引擎(一)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1024,61 +1093,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%9D%92%E8%AE%AD%E8%90%A5/">
-                        <span class="chip bg-color">青训营</span>
+                    <a href="/tags/Vue/">
+                        <span class="chip bg-color">Vue</span>
                     </a>
                     
-                    <a href="/tags/WebGL/">
-                        <span class="chip bg-color">WebGL</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/01/23/computer-network-6/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="计算机网络(六)    应用层">
-                        
-                        <span class="card-title">计算机网络(六)    应用层</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-23
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
-                                    计算机网络
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
-                        <span class="chip bg-color">计算机网络</span>
+                    <a href="/tags/Vue%E6%BA%90%E7%A0%81/">
+                        <span class="chip bg-color">Vue源码</span>
                     </a>
                     
                 </div>
