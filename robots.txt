@@ -1,1 +1,15 @@
-Sitemap: https://13535944743.github.io/sitemap.xml
+User-agent: *
+Disallow: /wp-
+Allow: /wp-content/uploads/
+Disallow: /?
+Disallow: /feed
+Disallow: /*/*/feed
+Disallow: /trackback
+Disallow: /*/*/trackback
+Disallow: /index.php?
+Disallow: /index.php/
+Disallow: /*.php$
+Disallow: /*.css$
+Disallow: /date/
+Sitemap: https://cbbkk.com/wp-sitemap.xml
+Sitemap: https://cbbkk.com/sitemap
