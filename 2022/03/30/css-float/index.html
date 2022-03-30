@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="计算机网络">
+    <meta name="keywords" content="清除浮动的四种方式, 赤蓝紫">
     <meta name="description" content="One Plus One Equals Two.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -30,7 +30,7 @@
 </script>
 
 
-    <title>计算机网络(五)    运输层 | 赤蓝紫</title>
+    <title>清除浮动的四种方式 | 赤蓝紫</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -301,12 +301,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">计算机网络(五)    运输层</h1>
+                    <h1 class="description center-align post-title">清除浮动的四种方式</h1>
                 </div>
             </div>
         </div>
@@ -421,8 +421,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
-                                <span class="chip bg-color">计算机网络</span>
+                            <a href="/tags/CSS/">
+                                <span class="chip bg-color">CSS</span>
                             </a>
                         
                     </div>
@@ -433,8 +433,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
-                                计算机网络
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
                             </a>
                         
                     </div>
@@ -446,7 +446,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-26
+                    2022-03-30
                 </div>
                 
 
@@ -457,7 +457,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    6 分
                 </div>
                 
 
@@ -477,150 +477,94 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="计算机网络-五-运输层"><a href="#计算机网络-五-运输层" class="headerlink" title="计算机网络(五) 运输层"></a>计算机网络(五) 运输层</h1><h2 id="1-运输层协议概述"><a href="#1-运输层协议概述" class="headerlink" title="1. 运输层协议概述"></a>1. 运输层协议概述</h2><p>运输层向它上面的应用层提供通信服务，它属于面向通信部份的最高层，也是用户功能中的最低层</p>
-<p><strong>端到端的通信</strong>：进程之间的通信。主机 A 的某个进程和主机 B 上的另一个进程进行通信</p>
-<p><strong>网络层和运输层的区别</strong>：<strong>网络层是为主机之间提供逻辑通信，运输层是为应用进程之间提供端到端的逻辑通信</strong>。</p>
-<h2 id="2-运输层的两个主要协议"><a href="#2-运输层的两个主要协议" class="headerlink" title="2. 运输层的两个主要协议"></a>2. 运输层的两个主要协议</h2><ul>
-<li>用户数据报协议 UDP：传送的数据单位协议是<strong>UDP 报文</strong>或<strong>用户数据报</strong></li>
-<li>传输控制协议 TCP：传送的数据单位协议是<strong>TCP 报文段</strong></li>
-</ul>
-<h3 id="2-1-用户数据报协议-UDP"><a href="#2-1-用户数据报协议-UDP" class="headerlink" title="2.1 用户数据报协议 UDP"></a>2.1 用户数据报协议 UDP</h3><p>UDP 在 IP 的数据报服务之上增加的功能·</p>
+                <h1 id="清除浮动的四种方式"><a href="#清除浮动的四种方式" class="headerlink" title="清除浮动的四种方式"></a>清除浮动的四种方式</h1><h2 id="浮动是什么"><a href="#浮动是什么" class="headerlink" title="浮动是什么"></a>浮动是什么</h2><p>CSS 的 Float（浮动），会使元素向左或向右移动，直到外边缘碰到包含框或另一个浮动元素位置。</p>
+<br>
+
+<p><strong>浮动元素的特征</strong>：</p>
 <ul>
-<li>复用和分用的功能</li>
-<li>差错检测的功能</li>
+<li>浮动的元素会脱离文档流</li>
+<li>浮动的元素会紧挨在一起</li>
+<li>浮动元素具有类似行内块元素的特性。所以行内元素有了浮动，不再需要转换为块级或行内块级元素元素</li>
+<li>收缩。浮动的元素，如果没有设置width，会自动收缩为内容的宽度。比如块级盒子，如果块级盒子没有设置宽度，默认宽度和父级一样宽，但是添加浮动后，会收缩成内容的宽度</li>
 </ul>
-<h4 id="2-1-1-UDP-的主要特点"><a href="#2-1-1-UDP-的主要特点" class="headerlink" title="2.1.1 UDP 的主要特点"></a>2.1.1 UDP 的主要特点</h4><ul>
-<li><strong>UDP 是无连接的</strong>：减少了开销和发送数据之前的时延</li>
-<li><strong>UDP 尽最大努力交付</strong>：不保证可靠交付</li>
-<li><strong>UDP 是面向报文的</strong>：UDP 一次交付一个完整的报文</li>
-<li><strong>UDP 没有拥塞控制</strong></li>
-<li><strong>UDP 支持一对一、一对多、多对一、多对多的交互通信</strong></li>
-<li><strong>UDP 的首部开销小</strong>，只有 8 个字节(由 4 个字段组成，每个字段都是 2 个字节)，比 TCP 的 20 个字节的首部要短</li>
-</ul>
-<h3 id="2-2-传输控制协议-TCP"><a href="#2-2-传输控制协议-TCP" class="headerlink" title="2.2 传输控制协议 TCP"></a>2.2 传输控制协议 TCP</h3><h4 id="2-2-1-TCP-最主要的特点"><a href="#2-2-1-TCP-最主要的特点" class="headerlink" title="2.2.1 TCP 最主要的特点"></a>2.2.1 TCP 最主要的特点</h4><ul>
-<li><p>TCP 是<b style="color: red">面向连接</b>的运输层协议</p>
-</li>
-<li><p>每一条 TCP 连接<strong>只能由两个端点</strong>，每一条 TCP 连接都<strong>只能是一对一</strong>的</p>
-</li>
-<li><p>TCP 提供<b style="color: red">可靠交付</b>的服务</p>
-</li>
-<li><p>TCP 提供<strong>全双工</strong>通信</p>
-</li>
-<li><p><strong>面向字节流</strong>：流指的是流入或流出进程的字节序列</p>
-<p>应用程序和 TCP 的交互是一次一个数据块，但 TCP 把应用程序交下来的数据当成一连串无结构的字节流。(接收方应用程序收到的数据块和发送方应用程序发出的<strong>数据块不一定具有对应大小的关系</strong>，但是收到的<strong>字节流完全一样</strong>)</p>
-</li>
-</ul>
-<h4 id="2-2-2-TCP-的连接"><a href="#2-2-2-TCP-的连接" class="headerlink" title="2.2..2 TCP 的连接"></a>2.2..2 TCP 的连接</h4><ul>
-<li><p>每一条 TCP 连接有<strong>两个端点</strong></p>
-</li>
-<li><p><b style="color: red">TCP 连接的断点叫做套接字(socket)或插口</b></p>
-</li>
-<li><p><strong>端口号拼接到 IP 地址就构成了套接字</strong>，即套接字 socket=(IP 地址:端口号)</p>
-<p>例如，套接字 socket=(127.0.0.1:8080)</p>
-<p>每一条 TCP 连接<strong>唯一</strong>地被通信两端的<strong>两个端点</strong>(即两个套接字)所确定。</p>
-<p>例如：TCP 连接::= {socket1, socket2} = {(IP1:port1), (IP2, port2)}</p>
-</li>
-</ul>
-<p><strong>TCP 连接、IP 地址、套接字</strong></p>
-<ul>
-<li>TCP 连接是由协议软件提供的一种抽象</li>
-<li>TCP 连接的端点是个抽象的套接字，即(IP 地址:端口号)</li>
-<li>同一个 IP 地址可以有多个不同的 TCP 连接</li>
-<li>同一个端口号可以出现在多个不同的 TCP 连接中</li>
-</ul>
-<h3 id="2-3-可靠传输的工作原理"><a href="#2-3-可靠传输的工作原理" class="headerlink" title="2.3 可靠传输的工作原理"></a>2.3 可靠传输的工作原理</h3><h4 id="2-3-1-停止等待协议"><a href="#2-3-1-停止等待协议" class="headerlink" title="2.3.1 停止等待协议"></a>2.3.1 停止等待协议</h4><p>停止等待就是每发送完一个分组就停止发送，等待对方的确认，在收到确认后再发送下一个分组</p>
-<p><img src="https://s2.loli.net/2021/12/26/qZSudAFnCPUQyMN.jpg"></p>
-<p>出现差错：</p>
-<ul>
-<li>接收方 B 接收 M1 时检测出了差错，就丢弃 M1，不通知发送方 A 收到有差错的分组</li>
-<li>M1 在传输过程中丢失了</li>
-</ul>
-<p>在上面两种情况下，B 都不会发送任何信息，但是 A 必须重发分组，直到 B 正确接收为止，这样才可以实现可靠通信</p>
-<p>问题：A 如何知道 B 是否 1 正确收到了 M1?</p>
-<p>解决方法：超时重传</p>
-<ol>
-<li>A 为每一个已发送的分组都设置了一个<strong>超时计时器</strong></li>
-<li>A 只要在计时器到期之前收到了相应的确认，就撤销该超时计时器，继续发送下一个分组 M2</li>
-<li>如果 A 在超时计时器规定时间内没有收到 B 的确认，就认为分组错误或丢失，所以需要重发该分组</li>
-</ol>
-<p>问题：如果分组正确到达 B 但是 B 回送的确认丢失或延迟了，A 会超时重传，B 可能会受到重发的 M1，B 如何知道收到了重复的分组，需要丢弃。</p>
-<p>解决方法：编号</p>
-<ol>
-<li>A 为每一个发送的分组都进行编号。如果 B 收到了编号相同的分组，则认为收到了重复分组，丢弃重复的分组，并回传确认</li>
-<li>B 也为发送的确认进行编号，指示是对哪一个分组的确认</li>
-<li>A 根据确认以及它的编号，可以确定它是对哪一个分组的确认，避免重发。如果是重复的确认，则将其丢弃</li>
-</ol>
-<p><b style="color: red">停止等待协议的要点：</b></p>
-<ul>
-<li><strong>停止等待</strong>：发送方每次只发送一个分组，在收到确认后 1 再发送下一个分组</li>
-<li><strong>编号</strong>：对发送的每个分组和确认都进行编号</li>
-<li><strong>自动重传请求</strong>：发送方为每个发送的分组设置一个超时计时器。如果发送方没有在超时计时器到期之前收到确认，则会自动重传分组</li>
-<li>简单，但<strong>信道利用率低</strong></li>
-</ul>
-<h4 id="2-3-2-连续-ARQ-协议"><a href="#2-3-2-连续-ARQ-协议" class="headerlink" title="2.3.2 连续 ARQ 协议"></a>2.3.2 连续 ARQ 协议</h4><ul>
-<li>发送方一次可以发送<strong>多个分组</strong></li>
-<li>使用<strong>滑动窗口协议</strong>控制发送方和接收方所能发送和接收的分组的数量和编号</li>
-<li>每收到一个确认，发送方就把发送窗口<strong>向前滑动</strong></li>
-<li>采用<strong>回退 N</strong>方法进行重传</li>
-</ul>
-<p><img src="https://s2.loli.net/2021/12/26/QPXtuv5FWGSEcV4.jpg"></p>
-<p>接收方一般采用<strong>累计确认</strong>的方式。即不必对收到的分组逐个发送确认，而是<strong>对按序到达的最后一个分组发送确认</strong>，即<strong>到这个分组为止的所有分组都已经正确收到了</strong></p>
-<p>优点：容易实现，即使确认丢失也不必重传</p>
-<p>缺点：不能向发送方反映出接收方已经正确收到的所有分组的信息(如发送 1, 2, 3, 4, 5, 接收方收到 1, 2, 4, 5，只能向发送方反映接收到了 1, 2 分组，不能像发送方确认正确收到 4, 5 分组)</p>
-<p>如果发送方发送 1, 2, 3, 4, 5 分组，而中间的第三个分组丢失了，接收方只能对前两个分组发出确认，而发送方无法知道后面三个分组是否发送成功，所以只能把后面的三个分组都在重传一次，这就叫做<strong>回退 N</strong>，表示需要回退， 去重传已经发送过的 N 个分组</p>
-<p><strong>滑动窗口协议</strong>：ppt(p88)</p>
-<p><img src="https://s2.loli.net/2021/12/26/QEcHXNwW3q6y5jg.jpg"></p>
-<h3 id="2-4-TCP-报文段的首部格式"><a href="#2-4-TCP-报文段的首部格式" class="headerlink" title="2.4 TCP 报文段的首部格式"></a>2.4 TCP 报文段的首部格式</h3><p>TCP 是面向字节流的，但是 TCP 传送的数据单元却是报文段。</p>
-<p>一个 TCP 报文段分为首部和数据两部分。<strong>TCP 首部的最小长度是 20 字节</strong></p>
-<h3 id="2-5-TCP-可靠传输的实现"><a href="#2-5-TCP-可靠传输的实现" class="headerlink" title="2.5 TCP 可靠传输的实现"></a>2.5 TCP 可靠传输的实现</h3><h4 id="2-5-1-以字节为单位的滑动窗口"><a href="#2-5-1-以字节为单位的滑动窗口" class="headerlink" title="2.5.1 以字节为单位的滑动窗口"></a>2.5.1 以字节为单位的滑动窗口</h4><p>TCP 使用流水线传输和滑动窗口协议实现高效、可靠的传输</p>
-<p>TCP 的滑动窗口<strong>以字节为单位</strong>，发送方 A 和发送方 B 分别维持一个发送窗口和一个接收窗口。</p>
-<p><strong>发送窗口</strong>在没有收到确认时，可以连续把窗口内的数据全部发送出去；<strong>接收窗口</strong>只允许接收落入窗口内的数据。</p>
-<p>例子：</p>
-<p><img src="https://pic.imgdb.cn/item/61a866552ab3f51d91795cae.jpg"></p>
-<p><strong>如果 A 的发送窗口内的序号都已用完，但没有收到确认，则必须停止发送。</strong></p>
-<p><img src="https://pic.imgdb.cn/item/61a866e02ab3f51d9179ba23.jpg"></p>
-<p>发送方的应用进程把字节流写入 TCP 的发送缓存，接收方的应用进程从 TCP 的接收缓存中读取字节流。</p>
-<p><strong>发送缓存暂时存放</strong>：</p>
-<ul>
-<li>准备发送的数据</li>
-<li>已发送出但并未收到确认的数据</li>
-</ul>
-<p><strong>接收缓存暂时存放</strong>：</p>
-<ul>
-<li>按序到达的但还没被读取的数据</li>
-<li>不按序到达的数据</li>
-</ul>
-<p>A 的发送窗口并不总是和 B 的接收窗口一样大。</p>
-<p>TCP 针对不按序到达的数据的处理：</p>
-<ul>
-<li>先临时存放在接收窗口中</li>
-<li>缺少的数据到达后，再按序交付给上层的应用进程</li>
-</ul>
-<h4 id="2-5-2-超时重传时间的选择"><a href="#2-5-2-超时重传时间的选择" class="headerlink" title="2.5.2 超时重传时间的选择"></a>2.5.2 超时重传时间的选择</h4><p>TCP 每发送一个报文段，就对这个报文段设置一次计时器。</p>
-<p>如果计时器设置的重传时间到了，但是还没有收到确认，就要重传这一报文段。</p>
-<p>加权平均往返时间、超时重传时间 RTO、Karn 算法</p>
-<h4 id="2-5-3-选择确认-SACK"><a href="#2-5-3-选择确认-SACK" class="headerlink" title="2.5.3 选择确认 SACK"></a>2.5.3 选择确认 SACK</h4><p>场景：收到的报文段没有差错，只是没按序号，中间还缺少某些序号的数据。选择确认 SACK 可以只传送缺少的数据而不重传已经正确到达接收方的数据。</p>
-<h3 id="2-6-TCP-的拥塞控制-PPT-P158"><a href="#2-6-TCP-的拥塞控制-PPT-P158" class="headerlink" title="2.6 TCP 的拥塞控制(PPT P158)"></a>2.6 TCP 的拥塞控制(PPT P158)</h3><p><strong>慢开始</strong>、<strong>拥塞避免算法</strong>、<strong>快重传</strong></p>
-<h3 id="2-7-TCP-的连接"><a href="#2-7-TCP-的连接" class="headerlink" title="2.7 TCP 的连接"></a>2.7 TCP 的连接</h3><p>TCP 是面向连接的协议</p>
-<p>TCP 连接有三个阶段：</p>
-<ol>
-<li><strong>连接建立</strong></li>
-<li><strong>数据传送</strong></li>
-<li><strong>连接释放</strong></li>
-</ol>
-<p>TCP 连接的建立<strong>采用客户服务器方式</strong>。主动发起连接建立的应用进程叫做<strong>客户端</strong>(client)，被动等待连接建立的应用进程叫做<strong>服务器</strong>(server)</p>
-<h4 id="2-7-1-TCP-的连接建立"><a href="#2-7-1-TCP-的连接建立" class="headerlink" title="2.7.1 TCP 的连接建立"></a>2.7.1 TCP 的连接建立</h4><p>TCP 建立连接的过程叫做<strong>握手</strong>。握手需要在客户端和服务器之间交换三个 TCP 报文段，称为<strong>三报文握手</strong></p>
-<p>采用三报文握手的目的：防止已失效的连接请求报文段突然又传送到了。</p>
-<p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/imsges/202112091438033.png" alt="image-20211209143835954"></p>
-<p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/imsges/202112091440908.png" alt="image-20211209144023848"></p>
-<p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/imsges/202112091440266.png" alt="image-20211209144035208"></p>
-<p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/imsges/202112091440555.png" alt="image-20211209144049512"></p>
-<p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/imsges/202112091441796.png" alt="image-20211209144100735"></p>
-<h4 id="2-7-2-TCP-的连接释放"><a href="#2-7-2-TCP-的连接释放" class="headerlink" title="2.7.2 TCP 的连接释放"></a>2.7.2 TCP 的连接释放</h4><p>TCP 连接释放过程是<strong>四报文握手</strong></p>
-<p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/imsges/202112091443586.png" alt="image-20211209144315512"></p>
-<p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/imsges/202112091445966.png" alt="image-20211209144553920"></p>
-<p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/imsges/202112091446967.png" alt="image-20211209144600913"></p>
-<p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/imsges/202112091446336.png" alt="image-20211209144616280"></p>
+<br>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"></span><br><span class="css">  <span class="hljs-selector-tag">div</span><span class="hljs-selector-attr">[class^=<span class="hljs-string">&quot;box&quot;</span>]</span> &#123;</span><br><span class="css">    <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;</span><br><span class="css">    <span class="hljs-attribute">height</span>: <span class="hljs-number">300px</span>;</span><br><span class="css">    <span class="hljs-attribute">background-color</span>: pink;</span><br><span class="css">    <span class="hljs-attribute">margin</span>: <span class="hljs-number">10px</span>;</span><br><span class="css">  &#125;</span><br><span class="css"></span><br><span class="css">  <span class="hljs-selector-tag">div</span><span class="hljs-selector-attr">[class^=<span class="hljs-string">&quot;box&quot;</span>]</span>&gt;<span class="hljs-selector-tag">div</span> &#123;</span><br><span class="css">    <span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;</span><br><span class="css">    <span class="hljs-attribute">background-color</span>: purple;</span><br><span class="css">  &#125;</span><br><span class="css"></span><br><span class="css">  <span class="hljs-selector-tag">div</span><span class="hljs-selector-attr">[class^=<span class="hljs-string">&quot;box&quot;</span>]</span>&gt;<span class="hljs-selector-tag">span</span> &#123;</span><br><span class="css">    <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;</span><br><span class="css">    <span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;</span><br><span class="css">    <span class="hljs-attribute">background-color</span>: skyblue;</span><br><span class="css">  &#125;</span><br><span class="css"></span><br><span class="css">  <span class="hljs-selector-class">.box1</span>&gt;<span class="hljs-selector-tag">div</span> &#123;</span><br><span class="css">    <span class="hljs-attribute">float</span>: left;</span><br><span class="css">  &#125;</span><br><span class="css"></span><br><span class="css">  <span class="hljs-selector-class">.box1</span>&gt;<span class="hljs-selector-tag">span</span> &#123;</span><br><span class="css">    <span class="hljs-attribute">float</span>: left;</span><br><span class="css">  &#125;</span><br><span class="css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box1&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>浮动div<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>浮动span<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box2&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>不浮动div<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>不浮动span<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/03/24/8XHOLg5cTheqoaJ.png" alt="image-20220324192531879"></p>
+<br>
+
+<h2 id="浮动导致的问题1"><a href="#浮动导致的问题1" class="headerlink" title="浮动导致的问题1"></a>浮动导致的问题1</h2><p>浮动的元素，高度会塌陷，而高度的塌陷使我们页面后面的布局不能正常显示。</p>
+<p>html</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box1 float&quot;</span>&gt;</span>box1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box2 float&quot;</span>&gt;</span>box2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box3&quot;</span>&gt;</span>box3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<br>
+
+<p>css</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-attr">[class^=<span class="hljs-string">&#x27;box&#x27;</span>]</span> &#123;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;<br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;<br>  <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;<br>&#125;<br><br><span class="hljs-selector-class">.box1</span> &#123;<br>  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">rgb</span>(<span class="hljs-number">160</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>);<br>&#125;<br><br><span class="hljs-selector-class">.box2</span> &#123;<br>  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">rgb</span>(<span class="hljs-number">11</span>, <span class="hljs-number">11</span>, <span class="hljs-number">133</span>);<br>&#125;<br><br><span class="hljs-selector-class">.box3</span> &#123;<br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">300px</span>;<br>  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">rgb</span>(<span class="hljs-number">85</span>, <span class="hljs-number">7</span>, <span class="hljs-number">85</span>);<br>&#125;<br><br><span class="hljs-selector-class">.float</span> &#123;<br>  <span class="hljs-attribute">float</span>: left;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://s2.loli.net/2022/03/10/dKHiIktfOQqXMVN.png" alt="image-20220310151022141"></p>
+<p>实际上box3确实有300px，只是box1浮起来了，所以，box3有200px在box1下，设置box1的<code> opacity</code>为0即可看出来。</p>
+<p><img src="https://s2.loli.net/2022/03/10/JCgixH3kmYOfutV.png" alt="image-20220310151222520"></p>
+<br>
+
+<h2 id="浮动导致的问题2"><a href="#浮动导致的问题2" class="headerlink" title="浮动导致的问题2"></a>浮动导致的问题2</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"></span><br><span class="css">    <span class="hljs-selector-tag">li</span> &#123;</span><br><span class="css">      <span class="hljs-attribute">float</span>: left;</span><br><span class="css">      <span class="hljs-attribute">width</span>: <span class="hljs-number">40px</span>;</span><br><span class="css">      <span class="hljs-attribute">height</span>: <span class="hljs-number">20px</span>;</span><br><span class="css">      <span class="hljs-attribute">background-color</span>: pink;</span><br><span class="css">      <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">2px</span> solid purple;</span><br><span class="css">      <span class="hljs-attribute">list-style</span>: none;</span><br><span class="css">    &#125;</span><br><span class="css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>5<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>6<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>7<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>8<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>9<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>10<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>11<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>12<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<br>
+
+<p>想要的效果：</p>
+<p><img src="https://s2.loli.net/2022/03/24/BVLHE1lpuTGysfP.png" alt="image-20220324195050428"></p>
+<br>
+
+<p>实际效果：</p>
+<p><img src="https://s2.loli.net/2022/03/24/GacKEHTUoqwmMh6.png" alt="image-20220324195120085"></p>
+<p>**原因：<code> div</code>没有高度，不能给浮动的子元素一个容器，所以第二个<code> div</code>的<code>li</code>就紧贴到第一个<code> div</code>中最后的一个<code> li</code>去了 **</p>
+<h2 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h2><p><strong>清除浮动是为了清除使用浮动产生的影响。</strong></p>
+<h3 id="1-浮动元素的祖先元素添加高度"><a href="#1-浮动元素的祖先元素添加高度" class="headerlink" title="1. 浮动元素的祖先元素添加高度"></a>1. 浮动元素的祖先元素添加高度</h3><p><strong>很少用</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js">.container &#123;<br>  <span class="hljs-attr">height</span>: 200px;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/03/24/6pVklvaxe5OyDNZ.png" alt="image-20220310152509811"></p>
+<br>
+
+<h3 id="2-额外标签法"><a href="#2-额外标签法" class="headerlink" title="2. 额外标签法"></a>2. 额外标签法</h3><p>在浮动元素后使用一个空元素，并携带<code> clear: both</code>属性。(当然，也可以是<code> left</code>、<code> right</code>值)，就是<code>both</code>，会把所有情况的浮动都清掉。</p>
+<p>问题：</p>
+<p>html</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- 初级版：外墙板。第一个div(container)的margin-bottom失效了 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box1 float&quot;</span>&gt;</span>box1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box2 float&quot;</span>&gt;</span>box2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;clear&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box3&quot;</span>&gt;</span>box3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br><span class="hljs-comment">&lt;!-- 升级版：内墙版 --&gt;</span><br> <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box1 float&quot;</span>&gt;</span>box1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box2 float&quot;</span>&gt;</span>box2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;clear&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box3&quot;</span>&gt;</span>box3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<br>
+
+<p>css</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.clear</span> &#123;<br>  <span class="hljs-attribute">clear</span>: both;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>效果同上</p>
+<br>
+
+<h3 id="3-overflow法"><a href="#3-overflow法" class="headerlink" title="3. overflow法"></a>3. overflow法</h3><p>给浮动元素的元素添加<code> overflow: hidden</code>或<code> overflow: auto</code>清除浮动。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.container</span> &#123;<br>  <span class="hljs-attribute">overflow</span>: hidden;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>效果如上图所示。</p>
+<h3 id="4-after伪元素法"><a href="#4-after伪元素法" class="headerlink" title="4. after伪元素法"></a>4. after伪元素法</h3><p>IE8以上和非IE浏览器才支持:after，zoom(IE专有属性)可解决ie6,ie7浮动问题(个人倒是感觉没啥意义，IE6版本也太老了吧，这都得兼容的话，更何况这年头，还真不知道谁还用IE)</p>
+<p>给浮动元素的容器添加一个clearfix的class，然后给这个class添加一个:after伪元素清除浮动。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container clearfix&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box1 float&quot;</span>&gt;</span>box1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box2 float&quot;</span>&gt;</span>box2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box3&quot;</span>&gt;</span>box3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.clearfix</span> &#123;<br>  <span class="hljs-comment">/* 兼容IE6、7，个人觉得大可不必(乱说的) */</span><br>  zoom: <span class="hljs-number">1</span>;<br>&#125;<br><br><span class="hljs-selector-class">.clearfix</span><span class="hljs-selector-pseudo">::after</span> &#123;<br>  <span class="hljs-attribute">content</span>: <span class="hljs-string">&#x27;&#x27;</span>;<br>  <span class="hljs-comment">/*因为clear对块级元素有效，伪元素:before和:after添加的内容默认是inline元素*/</span><br>  <span class="hljs-attribute">display</span>: block;<br>  <span class="hljs-comment">/* 清除浮动 */</span><br>  <span class="hljs-attribute">clear</span>: both;<br>  <span class="hljs-comment">/*不显示该区域，content为空，实际可省略*/</span><br>  <span class="hljs-attribute">visibility</span>: hidden;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>效果如上图所示。</p>
+<p>实际上，下面的代码就足够了</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.clearfix</span>:before &#123;<br>  content: <span class="hljs-string">&#x27;&#x27;</span>;<br>  <span class="hljs-attribute">display</span>: block;<br>  <span class="hljs-attribute">clear</span>: both;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="5-双伪元素法"><a href="#5-双伪元素法" class="headerlink" title="5. 双伪元素法"></a>5. 双伪元素法</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.clearfix</span>:after,<br>.clearfix:before &#123;<br>  content: <span class="hljs-string">&#x27;&#x27;</span>;<br>  <span class="hljs-attribute">display</span>: block;<br>  <span class="hljs-attribute">clear</span>: both;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>原理就和上面一样</p>
+<br>
+
+<p>参考链接：<a target="_blank" rel="noopener" href="https://www.jb51.net/css/502268.html[">关于清除浮动塌陷的几种方法总结</a></p>
 
                 
             </div>
@@ -647,7 +591,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.clzczh.top/2021/12/26/computer-network-5/">https://www.clzczh.top/2021/12/26/computer-network-5/</a>
+                    <a href="https://www.clzczh.top/2022/03/30/css-float/">https://www.clzczh.top/2022/03/30/css-float/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -685,8 +629,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
-                                    <span class="chip bg-color">计算机网络</span>
+                                <a href="/tags/CSS/">
+                                    <span class="chip bg-color">CSS</span>
                                 </a>
                             
                         </div>
@@ -1071,17 +1015,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/01/02/vue-online/">
+                <a href="/2022/03/30/css-float/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.png" class="responsive-img" alt="Vue项目部署到服务器(ubuntu)">
+                        <img src="/medias/featureimages/20.png" class="responsive-img" alt="清除浮动的四种方式">
                         
-                        <span class="card-title">Vue项目部署到服务器(ubuntu)</span>
+                        <span class="card-title">清除浮动的四种方式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1091,9 +1036,59 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-02
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-30
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/CSS/">
+                        <span class="chip bg-color">CSS</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/03/28/vue-mustache-2/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/11.png" class="responsive-img" alt="Vue源码之mustache模板引擎(二)	手写实现mustache">
+                        
+                        <span class="card-title">Vue源码之mustache模板引擎(二)	手写实现mustache</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1113,53 +1108,8 @@
                         <span class="chip bg-color">Vue</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/12/26/computer-network-4/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/13.png" class="responsive-img" alt="计算机网络(四)    网络层">
-                        
-                        <span class="card-title">计算机网络(四)    网络层</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-26
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
-                                    计算机网络
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
-                        <span class="chip bg-color">计算机网络</span>
+                    <a href="/tags/Vue%E6%BA%90%E7%A0%81/">
+                        <span class="chip bg-color">Vue源码</span>
                     </a>
                     
                 </div>
