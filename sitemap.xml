@@ -2,6 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.clzczh.top/2022/04/12/js-precompile/</loc>
+    
+    <lastmod>2022-04-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.clzczh.top/2022/03/30/css-float/</loc>
+    
+    <lastmod>2022-04-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.clzczh.top/2022/03/05/promise-1/</loc>
+    
+    <lastmod>2022-04-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.clzczh.top/2022/04/04/vue-dataReactive/</loc>
     
     <lastmod>2022-04-04</lastmod>
@@ -50,15 +77,6 @@
     <loc>https://www.clzczh.top/2022/03/10/axios-1/</loc>
     
     <lastmod>2022-04-02</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.clzczh.top/2022/03/30/css-float/</loc>
-    
-    <lastmod>2022-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -435,15 +453,6 @@
   
   <url>
     <loc>https://www.clzczh.top/2022/03/05/promise-2/</loc>
-    
-    <lastmod>2022-03-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.clzczh.top/2022/03/05/promise-1/</loc>
     
     <lastmod>2022-03-25</lastmod>
     
@@ -922,7 +931,7 @@
 
   <url>
     <loc>https://www.clzczh.top/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -930,245 +939,245 @@
   
   <url>
     <loc>https://www.clzczh.top/tags/blog/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/tags/hexo/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/tags/Chrome-Debug/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/tags/%E5%B8%83%E5%B1%80/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/tags/HTML/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/tags/JavaScript/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/tags/Python/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/tags/%E6%8E%A5%E5%8F%A3/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/tags/SQL/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/tags/axios/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/tags/CSS/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/tags/Express/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/tags/git/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/tags/LeetCode/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/tags/Less/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/tags/Node-js/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/tags/VSCode/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/tags/php/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/tags/Promise/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/tags/uni-app/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/tags/Vue/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/tags/Vue%E6%BA%90%E7%A0%81/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/tags/Vue-Router/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/tags/Vue3/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/tags/Vuex/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/tags/Webpack/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/tags/%E9%9D%92%E8%AE%AD%E8%90%A5/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/tags/WebGL/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/tags/%E5%8A%A8%E7%94%BB/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/tags/%E8%B0%83%E8%AF%95/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/tags/HTTP/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/tags/Web%E5%A4%9A%E5%AA%92%E4%BD%93/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/tags/TypeScript/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/tags/%E5%AE%89%E5%85%A8/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -1177,56 +1186,56 @@
   
   <url>
     <loc>https://www.clzczh.top/categories/%E5%B0%8F%E6%8A%80%E8%83%BD/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/categories/%E5%89%8D%E7%AB%AF/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/categories/Python/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/categories/%E5%90%8E%E7%AB%AF/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/categories/SQL/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/categories/%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.clzczh.top/categories/%E5%89%8D%E5%90%8E%E7%AB%AF/</loc>
-    <lastmod>2022-04-05</lastmod>
+    <lastmod>2022-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
