@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="git">
+    <meta name="keywords" content="var、let和const之间的区别, 赤蓝紫">
     <meta name="description" content="One Plus One Equals Two.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -30,7 +30,7 @@
 </script>
 
 
-    <title>git命令——少用但有用 | 赤蓝紫</title>
+    <title>var、let和const之间的区别 | 赤蓝紫</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -301,12 +301,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">git命令——少用但有用</h1>
+                    <h1 class="description center-align post-title">var、let和const之间的区别</h1>
                 </div>
             </div>
         </div>
@@ -421,8 +421,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/git/">
-                                <span class="chip bg-color">git</span>
+                            <a href="/tags/JavaScript/">
+                                <span class="chip bg-color">JavaScript</span>
                             </a>
                         
                     </div>
@@ -433,8 +433,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%B0%8F%E6%8A%80%E8%83%BD/" class="post-category">
-                                小技能
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
                             </a>
                         
                     </div>
@@ -446,7 +446,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-02-19
+                    2022-04-13
                 </div>
                 
 
@@ -457,7 +457,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    5 分
                 </div>
                 
 
@@ -477,46 +477,81 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="git-命令——少用但有用"><a href="#git-命令——少用但有用" class="headerlink" title="git 命令——少用但有用"></a>git 命令——少用但有用</h1><p>实习开始了，新环境、新电脑，git 添加公钥等操作自然也是需要重新设置，为了避免之后还要查找，自己写一下笔记，方便日后使用。</p>
-<p><a target="_blank" rel="noopener" href="https://clz.vercel.app/2021/11/20/git-order/">git 常用命令</a></p>
-<p><b style="color: red">以下命令在 Git  Bash 中执行</b></p>
-<h2 id="1-设置用户名和-email"><a href="#1-设置用户名和-email" class="headerlink" title="1. 设置用户名和 email"></a>1. 设置用户名和 email</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">git config --global user.name 用户名<br>git config --global user.email 邮箱<br></code></pre></td></tr></table></figure>
-
-<h2 id="2-查看用户名和-email"><a href="#2-查看用户名和-email" class="headerlink" title="2. 查看用户名和 email"></a>2. 查看用户名和 email</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell">git config user.name<br>git config user.email<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> 也可以把所有信息都列出来，再找</span><br>git config --list<br></code></pre></td></tr></table></figure>
-
-<h2 id="3-配置-ssh-公私钥"><a href="#3-配置-ssh-公私钥" class="headerlink" title="3. 配置 ssh 公私钥"></a>3. 配置 ssh 公私钥</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">ssh-keygen -o		# 要输入的话直接Enter<br>cat ~/.ssh/id_rsa.pub		# 查看并复制公钥(复制是手动复制全部)<br></code></pre></td></tr></table></figure>
-
-<p>github 进入<code>setting -&gt; SSH and GPG keys -&gt; New SSH key</code></p>
-<p><img src="https://s2.loli.net/2022/02/18/lbWKsfAohLqZiDz.png" alt="image-20220218231701335"></p>
-<p>输入标题(自定义)以及复制的公钥</p>
-<p>测试</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">ssh -T git@github.com		# 不要改成自己的邮箱，弹出提示的话，输入yes，回车<br></code></pre></td></tr></table></figure>
-
-<p><img src="https://s2.loli.net/2022/02/19/r6j1N7wcPkaO8gx.png" alt="image-20220218232334720"></p>
-<h2 id="4-清空暂存区"><a href="#4-清空暂存区" class="headerlink" title="4. 清空暂存区"></a>4. 清空暂存区</h2><h3 id="4-1-git-rm-–cached-文件"><a href="#4-1-git-rm-–cached-文件" class="headerlink" title="4.1 git rm –cached 文件"></a>4.1 git rm –cached 文件</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">git status		# 查看暂存区文件<br>git rm --cached 文件		# 一次删除，知道空。效率极低<br></code></pre></td></tr></table></figure>
-
-<h3 id="4-2-rm-git-index"><a href="#4-2-rm-git-index" class="headerlink" title="4.2 rm .git/index"></a>4.2 rm .git/index</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">rm .git/index	# 暂存区仅仅是.git目录下的一个index文件,所以只要删除这个文件，就清空暂存区了<br></code></pre></td></tr></table></figure>
-
-<h3 id="4-2-git-reset"><a href="#4-2-git-reset" class="headerlink" title="4.2 git reset"></a>4.2 git reset</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git reset	# 后面什么都不跟<br></code></pre></td></tr></table></figure>
-
-<h2 id="5-撤销提交"><a href="#5-撤销提交" class="headerlink" title="5. 撤销提交"></a>5. 撤销提交</h2><p>场景：提交完后，发现漏掉文件没有添加，或者提交信息写错了</p>
-<h3 id="5-1-修改提交信息"><a href="#5-1-修改提交信息" class="headerlink" title="5.1 修改提交信息"></a>5.1 修改提交信息</h3><p>现在提交了一次</p>
-<p><img src="https://s2.loli.net/2022/02/19/l5Jr7X3WLiQ9kwE.png" alt="image-20220218235143317"></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git commit --amend<br></code></pre></td></tr></table></figure>
-
-<p>进入类似 vim 的页面</p>
+                <h1 id="var、let和const之间的区别"><a href="#var、let和const之间的区别" class="headerlink" title="var、let和const之间的区别"></a>var、let和const之间的区别</h1><h2 id="作用域不同"><a href="#作用域不同" class="headerlink" title="作用域不同"></a>作用域不同</h2><p><strong><code> var</code>是函数作用域，<code> let</code>、<code>const</code>是块级作用域</strong></p>
 <ul>
-<li>输入<code>i</code>，进入编辑模式</li>
-<li>移动光标，修改信息</li>
-<li>esc 退出编辑模式</li>
-<li><code>:wq</code>保存</li>
+<li><p>函数作用域就是在函数中声明了<code> var</code>变量，那么这个变量在整个函数里都是有效的。</p>
+</li>
+<li><p>块级作用域则是在块里是有效的。块级作用域就是用<code>&#123;&#125;</code>包住的区域，常用的有<code>for</code>，<code>while</code>，<code>if</code>等，只是有<code> &#123;&#125;</code>包住也是块级作用域</p>
+</li>
 </ul>
-<p><img src="https://s2.loli.net/2022/02/19/GwLEyRIMX25fJ6H.png" alt="image-20220218235618176"></p>
-<h3 id="5-2-添加漏掉的文件"><a href="#5-2-添加漏掉的文件" class="headerlink" title="5.2 添加漏掉的文件"></a>5.2 添加漏掉的文件</h3><ul>
-<li>直接新增文件</li>
-<li><code> git add .</code></li>
-<li><code> git commit --amend</code>(<b style="color: red">不修改，直接保存</b>)</li>
-<li>提交记录只有一条</li>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs js">&#123;<br>  <span class="hljs-keyword">var</span> a = <span class="hljs-number">111</span><br>  <span class="hljs-keyword">let</span> b = <span class="hljs-number">222</span><br>  <span class="hljs-keyword">const</span> c = <span class="hljs-number">333</span><br><br>  <span class="hljs-built_in">console</span>.log(a)  <span class="hljs-comment">// 111</span><br>  <span class="hljs-built_in">console</span>.log(b)<span class="hljs-comment">// 222</span><br>  <span class="hljs-built_in">console</span>.log(c)<span class="hljs-comment">// 333</span><br>&#125;<br><br><span class="hljs-built_in">console</span>.log(a)  <span class="hljs-comment">// 111</span><br><span class="hljs-comment">// console.log(b) // b is not defined</span><br><span class="hljs-built_in">console</span>.log(c)  <span class="hljs-comment">// c is not defined</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="有无变量提升"><a href="#有无变量提升" class="headerlink" title="有无变量提升"></a>有无变量提升</h2><p><strong><code> var</code>有变量提升，<code> let</code>和<code> const</code>没有变量提升</strong></p>
+<p>即<code> let</code>和<code> const</code>不需要先声明，再使用，否则会报错，而<code> var</code>不需要先声明再使用，可以先使用后声明，不会报错，不过赋值的时候，值一直是<code> undefined</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">console</span>.log(a)    <span class="hljs-comment">// undefined</span><br><span class="hljs-built_in">console</span>.log(b)    <span class="hljs-comment">// Cannot access &#x27;b&#x27; before initialization</span><br><span class="hljs-comment">// console.log(c)  // Cannot access &#x27;c&#x27; before initialization</span><br><br><span class="hljs-keyword">var</span> a = <span class="hljs-number">111</span><br><span class="hljs-keyword">let</span> b = <span class="hljs-number">222</span><br><span class="hljs-comment">// const c = 333</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p>**注意，这里报的错不是<code> b is not defined</code>而是<code> Cannot access &#39;b&#39; before initialization</code>**。也就是说：</p>
+<ul>
+<li>从广义上来说，<code> let</code>和<code> const</code>没有变量提升，因为在声明前使用会报错</li>
+<li>从狭义上来说，<code> let</code>和<code> const</code>是有变量提升的，因为实际上用它们定义的变量已经被执行上下文记住了，否则应该会报错<code> is not defined</code>才对。</li>
+</ul>
+<p><strong><code>let</code>和<code> const</code>究竟有没有变量提升取决于怎么定义变量提升</strong>：</p>
+<ul>
+<li>如果变量提升指的是变量可以在声明前使用，则没有变量提升</li>
+<li>如果变量提升指的是变量在声明前有没有被执行上下文记住的话，则是有变量提升的。</li>
+</ul>
+<h2 id="能否被重新定义"><a href="#能否被重新定义" class="headerlink" title="能否被重新定义"></a>能否被重新定义</h2><p><code>let</code>和<code> const</code>不能被重新声明，但是<code>var</code>可以被重新声明</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> a = <span class="hljs-number">1</span><br><span class="hljs-keyword">var</span> a = <span class="hljs-number">2</span><br><span class="hljs-built_in">console</span>.log(a)    <span class="hljs-comment">// 2</span><br><br><span class="hljs-comment">// let b = 1</span><br><span class="hljs-comment">// let b = 2    // Identifier &#x27;b&#x27; has already been declared</span><br><br><span class="hljs-comment">// const c = 1</span><br><span class="hljs-comment">// const c = 2     // Identifier &#x27;b&#x27; has already been declared</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p>在这个例子中，把下面的注释去掉后，就能够再次证明上面说的<code> let</code>、<code>const</code>有没有变量提升是取决于怎么定义的。</p>
+<p><img src="https://gitee.com/clzczh/picgo/raw/master/images/202204131217401.png" alt="image-20220411210448047"></p>
+<p>因为JavaScript是单线程的，如果预编译执行上下文没有记住用<code> let</code>或<code> const</code>定义的变量的话，按理来说会先输出a，才报错，但是不是，也就是说，实际上执行上下文在预编译的时候，也已经记住用<code> let</code>和<code> const</code>声明的变量了。</p>
+<p><strong>不能在函数内部重新声明参数</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mytest</span>(<span class="hljs-params">args</span>) </span>&#123;<br>    <span class="hljs-keyword">let</span> args	<span class="hljs-comment">// 报错</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>但是，如果是在函数里的另一个块级作用域里则可以重新声明参数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mytest</span>(<span class="hljs-params">args</span>) </span>&#123;<br>  &#123;<br>    <span class="hljs-keyword">let</span> args = <span class="hljs-number">111</span>;<br>    <span class="hljs-built_in">console</span>.log(args)	<span class="hljs-comment">// 111</span><br><br>    &#123;<br>      <span class="hljs-keyword">let</span> args = <span class="hljs-number">222</span>;<br>      <span class="hljs-built_in">console</span>.log(args)	<span class="hljs-comment">// 222</span><br>    &#125;<br><br>  &#125;<br>&#125;<br><br>mytest(<span class="hljs-number">123</span>)<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="暂时性死区"><a href="#暂时性死区" class="headerlink" title="暂时性死区"></a>暂时性死区</h2><p>块中用<code> let</code>和<code> const</code>声明的变量，在使用<code> let</code>或<code> const</code>声明变量之前，该变量都是不可用的。这在语法上称为<strong>暂时性死区</strong>(temporal dead zone)</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-keyword">var</span> a = <span class="hljs-number">111</span><br><br>&#123;<br>  console.log(a)    <span class="hljs-comment">// Cannot access &#x27;a&#x27; before initialization</span><br>  <span class="hljs-keyword">let</span> a = <span class="hljs-number">222</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>上面的例子，就是典型的暂时性死区的例子。在上面有全局变量，在下面有块级变量，但是在中间则是谁都没法访问到。</p>
+<h2 id="全局作用域下是否会挂载到window对象"><a href="#全局作用域下是否会挂载到window对象" class="headerlink" title="全局作用域下是否会挂载到window对象"></a>全局作用域下是否会挂载到window对象</h2><p>全局作用域下，使用<code> var</code>声明的变量会被挂载到<code> window</code>对象上，而使用<code> let</code>和<code> const 则不会</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> a = <span class="hljs-number">111</span><br><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.a)   <span class="hljs-comment">// 111</span><br><br><span class="hljs-keyword">let</span> b = <span class="hljs-number">222</span><br><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.b)   <span class="hljs-comment">// undefined</span><br><br><span class="hljs-keyword">const</span> c = <span class="hljs-number">333</span><br><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.c)   <span class="hljs-comment">// undefined</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="const与let的区别"><a href="#const与let的区别" class="headerlink" title="const与let的区别"></a><code>const</code>与<code>let</code>的区别</h2><p><code> const</code>与<code> var</code>的区别如上。<code> const</code>和<code> let</code>的区别就是<strong>const声明的是常量，声明后不能够修改</strong></p>
+<h2 id="常见面试题"><a href="#常见面试题" class="headerlink" title="常见面试题"></a>常见面试题</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) &#123;<br>  <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-built_in">console</span>.log(i)    <span class="hljs-comment">// 输出5，5次</span><br>  &#125;, <span class="hljs-number">0</span>)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>因为setTimeout是宏任务(JS执行机制可参考之前的文章)，所以执行输出语句时，for循环已经执行完成了，然后用<code> var</code>声明的变量是函数作用域，所以会打印出5个5。可以尝试在for循环外打印<code>i</code>，能得到<code> 5</code>的结果</p>
+<p>把上面的<code> var</code>换成<code> let</code>后，会依次输出0、1、2、3、4</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) &#123;<br>  <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-built_in">console</span>.log(i)    <span class="hljs-comment">// 输出0、1、2、3、4</span><br>  &#125;, <span class="hljs-number">0</span>)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>因为<code> let</code>是块级作用域，用<code> let</code>声明的变量会被绑定到<code> setTimeout</code>上，所以并不会受到外界的影响，输出的结果就会是正常的0、1、2、3、4。</p>
+<p>另外，for循环还有一个特别的地方：<strong>设置循环变量的部分是一个父作用域，而循环体内是一个单独的子作用域</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">1</span>; i++) &#123;<br>  <span class="hljs-keyword">let</span> i = <span class="hljs-number">222</span>       <span class="hljs-comment">// 这里不会报错，因为这里实际上是另一个子作用域</span><br>  <span class="hljs-built_in">console</span>.log(i)    <span class="hljs-comment">// 222</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<p>这里顺便再来回顾一下，暂时性死区。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">1</span>; i++) &#123;<br>  <span class="hljs-built_in">console</span>.log(i)		<span class="hljs-comment">// Cannot access &#x27;i&#x27; before initialization</span><br>    <br>  <span class="hljs-keyword">let</span> i = <span class="hljs-number">222</span>      <br>  <span class="hljs-built_in">console</span>.log(i)   <br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+<p>参考链接：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_58875046/article/details/123067627">let 到底有无变量提升</a></li>
 </ul>
 
                 
@@ -544,7 +579,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.clzczh.top/2022/02/19/git-useful/">https://www.clzczh.top/2022/02/19/git-useful/</a>
+                    <a href="https://www.clzczh.top/2022/04/13/js-let-var-const/">https://www.clzczh.top/2022/04/13/js-let-var-const/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -582,8 +617,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/git/">
-                                    <span class="chip bg-color">git</span>
+                                <a href="/tags/JavaScript/">
+                                    <span class="chip bg-color">JavaScript</span>
                                 </a>
                             
                         </div>
@@ -968,17 +1003,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/02/21/vue3-1/">
+                <a href="/2022/04/13/js-let-var-const/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.png" class="responsive-img" alt="Vue3快速入门(一)">
+                        <img src="/medias/featureimages/20.png" class="responsive-img" alt="var、let和const之间的区别">
                         
-                        <span class="card-title">Vue3快速入门(一)</span>
+                        <span class="card-title">var、let和const之间的区别</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -988,9 +1024,59 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-21
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/04/12/js-precompile/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.png" class="responsive-img" alt="一道问题引起的重学预编译">
+                        
+                        <span class="card-title">一道问题引起的重学预编译</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1006,61 +1092,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Vue/">
-                        <span class="chip bg-color">Vue</span>
-                    </a>
-                    
-                    <a href="/tags/Vue3/">
-                        <span class="chip bg-color">Vue3</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/02/16/express-1/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/17.png" class="responsive-img" alt="Express(一) ——简单入门">
-                        
-                        <span class="card-title">Express(一) ——简单入门</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-16
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                    后端
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Express/">
-                        <span class="chip bg-color">Express</span>
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
                 </div>
