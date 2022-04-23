@@ -510,7 +510,7 @@
 
 
 <p>在这个例子中，把下面的注释去掉后，就能够再次证明上面说的<code> let</code>、<code>const</code>有没有变量提升是取决于怎么定义的。</p>
-<p><img src="https://gitee.com/clzczh/picgo/raw/master/images/202204131217401.png" alt="image-20220411210448047"></p>
+<p><img src="https://s2.loli.net/2022/04/23/n2KgUkhuYe1dEwJ.png" alt="image-20220411210448047"></p>
 <p>因为JavaScript是单线程的，如果预编译执行上下文没有记住用<code> let</code>或<code> const</code>定义的变量的话，按理来说会先输出a，才报错，但是不是，也就是说，实际上执行上下文在预编译的时候，也已经记住用<code> let</code>和<code> const</code>声明的变量了。</p>
 <p><strong>不能在函数内部重新声明参数</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mytest</span>(<span class="hljs-params">args</span>) </span>&#123;<br>    <span class="hljs-keyword">let</span> args	<span class="hljs-comment">// 报错</span><br>&#125;<br></code></pre></td></tr></table></figure>
