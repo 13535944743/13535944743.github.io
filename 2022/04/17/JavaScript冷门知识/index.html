@@ -457,7 +457,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    10 分
                 </div>
                 
 
@@ -586,9 +586,28 @@
 
 
 <h2 id="函数参数按值传递"><a href="#函数参数按值传递" class="headerlink" title="函数参数按值传递"></a>函数参数按值传递</h2><p>这个一直都是这么听别人说的，但是没有证明过，其他语言倒是有看过证明，现在就来证明一波js版本的。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mytest</span>(<span class="hljs-params">o</span>) </span>&#123;<br>  o.age = <span class="hljs-number">21</span><br><br>  o = &#123;<br>    <span class="hljs-attr">age</span>: <span class="hljs-number">999</span><br>  &#125;<br><br>&#125;<br><br><span class="hljs-keyword">const</span> person = &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;clz&#x27;</span><br>&#125;<br><br>mytest(person)<br><br><span class="hljs-built_in">console</span>.log(person)  <span class="hljs-comment">// &#123;name: &#x27;clz&#x27;, age: 21&#125;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mytest</span>(<span class="hljs-params">o</span>) </span>&#123;<br>  o.age = <span class="hljs-number">21</span><br>&#125;<br><br><span class="hljs-keyword">const</span> person = &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;clz&#x27;</span><br>&#125;<br><br>mytest(person)<br><br><span class="hljs-built_in">console</span>.log(person)  <span class="hljs-comment">// &#123;name: &#x27;clz&#x27;, age: 21&#125;</span><br></code></pre></td></tr></table></figure>
 
-<p>如果函数参数是按引用传递的，那么函数中给<code>变量o</code>重新赋值时，按理来说就应该已经把指针改为指向<code> age</code>为999的对象了。但是最后的结果是<code> &#123;name: &#39;clz&#39;, age: 21&#125;</code>，也就是说<strong>函数参数按值传递</strong></p>
+
+
+<p>可以发现，修改函数里的对象<code> o</code>会导致函数外的<code> person</code>也发生变化。</p>
+<p>这是什么原因呢?可能的原因有两个：</p>
+<ol>
+<li>当函数参数是对象时，是按引用传递的</li>
+<li>函数参数是按值传递的，但是对象是引用类型。所以<code> o</code>还是会通过引用访问对象，那么函数内部给<code> o</code>添加<code>age</code>属性时，函数外部的对象也会反映这个变化。因为<code> o</code>指向的对象保存在全局作用域的堆内存中。</li>
+</ol>
+<p>然后，先来说一下按值传递和按引用传递的概念。</p>
+<ul>
+<li>按值传递：<strong>值会被复制到函数内的局部变量</strong>。也就是说，此时<strong>直接给局部变量赋新值是不会修改到函数外的变量的</strong>，但是，如果参数是对象，而且不是直接给局部变量赋新值，而是给它添加新属性，或者修改属性值的话，还是影响到函数外的变量的，因为<strong>对象是引用类型的</strong>。</li>
+<li>按引用传递：<strong>值在内存的位置会被保存到函数内的局部变量中</strong>。也就是说，此时<strong>直接给局部变量赋新值是会修改到函数外的变量的</strong>，因为此时局部变量是地址，也就是说，直接给局部变量赋新值的话，就是将那个地址改变，既然修改的是地址，那么函数外部的变量肯定也会跟着变，因为它指向的地址都被别人改了。</li>
+</ul>
+<p>下面对上面的例子进行修改，来证明对象也是按值传递的。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mytest</span>(<span class="hljs-params">o</span>) </span>&#123;<br>  o.age = <span class="hljs-number">21</span><br><br>  o = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>()<br>  o.age = <span class="hljs-number">999</span><br>&#125;<br><br><span class="hljs-keyword">const</span> person = &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;clz&#x27;</span><br>&#125;<br><br>mytest(person)<br><br><span class="hljs-built_in">console</span>.log(person)  <span class="hljs-comment">// &#123;name: &#x27;clz&#x27;, age: 21&#125;</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p>如果<code> person</code>是按引用传递的，那么当我们将<code> o</code>重新定义为一个新对象时，<code> person</code>也应该会自动将指针改成指向<code> age</code>为999的对象。</p>
+<p>但是最后的结果是<code> &#123;name: &#39;clz&#39;, age: 21&#125;</code>，也就是说，函数中参数的值改变之后，原始的引用还是没有改变。即<strong>函数参数按值传递</strong></p>
 <p>参考链接：</p>
 <ul>
 <li><p>JS红宝书</p>
@@ -1368,7 +1387,7 @@
       <a href="/about" target="_blank">赤蓝紫</a>
       |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
       <br />
-       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">207.4k</span>&nbsp;字     
+       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">207.9k</span>&nbsp;字     
       <br />
       
       <span id="sitetime">载入运行时间...</span>

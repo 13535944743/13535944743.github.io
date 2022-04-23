@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.clzczh.top/2022/04/17/Array-from%E7%9A%84%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/</loc>
+    <loc>https://www.clzczh.top/2022/04/17/JavaScript%E5%86%B7%E9%97%A8%E7%9F%A5%E8%AF%86/</loc>
+    <lastmod>2022-04-18</lastmod>
+  </url>
+  <url>
+    <loc>https://www.clzczh.top/2021/11/01/Rem-Layout/</loc>
     <lastmod>2022-04-17</lastmod>
   </url>
   <url>
-    <loc>https://www.clzczh.top/2022/04/17/JavaScript%E5%86%B7%E9%97%A8%E7%9F%A5%E8%AF%86/</loc>
+    <loc>https://www.clzczh.top/2022/04/17/Array-from%E7%9A%84%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/</loc>
     <lastmod>2022-04-17</lastmod>
   </url>
   <url>
@@ -186,10 +190,6 @@
   </url>
   <url>
     <loc>https://www.clzczh.top/2021/09/25/Responsive-Layout/</loc>
-    <lastmod>2022-03-25</lastmod>
-  </url>
-  <url>
-    <loc>https://www.clzczh.top/2021/11/01/Rem-Layout/</loc>
     <lastmod>2022-03-25</lastmod>
   </url>
   <url>
