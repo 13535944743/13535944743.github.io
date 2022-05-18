@@ -41,7 +41,7 @@
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/clz.css">
 
-    <link href="https://cdn.bootcdn.net/ajax/libs/highlight.js/11.5.0/styles/an-old-hope.min.css" rel="stylesheet">
+    <link href="/css/an-old-hope.css" rel="stylesheet">
 
     <script src="/libs/jquery/jquery.min.js"></script>
 	<!-- async load function -->
@@ -425,6 +425,10 @@
                                 <span class="chip bg-color">Vue3</span>
                             </a>
                         
+                            <a href="/tags/Element/">
+                                <span class="chip bg-color">Element</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -477,11 +481,13 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Element-Plus修改表格行、单元格样式"><a href="#Element-Plus修改表格行、单元格样式" class="headerlink" title="Element Plus修改表格行、单元格样式"></a>Element Plus修改表格行、单元格样式</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>实习工作需要根据表格的状态字段来设置行的样式，记录一波。</p>
+                <hr>
+<h2 id="theme-channing-cyan"><a href="#theme-channing-cyan" class="headerlink" title="theme: channing-cyan"></a>theme: channing-cyan</h2><p>一起养成写作习惯！这是我参与「掘金日新计划 · 4 月更文挑战」的第27天，<a target="_blank" rel="noopener" href="https://juejin.cn/post/7080800226365145118" title="https://juejin.cn/post/7080800226365145118">点击查看活动详情</a>。</p>
+<h1 id="Element-Plus修改表格行、单元格样式"><a href="#Element-Plus修改表格行、单元格样式" class="headerlink" title="Element Plus修改表格行、单元格样式"></a>Element Plus修改表格行、单元格样式</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>实习工作需要根据表格的状态字段来设置行的样式，记录一波。</p>
 <p>先来一下基础配置。(Vue3)</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">el-table</span> <span class="hljs-attr">:data</span>=<span class="hljs-string">&quot;tableData&quot;</span> <span class="hljs-attr">border</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 400px&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">el-table-column</span> <span class="hljs-attr">prop</span>=<span class="hljs-string">&quot;name&quot;</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;姓名&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;100&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">el-table-column</span> <span class="hljs-attr">prop</span>=<span class="hljs-string">&quot;age&quot;</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;年龄&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;100&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">el-table-column</span> <span class="hljs-attr">prop</span>=<span class="hljs-string">&quot;job&quot;</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;工作&quot;</span> /&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">el-table</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span>&gt;</span><span class="javascript"></span><br><span class="javascript"><span class="hljs-keyword">const</span> tableData = [</span><br><span class="javascript">  &#123;</span><br><span class="javascript">    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;clz&quot;</span>,</span><br><span class="javascript">    <span class="hljs-attr">age</span>: <span class="hljs-number">21</span>,</span><br><span class="javascript">    <span class="hljs-attr">job</span>: <span class="hljs-string">&quot;Coder&quot;</span>,</span><br><span class="javascript">  &#125;,</span><br><span class="javascript">  &#123;</span><br><span class="javascript">    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;czh&quot;</span>,</span><br><span class="javascript">    <span class="hljs-attr">age</span>: <span class="hljs-number">21</span>,</span><br><span class="javascript">    <span class="hljs-attr">job</span>: <span class="hljs-string">&quot;Coder&quot;</span>,</span><br><span class="javascript">  &#125;,</span><br><span class="javascript">  &#123;</span><br><span class="javascript">    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;赤蓝紫&quot;</span>,</span><br><span class="javascript">    <span class="hljs-attr">age</span>: <span class="hljs-number">21</span>,</span><br><span class="javascript">    <span class="hljs-attr">job</span>: <span class="hljs-string">&quot;Coder&quot;</span>,</span><br><span class="javascript">  &#125;,</span><br><span class="javascript">];</span><br><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;less&quot;</span> <span class="hljs-attr">scoped</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
-<p><img src="https://gitee.com/clzczh/picgo/raw/master/images/202204301724709.png" alt="image-20220425211149555"></p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/631eedb6885c44babc3af2a9e48b3642~tplv-k3u1fbpfcp-zoom-1.image" alt="image-20220425211149555"></p>
 <h2 id="设置某一行的样式"><a href="#设置某一行的样式" class="headerlink" title="设置某一行的样式"></a>设置某一行的样式</h2><p>主要是通过<code> row-style</code>属性来实现。它是行的<code> style</code>的回调方法，可以通过它来实现设置某一行的样式。</p>
 <p>先让我们来体验一下它的参数都是些什么。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">el-table</span> </span><br><span class="hljs-tag">  <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 400px&quot;</span> </span><br><span class="hljs-tag">  <span class="hljs-attr">border</span> </span><br><span class="hljs-tag">  <span class="hljs-attr">:data</span>=<span class="hljs-string">&quot;tableData&quot;</span> </span><br><span class="hljs-tag">  <span class="hljs-attr">:row-style</span>=<span class="hljs-string">&quot;rowState&quot;</span></span><br><span class="hljs-tag">&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">el-table</span>&gt;</span><br></code></pre></td></tr></table></figure>
@@ -500,7 +506,7 @@
 <p>然后在搭配参数使用，就能实现根据表格内容设置行的样式。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> rowState = <span class="hljs-function">(<span class="hljs-params">&#123; row &#125;</span>) =&gt;</span> &#123;<br>  <span class="hljs-keyword">let</span> style = &#123;&#125;<br><br>  <span class="hljs-keyword">switch</span> (row.name) &#123;<br>    <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;clz&#x27;</span>:<br>      style = &#123;<br>        <span class="hljs-attr">backgroundColor</span>: <span class="hljs-string">&#x27;red&#x27;</span><br>      &#125;<br>      <span class="hljs-keyword">break</span>;<br>    <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;czh&#x27;</span>:<br>      style = &#123;<br>        <span class="hljs-attr">backgroundColor</span>: <span class="hljs-string">&#x27;blue&#x27;</span><br>      &#125;<br>      <span class="hljs-keyword">break</span>;<br>    <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;赤蓝紫&#x27;</span>:<br>      style = &#123;<br>        <span class="hljs-attr">backgroundColor</span>: <span class="hljs-string">&#x27;purple&#x27;</span><br>      &#125;<br>      <span class="hljs-keyword">break</span>;<br>  &#125;<br><br>  <span class="hljs-keyword">return</span> style;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ed99c47db4f9492c97ad837cd819443a~tplv-k3u1fbpfcp-zoom-1.image" alt="image-20220426211744236"></p>
+<p><img src="https://gitee.com/clzczh/picgo/raw/master/images/202205182210732.png" alt="image-20220426211744236"></p>
 <h2 id="设置某一个单元格的样式"><a href="#设置某一个单元格的样式" class="headerlink" title="设置某一个单元格的样式"></a>设置某一个单元格的样式</h2><p>通过<code> cell-style</code>属性来实现。做法和上面一样，就不多说了，主要的四个参数<code> row, column, rowIndex, columnIndex</code>。</p>
 <ul>
 <li><code>row</code>：行的信息</li>
@@ -526,16 +532,16 @@
 
 <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5ec6ae0d71a6490199c26322b3b259d7~tplv-k3u1fbpfcp-zoom-1.image" alt="image-20220427220605501"></p>
 <p>发现只有标头的行高有所变化，这是为啥呢？</p>
-<p><img src="https://gitee.com/clzczh/picgo/raw/master/images/202204301724529.png" alt="image-20220427220742235"></p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e213d53f38334f71846e8723a640b518~tplv-k3u1fbpfcp-zoom-1.image" alt="image-20220427220742235"></p>
 <p>检查样式发现，这是因为单元格本身具有背景颜色，所以并不会生效。</p>
 <p><code>header-row-style</code>：和正常的单元格一样，有四个属性</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">const headerCellStyle = (&#123; row, column, rowIndex, columnIndex &#125;) =&gt; &#123;<br>  if (columnIndex === 1) &#123;<br>    return &#123;<br>      backgroundColor: &#x27;pink&#x27;<br>    &#125;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b3aba8d031704da3a97767ade4b2c224~tplv-k3u1fbpfcp-zoom-1.image" alt="image-20220427221737551"></p>
+<p><img src="https://gitee.com/clzczh/picgo/raw/master/images/202205182210698.png" alt="image-20220427221737551"></p>
 <p>也可以通过<code>column</code>属性来设置符合条件的表头单元格的样式。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">const headerCellStyle = (&#123; row, column, rowIndex, columnIndex &#125;) =&gt; &#123;<br><br>  if (column.label === &#x27;姓名&#x27;) &#123;<br>    return &#123;<br>      backgroundColor: &#x27;red&#x27;<br>    &#125;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p><img src="https://gitee.com/clzczh/picgo/raw/master/images/202204301724489.png" alt="image-20220427222630382"></p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b8e2ff1f91304924a85c3c421e8e2f5b~tplv-k3u1fbpfcp-zoom-1.image" alt="image-20220427222630382"></p>
 <p>\</p>
 
                 
@@ -603,6 +609,10 @@
                             
                                 <a href="/tags/Vue3/">
                                     <span class="chip bg-color">Vue3</span>
+                                </a>
+                            
+                                <a href="/tags/Element/">
+                                    <span class="chip bg-color">Element</span>
                                 </a>
                             
                         </div>
@@ -1293,7 +1303,7 @@
 </div>
 
 <script src="/libs/aplayer/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
 
      -->
   <div class="container row center-align" style="margin-bottom: 15px !important;">
@@ -1305,7 +1315,7 @@
       <a href="/about" target="_blank">赤蓝紫</a>
       |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
       <br />
-       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">221.8k</span>&nbsp;字     
+       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">225.3k</span>&nbsp;字     
       <br />
       
       <span id="sitetime">载入运行时间...</span>
@@ -1520,7 +1530,8 @@ $(function () {
 
 
                       <!-- <script src="/js/digitalRain.js"></script> -->
-                      <script src="https://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
+                      <!-- <script src="https://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script> -->
+                      <script src="/libs/highlight/highlight.min.js"></script>
                       <script>
                         hljs.initHighlightingOnLoad()
                       </script>
@@ -1616,7 +1627,7 @@ $(function () {
 </div>
 
 <script src="/libs/aplayer/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
 
               
                 <script src="/js/jquery.pjax.js"></script>

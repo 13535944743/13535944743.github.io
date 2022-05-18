@@ -41,7 +41,7 @@
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/clz.css">
 
-    <link href="https://cdn.bootcdn.net/ajax/libs/highlight.js/11.5.0/styles/an-old-hope.min.css" rel="stylesheet">
+    <link href="/css/an-old-hope.css" rel="stylesheet">
 
     <script src="/libs/jquery/jquery.min.js"></script>
 	<!-- async load function -->
@@ -501,7 +501,7 @@
 <p><strong><code> return</code>会直接让生成器到达<code> done: true</code>状态</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">gFn</span>(<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-number">111</span>)<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">222</span><br>&#125;<br><br><span class="hljs-keyword">const</span> g = gFn()<br><span class="hljs-built_in">console</span>.log(g)<br><br><span class="hljs-built_in">console</span>.log(g.next())<br><span class="hljs-built_in">console</span>.log(g.next())<br></code></pre></td></tr></table></figure>
 
-<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b72657e50a89426795185b1f3592dab5~tplv-k3u1fbpfcp-zoom-1.image" alt="image-20220416114721721"></p>
+<p><img src="https://gitee.com/clzczh/picgo/raw/master/images/202205182103034.png" alt="image-20220416114721721"></p>
 <p>有种迭代器的既视感。实际上，<strong>生成器实现了Iterable接口</strong>，它们默认的迭代器是自引用的。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">gFn</span>(<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-number">111</span>)<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">222</span><br>&#125;<br><br><span class="hljs-keyword">const</span> g = gFn()<br><br><span class="hljs-built_in">console</span>.log(gFn()[<span class="hljs-built_in">Symbol</span>.iterator]())   <span class="hljs-comment">// gFn &#123;&lt;suspended&gt;&#125;</span><br><span class="hljs-built_in">console</span>.log(g === g[<span class="hljs-built_in">Symbol</span>.iterator]()) <span class="hljs-comment">// true</span><br></code></pre></td></tr></table></figure>
 
@@ -514,12 +514,12 @@
 
 <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/51670b15ec7843c2a71907169d99732f~tplv-k3u1fbpfcp-zoom-1.image" alt="image-20220416162345189"></p>
 <p>简单分析一下：</p>
-<p><img src="https://gitee.com/clzczh/picgo/raw/master/images/202204301718598.png" alt="image-20220416163137033"></p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b4690e87666443d6bd55d7e5a68cccc8~tplv-k3u1fbpfcp-zoom-1.image" alt="image-20220416163137033"></p>
 <p>另外，**<code> yield</code>关键字只能在生成器内部使用，用在其他地方会抛出错误。**</p>
 <h2 id="生成器拥有迭代器的特性"><a href="#生成器拥有迭代器的特性" class="headerlink" title="生成器拥有迭代器的特性"></a>生成器拥有迭代器的特性</h2><p>正如上面所说，生成器是特殊的迭代器，所以生成器也拥有迭代器的特性。</p>
 <h3 id="生成器对象之间互不干扰"><a href="#生成器对象之间互不干扰" class="headerlink" title="生成器对象之间互不干扰"></a>生成器对象之间互不干扰</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">gFn</span>(<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-keyword">yield</span> <span class="hljs-string">&#x27;red&#x27;</span>;<br>    <span class="hljs-keyword">yield</span> <span class="hljs-string">&#x27;blue&#x27;</span>;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;purple&#x27;</span>;<br>&#125;<br><br><span class="hljs-keyword">const</span> g1 = gFn()<br><span class="hljs-keyword">const</span> g2 = gFn()<br><br><span class="hljs-built_in">console</span>.log(g1.next())<br><span class="hljs-built_in">console</span>.log(g2.next())<br></code></pre></td></tr></table></figure>
 
-<p><img src="https://gitee.com/clzczh/picgo/raw/master/images/202204301718550.png" alt="image-20220416164330795"></p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/42dfb5b7ba6f4d4a862f849db050fedc~tplv-k3u1fbpfcp-zoom-1.image" alt="image-20220416164330795"></p>
 <h3 id="生成器对象可作为可迭代对象"><a href="#生成器对象可作为可迭代对象" class="headerlink" title="生成器对象可作为可迭代对象"></a>生成器对象可作为可迭代对象</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">gFn</span>(<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-keyword">yield</span> <span class="hljs-string">&#x27;red&#x27;</span><br>  <span class="hljs-keyword">yield</span> <span class="hljs-string">&#x27;blue&#x27;</span><br>  <span class="hljs-keyword">yield</span> <span class="hljs-string">&#x27;purple&#x27;</span><br>  <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;white&#x27;</span><br>&#125;<br><br><span class="hljs-keyword">const</span> g = gFn()<br><br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> i <span class="hljs-keyword">of</span> g) &#123;<br>  <span class="hljs-built_in">console</span>.log(i)    <span class="hljs-comment">// 依次输出red、blue、purple</span><br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p><strong><code> return</code>的内容不能被迭代。</strong></p>
@@ -536,7 +536,7 @@
 <p>直接来实践比较好理解。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">gFn</span>(<span class="hljs-params">initial</span>) </span>&#123;<br>  <span class="hljs-built_in">console</span>.log(initial)<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">yield</span>)<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">yield</span>)<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">yield</span>)<br>&#125;<br><br><span class="hljs-keyword">const</span> g = gFn(<span class="hljs-string">&#x27;red&#x27;</span>)<br>g.next(<span class="hljs-string">&#x27;white&#x27;</span>)<br>g.next(<span class="hljs-string">&#x27;blue&#x27;</span>)<br>g.next(<span class="hljs-string">&#x27;purple&#x27;</span>)<br></code></pre></td></tr></table></figure>
 
-<p><img src="https://gitee.com/clzczh/picgo/raw/master/images/202204301718936.png" alt="image-20220416232423112"></p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1ec69ea4cf8843aca8eca14bce035cd0~tplv-k3u1fbpfcp-zoom-1.image" alt="image-20220416232423112"></p>
 <ol>
 <li>生成生成器，此时处于暂停执行的状态</li>
 <li>调用<code> next</code>，让生成器开始执行，输出<code> red</code>，然后准备输出<code> yield</code>，发现是<code> yield</code>，暂停执行，出去外面一下。</li>
@@ -548,7 +548,7 @@
 <h3 id="yield关键字同时用于输入和输出"><a href="#yield关键字同时用于输入和输出" class="headerlink" title="yield关键字同时用于输入和输出"></a>yield关键字同时用于输入和输出</h3><p><code> yield</code>可以和<code> return</code>同时使用，同时用于输入和输出</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">gFn</span>(<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-keyword">yield</span> <span class="hljs-number">111</span><br>  <span class="hljs-keyword">return</span> <span class="hljs-keyword">yield</span> <span class="hljs-number">222</span><br>&#125;<br><br><span class="hljs-keyword">const</span> g = gFn()<br><br><span class="hljs-built_in">console</span>.log(g.next(<span class="hljs-number">333</span>))<br><span class="hljs-built_in">console</span>.log(g.next(<span class="hljs-number">444</span>))<br><span class="hljs-built_in">console</span>.log(g.next(<span class="hljs-number">555</span>))<br></code></pre></td></tr></table></figure>
 
-<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1f15b793457e4cfe897c43a8e2b88f6a~tplv-k3u1fbpfcp-zoom-1.image" alt="image-20220417091733574"></p>
+<p><img src="https://gitee.com/clzczh/picgo/raw/master/images/202205182103615.png" alt="image-20220417091733574"></p>
 <ol>
 <li>生成生成器，此时处于暂停执行的状态</li>
 <li>调用<code> next</code>，让生成器开始执行，遇到<code> yield</code>，暂停执行，因为<code> yield</code>后面还有111，所以带着111作为输出出去外面。</li>
@@ -607,7 +607,7 @@
 <h3 id="throw"><a href="#throw" class="headerlink" title="throw"></a>throw</h3><p><code>throw</code>也可以提前终止生成器，且会抛出异常，需要捕获处理抛出的异常。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">gFn</span>(<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-keyword">yield</span> <span class="hljs-number">111</span><br>  <span class="hljs-keyword">yield</span> <span class="hljs-number">222</span><br>  <span class="hljs-keyword">yield</span> <span class="hljs-number">333</span><br>&#125;<br><br><span class="hljs-keyword">const</span> g = gFn()<br><span class="hljs-comment">// g.throw(444)       // 如果异常没有被处理的话，会直接报错</span><br><br><span class="hljs-keyword">try</span> &#123;<br>  g.throw(<span class="hljs-number">444</span>)<br>&#125; <span class="hljs-keyword">catch</span> (e) &#123;<br>  <span class="hljs-built_in">console</span>.log(e)<br>&#125;<br><br><span class="hljs-built_in">console</span>.log(g)<br><br><span class="hljs-built_in">console</span>.log(g.next())<br></code></pre></td></tr></table></figure>
 
-<p><img src="https://gitee.com/clzczh/picgo/raw/master/images/202204301718161.png" alt="image-20220417103544691"></p>
+<p><img src="https://gitee.com/clzczh/picgo/raw/master/images/202205182103877.png" alt="image-20220417103544691"></p>
 <p>不过，如果处理异常是在生成器内部的话，情况就不太一样了。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">gFn</span>(<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> x <span class="hljs-keyword">of</span> [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]) &#123;<br>    <span class="hljs-keyword">try</span> &#123;<br>      <span class="hljs-keyword">yield</span> x<br>    &#125; <span class="hljs-keyword">catch</span> (e) &#123;<br>      <span class="hljs-built_in">console</span>.log(e)<br>    &#125;<br>  &#125;<br>&#125;<br><br><span class="hljs-keyword">const</span> g = gFn()<br><br><span class="hljs-built_in">console</span>.log(g.next())<br><br>g.throw(<span class="hljs-number">444</span>)<br><span class="hljs-built_in">console</span>.log(g)<br><br><span class="hljs-built_in">console</span>.log(g.next())<br></code></pre></td></tr></table></figure>
 
@@ -618,7 +618,7 @@
 <p><strong>throw语句会得到被跳过的那个值</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">console</span>.log(g.throw(<span class="hljs-number">444</span>))<br></code></pre></td></tr></table></figure>
 
-<p><img src="https://gitee.com/clzczh/picgo/raw/master/images/202204301718537.png" alt="image-20220417104806188"></p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/880f12f0b6774089900d29a2e5f79658~tplv-k3u1fbpfcp-zoom-1.image" alt="image-20220417104806188"></p>
 <p>以下是个人看法(有错请指出)，处理异常在生成器内部的话，还是会正常终止生成器的，只是在生成器内部的循环中处理异常才会不终止外部的生成器。原因不晓得。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">gFn</span>(<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-keyword">try</span> &#123;<br>    <span class="hljs-keyword">yield</span> <span class="hljs-number">1</span><br>    <span class="hljs-keyword">yield</span> <span class="hljs-number">2</span><br>    <span class="hljs-keyword">yield</span> <span class="hljs-number">3</span><br>  &#125; <span class="hljs-keyword">catch</span> (e) &#123;<br>    <span class="hljs-built_in">console</span>.log(e)<br>  &#125;<br>&#125;<br><br><span class="hljs-keyword">const</span> g = gFn()<br><br><span class="hljs-built_in">console</span>.log(g.next())<br><br><span class="hljs-built_in">console</span>.log(g.throw(<span class="hljs-number">444</span>))<br><span class="hljs-built_in">console</span>.log(g)<br><br><span class="hljs-built_in">console</span>.log(g.next())<br></code></pre></td></tr></table></figure>
 
@@ -1384,7 +1384,7 @@
 </div>
 
 <script src="/libs/aplayer/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
 
      -->
   <div class="container row center-align" style="margin-bottom: 15px !important;">
@@ -1396,7 +1396,7 @@
       <a href="/about" target="_blank">赤蓝紫</a>
       |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
       <br />
-       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">221.8k</span>&nbsp;字     
+       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">225.3k</span>&nbsp;字     
       <br />
       
       <span id="sitetime">载入运行时间...</span>
@@ -1611,7 +1611,8 @@ $(function () {
 
 
                       <!-- <script src="/js/digitalRain.js"></script> -->
-                      <script src="https://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
+                      <!-- <script src="https://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script> -->
+                      <script src="/libs/highlight/highlight.min.js"></script>
                       <script>
                         hljs.initHighlightingOnLoad()
                       </script>
@@ -1707,7 +1708,7 @@ $(function () {
 </div>
 
 <script src="/libs/aplayer/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
 
               
                 <script src="/js/jquery.pjax.js"></script>
