@@ -489,7 +489,7 @@
 <p>css</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">body &#123;<br>    display: flex;<br>&#125;<br><br>div &#123;<br>    width: 100px;<br>    height: 100px;<br>&#125;<br><br>div:nth-child(1) &#123;<br>    background-color: red;<br>&#125;<br><br>div:nth-child(2) &#123;<br>    display: none;<br>    background-color: blue;<br>&#125;<br><br>div:nth-child(3) &#123;<br>    background-color: purple;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p><img src="https://gitee.com/clzczh/picgo/raw/master/images/202204301725236.png" alt="image-20220427230639837"></p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6b3c393ff79c420cba57e8f9f1452328~tplv-k3u1fbpfcp-zoom-1.image" alt="image-20220427230639837"></p>
 <p>那么<code>display</code>会不会引发回流、重绘呢？</p>
 <p>答案是必然的，当我们修改<code>display</code>时，它会突然地出现或消失(即会修改元素的位置)，所以会引发回流，引发回流自然就会引发重绘。但是，如果一开始就是<code>none</code>，那么倒是不会多次触发回流，因为不会渲染该元素。</p>
 <h2 id="visibility-hidden"><a href="#visibility-hidden" class="headerlink" title="visibility: hidden"></a>visibility: hidden</h2><p>元素在页面中会保留位置，但是不会响应绑定的事件</p>
@@ -524,7 +524,7 @@
 <h2 id="降低层次法"><a href="#降低层次法" class="headerlink" title="降低层次法"></a>降低层次法</h2><p>通过<code>z-index</code>来降低当前元素的层次，让其他元素遮盖该元素来实现隐藏。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">div:nth-child(2) &#123;<br>    position: absolute;<br>    z-index: -999;<br>    background-color: blue;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p><img src="https://gitee.com/clzczh/picgo/raw/master/images/202204301725701.png" alt="image-20220428214355252"></p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/213df0c462d44386bd4c9f88494ccba2~tplv-k3u1fbpfcp-zoom-1.image" alt="image-20220428214355252"></p>
 <p>上面我们用到了绝对定位，可能就会提出疑问：这不是算是绝对定位法吗？</p>
 <p>但是上面的只是其中一种用法，也能通过搭配<code>margin</code>来实现隐藏，只要让降低层次的元素被更高层次的元素遮住就行。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">div:nth-child(2) &#123;<br>    margin-left: -100px;<br>    z-index: -999;<br>    background-color: blue;<br>&#125;<br></code></pre></td></tr></table></figure>

@@ -481,7 +481,7 @@
 <h2 id="a链接"><a href="#a链接" class="headerlink" title="a链接"></a>a链接</h2><h3 id="极简版本"><a href="#极简版本" class="headerlink" title="极简版本"></a>极简版本</h3><p>实际上，如果a链接的<code>href</code>就是指向文件的地址的话，是可以直接下载的。这种方式下载的文件名就是原本的文件名。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;a href=&quot;https://www.clzczh.top/medias/test.xlsx&quot;&gt;下载文件&lt;/a&gt;<br></code></pre></td></tr></table></figure>
 
-<p><img src="https://gitee.com/clzczh/picgo/raw/master/images/202205182204001.png" alt="image-20220430181604786"></p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/214c0856f9b243ed80e1c95a7ea7c601~tplv-k3u1fbpfcp-zoom-in-crop-mark:1304:0:0:0.awebp" alt="image-20220430181604786"></p>
 <h3 id="自定义文件名"><a href="#自定义文件名" class="headerlink" title="自定义文件名"></a>自定义文件名</h3><p>通过<code>download</code>属性，可以实现对下载的文件进行重命名。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;a href=&quot;https://www.clzczh.top/medias/test.xlsx&quot; download=&quot;clz.xlsx&quot;&gt;下载文件&lt;/a&gt;<br></code></pre></td></tr></table></figure>
 
@@ -490,7 +490,7 @@
 <p>换成同源路径后，就能实现自定义文件名了</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;a href=&quot;/test.xlsx&quot; download=&quot;clz.xlsx&quot;&gt;下载文件&lt;/a&gt;<br></code></pre></td></tr></table></figure>
 
-<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/08b09718607f473a85c49c3e7a606d84~tplv-k3u1fbpfcp-zoom-1.image" alt="image-20220430183758385"></p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/214c0856f9b243ed80e1c95a7ea7c601~tplv-k3u1fbpfcp-zoom-1.image" alt="image-20220430181604786"></p>
 <h3 id="动态添加a标签"><a href="#动态添加a标签" class="headerlink" title="动态添加a标签"></a>动态添加a标签</h3><p>在上面的例子中，我们是通过点击a标签来实现下载文件的。但是，实际上，我们也可以通过动态添加a标签的形式来实现。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;button onclick=&quot;download()&quot;&gt;下载文件&lt;/button&gt;<br><br>&lt;script&gt;<br>  function download() &#123;<br>    const a = document.createElement(&#x27;a&#x27;)<br>    a.href = &#x27;/test.xlsx&#x27;<br>    a.download = &#x27;clz.xlsx&#x27;<br>    a.click()<br>  &#125;<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
 
