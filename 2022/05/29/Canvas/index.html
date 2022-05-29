@@ -1,0 +1,1754 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta name="keywords" content="Canvas简单入门, 赤蓝紫">
+    <meta name="description" content="One Plus One Equals Two.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="google-site-verification" content="N2tyqrBMiGbzMX97sCxKpveMRBLdm8zEfKfFo8kitYk" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GZXVDMM7YD"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-GZXVDMM7YD');
+</script>
+
+
+    <title>Canvas简单入门 | 赤蓝紫</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/clz.css">
+
+    <link href="/css/an-old-hope.css" rel="stylesheet">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+	<!-- async load function -->
+    <script>
+        function async(u, c) {
+            var d = document, t = 'script',
+                o = d.createElement(t),
+                s = d.getElementsByTagName(t)[0];
+            o.src = u;
+            if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+            s.parentNode.insertBefore(o, s);
+        }
+    </script>
+    <script src="/libs/valine/av-min.js"></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="赤蓝紫" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+  
+
+        <body>
+          <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="pageContent">
+            <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/avatar.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">赤蓝紫</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact/" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/avatar.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">赤蓝紫</div>
+        <div class="logo-desc">
+            
+            One Plus One Equals Two.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+    <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</header>
+
+              
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8_preview.png')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Canvas简单入门</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css" />
+<style>
+  #articleContent h1::before,
+  #articleContent h2::before,
+  #articleContent h3::before,
+  #articleContent h4::before,
+  #articleContent h5::before,
+  #articleContent h6::before {
+    display: block;
+    content: " ";
+    height: 100px;
+    margin-top: -100px;
+    visibility: hidden;
+  }
+
+  #articleContent :focus {
+    outline: none;
+  }
+
+  .toc-fixed {
+    position: fixed;
+    top: 64px;
+  }
+
+  .toc-widget {
+    width: 345px;
+    padding-left: 20px;
+  }
+
+  .toc-widget .toc-title {
+    padding: 35px 0 15px 17px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+  }
+
+  .toc-widget ol {
+    padding: 0;
+    list-style: none;
+  }
+
+  #toc-content {
+    padding-bottom: 30px;
+    overflow: auto;
+  }
+
+  #toc-content ol {
+    padding-left: 10px;
+  }
+
+  #toc-content ol li {
+    padding-left: 10px;
+  }
+
+  #toc-content .toc-link:hover {
+    color: #42b983;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+
+  #toc-content .toc-link::before {
+    background-color: transparent;
+    max-height: 25px;
+
+    position: absolute;
+    right: 23.5vw;
+    display: block;
+  }
+
+  #toc-content .is-active-link {
+    color: #42b983;
+  }
+
+  #floating-toc-btn {
+    position: fixed;
+    right: 15px;
+    bottom: 76px;
+    padding-top: 15px;
+    margin-bottom: 0;
+    z-index: 998;
+  }
+
+  #floating-toc-btn .btn-floating {
+    width: 48px;
+    height: 48px;
+  }
+
+  #floating-toc-btn .btn-floating i {
+    line-height: 48px;
+    font-size: 1.4rem;
+  }
+</style>
+<div class="row">
+  <div id="main-content" class="col s12 m12 l9"><!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/JavaScript/">
+                                <span class="chip bg-color">JavaScript</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-05-29
+                </div>
+                
+
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    17 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Canvas简单入门"><a href="#Canvas简单入门" class="headerlink" title="Canvas简单入门"></a>Canvas简单入门</h1><p>创建<code>canvas</code>至少需要提供<code>width</code>和<code>height</code>属性，才能通知浏览器需要多大位置画图。标签的内容是后备数据，在浏览器不支持<code>canvas</code>元素时显示。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;mycanvas&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;200&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;200&quot;</span>&gt;</span>haha<span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>可以通过<code>if(canvas.getContext)</code>来判断浏览器是否支持<code>canvas</code>。</p>
+<p>通过<code>canvas.getContext(&#39;2d&#39;)</code>可以获取 2D 绘图上下文。2D 绘图上下文提供了绘制 2D 图形的方法。左边原点(0, 0)在<code> canvas</code>元素的左上角，x 坐标向右增长，y 坐标向下增长。</p>
+<h2 id="从画布上导出一张-PNG-格式的图片"><a href="#从画布上导出一张-PNG-格式的图片" class="headerlink" title="从画布上导出一张 PNG 格式的图片"></a>从画布上导出一张 PNG 格式的图片</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;mycanvas&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;200&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;200&quot;</span>&gt;</span>haha<span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"></span><br><span class="javascript">    <span class="hljs-keyword">const</span> mycanvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;mycanvas&quot;</span>);</span><br><span class="javascript"></span><br><span class="javascript">    <span class="hljs-comment">// 确保浏览器支持canvas</span></span><br><span class="javascript">    <span class="hljs-keyword">if</span> (mycanvas.getContext) &#123;</span><br><span class="javascript">      <span class="hljs-comment">// 获得图像的数据URI</span></span><br><span class="javascript">      <span class="hljs-keyword">const</span> imgURI = mycanvas.toDataURL(<span class="hljs-string">&quot;image/png&quot;</span>);</span><br><span class="javascript">      <span class="hljs-built_in">console</span>.log(imgURI);</span><br><span class="javascript">    &#125;</span><br><span class="javascript">  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/images/202205292320516.png" alt="image-20220522110709840"></p>
+<p>我们查看控制台可以发现，输出了一串<code>base64</code>编码，也就是说，<code>canvas.toDataURL</code>就是将画布<code> canvas</code>转换成<code>base64</code>编码。</p>
+<h2 id="填充与描边"><a href="#填充与描边" class="headerlink" title="填充与描边"></a>填充与描边</h2><ul>
+<li><p>填充就是以特定的样式填充形状，包括颜色、渐变、图像</p>
+</li>
+<li><p>描边就是只给形状边界着色。</p>
+</li>
+</ul>
+<p>显示效果取决于两个属性：<code>fillStyle</code>和<code>strokeStyle</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> mycanvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;mycanvas&quot;</span>);<br><br><span class="hljs-comment">// 确保浏览器支持canvas</span><br><span class="hljs-keyword">if</span> (mycanvas.getContext) &#123;<br>  <span class="hljs-keyword">const</span> context = mycanvas.getContext(<span class="hljs-string">&quot;2d&quot;</span>);<br><br>  context.fillStyle = <span class="hljs-string">&quot;#000&quot;</span>;<br>  context.strokeStyle = <span class="hljs-string">&quot;red&quot;</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>没有效果？<br>别急，这是因为我们只是设置了填充和描边而已，想要它生效，还需要绘制出来才能有效果。</p>
+<h2 id="绘制矩形"><a href="#绘制矩形" class="headerlink" title="绘制矩形"></a>绘制矩形</h2><p>与绘制矩形相关的方法有三个。它们都接收 4 个参数：矩形 x 坐标、矩形 y 坐标、矩形宽度和矩形高度。(单位是像素，但是传参时不需要传单位)</p>
+<ol>
+<li><code>fillRect</code></li>
+<li><code>strokeRect</code></li>
+<li><code>clearRect</code></li>
+</ol>
+<h3 id="fillRect：绘制并填充矩形"><a href="#fillRect：绘制并填充矩形" class="headerlink" title="fillRect：绘制并填充矩形"></a><code>fillRect</code>：绘制并填充矩形</h3><p><code>fillRect</code>：以指定颜色在画布上绘制并填充矩形，填充色使用<code>fillStyle</code>来设置。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> mycanvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;mycanvas&quot;</span>);<br><br><span class="hljs-comment">// 确保浏览器支持canvas</span><br><span class="hljs-keyword">if</span> (mycanvas.getContext) &#123;<br>  <span class="hljs-keyword">const</span> context = mycanvas.getContext(<span class="hljs-string">&quot;2d&quot;</span>);<br><br>  context.fillStyle = <span class="hljs-string">&quot;pink&quot;</span>;<br>  context.fillRect(<span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>);<br><br>  context.fillStyle = <span class="hljs-string">&quot;rgba(0, 0, 0, .1)&quot;</span>;<br>  context.fillRect(<span class="hljs-number">30</span>, <span class="hljs-number">30</span>, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/images/202205292320709.png" alt="image-20220522110314237"></p>
+<h3 id="stokeRect：绘制矩形轮廓"><a href="#stokeRect：绘制矩形轮廓" class="headerlink" title="stokeRect：绘制矩形轮廓"></a><code>stokeRect</code>：绘制矩形轮廓</h3><p><code>stokeRect</code>：绘制矩形轮廓，颜色由<code>strokeStyle</code>来指定。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> mycanvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;mycanvas&quot;</span>);<br><br><span class="hljs-comment">// 确保浏览器支持canvas</span><br><span class="hljs-keyword">if</span> (mycanvas.getContext) &#123;<br>  <span class="hljs-keyword">const</span> context = mycanvas.getContext(<span class="hljs-string">&quot;2d&quot;</span>);<br><br>  context.strokeStyle = <span class="hljs-string">&quot;red&quot;</span>;<br>  <span class="hljs-comment">// 设置描边宽度</span><br>  context.lineWidth = <span class="hljs-number">5</span>;<br>  context.strokeRect(<span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>);<br><br>  context.strokeStyle = <span class="hljs-string">&quot;blue&quot;</span>;<br>  context.fillStyle = <span class="hljs-string">&quot;rgba(0, 0, 0, .1)&quot;</span>;<br>  context.strokeRect(<span class="hljs-number">30</span>, <span class="hljs-number">30</span>, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/images/202205292319241.png" alt="image-20220522110410841"></p>
+<h3 id="clearRect：擦除画布中某个区域"><a href="#clearRect：擦除画布中某个区域" class="headerlink" title="clearRect：擦除画布中某个区域"></a><code>clearRect</code>：擦除画布中某个区域</h3><p><code>clearRect</code>：擦除画布中某个区域，把擦除的区域变透明。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> mycanvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;mycanvas&quot;</span>);<br><br><span class="hljs-comment">// 确保浏览器支持canvas</span><br><span class="hljs-keyword">if</span> (mycanvas.getContext) &#123;<br>  <span class="hljs-keyword">const</span> context = mycanvas.getContext(<span class="hljs-string">&quot;2d&quot;</span>);<br><br>  context.fillStyle = <span class="hljs-string">&quot;red&quot;</span>;<br>  context.fillRect(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">200</span>, <span class="hljs-number">200</span>);<br><br>  context.clearRect(<span class="hljs-number">50</span>, <span class="hljs-number">50</span>, <span class="hljs-number">100</span>, <span class="hljs-number">100</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/images/202205292320228.png" alt="image-20220522110449360"></p>
+<h2 id="绘制路径"><a href="#绘制路径" class="headerlink" title="绘制路径"></a>绘制路径</h2><p>绘制路径需要先调用<code>beginPath</code>，表示要开始绘制路径，再调用以下方法来绘制路径。</p>
+<ul>
+<li><code>lineTo(x, y)</code>：绘制一条从上一个点到(x, y)的直线</li>
+<li><code>moveTo(x, y)</code>：不绘制线条，只是把画笔移动到(x, y)</li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D">更多</a></li>
+</ul>
+<p>绘制完路径后，可以指定<code>fillStyle</code>属性并调用<code>fill</code>方法来填充路径，也可以指定<code>strokeStyle</code>属性并调用<code>stoke</code>方法来描画路径。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> mycanvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;mycanvas&quot;</span>);<br><br><span class="hljs-comment">// 确保浏览器支持canvas</span><br><span class="hljs-keyword">if</span> (mycanvas.getContext) &#123;<br>  <span class="hljs-keyword">const</span> context = mycanvas.getContext(<span class="hljs-string">&quot;2d&quot;</span>);<br><br>  <span class="hljs-comment">// 创建路径</span><br>  context.beginPath();<br><br>  <span class="hljs-comment">// 绘制圆弧，参数分别是圆心x坐标、圆形y坐标、圆弧半径、圆弧起始点(单位：弧度)、圆弧终点(单位：弧度)、绘制方向(false为顺时针绘制，true为逆时针绘制)</span><br>  context.arc(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">99</span>, <span class="hljs-number">0</span>, <span class="hljs-number">2</span> * <span class="hljs-built_in">Math</span>.PI, <span class="hljs-literal">true</span>);<br><br>  <span class="hljs-comment">// context.fillStyle = &#x27;pink&#x27;</span><br>  <span class="hljs-comment">// context.fill()</span><br><br>  context.strokeStyle = <span class="hljs-string">&quot;pink&quot;</span>;<br>  context.stroke();<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/images/202205292321089.png" alt="image-20220522111214015"></p>
+<p>还可以调用<code>clip</code>方法创建一个新的剪切区域。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> mycanvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;mycanvas&quot;</span>);<br><br><span class="hljs-comment">// 确保浏览器支持canvas</span><br><span class="hljs-keyword">if</span> (mycanvas.getContext) &#123;<br>  <span class="hljs-keyword">const</span> context = mycanvas.getContext(<span class="hljs-string">&quot;2d&quot;</span>);<br><br>  <span class="hljs-comment">// 创建路径</span><br>  context.beginPath();<br><br>  <span class="hljs-comment">// 绘制圆弧，参数分别是圆心x坐标、圆形y坐标、圆弧半径、圆弧起始点(单位：弧度)、圆弧终点(单位：弧度)、绘制方向(false为顺时针绘制，true为逆时针绘制)</span><br>  context.arc(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">50</span>, <span class="hljs-number">0</span>, <span class="hljs-number">2</span> * <span class="hljs-built_in">Math</span>.PI, <span class="hljs-literal">true</span>);<br><br>  context.fillStyle = <span class="hljs-string">&quot;pink&quot;</span>;<br>  context.clip();<br><br>  context.fillRect(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">100</span>, <span class="hljs-number">100</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>上面的扇形怎么出来的呢？<br>我们可以把<code>clip</code>变成<code>fill</code>，看下没有被剪切的话，是什么样子。</p>
+<p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/images/202205292321085.png" alt="img"></p>
+<p>也就是说，实际上剪切就是两个图形相交部分。</p>
+<p>如果使用<code>lineTo</code>需要注意：没有设置<code>moveTo</code>时，这个位置并不是(0, 0)，而是空，所以第一次的<code>lineTo</code>没法画出结果。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> mycanvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;mycanvas&quot;</span>);<br><br><span class="hljs-comment">// 确保浏览器支持canvas</span><br><span class="hljs-keyword">if</span> (mycanvas.getContext) &#123;<br>  <span class="hljs-keyword">const</span> context = mycanvas.getContext(<span class="hljs-string">&quot;2d&quot;</span>);<br>  <span class="hljs-comment">// 创建路径</span><br>  context.beginPath();<br><br>  <span class="hljs-comment">// context.moveTo(0, 0);</span><br>  context.lineTo(<span class="hljs-number">100</span>, <span class="hljs-number">50</span>);<br>  context.lineTo(<span class="hljs-number">200</span>, <span class="hljs-number">0</span>);<br><br>  context.lineWidth = <span class="hljs-number">8</span>;<br>  context.strokeStyle = <span class="hljs-string">&quot;pink&quot;</span>;<br><br>  <span class="hljs-comment">// 描画路径</span><br>  context.stroke();<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<p>没有<code>moveTo</code>：</p>
+<p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/images/202205292321928.png" alt="image-20220522112404156"></p>
+<p>有<code>moveTo</code>：</p>
+<p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/images/202205292321959.png" alt="image-20220522112440786"></p>
+<h3 id="beginPath-的作用"><a href="#beginPath-的作用" class="headerlink" title="beginPath 的作用"></a>beginPath 的作用</h3><p>上面的例子中，<code>beginPath</code>并没有作用，也就是说上面的例子中，其实有没有<code>beginPath</code>都一样。那么<code>beginPath</code>有什么作用呢？</p>
+<p><strong><code>beginPath</code>表示下面绘制的图形是一个新的路径</strong>。具体看下实例。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> context = mycanvas.getContext(<span class="hljs-string">&quot;2d&quot;</span>);<br><span class="hljs-comment">// 创建路径</span><br>context.beginPath();<br><br>context.moveTo(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>);<br>context.lineTo(<span class="hljs-number">100</span>, <span class="hljs-number">50</span>);<br><br>context.lineWidth = <span class="hljs-number">8</span>;<br>context.strokeStyle = <span class="hljs-string">&quot;pink&quot;</span>;<br><br><span class="hljs-comment">// 描画路径</span><br>context.stroke();<br><br>context.lineTo(<span class="hljs-number">200</span>, <span class="hljs-number">0</span>);<br>context.strokeStyle = <span class="hljs-string">&quot;purple&quot;</span>;<br>context.stroke();<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/images/202205292320049.png" alt="image-20220522112513152"></p>
+<p>想要的效果是画出两条不一样颜色的线，但是最后是一种颜色折线，这是因为我们只是用了一次<code>beginPath</code>，所以就会把这两条线当成同一个路径，最后调用的<code>stroke</code>就会把原本是粉色的线再用紫色画一遍，所以最终的效果就是只有一条折线。</p>
+<p>所以需要使用<code>beginPath</code>创建新路径，新的路径还是会有<strong>没有设置<code>moveTo</code>时，这个位置并不是(0, 0)，而是空</strong>的问题，所以需要使用<code>moveTo</code>设置位置</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> mycanvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;mycanvas&quot;</span>);<br><br><span class="hljs-comment">// 确保浏览器支持canvas</span><br><span class="hljs-keyword">if</span> (mycanvas.getContext) &#123;<br>  <span class="hljs-keyword">const</span> context = mycanvas.getContext(<span class="hljs-string">&quot;2d&quot;</span>);<br>  <span class="hljs-comment">// 创建路径</span><br>  context.beginPath();<br><br>  context.moveTo(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>);<br>  context.lineTo(<span class="hljs-number">100</span>, <span class="hljs-number">50</span>);<br><br>  context.lineWidth = <span class="hljs-number">8</span>;<br>  context.strokeStyle = <span class="hljs-string">&quot;pink&quot;</span>;<br>  context.stroke();<br><br>  context.beginPath();<br>  <span class="hljs-comment">// 创建新的路径，需要重新设置位置</span><br>  context.moveTo(<span class="hljs-number">100</span>, <span class="hljs-number">50</span>);<br>  context.lineTo(<span class="hljs-number">200</span>, <span class="hljs-number">0</span>);<br>  context.strokeStyle = <span class="hljs-string">&quot;purple&quot;</span>;<br>  context.stroke();<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/images/202205292321827.png" alt="image-20220522112538976"></p>
+<h3 id="closePath-的作用"><a href="#closePath-的作用" class="headerlink" title="closePath 的作用"></a>closePath 的作用</h3><p>有可能会陷进<code>closePath</code>是结束路径的误区，认为<code>closePath</code>就是<code>beginPath</code>的配套。但是<code>closePath</code>和<code>beginPath</code>并不是配套的，它们的功能不一样。所以<code>closePath</code>之后的路径也不是新的路径，只有<code>beginPath</code>才行。</p>
+<p>而<code>closePath</code>的作用是将最近绘制的路径闭合，<strong>和之前有没有<code>beginPath</code>无关</strong>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> mycanvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;mycanvas&quot;</span>);<br><br><span class="hljs-comment">// 确保浏览器支持canvas</span><br><span class="hljs-keyword">if</span> (mycanvas.getContext) &#123;<br>  <span class="hljs-keyword">const</span> context = mycanvas.getContext(<span class="hljs-string">&quot;2d&quot;</span>);<br><br>  <span class="hljs-comment">// context.beginPath();  // 有无`beginPath`都没有影响</span><br><br>  context.moveTo(<span class="hljs-number">10</span>, <span class="hljs-number">10</span>);<br>  context.lineTo(<span class="hljs-number">100</span>, <span class="hljs-number">50</span>);<br>  context.lineTo(<span class="hljs-number">20</span>, <span class="hljs-number">70</span>);<br>  context.closePath();<br><br>  context.lineWidth = <span class="hljs-number">8</span>;<br>  context.strokeStyle = <span class="hljs-string">&quot;pink&quot;</span>;<br>  context.stroke();<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/images/202205292320241.png" alt="image-20220522112629070"></p>
+<p>上面我们只绘制了两条线，但是最终得到的结果是一个三角形，这是因为我们使用<code>closePath</code>把最近绘制的路径闭合了。</p>
+<h2 id="绘制文本"><a href="#绘制文本" class="headerlink" title="绘制文本"></a>绘制文本</h2><p>绘制文本有两种方法。</p>
+<ol>
+<li><code>fillText</code>：使用<code>fillStyle</code>属性绘制文本</li>
+<li><code>strokeText</code>：使用<code>strokeStyle</code>属性绘制文本</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> mycanvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;mycanvas&quot;</span>);<br><br><span class="hljs-comment">// 确保浏览器支持canvas</span><br><span class="hljs-keyword">if</span> (mycanvas.getContext) &#123;<br>  <span class="hljs-keyword">const</span> context = mycanvas.getContext(<span class="hljs-string">&quot;2d&quot;</span>);<br><br>  context.moveTo(<span class="hljs-number">10</span>, <span class="hljs-number">10</span>);<br>  context.lineTo(<span class="hljs-number">150</span>, <span class="hljs-number">75</span>);<br>  context.lineTo(<span class="hljs-number">30</span>, <span class="hljs-number">100</span>);<br>  context.closePath();<br><br>  context.lineWidth = <span class="hljs-number">1</span>;<br>  context.strokeStyle = <span class="hljs-string">&quot;pink&quot;</span>;<br><br>  context.fillStyle = <span class="hljs-string">&quot;purple&quot;</span>;<br>  context.fillText(<span class="hljs-string">&quot;CLZ&quot;</span>, <span class="hljs-number">50</span>, <span class="hljs-number">60</span>);<br>  context.strokeText(<span class="hljs-string">&quot;CLZ&quot;</span>, <span class="hljs-number">50</span>, <span class="hljs-number">80</span>);<br><br>  context.stroke();<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/images/202205292320806.png" alt="image-20220522112741066"></p>
+<p>可以通过<code>font</code>、<code>textAlign</code>、<code>textBaseline</code>属性设置文本的字体、对齐方式、基线。</p>
+<p>示例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">context.font = <span class="hljs-string">&quot;700 16px Arial&quot;</span>;<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/images/202205292320835.png" alt="img"></p>
+<p><code>textAlign</code>：</p>
+<ul>
+<li>如果是<code>start</code>，那么 x 坐标就是文本的左侧坐标</li>
+<li>如果是<code>center</code>，那么 x 坐标就是文本的中心点坐标</li>
+<li>如果是<code>end</code>，那么 x 坐标就是文本的右侧坐标</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> mycanvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;mycanvas&quot;</span>);<br><br><span class="hljs-comment">// 确保浏览器支持canvas</span><br><span class="hljs-keyword">if</span> (mycanvas.getContext) &#123;<br>  <span class="hljs-keyword">const</span> context = mycanvas.getContext(<span class="hljs-string">&quot;2d&quot;</span>);<br><br>  context.moveTo(<span class="hljs-number">10</span>, <span class="hljs-number">10</span>);<br>  context.lineTo(<span class="hljs-number">150</span>, <span class="hljs-number">75</span>);<br>  context.lineTo(<span class="hljs-number">30</span>, <span class="hljs-number">100</span>);<br>  context.closePath();<br><br>  context.lineWidth = <span class="hljs-number">1</span>;<br>  context.strokeStyle = <span class="hljs-string">&quot;pink&quot;</span>;<br><br>  context.font = <span class="hljs-string">&quot;700 16px Arial&quot;</span>;<br>  context.fillStyle = <span class="hljs-string">&quot;purple&quot;</span>;<br><br>  context.textAlign = <span class="hljs-string">&quot;start&quot;</span>;<br>  context.strokeText(<span class="hljs-string">&quot;CLZ&quot;</span>, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>);<br><br>  context.textAlign = <span class="hljs-string">&quot;center&quot;</span>;<br>  context.fillText(<span class="hljs-string">&quot;CLZ&quot;</span>, <span class="hljs-number">50</span>, <span class="hljs-number">65</span>);<br><br>  context.textAlign = <span class="hljs-string">&quot;end&quot;</span>;<br>  context.strokeText(<span class="hljs-string">&quot;CLZ&quot;</span>, <span class="hljs-number">50</span>, <span class="hljs-number">80</span>);<br><br>  context.stroke();<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/images/202205292320368.png" alt="image-20220522112924112"></p>
+<p><strong><code>textBaseline</code>类似</strong></p>
+<h2 id="变换"><a href="#变换" class="headerlink" title="变换"></a>变换</h2><p>2D 换图上下文支持所有常见的绘制变化。<br><code>rotate(a)</code>：围绕原点把图像旋转 a 弧度<br><code>scale(x, y)</code>：缩放图像<br><code>translate(x, y)</code>：移动原点</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> mycanvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;mycanvas&quot;</span>);<br><br><span class="hljs-comment">// 确保浏览器支持canvas</span><br><span class="hljs-keyword">if</span> (mycanvas.getContext) &#123;<br>  <span class="hljs-keyword">const</span> context = mycanvas.getContext(<span class="hljs-string">&quot;2d&quot;</span>);<br><br>  <span class="hljs-comment">// 创建路径</span><br>  context.beginPath();<br><br>  <span class="hljs-comment">// 绘制圆弧，参数分别是圆心x坐标、圆形y坐标、圆弧半径、圆弧起始点(单位：弧度)、圆弧终点(单位：弧度)、绘制方向(false为顺时针绘制，true为逆时针绘制)</span><br>  context.arc(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">50</span>, <span class="hljs-number">0</span>, <span class="hljs-number">2</span> * <span class="hljs-built_in">Math</span>.PI, <span class="hljs-literal">true</span>);<br><br>  context.lineWidth = <span class="hljs-string">&quot;8&quot;</span>;<br>  context.strokeStyle = <span class="hljs-string">&quot;pink&quot;</span>;<br><br>  <span class="hljs-comment">// 移动原点</span><br>  context.translate(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>);<br><br>  <span class="hljs-comment">// 旋转</span><br>  context.rotate(<span class="hljs-built_in">Math</span>.PI);<br><br>  <span class="hljs-comment">// 缩放</span><br>  context.scale(<span class="hljs-number">0.75</span>, <span class="hljs-number">0.75</span>);<br><br>  <span class="hljs-comment">// 因为已经移动过原点了，所以这时候(0, 0)就是圆心</span><br>  context.moveTo(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>);<br>  context.lineTo(<span class="hljs-number">25</span>, <span class="hljs-number">30</span>);<br><br>  context.stroke();<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/images/202205292321235.png" alt="image-20220522113048545"></p>
+<p>上面的例子中，已经把很多变化都使用上了，如果想要了解具体例子可以注释掉其他部分。</p>
+<h3 id="save-和-restore-的作用"><a href="#save-和-restore-的作用" class="headerlink" title="save 和 restore 的作用"></a>save 和 restore 的作用</h3><p><code>save</code>方法可以保存应用到绘图上下文的设置和变换，不保存绘图上下文的内容。后续可以通过<code>restore</code>方法，恢复上下文的设置和变换。<code>save</code>和<code>restore</code>的使用类似于栈，后进先出。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> mycanvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;mycanvas&quot;</span>);<br><br><span class="hljs-comment">// 确保浏览器支持canvas</span><br><span class="hljs-keyword">if</span> (mycanvas.getContext) &#123;<br>  <span class="hljs-keyword">const</span> context = mycanvas.getContext(<span class="hljs-string">&quot;2d&quot;</span>);<br><br>  context.fillStyle = <span class="hljs-string">&quot;red&quot;</span>;<br>  context.save();<br><br>  context.fillStyle = <span class="hljs-string">&quot;blue&quot;</span>;<br>  context.translate(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>);<br>  context.save();<br><br>  context.fillStyle = <span class="hljs-string">&quot;purple&quot;</span>;<br>  context.translate(-<span class="hljs-number">100</span>, -<span class="hljs-number">100</span>);<br>  context.fillRect(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">100</span>, <span class="hljs-number">100</span>);<br><br>  context.restore();<br>  context.fillRect(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">100</span>, <span class="hljs-number">100</span>);<br><br>  context.restore();<br>  context.fillRect(<span class="hljs-number">100</span>, <span class="hljs-number">0</span>, <span class="hljs-number">100</span>, <span class="hljs-number">100</span>);<br><br>  context.restore();<br>  context.fillRect(<span class="hljs-number">0</span>, <span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">100</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/images/202205292321143.png" alt="image-20220522113308234"></p>
+<p>分析：设 XXX 为<strong>绘图上下文的设置和变化</strong></p>
+<ol>
+<li>设置填充色为红色，<code>save</code>保存</li>
+<li>设置填充色为蓝色，移动原点，<code>save</code>保存</li>
+<li>设置填充色为紫色，移动原点，画出紫色的矩形</li>
+<li><code>restore</code>恢复<strong>XXX</strong>，此时，原点为(100, 100)，填充色为蓝色。画出蓝色的矩形</li>
+<li><code>restore</code>恢复**XXX**，此时，原点为(0, 0)，填充色为红色。画出红色的矩形</li>
+<li><code>restore</code>已经没有保存的<strong>XXX</strong>，所以<strong>XXX</strong>不会变化</li>
+</ol>
+<h2 id="绘制图像"><a href="#绘制图像" class="headerlink" title="绘制图像"></a>绘制图像</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./avatar.png&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;mycanvas&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;200&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;200&quot;</span>&gt;</span>haha<span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p>通过<code>drawImage</code>把 HTML 的 img 元素或另一个 canvas 元素绘制到当前画布中。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> mycanvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;mycanvas&quot;</span>);<br><br><span class="hljs-comment">// 确保浏览器支持canvas</span><br><span class="hljs-keyword">if</span> (mycanvas.getContext) &#123;<br>  <span class="hljs-keyword">const</span> context = mycanvas.getContext(<span class="hljs-string">&quot;2d&quot;</span>);<br><br>  <span class="hljs-comment">// 获取图像</span><br>  <span class="hljs-keyword">const</span> img = <span class="hljs-built_in">document</span>.images[<span class="hljs-number">0</span>];<br><br>  <span class="hljs-comment">// 在画布的坐标出绘制图像，此时图像和原来的图像一样大，指的是原文件的大小</span><br>  <span class="hljs-comment">// context.drawImage(img, 10, 10)</span><br><br>  <span class="hljs-comment">// 传入另外两个参数，设置绘制图像的宽高</span><br>  context.drawImage(img, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-number">100</span>, <span class="hljs-number">100</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>只传3个参数，画到画布上的跟原来的图像一样大，但画布没那么大。所以会只有一部分。</p>
+<p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/images/202205292322993.png" alt="image-20220522113739829"></p>
+<p>传入五个参数，可以让设置图像的宽高，显示完整的图像。</p>
+<p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/images/202205292321509.png" alt="image-20220522113901338"></p>
+<h3 id="去掉DOM树上的img"><a href="#去掉DOM树上的img" class="headerlink" title="去掉DOM树上的img"></a>去掉DOM树上的img</h3><p>上面的做法是需要<code>html</code>中有<code>img</code>元素才能执行的.实际上,我们也可以通过<code>image</code>对象来实现。</p>
+<p>即获取图像不再是通过<code>document.images[0]</code>，而是</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> img = <span class="hljs-keyword">new</span> Image();<br>img.src = <span class="hljs-string">&quot;./avatar.png&quot;</span>;<br></code></pre></td></tr></table></figure>
+
+<p>另外，绘制图像应该在<code>img</code>的<code>load</code>事件回调中调用。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> img = <span class="hljs-keyword">new</span> Image();<br>img.src = <span class="hljs-string">&quot;./avatar.png&quot;</span>;<br>img.onload = <span class="hljs-function">() =&gt;</span> &#123;<br>  <span class="hljs-comment">// 传入另外两个参数，设置绘制图像的宽高</span><br>  context.drawImage(img, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-number">100</span>, <span class="hljs-number">100</span>);<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/images/202205292322851.png" alt="image-20220522114113263"></p>
+<p>还可以接收 9 个参数，实现把原始图像的一部分绘制到画布上。<br>如：<code>context.drawImage(img, 0, 10, 50, 50, 0, 100, 20, 30)</code>，从原始图像的(0, 10)开始，50 像素宽、50 像素高，画到画布上(0, 100)开始，宽 40 像素、高 60 像素。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> mycanvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;mycanvas&quot;</span>);<br><br><span class="hljs-comment">// 确保浏览器支持canvas</span><br><span class="hljs-keyword">if</span> (mycanvas.getContext) &#123;<br>  <span class="hljs-keyword">const</span> context = mycanvas.getContext(<span class="hljs-string">&quot;2d&quot;</span>);<br><br>  <span class="hljs-comment">// 获取图像</span><br>  <span class="hljs-keyword">const</span> img = <span class="hljs-built_in">document</span>.images[<span class="hljs-number">0</span>];<br><br>  <span class="hljs-comment">// // 9个参数</span><br>  context.drawImage(img, <span class="hljs-number">0</span>, <span class="hljs-number">10</span>, <span class="hljs-number">300</span>, <span class="hljs-number">300</span>, <span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">40</span>, <span class="hljs-number">40</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/images/202205292321579.png" alt="image-20220522114232024"></p>
+<h3 id="下载图像"><a href="#下载图像" class="headerlink" title="下载图像"></a>下载图像</h3><p>操作的结果可以使用<code>canvas.toDataURL()</code>方法获取。</p>
+<p>再搭配下载图片的方式就能实现下载图片。(这里用的是<code>a</code>标签方法)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> a = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&quot;a&quot;</span>);<br>a.href = mycanvas.toDataURL();<br><br><span class="hljs-comment">// 获取源图片的名字</span><br>a.download = img.src.split(<span class="hljs-string">&quot;/&quot;</span>)[img.src.split(<span class="hljs-string">&quot;/&quot;</span>).length - <span class="hljs-number">1</span>];<br><br>a.click();<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h2><p>设置好阴影有关的属性值，就能够自动为要绘制的形状或路径生成阴影</p>
+<ul>
+<li><code>shadowOffsetX</code>：阴影相对于形状或路径的 x 坐标偏移。默认为 0</li>
+<li><code>shadowOffsetY</code>：阴影相对于形状或路径的 y 坐标偏移。默认为 0</li>
+<li><code>shadowBlur</code>：阴影的模糊量。默认值为 0，表示不模糊</li>
+<li><code>shadowColor</code>：阴影的颜色。默认为黑色</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> mycanvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;mycanvas&quot;</span>);<br><br><span class="hljs-comment">// 确保浏览器支持canvas</span><br><span class="hljs-keyword">if</span> (mycanvas.getContext) &#123;<br>  <span class="hljs-keyword">const</span> context = mycanvas.getContext(<span class="hljs-string">&quot;2d&quot;</span>);<br><br>  context.shadowOffsetX = <span class="hljs-number">5</span>;<br>  context.shadowOffsetY = <span class="hljs-number">10</span>;<br>  context.shadowBlur = <span class="hljs-number">5</span>;<br>  context.shadowColor = <span class="hljs-string">&quot;rgba(0, 0, 0, .2)&quot;</span>;<br><br>  context.fillStyle = <span class="hljs-string">&quot;red&quot;</span>;<br>  context.fillRect(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>);<br><br>  context.moveTo(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>);<br>  context.lineTo(<span class="hljs-number">180</span>, <span class="hljs-number">20</span>);<br><br>  context.lineWidth = <span class="hljs-number">12</span>;<br>  context.stroke();<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/images/202205292323370.png" alt="image-20220522114457032"></p>
+<h2 id="渐变"><a href="#渐变" class="headerlink" title="渐变"></a>渐变</h2><h3 id="线性渐变"><a href="#线性渐变" class="headerlink" title="线性渐变"></a>线性渐变</h3><p>线性渐变可以调用上下文的<code>createLinearGradient</code>方法，接收四个参数：起点 x 坐标、起点 y 坐标、终点 x 坐标、终点 y 坐标，创建<code>CanvasGradient</code>对象。</p>
+<p>有了渐变对象后，就需要添加渐变色标了，通过<code>addColorStop</code>可以添加色标，第一个参数范围为 0~1，第二个参数是 CSS 颜色字符串。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> mycanvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;mycanvas&quot;</span>);<br><br><span class="hljs-comment">// 确保浏览器支持canvas</span><br><span class="hljs-keyword">if</span> (mycanvas.getContext) &#123;<br>  <span class="hljs-keyword">const</span> context = mycanvas.getContext(<span class="hljs-string">&quot;2d&quot;</span>);<br><br>  <span class="hljs-keyword">const</span> gradient = context.createLinearGradient(<span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-number">180</span>, <span class="hljs-number">180</span>);<br><br>  gradient.addColorStop(<span class="hljs-number">0</span>, <span class="hljs-string">&quot;red&quot;</span>);<br>  gradient.addColorStop(<span class="hljs-number">0.5</span>, <span class="hljs-string">&quot;blue&quot;</span>);<br>  gradient.addColorStop(<span class="hljs-number">1</span>, <span class="hljs-string">&quot;purple&quot;</span>);<br><br>  context.fillStyle = gradient;<br>  context.fillRect(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">200</span>, <span class="hljs-number">200</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/images/202205292322784.png" alt="image-20220522114554072"></p>
+<p>为了让渐变覆盖整个矩形，渐变的坐标和矩形的坐标应该搭配合适，不然只会显示部分渐变。</p>
+<p>还可以调用上下文的<code>createRadialGradient</code>方法来创建径向渐变。接收 6 个参数，前 3 个参数指定起点圆形中心的 x 坐标、y 坐标和半径，后 3 个参数指定终点圆形中心的 x 坐标和半径。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> mycanvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;mycanvas&quot;</span>);<br><br><span class="hljs-comment">// 确保浏览器支持canvas</span><br><span class="hljs-keyword">if</span> (mycanvas.getContext) &#123;<br>  <span class="hljs-keyword">const</span> context = mycanvas.getContext(<span class="hljs-string">&quot;2d&quot;</span>);<br><br>  <span class="hljs-keyword">let</span> gradient = context.createRadialGradient(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">20</span>, <span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">80</span>);<br>  gradient.addColorStop(<span class="hljs-number">0</span>, <span class="hljs-string">&quot;white&quot;</span>);<br>  gradient.addColorStop(<span class="hljs-number">1</span>, <span class="hljs-string">&quot;black&quot;</span>);<br><br>  context.fillStyle = gradient;<br>  context.fillRect(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">200</span>, <span class="hljs-number">200</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>上面这个渐变，简单理解就是内层圆为半径为 20 像素的<code>纯白圆</code>，外层圆为 80 像素的<code>白渐变黑圆</code>，剩余部分就是黑色。</p>
+<p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/images/202205292323582.png" alt="image-20220522114630535"></p>
+<h2 id="图案"><a href="#图案" class="headerlink" title="图案"></a>图案</h2><blockquote>
+<p>图案适用于填充和描画图形的重复图像。<br>通过<code>createPattern</code>方法，该方法接收两个参数，第一个参数是<code>img</code>元素，第二个参数是是否重复，和<code>background-repeat</code>属性一样。</p>
+</blockquote>
+<p>然后，像渐变一样，把<code>pattern</code>对象赋值给<code>fillStyle</code>属性即可。</p>
+<p>这个图案实际上就有点背景图像的味道了，通过创建<code>pattern</code>对象，来控制图像的重复。然后，给绘图上下文的<code>fillStyle</code>赋值，设置填充样式，最后再通过<code>fillRect</code>来设置图案的位置和大小。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> mycanvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;mycanvas&quot;</span>);<br><br><span class="hljs-comment">// 确保浏览器支持canvas</span><br><span class="hljs-keyword">if</span> (mycanvas.getContext) &#123;<br>  <span class="hljs-keyword">const</span> context = mycanvas.getContext(<span class="hljs-string">&quot;2d&quot;</span>);<br><br>  <span class="hljs-keyword">const</span> image = <span class="hljs-built_in">document</span>.images[<span class="hljs-number">0</span>];<br><br>  <span class="hljs-keyword">const</span> pattern = context.createPattern(image, <span class="hljs-string">&quot;repeat&quot;</span>);<br>  <span class="hljs-comment">// const pattern = context.createPattern(image, &#x27;repeat-y&#x27;)</span><br>  <span class="hljs-comment">// const pattern = context.createPattern(image, &#x27;no-repeat&#x27;)</span><br><br>  context.fillStyle = pattern;<br>  context.fillRect(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">190</span>, <span class="hljs-number">190</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/13535944743/CLZ_img/master/images/202205292322852.png" alt="image-20220522115145807"></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">赤蓝紫</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://www.clzczh.top/2022/05/29/Canvas/">https://www.clzczh.top/2022/05/29/Canvas/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">赤蓝紫</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/JavaScript/">
+                                    <span class="chip bg-color">JavaScript</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="qq,wechat" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+  .valine-card {
+    margin: 1.5rem auto;
+  }
+
+  .valine-card .card-content {
+    padding: 20px 20px 5px 20px;
+  }
+
+  #vcomments textarea {
+    resize: none;
+    box-sizing: border-box;
+    background: url("/medias/my_comment_bg.jpg") 100% 100% no-repeat;
+  }
+
+  #vcomments p {
+    margin: 2px 2px 10px;
+    font-size: 1.05rem;
+    line-height: 1.78rem;
+  }
+
+  #vcomments blockquote p {
+    text-indent: 0.2rem;
+  }
+
+  #vcomments a {
+    padding: 0 2px;
+    color: #4cbf30;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  #vcomments img {
+    max-width: 100%;
+    height: auto;
+    cursor: pointer;
+  }
+
+  #vcomments ol li {
+    list-style-type: decimal;
+  }
+
+  #vcomments ol,
+  ul {
+    display: block;
+    padding-left: 2em;
+    word-spacing: 0.05rem;
+  }
+
+  #vcomments ul li,
+  ol li {
+    display: list-item;
+    line-height: 1.8rem;
+    font-size: 1rem;
+  }
+
+  #vcomments ul li {
+    list-style-type: disc;
+  }
+
+  #vcomments ul ul li {
+    list-style-type: circle;
+  }
+
+  #vcomments table,
+  th,
+  td {
+    padding: 12px 13px;
+    border: 1px solid #dfe2e5;
+  }
+
+  #vcomments table,
+  th,
+  td {
+    border: 0;
+  }
+
+  table tr:nth-child(2n),
+  thead {
+    background-color: #fafafa;
+  }
+
+  #vcomments table th {
+    background-color: #f2f2f2;
+    min-width: 80px;
+  }
+
+  #vcomments table td {
+    min-width: 80px;
+  }
+
+  #vcomments h1 {
+    font-size: 1.85rem;
+    font-weight: bold;
+    line-height: 2.2rem;
+  }
+
+  #vcomments h2 {
+    font-size: 1.65rem;
+    font-weight: bold;
+    line-height: 1.9rem;
+  }
+
+  #vcomments h3 {
+    font-size: 1.45rem;
+    font-weight: bold;
+    line-height: 1.7rem;
+  }
+
+  #vcomments h4 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+  }
+
+  #vcomments h5 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    line-height: 1.4rem;
+  }
+
+  #vcomments h6 {
+    font-size: 1rem;
+    line-height: 1.3rem;
+  }
+
+  #vcomments p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  #vcomments hr {
+    margin: 12px 0;
+    border: 0;
+    border-top: 1px solid #ccc;
+  }
+
+  #vcomments blockquote {
+    margin: 15px 0;
+    border-left: 5px solid #42b983;
+    padding: 1rem 0.8rem 0.3rem 0.8rem;
+    color: #666;
+    background-color: rgba(66, 185, 131, 0.1);
+  }
+
+  #vcomments pre {
+    font-family: monospace, monospace;
+    padding: 1.2em;
+    margin: 0.5em 0;
+    background: #272822;
+    overflow: auto;
+    border-radius: 0.3em;
+    tab-size: 4;
+  }
+
+  #vcomments code {
+    font-family: monospace, monospace;
+    padding: 1px 3px;
+    font-size: 0.92rem;
+    color: #e96900;
+    background-color: #f8f8f8;
+    border-radius: 2px;
+  }
+
+  #vcomments pre code {
+    font-family: monospace, monospace;
+    padding: 0;
+    color: #e8eaf6;
+    background-color: #272822;
+  }
+
+  #vcomments pre[class*="language-"] {
+    padding: 1.2em;
+    margin: 0.5em 0;
+  }
+
+  #vcomments code[class*="language-"],
+  pre[class*="language-"] {
+    color: #e8eaf6;
+  }
+
+  #vcomments [type="checkbox"]:not(:checked),
+  [type="checkbox"]:checked {
+    position: inherit;
+    margin-left: -1.3rem;
+    margin-right: 0.4rem;
+    margin-top: -1px;
+    vertical-align: middle;
+    left: unset;
+    visibility: visible;
+  }
+
+  #vcomments b,
+  strong {
+    font-weight: bold;
+  }
+
+  #vcomments dfn {
+    font-style: italic;
+  }
+
+  #vcomments small {
+    font-size: 85%;
+  }
+
+  #vcomments cite {
+    font-style: normal;
+  }
+
+  #vcomments mark {
+    background-color: #fcf8e3;
+    padding: 0.2em;
+  }
+
+  #vcomments table,
+  th,
+  td {
+    padding: 12px 13px;
+    border: 1px solid #dfe2e5;
+  }
+
+  table tr:nth-child(2n),
+  thead {
+    background-color: #fafafa;
+  }
+
+  #vcomments table th {
+    background-color: #f2f2f2;
+    min-width: 80px;
+  }
+
+  #vcomments table td {
+    min-width: 80px;
+  }
+
+  #vcomments [type="checkbox"]:not(:checked),
+  [type="checkbox"]:checked {
+    position: inherit;
+    margin-left: -1.3rem;
+    margin-right: 0.4rem;
+    margin-top: -1px;
+    vertical-align: middle;
+    left: unset;
+    visibility: visible;
+  }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+  <div class="comment_headling"
+    style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px">
+    <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+    <span>评论</span>
+  </div>
+  <div id="vcomments" class="card-content" style="display: grid"></div>
+</div>
+
+<script>
+  async("/libs/valine/ValineHCLonely.js", function () {
+    new Valine({
+      el: "#vcomments",
+      appId: "2coN91JLNAEdiLdotu8swszK-MdYXbMMI",
+      appKey: "lMPrwDlhyJdnYay6JviS0qKS",
+      notify: "true" === "true",
+      verify: "false" === "true",
+      visitor: "true" === "true",
+      avatar: "identicon",
+      pageSize: "10",
+      lang: 'zh-cn',
+      placeholder: "One Plus One is ?",
+
+      serverURLs: 'https://2con91jl.api.lncldglobal.com',
+
+      requiredFields: ["nick", "mail"],
+      // 设置Bilibili表情包地址
+      emojiCDN: "//i0.hdslb.com/bfs/emote/",
+      // 表情title和图片映射
+      emojiMaps: {
+        tv_doge: "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+        tv_亲亲: "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+        tv_偷笑: "bb690d4107620f1c15cff29509db529a73aee261.png",
+        tv_再见: "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+        tv_冷漠: "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+        tv_发怒: "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+        tv_发财: "34db290afd2963723c6eb3c4560667db7253a21a.png",
+        tv_可爱: "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+        tv_吐血: "09dd16a7aa59b77baa1155d47484409624470c77.png",
+        tv_呆: "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+        tv_呕吐: "9f996894a39e282ccf5e66856af49483f81870f3.png",
+        tv_困: "241ee304e44c0af029adceb294399391e4737ef2.png",
+        tv_坏笑: "1f0b87f731a671079842116e0991c91c2c88645a.png",
+        tv_大佬: "093c1e2c490161aca397afc45573c877cdead616.png",
+        tv_大哭: "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+        tv_委屈: "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+        tv_害羞: "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+        tv_尴尬: "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+        tv_微笑: "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+        tv_思考: "90cf159733e558137ed20aa04d09964436f618a1.png",
+        tv_惊吓: "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+        tv_打脸: "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+        tv_抓狂: "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+        tv_抠鼻: "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+        tv_斜眼笑: "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+        tv_无奈: "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+        tv_晕: "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+        tv_流汗: "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+        tv_流泪: "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+        tv_流鼻血: "c32d39db2737f89b904ca32700d140a9241b0767.png",
+        tv_点赞: "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+        tv_生气: "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+        tv_生病: "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+        tv_疑问: "0793d949b18d7be716078349c202c15ff166f314.png",
+        tv_白眼: "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+        tv_皱眉: "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+        tv_目瞪口呆: "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+        tv_睡着: "8b196675b53af58264f383c50ad0945048290b33.png",
+        tv_笑哭: "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+        tv_腼腆: "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+        tv_色: "61822c7e9aae5da76475e7892534545336b23a6f.png",
+        tv_调侃: "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+        tv_调皮: "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+        tv_鄙视: "6e72339f346a692a495b123174b49e4e8e781303.png",
+        tv_闭嘴: "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+        tv_难过: "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+        tv_馋: "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+        tv_鬼脸: "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+        tv_黑人问号: "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+        tv_鼓掌: "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"
+        // ... 更多表情
+      },
+      master: "6215c7b8691be9bc9e7e783fe8372da6",
+      tagMeta: ["博主", "小伙伴", "访客"],
+      friends: ["7a5b615c3a4fae10cc2dd518b503ef2d"],
+      metaPlaceholder: { nick: "昵称/QQ号", mail: "邮箱" },
+      enableQQ: true,
+      path: window.location.pathname
+    })
+  })
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2022/05/29/Canvas/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8_preview.png" class="responsive-img" alt="Canvas简单入门">
+                        
+                        <span class="card-title">Canvas简单入门</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-29
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/05/29/element-plus%E4%B8%8B%E6%8B%89%E6%A1%86%E5%85%A8%E9%80%89/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10_preview.png" class="responsive-img" alt="element-plus下拉框全选">
+                        
+                        <span class="card-title">element-plus下拉框全选</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-29
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Vue/">
+                        <span class="chip bg-color">Vue</span>
+                    </a>
+                    
+                    <a href="/tags/Element/">
+                        <span class="chip bg-color">Element</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 赤蓝紫<br />'
+            + '文章作者: 赤蓝紫<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+</div>
+  <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+    <div class="toc-widget card" style="background-color: white">
+      <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+      <div id="toc-content"></div>
+    </div>
+  </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+  <a class="btn-floating btn-large bg-color">
+    <i class="fas fa-list-ul"></i>
+  </a>
+</div>
+
+
+<script>
+  async("/libs/tocbot/tocbot.min.js", function() {
+      $(function () {
+          tocbot.init({
+              tocSelector: '#toc-content',
+              contentSelector: '#articleContent',
+              headingsOffset: -($(window).height() * 0.4 - 45),
+              collapseDepth: Number('0'),
+              headingSelector: 'h2, h3, h4'
+          });
+
+          // modify the toc link href to support Chinese.
+          let i = 0;
+          let tocHeading = 'toc-heading-';
+          $('#toc-content a').each(function () {
+              $(this).attr('href', '#' + tocHeading + (++i));
+          });
+
+          // modify the heading title id to support Chinese.
+          i = 0;
+          $('#articleContent').children('h2, h3, h4').each(function () {
+              $(this).attr('id', tocHeading + (++i));
+          });
+
+          // Set scroll toc fixed.
+          let tocHeight = parseInt($(window).height() * 0.4 - 64);
+          let $tocWidget = $('.toc-widget');
+          $(window).scroll(function () {
+              let scroll = $(window).scrollTop();
+              /* add post toc fixed. */
+              if (scroll > tocHeight) {
+                  $tocWidget.addClass('toc-fixed');
+              } else {
+                  $tocWidget.removeClass('toc-fixed');
+              }
+          });
+
+          
+          /* 修复文章卡片 div 的宽度. */
+          let fixPostCardWidth = function (srcId, targetId) {
+              let srcDiv = $('#' + srcId);
+              if (srcDiv.length === 0) {
+                  return;
+              }
+
+              let w = srcDiv.width();
+              if (w >= 450) {
+                  w = w + 21;
+              } else if (w >= 350 && w < 450) {
+                  w = w + 18;
+              } else if (w >= 300 && w < 350) {
+                  w = w + 16;
+              } else {
+                  w = w + 14;
+              }
+              $('#' + targetId).width(w);
+          };
+
+          // 切换TOC目录展开收缩的相关操作.
+          const expandedClass = 'expanded';
+          let $tocAside = $('#toc-aside');
+          let $mainContent = $('#main-content');
+          $('#floating-toc-btn .btn-floating').click(function () {
+              if ($tocAside.hasClass(expandedClass)) {
+                  $tocAside.removeClass(expandedClass).hide();
+                  $mainContent.removeClass('l9');
+              } else {
+                  $tocAside.addClass(expandedClass).show();
+                  $mainContent.addClass('l9');
+              }
+              fixPostCardWidth('artDetail', 'prenext-posts');
+          });
+          
+      });
+  })
+</script>
+
+    
+
+</main>
+
+
+
+                <footer class="page-footer bg-color">
+  <!-- 
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        font-size: 15px;
+        color: #e54d42;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="" id="aplayerContent">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="6833073788"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#e54d42'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+     -->
+  <div class="container row center-align" style="margin-bottom: 15px !important;">
+    <div class="col s12 m8 l8 copy-right">
+      Copyright&nbsp;&copy; 
+      <span id="year">2021-2022</span>
+      
+      <span id="year">2021</span>
+      <a href="/about" target="_blank">赤蓝紫</a>
+      |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+      <br />
+       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">233.3k</span>&nbsp;字     
+      <br />
+      
+      <span id="sitetime">载入运行时间...</span>
+      <script>
+        function siteTime() {
+          var seconds = 1000
+          var minutes = seconds * 60
+          var hours = minutes * 60
+          var days = hours * 24
+          var years = days * 365
+          var today = new Date()
+          var startYear = "2021"
+          var startMonth = "6"
+          var startDate = "20"
+          var startHour = "0"
+          var startMinute = "0"
+          var startSecond = "0"
+          var todayYear = today.getFullYear()
+          var todayMonth = today.getMonth() + 1
+          var todayDate = today.getDate()
+          var todayHour = today.getHours()
+          var todayMinute = today.getMinutes()
+          var todaySecond = today.getSeconds()
+          var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond)
+          var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond)
+          var diff = t2 - t1
+          var diffYears = Math.floor(diff / years)
+          var diffDays = Math.floor(diff / days - diffYears * 365)
+          var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours)
+          var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes)
+          var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds)
+          if (startYear == todayYear) {
+            document.getElementById("year").innerHTML = todayYear
+            document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒"
+          } else {
+            document.getElementById("year").innerHTML = startYear + " - " + todayYear
+            document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒"
+          }
+        }
+        setInterval(siteTime, 1000)
+      </script>
+      
+      <br />
+      
+
+      <!-- 萌ICP -->
+      <span id="moeicp"
+        >
+        <img src="/medias/moeicp.png" style="vertical-align: text-bottom;width:17px;" />
+        <a href="https://icp.gov.moe/?keyword=20229007" target="_blank" class="icp-link">萌ICP备20229007号</a>
+      </span>
+    </div>
+    <div class="col s12 m4 l4 social-link ">
+<a href="https://github.com/13535944743" target="_blank"
+    data-position="top" data-delay="50">
+    <i class="fab fa-github"></i>
+</a>
+
+
+
+<a href="javascript:;" class="wechat" data-position="top" data-delay="50">
+    <i class="fab fa-weixin"></i>
+</a>
+
+
+
+<a href="mailto:1926389897@qq.com"  target="_blank"
+    data-position="top" data-delay="50">
+    <i class="fas fa-envelope-open"></i>
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top"
+    data-delay="50">
+    <i class="fas fa-rss"></i>
+</a>
+</div>
+  </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+                  <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+                    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+                      <script src="/libs/materialize/materialize.min.js"></script>
+                      <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+                      <script src="/libs/aos/aos.js"></script>
+                      <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+                      <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+                      <script>async("/js/matery.js");</script>
+
+
+                      <!-- <script src="/js/digitalRain.js"></script> -->
+                      <!-- <script src="https://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script> -->
+                      <script src="/libs/highlight/highlight.min.js"></script>
+                      <script>
+                        hljs.initHighlightingOnLoad()
+                      </script>
+
+                      <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?4ad37b19b8976dd4a39f98611bfe8cf1";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+                        <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+                          
+                              
+                                  
+                                      
+                                          
+                                              
+                                                  
+                                                        
+                                                            
+                                                              <script
+                                                                src="/libs/instantpage/instantpage.js"
+                                                                type="module"></script>
+                                                              
+          </div>
+
+          
+            <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        font-size: 15px;
+        color: #e54d42;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="" id="aplayerContent">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="6833073788"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#e54d42'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+              
+                <script src="/js/jquery.pjax.js"></script>
+                <script src="/js/clz.js"></script>
+
+                <!--动态线条背景-->
+                <script type="text/javascript" color="220,220,220" opacity="0.7" zIndex="-2" count="200"
+                  src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+        </body>
+
+</html>

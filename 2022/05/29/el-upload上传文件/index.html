@@ -1,0 +1,1664 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta name="keywords" content="el-upload上传文件, 赤蓝紫">
+    <meta name="description" content="One Plus One Equals Two.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="google-site-verification" content="N2tyqrBMiGbzMX97sCxKpveMRBLdm8zEfKfFo8kitYk" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GZXVDMM7YD"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-GZXVDMM7YD');
+</script>
+
+
+    <title>el-upload上传文件 | 赤蓝紫</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/clz.css">
+
+    <link href="/css/an-old-hope.css" rel="stylesheet">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+	<!-- async load function -->
+    <script>
+        function async(u, c) {
+            var d = document, t = 'script',
+                o = d.createElement(t),
+                s = d.getElementsByTagName(t)[0];
+            o.src = u;
+            if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+            s.parentNode.insertBefore(o, s);
+        }
+    </script>
+    <script src="/libs/valine/av-min.js"></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="赤蓝紫" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+  
+
+        <body>
+          <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="pageContent">
+            <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/avatar.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">赤蓝紫</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact/" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/avatar.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">赤蓝紫</div>
+        <div class="logo-desc">
+            
+            One Plus One Equals Two.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+    <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</header>
+
+              
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20_preview.png')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">el-upload上传文件</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css" />
+<style>
+  #articleContent h1::before,
+  #articleContent h2::before,
+  #articleContent h3::before,
+  #articleContent h4::before,
+  #articleContent h5::before,
+  #articleContent h6::before {
+    display: block;
+    content: " ";
+    height: 100px;
+    margin-top: -100px;
+    visibility: hidden;
+  }
+
+  #articleContent :focus {
+    outline: none;
+  }
+
+  .toc-fixed {
+    position: fixed;
+    top: 64px;
+  }
+
+  .toc-widget {
+    width: 345px;
+    padding-left: 20px;
+  }
+
+  .toc-widget .toc-title {
+    padding: 35px 0 15px 17px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+  }
+
+  .toc-widget ol {
+    padding: 0;
+    list-style: none;
+  }
+
+  #toc-content {
+    padding-bottom: 30px;
+    overflow: auto;
+  }
+
+  #toc-content ol {
+    padding-left: 10px;
+  }
+
+  #toc-content ol li {
+    padding-left: 10px;
+  }
+
+  #toc-content .toc-link:hover {
+    color: #42b983;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+
+  #toc-content .toc-link::before {
+    background-color: transparent;
+    max-height: 25px;
+
+    position: absolute;
+    right: 23.5vw;
+    display: block;
+  }
+
+  #toc-content .is-active-link {
+    color: #42b983;
+  }
+
+  #floating-toc-btn {
+    position: fixed;
+    right: 15px;
+    bottom: 76px;
+    padding-top: 15px;
+    margin-bottom: 0;
+    z-index: 998;
+  }
+
+  #floating-toc-btn .btn-floating {
+    width: 48px;
+    height: 48px;
+  }
+
+  #floating-toc-btn .btn-floating i {
+    line-height: 48px;
+    font-size: 1.4rem;
+  }
+</style>
+<div class="row">
+  <div id="main-content" class="col s12 m12 l9"><!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Vue/">
+                                <span class="chip bg-color">Vue</span>
+                            </a>
+                        
+                            <a href="/tags/Element/">
+                                <span class="chip bg-color">Element</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-05-29
+                </div>
+                
+
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    11 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="el-upload上传文件"><a href="#el-upload上传文件" class="headerlink" title="el-upload上传文件"></a>el-upload上传文件</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>公司和学校项目都用到了上传文件的功能，记录一下。</p>
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><h3 id="express实现的上传接口"><a href="#express实现的上传接口" class="headerlink" title="express实现的上传接口"></a>express实现的上传接口</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;express&#x27;</span>);<br><br><span class="hljs-comment">// 文件上传模块</span><br><span class="hljs-keyword">const</span> multiparty = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;multiparty&#x27;</span>)<br><br><span class="hljs-comment">// 提供跨域资源请求</span><br><span class="hljs-keyword">const</span> cors = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;cors&#x27;</span>)<br><br><span class="hljs-comment">// 文件操作</span><br><span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;fs&#x27;</span>)<br><br><span class="hljs-keyword">const</span> app = express();<br><br>app.use(cors());<br><br>app.get(<span class="hljs-string">&#x27;/policy&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> &#123;<br>  res.json(&#123;<br>    <span class="hljs-attr">code</span>: <span class="hljs-number">200</span>,<br>    <span class="hljs-attr">msg</span>: <span class="hljs-string">&#x27;成功&#x27;</span>,<br>    <span class="hljs-attr">url</span>: <span class="hljs-string">&#x27;/upload&#x27;</span>,<br>    <span class="hljs-attr">filename</span>: <span class="hljs-string">&#x27;clz&#x27;</span><br>  &#125;)<br>&#125;);<br><br>app.post(<span class="hljs-string">&#x27;/upload&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> &#123;<br>  <span class="hljs-keyword">let</span> form = <span class="hljs-keyword">new</span> multiparty.Form()<br><br>  <span class="hljs-comment">// 配置文件存储路径</span><br>  form.uploadDir = <span class="hljs-string">&#x27;./upload&#x27;</span><br><br>  form.parse(req, <span class="hljs-function">(<span class="hljs-params">err, fields, files</span>) =&gt;</span> &#123;<br>    <span class="hljs-comment">// 解析formData</span><br><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> file <span class="hljs-keyword">of</span> files.file) &#123;<br>      <span class="hljs-keyword">const</span> newPath = form.uploadDir + <span class="hljs-string">&#x27;/&#x27;</span> + file.originalFilename<br><br>      <span class="hljs-comment">// renameSync(oldPath, newPath)：同步重命名文件，oldPath使用默认上传路径，newPath则是想要保存到的路径</span><br>      fs.renameSync(file.path, newPath);<br>    &#125;<br><br>    res.json(&#123;<br>      <span class="hljs-attr">code</span>: <span class="hljs-number">200</span>,<br>      <span class="hljs-attr">msg</span>: <span class="hljs-string">&#x27;上传成功&#x27;</span><br>    &#125;)<br>  &#125;)<br>&#125;);<br><br>app.listen(<span class="hljs-number">8088</span>, <span class="hljs-function">() =&gt;</span> &#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;http://localhost:8088/&#x27;</span>);<br>&#125;);<br></code></pre></td></tr></table></figure>
+
+<p>如果需要使用，自行查阅<code>express</code>用法，也可以到<a href="https://www.clzczh.top/">本人博客</a>中查看简单教程。</p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h3 id="简单使用版本"><a href="#简单使用版本" class="headerlink" title="简单使用版本"></a>简单使用版本</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs js">&lt;template&gt;<br>  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">el-upload</span></span></span><br><span class="hljs-tag"><span class="xml">    <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;http://localhost:8088/upload&quot;</span></span></span><br><span class="hljs-tag"><span class="xml">    <span class="hljs-attr">:show-file-list</span>=<span class="hljs-string">&quot;true&quot;</span></span></span><br><span class="hljs-tag"><span class="xml">    <span class="hljs-attr">:on-success</span>=<span class="hljs-string">&quot;handleSuccess&quot;</span></span></span><br><span class="hljs-tag"><span class="xml">    <span class="hljs-attr">:on-error</span>=<span class="hljs-string">&quot;handleError&quot;</span></span></span><br><span class="hljs-tag"><span class="xml">  &gt;</span></span><br><span class="xml">    <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span>&gt;</span>上传图片<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span></span><br><span class="xml">  <span class="hljs-tag">&lt;/<span class="hljs-name">el-upload</span>&gt;</span></span><br>&lt;/template&gt;<br><br><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span>&gt;</span><span class="javascript"></span></span><br><span class="javascript"><span class="xml"><span class="hljs-keyword">import</span> &#123; ElMessage &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;element-plus&quot;</span>;</span></span><br><span class="javascript"><span class="xml"></span></span><br><span class="javascript"><span class="xml"><span class="hljs-keyword">const</span> handleSuccess = <span class="hljs-function">(<span class="hljs-params">res, file, files</span>) =&gt;</span> &#123;</span></span><br><span class="javascript"><span class="xml">  <span class="hljs-built_in">console</span>.log(res);</span></span><br><span class="javascript"><span class="xml">  <span class="hljs-built_in">console</span>.log(file, files);</span></span><br><span class="javascript"><span class="xml"></span></span><br><span class="javascript"><span class="xml">  <span class="hljs-keyword">new</span> ElMessage(&#123;</span></span><br><span class="javascript"><span class="xml">    <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;success&quot;</span>,</span></span><br><span class="javascript"><span class="xml">    <span class="hljs-attr">message</span>: <span class="hljs-string">&quot;上传成功&quot;</span>,</span></span><br><span class="javascript"><span class="xml">  &#125;);</span></span><br><span class="javascript"><span class="xml">&#125;;</span></span><br><span class="javascript"><span class="xml"></span></span><br><span class="javascript"><span class="xml"><span class="hljs-keyword">const</span> handleError = <span class="hljs-function">(<span class="hljs-params">error, file, files</span>) =&gt;</span> &#123;</span></span><br><span class="javascript"><span class="xml">  <span class="hljs-built_in">console</span>.log(error);</span></span><br><span class="javascript"><span class="xml">  <span class="hljs-built_in">console</span>.log(file, files);</span></span><br><span class="javascript"><span class="xml">  ElMessage.error(<span class="hljs-string">&quot;上传失败&quot;</span>);</span></span><br><span class="javascript"><span class="xml">&#125;;</span></span><br><span class="javascript"><span class="xml"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><br><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;less&quot;</span> <span class="hljs-attr">scoped</span>&gt;</span></span><br><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></span><br><br></code></pre></td></tr></table></figure>
+
+<p>解释下上面的属性：</p>
+<ul>
+<li><p>  <code>action</code>：请求URL</p>
+</li>
+<li><p>  <code>show-file-list</code>：是否展文件列表(如果没上传成功，则会闪现一下，再消失)</p>
+</li>
+<li><p><code>on-success</code>：文件上传成功钩子</p>
+<ul>
+<li>  参数：</li>
+<li>  res：后端返回的成功响应数据(响应状态为成功时)</li>
+<li>  file：上传的文件</li>
+<li>  files：成功上传的文件列表</li>
+</ul>
+</li>
+<li><p><code>on-success</code>：文件上传失败钩子</p>
+<ul>
+<li>  参数：</li>
+<li>  error：错误对象，内容是后端返回的响应数据(响应状态为失败时，如状态码为500)</li>
+<li>  file：上传的文件</li>
+<li>  files：成功上传的文件列表</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e58edc4653c54f5ab9e64e70a4098d6f~tplv-k3u1fbpfcp-zoom-1.image" alt="file"></p>
+<p>接下来，去后端设置的路径去看看有没有成功保存上传的文件。</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c21055f85a304475b52533a145869b83~tplv-k3u1fbpfcp-zoom-1.image" alt="image-20220508120156380"></p>
+<h3 id="添加token"><a href="#添加token" class="headerlink" title="添加token"></a>添加token</h3><p>这个比较简单，因为<code>element-plus</code>也封装好了，只需要使用<code>headers</code>属性，去设置请求头即可</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">el-upload</span></span><br><span class="hljs-tag">  <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;http://localhost:8088/upload&quot;</span></span><br><span class="hljs-tag">  <span class="hljs-attr">:headers</span>=<span class="hljs-string">&quot;&#123; token: &#x27;12345&#x27; &#125;&quot;</span></span><br><span class="hljs-tag">&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span>&gt;</span>上传图片<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">el-upload</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/913b816fa4c341baa16f7ce43f23a765~tplv-k3u1fbpfcp-zoom-1.image" alt="image-20220508120607213"></p>
+<h3 id="上传前获取签名再上传"><a href="#上传前获取签名再上传" class="headerlink" title="上传前获取签名再上传"></a>上传前获取签名再上传</h3><p>有时候并不是直接上传就可以的，比如一开始并没有上传路径，需要调用获取签名接口来获取上传路径。这个时候就可以使用我们的上传文件之前的钩子<code>before-upload</code>。在上传前调用获取签名的接口，用拿到的<code>url</code>去修改，上传路径，就能够上传了。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">el-upload</span> <span class="hljs-attr">:action</span>=<span class="hljs-string">&quot;url&quot;</span> <span class="hljs-attr">:before-upload</span>=<span class="hljs-string">&quot;getPolicy&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span>&gt;</span>上传图片<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">el-upload</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span>&gt;</span><span class="javascript"></span><br><span class="javascript"><span class="hljs-keyword">import</span> axios <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;axios&quot;</span>;</span><br><span class="javascript"><span class="hljs-keyword">import</span> &#123; reactive, ref &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;vue&quot;</span>;</span><br><span class="javascript"></span><br><span class="javascript"><span class="hljs-keyword">const</span> url = ref(<span class="hljs-string">&quot;&quot;</span>);</span><br><span class="javascript"></span><br><span class="javascript"><span class="hljs-keyword">const</span> getPolicy = <span class="hljs-function">() =&gt;</span> &#123;</span><br><span class="javascript">  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="javascript">    axios</span><br><span class="javascript">      .get(<span class="hljs-string">&quot;http://localhost:8088/policy&quot;</span>)</span><br><span class="javascript">      .then(<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> &#123;</span><br><span class="javascript">        <span class="hljs-keyword">const</span> &#123; data &#125; = res;</span><br><span class="javascript"></span><br><span class="javascript">        <span class="hljs-keyword">if</span> (data.code === <span class="hljs-number">200</span>) &#123;</span><br><span class="javascript">          url.value = <span class="hljs-string">`http://localhost:8088<span class="hljs-subst">$&#123;data.url&#125;</span>`</span>;</span><br><span class="javascript"></span><br><span class="javascript">          resolve();</span><br><span class="javascript">        &#125;</span><br><span class="javascript">      &#125;)</span><br><span class="javascript">      .catch(<span class="hljs-function">(<span class="hljs-params">error</span>) =&gt;</span> &#123;</span><br><span class="javascript">        reject(error);</span><br><span class="javascript">      &#125;);</span><br><span class="javascript">  &#125;);</span><br><span class="javascript">&#125;;</span><br><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;less&quot;</span> <span class="hljs-attr">scoped</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/40043fd7261d4055af018d53fce8b352~tplv-k3u1fbpfcp-zoom-1.image" alt="image-20220508134523663"></p>
+<h3 id="手动上传"><a href="#手动上传" class="headerlink" title="手动上传"></a>手动上传</h3><p>我们上面的例子都是选中文件后，就会上传，但是有时候我们会有点击按钮才去上传的需求，这个时候就需要结合<code>auto-upload</code>和<code>submit</code>来实现手动上传了。先设置<code>auto-upload</code>为<code>false</code>，取消自动上传，这个时候选中图片后就没有上传了，所以我们在按钮的点击事件中，还得使用DOM去调用<code>submit</code>方法去手动上传。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">el-upload</span></span><br><span class="hljs-tag">    <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;upload&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;http://localhost:8088/upload&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">:auto-upload</span>=<span class="hljs-string">&quot;false&quot;</span></span><br><span class="hljs-tag">  &gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span>&gt;</span>上传图片<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">el-upload</span>&gt;</span><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;confirm&quot;</span>&gt;</span>确定<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span>&gt;</span><span class="javascript"></span><br><span class="javascript"><span class="hljs-keyword">import</span> &#123; getCurrentInstance &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;vue&quot;</span>;</span><br><span class="javascript"></span><br><span class="javascript"><span class="hljs-keyword">const</span> &#123; proxy &#125; = getCurrentInstance();</span><br><span class="javascript"></span><br><span class="javascript"><span class="hljs-keyword">const</span> confirm = <span class="hljs-function">() =&gt;</span> &#123;</span><br><span class="javascript">  proxy.$refs.upload.submit();</span><br><span class="javascript">&#125;;</span><br><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;less&quot;</span> <span class="hljs-attr">scoped</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d098f8945fde457e82e1f5114a8377b1~tplv-k3u1fbpfcp-zoom-1.image" alt="file"></p>
+<h3 id="上传的时候修改文件名"><a href="#上传的时候修改文件名" class="headerlink" title="上传的时候修改文件名"></a>上传的时候修改文件名</h3><p>情境：调用签名接口时也给你返回一个文件名，前端在上传的时候需要把文件名改掉再上传，让服务器保存的是规范的文件名。</p>
+<p>首先，先说一下结论：无法通过修改<code>File</code>对象的<code>name</code>属性，实现重命名</p>
+<h4 id="在上传前钩子中修改File对象的name属性"><a href="#在上传前钩子中修改File对象的name属性" class="headerlink" title="在上传前钩子中修改File对象的name属性"></a>在上传前钩子中修改File对象的name属性</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">el-upload</span></span><br><span class="hljs-tag">    <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;http://localhost:8088/upload&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">:before-upload</span>=<span class="hljs-string">&quot;getPolicy&quot;</span></span><br><span class="hljs-tag">  &gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span>&gt;</span>上传图片<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">el-upload</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span>&gt;</span><span class="javascript"></span><br><span class="javascript"><span class="hljs-comment">// 上传前钩子</span></span><br><span class="javascript"><span class="hljs-keyword">const</span> getPolicy = <span class="hljs-function">(<span class="hljs-params">file</span>) =&gt;</span> &#123;</span><br><span class="javascript">  <span class="hljs-built_in">console</span>.log(file);</span><br><span class="javascript"></span><br><span class="javascript">  file.name = <span class="hljs-string">&quot;clz.png&quot;</span>;    <span class="hljs-comment">// 如果在上传前钩子中对文件的name属性进行修改，则会导致上传不了。而且不报错，难以发现问题所在。</span></span><br><span class="javascript"></span><br><span class="javascript">  <span class="hljs-built_in">console</span>.log(file.name);</span><br><span class="javascript">&#125;;</span><br><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;less&quot;</span> <span class="hljs-attr">scoped</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/54b5d42e1cab4d32844a1ae53d839210~tplv-k3u1fbpfcp-zoom-1.image" alt="file"></p>
+<p>毫无波澜。</p>
+<h4 id="上传文件时修改"><a href="#上传文件时修改" class="headerlink" title="上传文件时修改"></a>上传文件时修改</h4><p>通过<code>http-request</code>属性，覆盖默认的上传行为。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">el-upload</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;http://localhost:8088/upload&quot;</span> <span class="hljs-attr">:http-request</span>=<span class="hljs-string">&quot;httpRequest&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span>&gt;</span>上传图片<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">el-upload</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span>&gt;</span><span class="javascript"></span><br><span class="javascript"><span class="hljs-keyword">const</span> httpRequest = <span class="hljs-function">(<span class="hljs-params">&#123; file &#125;</span>) =&gt;</span> &#123;</span><br><span class="javascript">  <span class="hljs-built_in">console</span>.log(file);</span><br><span class="javascript">  file.name = <span class="hljs-string">&quot;clz.png&quot;</span>;</span><br><span class="javascript">&#125;;</span><br><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;less&quot;</span> <span class="hljs-attr">scoped</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/03f4aea317444c5d884436f8bf85110b~tplv-k3u1fbpfcp-zoom-1.image" alt="file"></p>
+<p>直接报错</p>
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><p>既然不能直接修改<code>File</code>对象的<code>name</code>属性来实现重命名操作，那么应该怎么办呢？</p>
+<p>这个时候就需要通过<code>new File</code>构造函数去再创建一个文件，创建的同时更改名字。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">el-upload</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;http://localhost:8088/upload&quot;</span> <span class="hljs-attr">:http-request</span>=<span class="hljs-string">&quot;httpRequest&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span>&gt;</span>上传图片<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">el-upload</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span>&gt;</span><span class="javascript"></span><br><span class="javascript"><span class="hljs-keyword">const</span> httpRequest = <span class="hljs-function">(<span class="hljs-params">&#123; file &#125;</span>) =&gt;</span> &#123;</span><br><span class="javascript">  <span class="hljs-built_in">console</span>.log(file);</span><br><span class="javascript"></span><br><span class="javascript">  <span class="hljs-keyword">const</span> cloneFile = <span class="hljs-keyword">new</span> File([file], <span class="hljs-string">&quot;clz.png&quot;</span>);</span><br><span class="javascript"></span><br><span class="javascript">  <span class="hljs-built_in">console</span>.log(cloneFile);</span><br><span class="javascript">&#125;;</span><br><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;less&quot;</span> <span class="hljs-attr">scoped</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>注意：如果是更改一个文件的文件名的话，File的构造函数第一个参数应该是包住<code>file</code>的数组</strong></p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5d4332203fae48388a03cc202a556d1e~tplv-k3u1fbpfcp-zoom-1.image" alt="image-20220508164215907"></p>
+<p>但是这个时候，又有问题了，我们已经使用<code>http-request</code>覆盖默认的上传的行为了，所以我们还得重新实现上传。</p>
+<p>上传文件首先需要<code>formData</code>对象，然后给<code>formData</code>添加上数据，在把<code>formData</code>通过接口发出去即可。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">el-upload</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;#&quot;</span> <span class="hljs-attr">:http-request</span>=<span class="hljs-string">&quot;httpRequest&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span>&gt;</span>上传图片<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">el-upload</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span>&gt;</span><span class="javascript"></span><br><span class="javascript"><span class="hljs-keyword">import</span> axios <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;axios&quot;</span>;</span><br><span class="javascript"><span class="hljs-keyword">import</span> &#123; ElMessage &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;element-plus&quot;</span>;</span><br><span class="javascript"></span><br><span class="javascript"><span class="hljs-keyword">const</span> httpRequest = <span class="hljs-function">(<span class="hljs-params">&#123; file &#125;</span>) =&gt;</span> &#123;</span><br><span class="javascript">  <span class="hljs-built_in">console</span>.log(file);</span><br><span class="javascript"></span><br><span class="javascript">  <span class="hljs-keyword">const</span> cloneFile = <span class="hljs-keyword">new</span> File([file], <span class="hljs-string">&quot;clz.png&quot;</span>);</span><br><span class="javascript"></span><br><span class="javascript">  <span class="hljs-keyword">const</span> formData = <span class="hljs-keyword">new</span> FormData();</span><br><span class="javascript">  formData.append(<span class="hljs-string">&quot;file&quot;</span>, cloneFile);</span><br><span class="javascript"></span><br><span class="javascript">  axios.post(<span class="hljs-string">&quot;http://localhost:8088/upload&quot;</span>, formData).then(<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> &#123;</span><br><span class="javascript">    <span class="hljs-keyword">if</span> (res === <span class="hljs-number">200</span>) &#123;</span><br><span class="javascript">      <span class="hljs-keyword">new</span> ElMessage(&#123;</span><br><span class="javascript">        <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;success&quot;</span>,</span><br><span class="javascript">        <span class="hljs-attr">message</span>: <span class="hljs-string">&quot;上传成功&quot;</span>,</span><br><span class="javascript">      &#125;);</span><br><span class="javascript">    &#125;</span><br><span class="javascript">  &#125;);</span><br><span class="javascript">&#125;;</span><br><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;less&quot;</span> <span class="hljs-attr">scoped</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1986ac52146c48069eb4309471c1780b~tplv-k3u1fbpfcp-zoom-1.image" alt="image-20220508165110118"></p>
+<h4 id="小贴士"><a href="#小贴士" class="headerlink" title="小贴士"></a>小贴士</h4><p>上面已经说出解决方法了，但是，重命名一般不会帮你把文件后缀都给改掉。所以这个时候可以通过正则表达式把后缀给取出来。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> houzhui = file.name.replace(<span class="hljs-regexp">/.+./</span>, <span class="hljs-string">&quot;&quot;</span>);<br><span class="hljs-keyword">const</span> newFile = <span class="hljs-keyword">new</span> File([file], filename+houzhui);<br></code></pre></td></tr></table></figure>
+
+<h3 id="一次请求上传多个文件"><a href="#一次请求上传多个文件" class="headerlink" title="一次请求上传多个文件"></a>一次请求上传多个文件</h3><p><code>el-upload</code>默认一个请求上传一个文件。需要上传多个文件首先得添加<code>multiple</code>属性。</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b5281fd7239345f59bae1b91e310ebff~tplv-k3u1fbpfcp-zoom-1.image" alt="file"></p>
+<p>上面的例子中，我们可以发现，我们上面选中了两个文件，点击确定，上传图片时调用了两次上传接口。</p>
+<p>既然<code>el-upload</code>默认一个请求上传一个文件，那么我们就不要使用<code>el-upload</code>的上传方法就行了。点击确定按钮时，去调用一个上传文件方法。</p>
+<p>因为我们点击确定时，需要获取选中的文件，所以需要有<code>file-list</code>属性，保存选中的文件。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">el-upload</span></span><br><span class="hljs-tag">    <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;upload&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;#&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">multiple</span></span><br><span class="hljs-tag">    <span class="hljs-attr">:file-list</span>=<span class="hljs-string">&quot;fileList&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">:auto-upload</span>=<span class="hljs-string">&quot;false&quot;</span></span><br><span class="hljs-tag">  &gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span>&gt;</span>上传图片<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">el-upload</span>&gt;</span><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;confirm&quot;</span>&gt;</span>确定<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>点击确定按钮，会触发<code>confirm</code>事件，实现一个请求上传多个文件的关键就在这，这个时候创建一个<code>formData</code>对象，遍历选中的文件列表，通过<code>append</code>添加到<code>formData</code>上。最后在调用<code>uploadFile</code>函数，真正把文件上传上去。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> fileList = reactive([]);<br><br><span class="hljs-keyword">const</span> confirm = <span class="hljs-function">() =&gt;</span> &#123;<br>  <span class="hljs-keyword">const</span> formData = <span class="hljs-keyword">new</span> FormData();<br><br>  <span class="hljs-built_in">console</span>.log(fileList);<br><br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> file <span class="hljs-keyword">of</span> fileList) &#123;<br>    formData.append(<span class="hljs-string">&quot;file&quot;</span>, file.raw);<br>  &#125;<br><br>  uploadFiles(formData);<br>&#125;;<br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">uploadFiles</span>(<span class="hljs-params">data</span>) </span>&#123;<br>  axios.post(<span class="hljs-string">&quot;http://localhost:8088/upload&quot;</span>, data).then(<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">if</span> (res === <span class="hljs-number">200</span>) &#123;<br>      <span class="hljs-keyword">new</span> ElMessage(&#123;<br>        <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;success&quot;</span>,<br>        <span class="hljs-attr">message</span>: <span class="hljs-string">&quot;上传成功&quot;</span>,<br>      &#125;);<br>    &#125;<br>  &#125;);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ce56ebee118446efbf2629321d3bddc8~tplv-k3u1fbpfcp-zoom-1.image" alt="file"></p>
+<h2 id="小技能"><a href="#小技能" class="headerlink" title="小技能"></a>小技能</h2><h3 id="获取图片的宽高像素"><a href="#获取图片的宽高像素" class="headerlink" title="获取图片的宽高像素"></a>获取图片的宽高像素</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 创建Image对象</span><br><span class="hljs-keyword">const</span> img = <span class="hljs-keyword">new</span> Image();<br><br><span class="hljs-comment">// 设置图片的src</span><br>img.src = <span class="hljs-string">&#x27;https://www.clzczh.top/medias/featureimages/19.png&#x27;</span>;<br><br><span class="hljs-comment">// 添加load事件，图片加载完成后执行</span><br>img.onload = <span class="hljs-function">() =&gt;</span> &#123;<br>  <span class="hljs-comment">// 获取图片的宽高像素</span><br>  <span class="hljs-built_in">console</span>.log(img.width, img.height);<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">赤蓝紫</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://www.clzczh.top/2022/05/29/el-upload%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6/">https://www.clzczh.top/2022/05/29/el-upload%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">赤蓝紫</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Vue/">
+                                    <span class="chip bg-color">Vue</span>
+                                </a>
+                            
+                                <a href="/tags/Element/">
+                                    <span class="chip bg-color">Element</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="qq,wechat" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+  .valine-card {
+    margin: 1.5rem auto;
+  }
+
+  .valine-card .card-content {
+    padding: 20px 20px 5px 20px;
+  }
+
+  #vcomments textarea {
+    resize: none;
+    box-sizing: border-box;
+    background: url("/medias/my_comment_bg.jpg") 100% 100% no-repeat;
+  }
+
+  #vcomments p {
+    margin: 2px 2px 10px;
+    font-size: 1.05rem;
+    line-height: 1.78rem;
+  }
+
+  #vcomments blockquote p {
+    text-indent: 0.2rem;
+  }
+
+  #vcomments a {
+    padding: 0 2px;
+    color: #4cbf30;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  #vcomments img {
+    max-width: 100%;
+    height: auto;
+    cursor: pointer;
+  }
+
+  #vcomments ol li {
+    list-style-type: decimal;
+  }
+
+  #vcomments ol,
+  ul {
+    display: block;
+    padding-left: 2em;
+    word-spacing: 0.05rem;
+  }
+
+  #vcomments ul li,
+  ol li {
+    display: list-item;
+    line-height: 1.8rem;
+    font-size: 1rem;
+  }
+
+  #vcomments ul li {
+    list-style-type: disc;
+  }
+
+  #vcomments ul ul li {
+    list-style-type: circle;
+  }
+
+  #vcomments table,
+  th,
+  td {
+    padding: 12px 13px;
+    border: 1px solid #dfe2e5;
+  }
+
+  #vcomments table,
+  th,
+  td {
+    border: 0;
+  }
+
+  table tr:nth-child(2n),
+  thead {
+    background-color: #fafafa;
+  }
+
+  #vcomments table th {
+    background-color: #f2f2f2;
+    min-width: 80px;
+  }
+
+  #vcomments table td {
+    min-width: 80px;
+  }
+
+  #vcomments h1 {
+    font-size: 1.85rem;
+    font-weight: bold;
+    line-height: 2.2rem;
+  }
+
+  #vcomments h2 {
+    font-size: 1.65rem;
+    font-weight: bold;
+    line-height: 1.9rem;
+  }
+
+  #vcomments h3 {
+    font-size: 1.45rem;
+    font-weight: bold;
+    line-height: 1.7rem;
+  }
+
+  #vcomments h4 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+  }
+
+  #vcomments h5 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    line-height: 1.4rem;
+  }
+
+  #vcomments h6 {
+    font-size: 1rem;
+    line-height: 1.3rem;
+  }
+
+  #vcomments p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  #vcomments hr {
+    margin: 12px 0;
+    border: 0;
+    border-top: 1px solid #ccc;
+  }
+
+  #vcomments blockquote {
+    margin: 15px 0;
+    border-left: 5px solid #42b983;
+    padding: 1rem 0.8rem 0.3rem 0.8rem;
+    color: #666;
+    background-color: rgba(66, 185, 131, 0.1);
+  }
+
+  #vcomments pre {
+    font-family: monospace, monospace;
+    padding: 1.2em;
+    margin: 0.5em 0;
+    background: #272822;
+    overflow: auto;
+    border-radius: 0.3em;
+    tab-size: 4;
+  }
+
+  #vcomments code {
+    font-family: monospace, monospace;
+    padding: 1px 3px;
+    font-size: 0.92rem;
+    color: #e96900;
+    background-color: #f8f8f8;
+    border-radius: 2px;
+  }
+
+  #vcomments pre code {
+    font-family: monospace, monospace;
+    padding: 0;
+    color: #e8eaf6;
+    background-color: #272822;
+  }
+
+  #vcomments pre[class*="language-"] {
+    padding: 1.2em;
+    margin: 0.5em 0;
+  }
+
+  #vcomments code[class*="language-"],
+  pre[class*="language-"] {
+    color: #e8eaf6;
+  }
+
+  #vcomments [type="checkbox"]:not(:checked),
+  [type="checkbox"]:checked {
+    position: inherit;
+    margin-left: -1.3rem;
+    margin-right: 0.4rem;
+    margin-top: -1px;
+    vertical-align: middle;
+    left: unset;
+    visibility: visible;
+  }
+
+  #vcomments b,
+  strong {
+    font-weight: bold;
+  }
+
+  #vcomments dfn {
+    font-style: italic;
+  }
+
+  #vcomments small {
+    font-size: 85%;
+  }
+
+  #vcomments cite {
+    font-style: normal;
+  }
+
+  #vcomments mark {
+    background-color: #fcf8e3;
+    padding: 0.2em;
+  }
+
+  #vcomments table,
+  th,
+  td {
+    padding: 12px 13px;
+    border: 1px solid #dfe2e5;
+  }
+
+  table tr:nth-child(2n),
+  thead {
+    background-color: #fafafa;
+  }
+
+  #vcomments table th {
+    background-color: #f2f2f2;
+    min-width: 80px;
+  }
+
+  #vcomments table td {
+    min-width: 80px;
+  }
+
+  #vcomments [type="checkbox"]:not(:checked),
+  [type="checkbox"]:checked {
+    position: inherit;
+    margin-left: -1.3rem;
+    margin-right: 0.4rem;
+    margin-top: -1px;
+    vertical-align: middle;
+    left: unset;
+    visibility: visible;
+  }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+  <div class="comment_headling"
+    style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px">
+    <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+    <span>评论</span>
+  </div>
+  <div id="vcomments" class="card-content" style="display: grid"></div>
+</div>
+
+<script>
+  async("/libs/valine/ValineHCLonely.js", function () {
+    new Valine({
+      el: "#vcomments",
+      appId: "2coN91JLNAEdiLdotu8swszK-MdYXbMMI",
+      appKey: "lMPrwDlhyJdnYay6JviS0qKS",
+      notify: "true" === "true",
+      verify: "false" === "true",
+      visitor: "true" === "true",
+      avatar: "identicon",
+      pageSize: "10",
+      lang: 'zh-cn',
+      placeholder: "One Plus One is ?",
+
+      serverURLs: 'https://2con91jl.api.lncldglobal.com',
+
+      requiredFields: ["nick", "mail"],
+      // 设置Bilibili表情包地址
+      emojiCDN: "//i0.hdslb.com/bfs/emote/",
+      // 表情title和图片映射
+      emojiMaps: {
+        tv_doge: "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+        tv_亲亲: "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+        tv_偷笑: "bb690d4107620f1c15cff29509db529a73aee261.png",
+        tv_再见: "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+        tv_冷漠: "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+        tv_发怒: "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+        tv_发财: "34db290afd2963723c6eb3c4560667db7253a21a.png",
+        tv_可爱: "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+        tv_吐血: "09dd16a7aa59b77baa1155d47484409624470c77.png",
+        tv_呆: "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+        tv_呕吐: "9f996894a39e282ccf5e66856af49483f81870f3.png",
+        tv_困: "241ee304e44c0af029adceb294399391e4737ef2.png",
+        tv_坏笑: "1f0b87f731a671079842116e0991c91c2c88645a.png",
+        tv_大佬: "093c1e2c490161aca397afc45573c877cdead616.png",
+        tv_大哭: "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+        tv_委屈: "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+        tv_害羞: "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+        tv_尴尬: "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+        tv_微笑: "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+        tv_思考: "90cf159733e558137ed20aa04d09964436f618a1.png",
+        tv_惊吓: "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+        tv_打脸: "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+        tv_抓狂: "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+        tv_抠鼻: "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+        tv_斜眼笑: "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+        tv_无奈: "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+        tv_晕: "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+        tv_流汗: "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+        tv_流泪: "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+        tv_流鼻血: "c32d39db2737f89b904ca32700d140a9241b0767.png",
+        tv_点赞: "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+        tv_生气: "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+        tv_生病: "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+        tv_疑问: "0793d949b18d7be716078349c202c15ff166f314.png",
+        tv_白眼: "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+        tv_皱眉: "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+        tv_目瞪口呆: "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+        tv_睡着: "8b196675b53af58264f383c50ad0945048290b33.png",
+        tv_笑哭: "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+        tv_腼腆: "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+        tv_色: "61822c7e9aae5da76475e7892534545336b23a6f.png",
+        tv_调侃: "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+        tv_调皮: "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+        tv_鄙视: "6e72339f346a692a495b123174b49e4e8e781303.png",
+        tv_闭嘴: "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+        tv_难过: "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+        tv_馋: "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+        tv_鬼脸: "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+        tv_黑人问号: "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+        tv_鼓掌: "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"
+        // ... 更多表情
+      },
+      master: "6215c7b8691be9bc9e7e783fe8372da6",
+      tagMeta: ["博主", "小伙伴", "访客"],
+      friends: ["7a5b615c3a4fae10cc2dd518b503ef2d"],
+      metaPlaceholder: { nick: "昵称/QQ号", mail: "邮箱" },
+      enableQQ: true,
+      path: window.location.pathname
+    })
+  })
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/05/29/element-plus%E4%B8%8B%E6%8B%89%E6%A1%86%E5%85%A8%E9%80%89/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10_preview.png" class="responsive-img" alt="element-plus下拉框全选">
+                        
+                        <span class="card-title">element-plus下拉框全选</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-29
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Vue/">
+                        <span class="chip bg-color">Vue</span>
+                    </a>
+                    
+                    <a href="/tags/Element/">
+                        <span class="chip bg-color">Element</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/05/18/%E4%BB%A3%E7%90%86%E4%B8%8E%E5%8F%8D%E5%B0%84-%E4%BA%8C/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19_preview.png" class="responsive-img" alt="代理与反射(二)">
+                        
+                        <span class="card-title">代理与反射(二)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 赤蓝紫<br />'
+            + '文章作者: 赤蓝紫<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+</div>
+  <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+    <div class="toc-widget card" style="background-color: white">
+      <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+      <div id="toc-content"></div>
+    </div>
+  </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+  <a class="btn-floating btn-large bg-color">
+    <i class="fas fa-list-ul"></i>
+  </a>
+</div>
+
+
+<script>
+  async("/libs/tocbot/tocbot.min.js", function() {
+      $(function () {
+          tocbot.init({
+              tocSelector: '#toc-content',
+              contentSelector: '#articleContent',
+              headingsOffset: -($(window).height() * 0.4 - 45),
+              collapseDepth: Number('0'),
+              headingSelector: 'h2, h3, h4'
+          });
+
+          // modify the toc link href to support Chinese.
+          let i = 0;
+          let tocHeading = 'toc-heading-';
+          $('#toc-content a').each(function () {
+              $(this).attr('href', '#' + tocHeading + (++i));
+          });
+
+          // modify the heading title id to support Chinese.
+          i = 0;
+          $('#articleContent').children('h2, h3, h4').each(function () {
+              $(this).attr('id', tocHeading + (++i));
+          });
+
+          // Set scroll toc fixed.
+          let tocHeight = parseInt($(window).height() * 0.4 - 64);
+          let $tocWidget = $('.toc-widget');
+          $(window).scroll(function () {
+              let scroll = $(window).scrollTop();
+              /* add post toc fixed. */
+              if (scroll > tocHeight) {
+                  $tocWidget.addClass('toc-fixed');
+              } else {
+                  $tocWidget.removeClass('toc-fixed');
+              }
+          });
+
+          
+          /* 修复文章卡片 div 的宽度. */
+          let fixPostCardWidth = function (srcId, targetId) {
+              let srcDiv = $('#' + srcId);
+              if (srcDiv.length === 0) {
+                  return;
+              }
+
+              let w = srcDiv.width();
+              if (w >= 450) {
+                  w = w + 21;
+              } else if (w >= 350 && w < 450) {
+                  w = w + 18;
+              } else if (w >= 300 && w < 350) {
+                  w = w + 16;
+              } else {
+                  w = w + 14;
+              }
+              $('#' + targetId).width(w);
+          };
+
+          // 切换TOC目录展开收缩的相关操作.
+          const expandedClass = 'expanded';
+          let $tocAside = $('#toc-aside');
+          let $mainContent = $('#main-content');
+          $('#floating-toc-btn .btn-floating').click(function () {
+              if ($tocAside.hasClass(expandedClass)) {
+                  $tocAside.removeClass(expandedClass).hide();
+                  $mainContent.removeClass('l9');
+              } else {
+                  $tocAside.addClass(expandedClass).show();
+                  $mainContent.addClass('l9');
+              }
+              fixPostCardWidth('artDetail', 'prenext-posts');
+          });
+          
+      });
+  })
+</script>
+
+    
+
+</main>
+
+
+
+                <footer class="page-footer bg-color">
+  <!-- 
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        font-size: 15px;
+        color: #e54d42;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="" id="aplayerContent">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="6833073788"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#e54d42'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+     -->
+  <div class="container row center-align" style="margin-bottom: 15px !important;">
+    <div class="col s12 m8 l8 copy-right">
+      Copyright&nbsp;&copy; 
+      <span id="year">2021-2022</span>
+      
+      <span id="year">2021</span>
+      <a href="/about" target="_blank">赤蓝紫</a>
+      |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+      <br />
+       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">233.3k</span>&nbsp;字     
+      <br />
+      
+      <span id="sitetime">载入运行时间...</span>
+      <script>
+        function siteTime() {
+          var seconds = 1000
+          var minutes = seconds * 60
+          var hours = minutes * 60
+          var days = hours * 24
+          var years = days * 365
+          var today = new Date()
+          var startYear = "2021"
+          var startMonth = "6"
+          var startDate = "20"
+          var startHour = "0"
+          var startMinute = "0"
+          var startSecond = "0"
+          var todayYear = today.getFullYear()
+          var todayMonth = today.getMonth() + 1
+          var todayDate = today.getDate()
+          var todayHour = today.getHours()
+          var todayMinute = today.getMinutes()
+          var todaySecond = today.getSeconds()
+          var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond)
+          var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond)
+          var diff = t2 - t1
+          var diffYears = Math.floor(diff / years)
+          var diffDays = Math.floor(diff / days - diffYears * 365)
+          var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours)
+          var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes)
+          var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds)
+          if (startYear == todayYear) {
+            document.getElementById("year").innerHTML = todayYear
+            document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒"
+          } else {
+            document.getElementById("year").innerHTML = startYear + " - " + todayYear
+            document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒"
+          }
+        }
+        setInterval(siteTime, 1000)
+      </script>
+      
+      <br />
+      
+
+      <!-- 萌ICP -->
+      <span id="moeicp"
+        >
+        <img src="/medias/moeicp.png" style="vertical-align: text-bottom;width:17px;" />
+        <a href="https://icp.gov.moe/?keyword=20229007" target="_blank" class="icp-link">萌ICP备20229007号</a>
+      </span>
+    </div>
+    <div class="col s12 m4 l4 social-link ">
+<a href="https://github.com/13535944743" target="_blank"
+    data-position="top" data-delay="50">
+    <i class="fab fa-github"></i>
+</a>
+
+
+
+<a href="javascript:;" class="wechat" data-position="top" data-delay="50">
+    <i class="fab fa-weixin"></i>
+</a>
+
+
+
+<a href="mailto:1926389897@qq.com"  target="_blank"
+    data-position="top" data-delay="50">
+    <i class="fas fa-envelope-open"></i>
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top"
+    data-delay="50">
+    <i class="fas fa-rss"></i>
+</a>
+</div>
+  </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+                  <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+                    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+                      <script src="/libs/materialize/materialize.min.js"></script>
+                      <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+                      <script src="/libs/aos/aos.js"></script>
+                      <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+                      <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+                      <script>async("/js/matery.js");</script>
+
+
+                      <!-- <script src="/js/digitalRain.js"></script> -->
+                      <!-- <script src="https://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script> -->
+                      <script src="/libs/highlight/highlight.min.js"></script>
+                      <script>
+                        hljs.initHighlightingOnLoad()
+                      </script>
+
+                      <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?4ad37b19b8976dd4a39f98611bfe8cf1";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+                        <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+                          
+                              
+                                  
+                                      
+                                          
+                                              
+                                                  
+                                                        
+                                                            
+                                                              <script
+                                                                src="/libs/instantpage/instantpage.js"
+                                                                type="module"></script>
+                                                              
+          </div>
+
+          
+            <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        font-size: 15px;
+        color: #e54d42;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="" id="aplayerContent">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="6833073788"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#e54d42'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+              
+                <script src="/js/jquery.pjax.js"></script>
+                <script src="/js/clz.js"></script>
+
+                <!--动态线条背景-->
+                <script type="text/javascript" color="220,220,220" opacity="0.7" zIndex="-2" count="200"
+                  src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+        </body>
+
+</html>
