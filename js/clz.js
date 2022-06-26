@@ -12,6 +12,12 @@ window.onload = function () {
     // console.log(temp);
 
   })
+
+  clzPjax.on('pjax:send', function () {
+    if ($('#toc-content').length) {
+      tocbot.destroy()
+    }
+  })
 }
 
 
