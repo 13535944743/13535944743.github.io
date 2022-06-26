@@ -1320,7 +1320,7 @@ thead {
 
 .chip-container .chip:hover {
     color: #fff;
-    background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%) !important;
+    background: linear-gradient(to right, #9900FF 0%, #CC66FF 100%) !important;
 }
 
 .chip .tag-length {
@@ -1809,8 +1809,8 @@ thead {
 
 .other-skills .chip:hover {
     color: #fff;
-    background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
-    border: 1px solid #4cbf30;
+    background: linear-gradient(to right, #9900FF 0%, #CC66FF 100%);
+    border: 1px solid #9900FF;
     box-shadow: 0 5px 5px rgba(0, 0, 0, .25)
 }
 
