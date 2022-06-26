@@ -71,7 +71,9 @@
         }
     </script>
     <script src="/libs/valine/av-min.js"></script>
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="赤蓝紫" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="赤蓝紫" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
   
 
@@ -508,7 +510,7 @@
             <div id="articleContent">
                 <h1 id="Web-开发安全"><a href="#Web-开发安全" class="headerlink" title="Web 开发安全"></a>Web 开发安全</h1><p>参加字节跳动的青训营时写的笔记。这部分是刘宇晨老师讲的课。</p>
 <h2 id="1-攻击"><a href="#1-攻击" class="headerlink" title="1. 攻击"></a>1. 攻击</h2><h3 id="1-1-跨站脚本攻击-XSS"><a href="#1-1-跨站脚本攻击-XSS" class="headerlink" title="1.1 跨站脚本攻击(XSS)"></a>1.1 跨站脚本攻击(XSS)</h3><p>XSS 攻击通常指的是通过利用网页开发时留下的漏洞，通过巧妙的方法注入恶意指令代码到网页，使用户加载并执行攻击者恶意制造的网页程序。</p>
-<p>如填写表单信息时，如果盲目相信用户的提交内容，那么假如用户填写了类似<code> &lt;script&gt;alert(&quot;注入恶意代码&quot;)&lt;/script&gt;</code>的信息，然后直接通过 element.innerHTML 把用户提交的代码存起来的话，那么工具者就可以实现攻击了。</p>
+<p>如填写表单信息时，如果盲目相信用户的提交内容，那么假如用户填写了类似<code> &lt;script&gt;alert("注入恶意代码")&lt;/script&gt;</code>的信息，然后直接通过 element.innerHTML 把用户提交的代码存起来的话，那么工具者就可以实现攻击了。</p>
 <p>比较巧妙的攻击方式：</p>
 <p><img src="https://s2.loli.net/2022/02/06/pB7uNcWPvFAMtG9.png" alt="image-20220127180108501"></p>
 <p><strong>XSS 特点</strong>：</p>
@@ -607,19 +609,19 @@
 <p>可以设置成三个值：</p>
 <ul>
 <li><p><strong>Strict</strong>：最严格。完全禁止第三方 Cookie，跨站点时，任何情况都不会发送 Cookie</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Set-Cookie: CookieName=CookieValue; SameSite=Strict;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Set-Cookie: CookieName=CookieValue; SameSite=Strict;<br></code></pre></td></tr></tbody></table></figure>
 
 <p>用户体验不会很好。比如访问别人的项目网站时，有个 fork me 链接到 github，然后点击跳转不会带有 github 的 token，所以跳转过后，都会是未登录状态</p>
 </li>
 <li><p><strong>Lax</strong>：大多数情况不发送第三方 Cookie，但是<b style="color: red">导航到目标地址的 GET 请求</b>会发送。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Set-Cookie: CookieName=CookieValue; SameSite=Lax;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Set-Cookie: CookieName=CookieValue; SameSite=Lax;<br></code></pre></td></tr></tbody></table></figure>
 
 <p>导航到目标地址的 GET 请求：<b style="color: red">链接、预加载、GET 表单</b></p>
 <p><img src="https://s2.loli.net/2022/01/27/Hl86by42ZdqEUYm.png" alt="image-20220127234433512"></p>
 <p><b style="color: red">设置了 Strict 或 Lax 之后，基本杜绝了 CSRF 攻击。</b></p>
 </li>
 <li><p><strong>None</strong>：显示关闭 SameSite 属性。前提是需要同时设置 Secure 属性(Cookie 只能通过 HTTPS 协议发送)，否则无效</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Set-Cookie: widget_session=abc123; SameSite=None; Secure<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">Set-Cookie: widget_session=abc123; SameSite=None; Secure<br></code></pre></td></tr></tbody></table></figure>
 
 <p>应用场景是依赖 Cookie 的第三方服务：如网站内嵌其他网站的播放器，开启 SameSite 属性后，就识别不了用户的登录态，也就发不了弹幕了</p>
 </li>
@@ -1189,12 +1191,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%9D%92%E8%AE%AD%E8%90%A5/">
-                        <span class="chip bg-color">青训营</span>
-                    </a>
-                    
                     <a href="/tags/%E5%8A%A8%E7%94%BB/">
                         <span class="chip bg-color">动画</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%9D%92%E8%AE%AD%E8%90%A5/">
+                        <span class="chip bg-color">青训营</span>
                     </a>
                     
                 </div>
@@ -1425,7 +1427,7 @@
       <a href="/about" target="_blank">赤蓝紫</a>
       |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
       <br />
-       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">254.7k</span>&nbsp;字      
+       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">232.9k</span>&nbsp;字      
       <span id="busuanzi_container_site_pv"> |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次 </span>
        
       <span id="busuanzi_container_site_uv"> |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人 </span>

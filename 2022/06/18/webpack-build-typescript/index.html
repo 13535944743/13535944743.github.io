@@ -71,7 +71,9 @@
         }
     </script>
     <script src="/libs/valine/av-min.js"></script>
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="赤蓝紫" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="赤蓝紫" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
   
 
@@ -436,12 +438,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Webpack/">
-                                <span class="chip bg-color">Webpack</span>
-                            </a>
-                        
                             <a href="/tags/TypeScript/">
                                 <span class="chip bg-color">TypeScript</span>
+                            </a>
+                        
+                            <a href="/tags/Webpack/">
+                                <span class="chip bg-color">Webpack</span>
                             </a>
                         
                     </div>
@@ -474,14 +476,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    790
+                    740
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    2 分
                 </div>
                 
 
@@ -515,10 +517,10 @@
 <p>添加<code>src</code>目录，后续的代码在<code>src</code>目录下进行编写</p>
 <h3 id="安装webpack"><a href="#安装webpack" class="headerlink" title="安装webpack"></a>安装webpack</h3><p><code>npm install webpack webpack-cli</code></p>
 <p>添加Webpack配置文件<code>webpack.config.js</code>，设置入口文件、出口文件地址。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;path&#x27;</span>)<br><br><span class="hljs-built_in">module</span>.exports = &#123;<br>    <span class="hljs-comment">// 开发模式</span><br>    <span class="hljs-attr">mode</span>: <span class="hljs-string">&#x27;development&#x27;</span>,<br><br>    <span class="hljs-comment">// 入口文件是src目录下的`index.js`文件</span><br>    <span class="hljs-attr">entry</span>: path.join(__dirname, <span class="hljs-string">&#x27;src&#x27;</span>, <span class="hljs-string">&#x27;index.js&#x27;</span>),<br>    <br>     <br>    <span class="hljs-attr">output</span>: &#123;<br>        <span class="hljs-comment">// 把所有依赖的模块合并输出到一个 index.js 文件</span><br>        <span class="hljs-attr">filename</span>: <span class="hljs-string">&#x27;index.js&#x27;</span>,<br><br>        <span class="hljs-comment">// 输出文件都放到 dist 目录下</span><br>        <span class="hljs-attr">path</span>: path.join(__dirname, <span class="hljs-string">&#x27;dist&#x27;</span>)<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>)<br><br><span class="hljs-built_in">module</span>.exports = {<br>    <span class="hljs-comment">// 开发模式</span><br>    <span class="hljs-attr">mode</span>: <span class="hljs-string">'development'</span>,<br><br>    <span class="hljs-comment">// 入口文件是src目录下的`index.js`文件</span><br>    <span class="hljs-attr">entry</span>: path.join(__dirname, <span class="hljs-string">'src'</span>, <span class="hljs-string">'index.js'</span>),<br>    <br>     <br>    <span class="hljs-attr">output</span>: {<br>        <span class="hljs-comment">// 把所有依赖的模块合并输出到一个 index.js 文件</span><br>        <span class="hljs-attr">filename</span>: <span class="hljs-string">'index.js'</span>,<br><br>        <span class="hljs-comment">// 输出文件都放到 dist 目录下</span><br>        <span class="hljs-attr">path</span>: path.join(__dirname, <span class="hljs-string">'dist'</span>)<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
 
 <h3 id="初次测试"><a href="#初次测试" class="headerlink" title="初次测试"></a>初次测试</h3><p>编写一下<code>index.js</code>文件，测试一下前面的配置是否正确。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;赤蓝紫&#x27;</span>)<br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'赤蓝紫'</span>)<br></code></pre></td></tr></tbody></table></figure>
 
 <p>执行命令<code>npx webpack</code><br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2840f6380f4b45d788d234a64b4f2767~tplv-k3u1fbpfcp-zoom-1.image"></p>
 <p>执行编译生成的文件，能得到正确的结果就表示前面的步骤正确了。<br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/eee2a95b5d0d4a9888f1a4d24a57a507~tplv-k3u1fbpfcp-zoom-1.image"></p>
@@ -539,23 +541,23 @@
 <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/060925f181a54875a24a55ad88a529ce~tplv-k3u1fbpfcp-zoom-1.image"></p>
 <h3 id="处理TS文件"><a href="#处理TS文件" class="headerlink" title="处理TS文件"></a>处理TS文件</h3><p>现在我们的脚手架还是不能处理TS文件的。</p>
 <p>index.js</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;./myts.ts&#x27;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> <span class="hljs-string">'./myts.ts'</span><br></code></pre></td></tr></tbody></table></figure>
 
 <p>myts.ts</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">let</span> age: <span class="hljs-built_in">number</span> = <span class="hljs-number">21</span><br><span class="hljs-built_in">console</span>.log(age)<br></code></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">let</span> age: <span class="hljs-built_in">number</span> = <span class="hljs-number">21</span><br><span class="hljs-built_in">console</span>.log(age)<br></code></pre></td></tr></tbody></table></figure>
 
 <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c64caf42202844dd903dfd1f13d6b030~tplv-k3u1fbpfcp-zoom-1.image"></p>
 <p>处理TS文件其实也不难，只需要两个步骤就行：</p>
 <ol>
 <li>安装<code>ts-loader</code>，<code>npm install ts-loader</code></li>
-<li>修改Webpack配置文件<code>webpack.config.js</code>，增加<code>module</code>节点<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">module</span>: &#123;<br>    <span class="hljs-attr">rules</span>: [<br>        &#123;<br>            <span class="hljs-comment">// ts后缀名的文件会使用ts-loader</span><br>            <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.ts$/</span>,<br>            use: [<span class="hljs-string">&quot;ts-loader&quot;</span>]<br>        &#125;<br>    ]<br>&#125;<br></code></pre></td></tr></table></figure></li>
+<li>修改Webpack配置文件<code>webpack.config.js</code>，增加<code>module</code>节点<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">module</span>: {<br>    <span class="hljs-attr">rules</span>: [<br>        {<br>            <span class="hljs-comment">// ts后缀名的文件会使用ts-loader</span><br>            <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.ts$/</span>,<br>            use: [<span class="hljs-string">"ts-loader"</span>]<br>        }<br>    ]<br>}<br></code></pre></td></tr></tbody></table></figure></li>
 <li>增加TS配置文件，空文件也行，只是一定要有</li>
 </ol>
 <p>再次执行<code>npx webpack serve</code><br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8ddc46ad1ea64f5b9cff7d84936a0e84~tplv-k3u1fbpfcp-zoom-1.image"></p>
 <p>然后，还可稍微修改一下<code>package.json</code>文件，设置<code>npx webpack serve</code>命令为更常用的<code>npm run dev</code><br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e432893f879c416491fa4d0188b8fbde~tplv-k3u1fbpfcp-zoom-1.image"></p>
 <p>简单的TS脚手架这样子就结束了。之后就能更方便的学习TS了。</p>
 <p>完整版Webpack配置献上：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;path&quot;</span>)<br><span class="hljs-keyword">const</span> HtmlWebpackPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;html-webpack-plugin&quot;</span>)<br><br><span class="hljs-built_in">module</span>.exports = &#123;<br>    <span class="hljs-attr">mode</span>: <span class="hljs-string">&quot;development&quot;</span>,<br>    <span class="hljs-attr">entry</span>: path.join(__dirname, <span class="hljs-string">&quot;src&quot;</span>, <span class="hljs-string">&quot;index.js&quot;</span>),<br>    <span class="hljs-attr">output</span>: &#123;<br>        <span class="hljs-attr">filename</span>: <span class="hljs-string">&quot;index.js&quot;</span>,<br>        <span class="hljs-attr">path</span>: path.join(__dirname, <span class="hljs-string">&quot;dist&quot;</span>)<br>    &#125;,<br>    <span class="hljs-attr">plugins</span>: [<span class="hljs-keyword">new</span> HtmlWebpackPlugin()],<br>    <span class="hljs-attr">module</span>: &#123;<br>        <span class="hljs-attr">rules</span>: [<br>            &#123;<br>                <span class="hljs-comment">// ts后缀名的文件会使用ts-loader</span><br>                <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.ts$/</span>,<br>                use: [<span class="hljs-string">&quot;ts-loader&quot;</span>]<br>            &#125;<br>        ]<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">"path"</span>)<br><span class="hljs-keyword">const</span> HtmlWebpackPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">"html-webpack-plugin"</span>)<br><br><span class="hljs-built_in">module</span>.exports = {<br>    <span class="hljs-attr">mode</span>: <span class="hljs-string">"development"</span>,<br>    <span class="hljs-attr">entry</span>: path.join(__dirname, <span class="hljs-string">"src"</span>, <span class="hljs-string">"index.js"</span>),<br>    <span class="hljs-attr">output</span>: {<br>        <span class="hljs-attr">filename</span>: <span class="hljs-string">"index.js"</span>,<br>        <span class="hljs-attr">path</span>: path.join(__dirname, <span class="hljs-string">"dist"</span>)<br>    },<br>    <span class="hljs-attr">plugins</span>: [<span class="hljs-keyword">new</span> HtmlWebpackPlugin()],<br>    <span class="hljs-attr">module</span>: {<br>        <span class="hljs-attr">rules</span>: [<br>            {<br>                <span class="hljs-comment">// ts后缀名的文件会使用ts-loader</span><br>                <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.ts$/</span>,<br>                use: [<span class="hljs-string">"ts-loader"</span>]<br>            }<br>        ]<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
 
                 
             </div>
@@ -620,12 +622,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Webpack/">
-                                    <span class="chip bg-color">Webpack</span>
-                                </a>
-                            
                                 <a href="/tags/TypeScript/">
                                     <span class="chip bg-color">TypeScript</span>
+                                </a>
+                            
+                                <a href="/tags/Webpack/">
+                                    <span class="chip bg-color">Webpack</span>
                                 </a>
                             
                         </div>
@@ -1329,7 +1331,7 @@
       <a href="/about" target="_blank">赤蓝紫</a>
       |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
       <br />
-       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">254.7k</span>&nbsp;字      
+       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">232.9k</span>&nbsp;字      
       <span id="busuanzi_container_site_pv"> |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次 </span>
        
       <span id="busuanzi_container_site_uv"> |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人 </span>

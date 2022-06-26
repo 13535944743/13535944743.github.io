@@ -71,7 +71,9 @@
         }
     </script>
     <script src="/libs/valine/av-min.js"></script>
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="赤蓝紫" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="赤蓝紫" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
   
 
@@ -470,14 +472,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    6 分
                 </div>
                 
 
@@ -507,7 +509,7 @@
 <h3 id="节点概述"><a href="#节点概述" class="headerlink" title="节点概述"></a>节点概述</h3><p><img src="https://pic.imgdb.cn/item/611f0cf54907e2d39ca04cce.jpg"></p>
 <h3 id="节点层级"><a href="#节点层级" class="headerlink" title="节点层级"></a>节点层级</h3><p>利用 DOM 树可以把节点划分为不同的层级关系，如父子层级、兄弟层级</p>
 <h4 id="父节点"><a href="#父节点" class="headerlink" title="父节点"></a>父节点</h4><p>node.parentNode</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>//node.parentNode<br>var son = document.querySelector(&quot;.son&quot;);<br>console.log(son.parentNode);<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>//node.parentNode<br>var son = document.querySelector(".son");<br>console.log(son.parentNode);<br><br></code></pre></td></tr></tbody></table></figure>
 
 <ol>
 <li>parentNode 属性可返回最近的一个父节点</li>
@@ -517,13 +519,13 @@
 <li>parentNode.childNodes</li>
 </ol>
 <p>返回包含指定节点的子节点的集合，包含元素节点、文本节点等</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>&lt;div class=&quot;father&quot;&gt;<br>	&lt;div class=&quot;son&quot;&gt;&lt;/div&gt;<br>&lt;/div&gt;<br>&lt;script&gt;<br>	var father = document.querySelector(&quot;.father&quot;);<br>	console.log(father.childNodes);<br>&lt;/script&gt;<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>&lt;div class="father"&gt;<br>	&lt;div class="son"&gt;&lt;/div&gt;<br>&lt;/div&gt;<br>&lt;script&gt;<br>	var father = document.querySelector(".father");<br>	console.log(father.childNodes);<br>&lt;/script&gt;<br><br></code></pre></td></tr></tbody></table></figure>
 
 <p>结果：</p>
 <p><img src="https://pic.imgdb.cn/item/611f120d4907e2d39cabddd5.jpg"></p>
 <p>这种方法要获取元素节点，可以遍历所有节点，利用元素节点的 nodeType 为 1 的性质选出来。但是很麻烦。 2. parentNode.children</p>
 <p>返回包含指定节点的子元素节点的集合，只返回元素节点</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>&lt;div class=&quot;father&quot;&gt;<br>	&lt;div class=&quot;son1&quot;&gt;&lt;/div&gt;<br>	&lt;div class=&quot;son2&quot;&gt;&lt;/div&gt;<br>&lt;/div&gt;<br>&lt;script&gt;<br>	var father = document.querySelector(&quot;.father&quot;);<br>	console.log(father.children);<br>&lt;/script&gt;<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>&lt;div class="father"&gt;<br>	&lt;div class="son1"&gt;&lt;/div&gt;<br>	&lt;div class="son2"&gt;&lt;/div&gt;<br>&lt;/div&gt;<br>&lt;script&gt;<br>	var father = document.querySelector(".father");<br>	console.log(father.children);<br>&lt;/script&gt;<br><br></code></pre></td></tr></tbody></table></figure>
 
 <p>结果：</p>
 <p><img src="https://pic.imgdb.cn/item/611f13c84907e2d39cafcdad.jpg"> 3. parentNode.firstChild</p>
@@ -543,26 +545,26 @@
 <p>返回下一个兄弟元素节点</p>
 <p>其中，3、4 有兼容性问题，IE9 以上才支持，可以封装兼容性函数</p>
 <h3 id="创建节点"><a href="#创建节点" class="headerlink" title="创建节点"></a>创建节点</h3><p>document.createElement(‘tagName’)<br>创建的元素原本不存在，是动态生成的，又被称为动态创建元素节点</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>var div = document.createElement(&quot;div&quot;);<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>var div = document.createElement("div");<br><br></code></pre></td></tr></tbody></table></figure>
 
 <h3 id="添加节点"><a href="#添加节点" class="headerlink" title="添加节点"></a>添加节点</h3><p>创建节点后，创建的节点并不会出现，而需要把节点添加上去才可以。添加节点主要是先找到要添加的位置的父节点，然后才添加进去。有两种方法</p>
 <ol>
 <li>node.appendChild(child)</li>
 </ol>
 <p>将节点 child 添加到指定的父节点 node 的子节点末尾。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>&lt;body&gt;<br>	&lt;div class=&quot;box&quot;&gt;<br>		&lt;div class=&quot;one&quot;&gt;&lt;/div&gt;<br>		&lt;div class=&quot;two&quot;&gt;&lt;/div&gt;<br>	&lt;/div&gt;<br><br>	&lt;script&gt;<br>		var div = document.createElement(&quot;div&quot;);<br>		div.className = &quot;three&quot;;<br><br>		var box = document.querySelector(&quot;.box&quot;);<br>		box.appendChild(div);<br><br>	&lt;/script&gt;<br>&lt;/body&gt;<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>&lt;body&gt;<br>	&lt;div class="box"&gt;<br>		&lt;div class="one"&gt;&lt;/div&gt;<br>		&lt;div class="two"&gt;&lt;/div&gt;<br>	&lt;/div&gt;<br><br>	&lt;script&gt;<br>		var div = document.createElement("div");<br>		div.className = "three";<br><br>		var box = document.querySelector(".box");<br>		box.appendChild(div);<br><br>	&lt;/script&gt;<br>&lt;/body&gt;<br><br></code></pre></td></tr></tbody></table></figure>
 
 <p>结果：</p>
 <p><img src="https://i.loli.net/2021/08/23/wvRsMI43JqlcCzg.png"> 2. node.insertBefore(child, 指定元素);</p>
 <p>将节点 child 添加到父节点 node 的指定子节点前面</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>&lt;body&gt;<br>	&lt;div class=&quot;box&quot;&gt;<br>		&lt;div class=&quot;one&quot;&gt;&lt;/div&gt;<br>		&lt;div class=&quot;two&quot;&gt;&lt;/div&gt;<br>	&lt;/div&gt;<br><br>	&lt;script&gt;<br>		var div = document.createElement(&quot;div&quot;);<br>		div.className = &quot;three&quot;;<br><br>		var box = document.querySelector(&quot;.box&quot;);<br>		var one = document.querySelector(&quot;.one&quot;);<br>		box.insertBefore(div, one);<br><br>	&lt;/script&gt;<br>&lt;/body&gt;<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>&lt;body&gt;<br>	&lt;div class="box"&gt;<br>		&lt;div class="one"&gt;&lt;/div&gt;<br>		&lt;div class="two"&gt;&lt;/div&gt;<br>	&lt;/div&gt;<br><br>	&lt;script&gt;<br>		var div = document.createElement("div");<br>		div.className = "three";<br><br>		var box = document.querySelector(".box");<br>		var one = document.querySelector(".one");<br>		box.insertBefore(div, one);<br><br>	&lt;/script&gt;<br>&lt;/body&gt;<br><br></code></pre></td></tr></tbody></table></figure>
 
 <p>结果：</p>
 <p><img src="https://i.loli.net/2021/08/23/KGhHNEVASTIpCue.png"></p>
 <h3 id="案例-1"><a href="#案例-1" class="headerlink" title="案例"></a>案例</h3><p>简单版发布留言案例</p>
 <h3 id="删除节点"><a href="#删除节点" class="headerlink" title="删除节点"></a>删除节点</h3><p>node.removeChild(child)</p>
 <p>从父节点 node 的子结点中删除指定子节点。，返回删除的节点。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>&lt;div class=&quot;box&quot;&gt;<br>	&lt;div class=&quot;one&quot;&gt;&lt;/div&gt;<br>	&lt;div class=&quot;two&quot;&gt;&lt;/div&gt;<br>&lt;/div&gt;<br><br>&lt;script&gt;<br>	var box = document.querySelector(&quot;.box&quot;);<br>	console.log(box.removeChild(box.children[0]));<br>&lt;/script&gt;<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>&lt;div class="box"&gt;<br>	&lt;div class="one"&gt;&lt;/div&gt;<br>	&lt;div class="two"&gt;&lt;/div&gt;<br>&lt;/div&gt;<br><br>&lt;script&gt;<br>	var box = document.querySelector(".box");<br>	console.log(box.removeChild(box.children[0]));<br>&lt;/script&gt;<br><br></code></pre></td></tr></tbody></table></figure>
 
 <p>结果:</p>
 <p><img src="https://i.loli.net/2021/08/23/o3mu1E7GzAtxjSf.png"></p>
@@ -573,7 +575,7 @@
 <li>参数为空或者 false，则是浅拷贝，只克隆节点自身，不克隆里面的子节点，包括文本节点</li>
 <li>参数为 true，则是深拷贝，克隆节点本身以及里面所有子节点。</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>&lt;div class=&quot;box&quot;&gt;<br>	111<br>	&lt;div class=&quot;one&quot;&gt;123&lt;/div&gt;<br>	&lt;div class=&quot;two&quot;&gt;456&lt;/div&gt;<br>&lt;/div&gt;<br><br>&lt;script&gt;<br>	var box = document.querySelector(&quot;.box&quot;);<br>	console.log(box.cloneNode());<br>	console.log(box.cloneNode(true));<br>&lt;/script&gt;<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>&lt;div class="box"&gt;<br>	111<br>	&lt;div class="one"&gt;123&lt;/div&gt;<br>	&lt;div class="two"&gt;456&lt;/div&gt;<br>&lt;/div&gt;<br><br>&lt;script&gt;<br>	var box = document.querySelector(".box");<br>	console.log(box.cloneNode());<br>	console.log(box.cloneNode(true));<br>&lt;/script&gt;<br><br></code></pre></td></tr></tbody></table></figure>
 
 <p>结果：</p>
 <p><img src="https://i.loli.net/2021/08/23/JgSYLnz2ci1kdCm.png"></p>
@@ -583,37 +585,37 @@
 </ol>
 <p>会导致页面全部重绘</p>
 <p>例子：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>&lt;body&gt;<br>	&lt;button class=&quot;write&quot;&gt;write方法&lt;/button&gt;<br>	&lt;script&gt;<br>		let write = document.querySelector(&quot;.write&quot;);<br>		write.onclick = () =&gt; &#123;<br>			console.log(document.write(&quot;&lt;h1&gt;123&lt;/h1&gt;&quot;));<br>		&#125;<br>	&lt;/script&gt;<br>&lt;/body&gt;<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>&lt;body&gt;<br>	&lt;button class="write"&gt;write方法&lt;/button&gt;<br>	&lt;script&gt;<br>		let write = document.querySelector(".write");<br>		write.onclick = () =&gt; {<br>			console.log(document.write("&lt;h1&gt;123&lt;/h1&gt;"));<br>		}<br>	&lt;/script&gt;<br>&lt;/body&gt;<br><br></code></pre></td></tr></tbody></table></figure>
 
 <p>点击前：</p>
 <p><img src="https://pic.imgdb.cn/item/6129f92844eaada739a03bef.jpg"></p>
 <p>点击后:</p>
 <p><img src="https://pic.imgdb.cn/item/6129f94d44eaada739a075d2.jpg"> 2. element.innerHTML</p>
 <p>例子：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>&lt;body&gt;<br>	&lt;div&gt;&lt;/div&gt;<br>	&lt;script&gt;<br>		let div = document.querySelector(&quot;div&quot;);<br>		div.innerHTML = &quot;&lt;h1&gt;123&lt;/h1&gt;&quot;;<br>	&lt;/script&gt;<br>&lt;/body&gt;<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>&lt;body&gt;<br>	&lt;div&gt;&lt;/div&gt;<br>	&lt;script&gt;<br>		let div = document.querySelector("div");<br>		div.innerHTML = "&lt;h1&gt;123&lt;/h1&gt;";<br>	&lt;/script&gt;<br>&lt;/body&gt;<br><br></code></pre></td></tr></tbody></table></figure>
 
 <ol start="3">
 <li>document.createElement()</li>
 </ol>
 <p>只能根据参数的标签名创建对应元素节点，无内容，也无类名、id 等。</p>
 <p>例子:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>&lt;div&gt;&lt;/div&gt;<br>   &lt;script&gt;<br>       let div = document.querySelector(&quot;div&quot;);<br>       let h1 = document.createElement(&quot;h1&quot;);<br>       h1.innerHTML = &quot;123&quot;;<br>       div.appendChild(h1);<br>   &lt;/script&gt;<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>&lt;div&gt;&lt;/div&gt;<br>   &lt;script&gt;<br>       let div = document.querySelector("div");<br>       let h1 = document.createElement("h1");<br>       h1.innerHTML = "123";<br>       div.appendChild(h1);<br>   &lt;/script&gt;<br><br></code></pre></td></tr></tbody></table></figure>
 
 <p>效率测试：</p>
 <ol>
 <li>innerHTML（拼接字符串）(1000 个 div)</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>const t1 = +new Date();<br>      for (let j = 0; j &lt; 1000; j++) &#123;<br>          document.body.innerHTML += &#x27;&lt;div&gt;&lt;/div&gt;&#x27;;<br>      &#125;<br>      const t2 = +new Date();<br>      console.log(t2 - t1);<br>      //505ms<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>const t1 = +new Date();<br>      for (let j = 0; j &lt; 1000; j++) {<br>          document.body.innerHTML += '&lt;div&gt;&lt;/div&gt;';<br>      }<br>      const t2 = +new Date();<br>      console.log(t2 - t1);<br>      //505ms<br><br></code></pre></td></tr></tbody></table></figure>
 
 <ol start="2">
 <li>innerHTML（数组形式拼接）（10000 个 div）</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">const t1 = +new Date();<br>      let arr = [];<br>      for (let j = 0; j &lt; 10000; j++) &#123;<br>          arr.push(&#x27;&lt;div&gt;&lt;/div&gt;&#x27;);<br>      &#125;<br><br>      document.body.innerHTML = arr.join(&#x27;&#x27;);<br>      const t2 = +new Date();<br>      console.log(t2 - t1);<br>      //15、14、13、11、9(ms)<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">const t1 = +new Date();<br>      let arr = [];<br>      for (let j = 0; j &lt; 10000; j++) {<br>          arr.push('&lt;div&gt;&lt;/div&gt;');<br>      }<br><br>      document.body.innerHTML = arr.join('');<br>      const t2 = +new Date();<br>      console.log(t2 - t1);<br>      //15、14、13、11、9(ms)<br><br></code></pre></td></tr></tbody></table></figure>
 
 <ol start="3">
 <li>createElement(10000 个 div)</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>const t1 = +new Date();<br>      for (let j = 0; j &lt; 10000; j++) &#123;<br>          let div = document.createElement(&quot;div&quot;);<br>          document.body.appendChild(div);<br>      &#125;<br><br>      const t2 = +new Date();<br>      console.log(t2 - t1);<br>      //14、16、19、13、11<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>const t1 = +new Date();<br>      for (let j = 0; j &lt; 10000; j++) {<br>          let div = document.createElement("div");<br>          document.body.appendChild(div);<br>      }<br><br>      const t2 = +new Date();<br>      console.log(t2 - t1);<br>      //14、16、19、13、11<br><br></code></pre></td></tr></tbody></table></figure>
 
 <p>innerHTML（数组形式拼接）的效率在测试中比 createElement 的稍微快一点，但只是一点点，一开始用 1000 个测试时，没办法分出区别，加大到 10000 个可以看出前者比后者稍快一点。</p>
 <p>innerHTML（数组形式拼接）结构较复杂，需要另外用数组接，后面还得转成字符串，再塞给父节点。</p>
@@ -1388,7 +1390,7 @@
       <a href="/about" target="_blank">赤蓝紫</a>
       |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
       <br />
-       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">254.7k</span>&nbsp;字      
+       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">232.9k</span>&nbsp;字      
       <span id="busuanzi_container_site_pv"> |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次 </span>
        
       <span id="busuanzi_container_site_uv"> |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人 </span>

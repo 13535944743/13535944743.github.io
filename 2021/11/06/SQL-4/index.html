@@ -71,7 +71,9 @@
         }
     </script>
     <script src="/libs/valine/av-min.js"></script>
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="赤蓝紫" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="赤蓝紫" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
   
 
@@ -504,9 +506,9 @@
             <div id="articleContent">
                 <h1 id="数据库学习笔记-四"><a href="#数据库学习笔记-四" class="headerlink" title="数据库学习笔记(四)"></a>数据库学习笔记(四)</h1><h2 id="1-数据库恢复技术"><a href="#1-数据库恢复技术" class="headerlink" title="1. 数据库恢复技术"></a>1. 数据库恢复技术</h2><h3 id="1-1-事务"><a href="#1-1-事务" class="headerlink" title="1.1 事务"></a>1.1 事务</h3><p><strong>事务</strong>：用户定义的一个数据库操作序列，是一个不可分割的工作单位。这些操作要么全做，要么全不做。<strong>是恢复的基本单位，也是并发控制的基本单位</strong></p>
 <p><strong>定义事务</strong>：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">begin</span> transaction<br>	<span class="hljs-keyword">sql</span>语句<br><span class="hljs-keyword">commit</span><br># 事务正常结束，提交事务的所有操作<br></code></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">begin</span> transaction<br>	<span class="hljs-keyword">sql</span>语句<br><span class="hljs-keyword">commit</span><br># 事务正常结束，提交事务的所有操作<br></code></pre></td></tr></tbody></table></figure>
 
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">begin</span> transaction<br>	<span class="hljs-keyword">sql</span>语句<br><span class="hljs-keyword">rollback</span><br># 事务异常终止，事务回到开始的状态<br></code></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">begin</span> transaction<br>	<span class="hljs-keyword">sql</span>语句<br><span class="hljs-keyword">rollback</span><br># 事务异常终止，事务回到开始的状态<br></code></pre></td></tr></tbody></table></figure>
 
 <h3 id="1-2-事务的特性"><a href="#1-2-事务的特性" class="headerlink" title="1.2 事务的特性"></a>1.2 事务的特性</h3><p>ACID 特性</p>
 <ul>
@@ -1418,7 +1420,7 @@
       <a href="/about" target="_blank">赤蓝紫</a>
       |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
       <br />
-       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">254.7k</span>&nbsp;字      
+       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">232.9k</span>&nbsp;字      
       <span id="busuanzi_container_site_pv"> |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次 </span>
        
       <span id="busuanzi_container_site_uv"> |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人 </span>

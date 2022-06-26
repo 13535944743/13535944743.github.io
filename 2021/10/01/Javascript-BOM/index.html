@@ -71,7 +71,9 @@
         }
     </script>
     <script src="/libs/valine/av-min.js"></script>
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="赤蓝紫" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="赤蓝紫" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
   
 
@@ -470,7 +472,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.1k
+                    2k
                 </div>
                 
 
@@ -513,22 +515,22 @@
 <li>它是一个全局对象。定义在全局作用域中的变量函数都会变成 window 对象的属性和方法。调用时可以省略 window,alert()和 prompt()都是 window 对象方法。</li>
 </ol>
 <p>例子：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">var num = 1;<br>      console.log(num); //实际console.log(window.num);<br><br>      function fn() &#123;<br>          alert(1); //window.alert(1);<br>      &#125;<br>      fn(); //window.fn();<br><br><br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">var num = 1;<br>      console.log(num); //实际console.log(window.num);<br><br>      function fn() {<br>          alert(1); //window.alert(1);<br>      }<br>      fn(); //window.fn();<br><br><br></code></pre></td></tr></tbody></table></figure>
 
-<h2 id="window-对象的常见事件"><a href="#window-对象的常见事件" class="headerlink" title="window 对象的常见事件"></a>window 对象的常见事件</h2><h3 id="窗口加载事件"><a href="#窗口加载事件" class="headerlink" title="窗口加载事件"></a>窗口加载事件</h3><h4 id="load-事件"><a href="#load-事件" class="headerlink" title="load 事件"></a>load 事件</h4><p><code>window.addEventListener(&quot;load&quot;, function()&#123;&#125;);</code></p>
+<h2 id="window-对象的常见事件"><a href="#window-对象的常见事件" class="headerlink" title="window 对象的常见事件"></a>window 对象的常见事件</h2><h3 id="窗口加载事件"><a href="#窗口加载事件" class="headerlink" title="窗口加载事件"></a>窗口加载事件</h3><h4 id="load-事件"><a href="#load-事件" class="headerlink" title="load 事件"></a>load 事件</h4><p><code>window.addEventListener("load", function(){});</code></p>
 <p>是窗口（页面）加载事件，当文档内容完全加载完成后会触发事件（包括图像、脚本文件、CSS 文件等），就调用的处理函数。</p>
 <p>作用：有了窗口加载事件就可以把 JS 代码放在页面元素上方。因为 load 事件是等页面内容完全加载完毕，才去执行事件处理函数。</p>
 <p>例子：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;!DOCTYPE html&gt;<br>&lt;html lang=&quot;zh-CN&quot;&gt;<br><br>&lt;head&gt;<br>  		&lt;meta charset=&quot;UTF-8&quot;&gt;<br>  		&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;<br>  		&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;<br>  		&lt;title&gt;Myself&lt;/title&gt;<br>  		&lt;script&gt;<br>      		window.addEventListener(&quot;load&quot;, () =&gt; &#123;<br>          		const btn = document.querySelector(&quot;button&quot;);<br>          		btn.addEventListener(&quot;click&quot;, () =&gt; &#123;<br>              		alert(1);<br>          		&#125;);<br>      		&#125;);<br>  		&lt;/script&gt;<br>&lt;/head&gt;<br><br>&lt;body&gt;<br>  		&lt;button&gt;点击&lt;/button&gt;<br><br>&lt;/body&gt;<br><br>&lt;/html&gt;<br><br><br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">&lt;!DOCTYPE html&gt;<br>&lt;html lang="zh-CN"&gt;<br><br>&lt;head&gt;<br>  		&lt;meta charset="UTF-8"&gt;<br>  		&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;<br>  		&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;<br>  		&lt;title&gt;Myself&lt;/title&gt;<br>  		&lt;script&gt;<br>      		window.addEventListener("load", () =&gt; {<br>          		const btn = document.querySelector("button");<br>          		btn.addEventListener("click", () =&gt; {<br>              		alert(1);<br>          		});<br>      		});<br>  		&lt;/script&gt;<br>&lt;/head&gt;<br><br>&lt;body&gt;<br>  		&lt;button&gt;点击&lt;/button&gt;<br><br>&lt;/body&gt;<br><br>&lt;/html&gt;<br><br><br></code></pre></td></tr></tbody></table></figure>
 
-<h4 id="DOMContentLoaded-事件"><a href="#DOMContentLoaded-事件" class="headerlink" title="DOMContentLoaded 事件"></a>DOMContentLoaded 事件</h4><p><code>document.addEventListener(&quot;DOMContentLoaded&quot;, function()&#123;&#125;);</code></p>
+<h4 id="DOMContentLoaded-事件"><a href="#DOMContentLoaded-事件" class="headerlink" title="DOMContentLoaded 事件"></a>DOMContentLoaded 事件</h4><p><code>document.addEventListener("DOMContentLoaded", function(){});</code></p>
 <p>DOMContentLoaded 事件触发时，仅当 DOM 加载完成时，不包括样式表，图片等。IE9 以上才支持。</p>
 <p>应用背景：当页面的图片很多时，从用户访问到 onload 触发可能需要较长的时间，会影响到用户的体验，此时用 DOMContentLoaded 事件更合适。</p>
 <p>用法和 load 事件类似。</p>
-<h3 id="调整窗口大小事件"><a href="#调整窗口大小事件" class="headerlink" title="调整窗口大小事件"></a>调整窗口大小事件</h3><p><code>window.addEventListener(&quot;resize&quot;, function()&#123;&#125;);</code></p>
+<h3 id="调整窗口大小事件"><a href="#调整窗口大小事件" class="headerlink" title="调整窗口大小事件"></a>调整窗口大小事件</h3><p><code>window.addEventListener("resize", function(){});</code></p>
 <p>只要窗口大小发生变化，就会触发事件。</p>
 <p>例子：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">const btn = document.querySelector(&quot;button&quot;);<br>      window.addEventListener(&quot;resize&quot;, () =&gt; &#123;<br>          if (window.innerWidth &lt; 800) &#123; //window.innerWidth是当前窗口大小<br>              btn.style.display = &quot;none&quot;;<br>          &#125; else &#123;<br>              btn.style.display = &quot;inline&quot;;<br>          &#125;<br>      &#125;)<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">const btn = document.querySelector("button");<br>      window.addEventListener("resize", () =&gt; {<br>          if (window.innerWidth &lt; 800) { //window.innerWidth是当前窗口大小<br>              btn.style.display = "none";<br>          } else {<br>              btn.style.display = "inline";<br>          }<br>      })<br><br></code></pre></td></tr></tbody></table></figure>
 
 <h2 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h2><h3 id="setTimeout-定时器"><a href="#setTimeout-定时器" class="headerlink" title="setTimeout()定时器"></a>setTimeout()定时器</h3><p><code>window.setTimeout(调用函数，[延迟的毫秒数]);</code></p>
 <p>用于设置一个定时器，在时间到后执行调用函数。</p>
@@ -541,23 +543,23 @@
 <p>调用函数也称为回调函数 callback。普通函数按照代码顺序直接调用，而 setTimeout 需要等待时间，时间到了才调用函数，因此被称为回调函数。</p>
 <p>注册事件时的事件处理函数也是回调函数。</p>
 <p>例子：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">let timer = setTimeout(fn, 1000);<br><br>      function fn() &#123;<br>          console.log(&quot;时间到了&quot;);<br>      &#125;<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">let timer = setTimeout(fn, 1000);<br><br>      function fn() {<br>          console.log("时间到了");<br>      }<br><br></code></pre></td></tr></tbody></table></figure>
 
 <h3 id="停止-setTimeout-定时器"><a href="#停止-setTimeout-定时器" class="headerlink" title="停止 setTimeout()定时器"></a>停止 setTimeout()定时器</h3><p><code>window.clearTimeout(timeoutID)</code></p>
 <p>例子：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">let timer = setTimeout(fn, 1000);<br><br>      function fn() &#123;<br>          console.log(&quot;时间到了&quot;);<br>      &#125;<br><br>      clearTimeout(timer);<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">let timer = setTimeout(fn, 1000);<br><br>      function fn() {<br>          console.log("时间到了");<br>      }<br><br>      clearTimeout(timer);<br><br></code></pre></td></tr></tbody></table></figure>
 
 <h3 id="setInterval-定时器"><a href="#setInterval-定时器" class="headerlink" title="setInterval()定时器"></a>setInterval()定时器</h3><p><code>window.setInterval(回调函数，[延迟的毫秒数]);</code></p>
 <p>和 setTimeout()基本一样，不一样的是，setInterval()会重复调用回调函数，每隔一段时间，就调用一次回调函数。</p>
 <p>注意：第一次执行也是需要等待延迟的毫秒数才会执行</p>
 <p>例子：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">let timer = setInterval(fn, 1000);<br><br>      function fn() &#123;<br>          console.log(&quot;时间到了&quot;);<br>      &#125;<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">let timer = setInterval(fn, 1000);<br><br>      function fn() {<br>          console.log("时间到了");<br>      }<br><br></code></pre></td></tr></tbody></table></figure>
 
 <h4 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h4><p>倒计时效果</p>
 <h3 id="停止-setInterval-定时器"><a href="#停止-setInterval-定时器" class="headerlink" title="停止 setInterval()定时器"></a>停止 setInterval()定时器</h3><p><code>window.clearInterval(intervalID)</code></p>
 <p>需要注意的是 setTimeout()和 setInterval()共用一个编号池，技术上，clearTimeout()和 clearInterval() 可以互换。但是，为了避免混淆，不要混用取消定时函数。<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout">来源</a></p>
 <p>例子：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">const start = document.querySelector(&quot;.start&quot;);<br>      const stop = document.querySelector(&quot;.pause&quot;);<br>      let timer = null;<br><br>      start.addEventListener(&quot;click&quot;, () =&gt; &#123;<br>          timer = setInterval(() =&gt; &#123;<br>              console.log(&quot;时间到了&quot;);<br>          &#125;, 1000);<br>      &#125;);<br>      stop.addEventListener(&quot;click&quot;, () =&gt; &#123;<br>          clearInterval(timer);<br>      &#125;);<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">const start = document.querySelector(".start");<br>      const stop = document.querySelector(".pause");<br>      let timer = null;<br><br>      start.addEventListener("click", () =&gt; {<br>          timer = setInterval(() =&gt; {<br>              console.log("时间到了");<br>          }, 1000);<br>      });<br>      stop.addEventListener("click", () =&gt; {<br>          clearInterval(timer);<br>      });<br><br></code></pre></td></tr></tbody></table></figure>
 
 <h4 id="案例-1"><a href="#案例-1" class="headerlink" title="案例"></a>案例</h4><p>发送短信案例</p>
 <h2 id="this-指向"><a href="#this-指向" class="headerlink" title="this 指向"></a>this 指向</h2><p>this 的指向只有在函数执行的时候才能确定指向，一般情况下 this 指向的是调用它的对象。</p>
@@ -565,21 +567,21 @@
 <li>全局作用域和普通函数中 this 指向全局对象 window,定时器里面的 this 也是指向 window</li>
 </ol>
 <p>例子：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">console.log(this);<br><br>      function fn() &#123;<br>          console.log(this);<br>      &#125;<br>      fn();<br><br>      setTimeout(function () &#123;<br>          console.log(this);<br>      &#125;, 200);<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">console.log(this);<br><br>      function fn() {<br>          console.log(this);<br>      }<br>      fn();<br><br>      setTimeout(function () {<br>          console.log(this);<br>      }, 200);<br><br></code></pre></td></tr></tbody></table></figure>
 
 <ol start="2">
 <li>方法调用中谁调用 this，this 就指向谁</li>
 </ol>
-<p style ="color: red">注意：匿名函数和箭头函数的区别：匿名函数和传统方式一样会创建独有的this对象（即触发事件的元素），而箭头函数是继承绑定它所在函数的this对象</p>
+<p style="color: red">注意：匿名函数和箭头函数的区别：匿名函数和传统方式一样会创建独有的this对象（即触发事件的元素），而箭头函数是继承绑定它所在函数的this对象</p>
 
 <p>例子：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">let o = &#123;            sayHi: function () &#123;                console.log(this);            &#125;        &#125;;        o.sayHi();<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">let o = {            sayHi: function () {                console.log(this);            }        };        o.sayHi();<br></code></pre></td></tr></tbody></table></figure>
 
 <ol start="3">
 <li>构造函数中 this 指向构造函数的实例</li>
 </ol>
 <p>例子：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">function Student() &#123;            console.log(this);        &#125;        let st = new Student();<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">function Student() {            console.log(this);        }        let st = new Student();<br></code></pre></td></tr></tbody></table></figure>
 
 <h2 id="JS-执行机制"><a href="#JS-执行机制" class="headerlink" title="JS 执行机制"></a>JS 执行机制</h2><p>Javascript 语言的一个特点是单线程。</p>
 <h3 id="同步和异步"><a href="#同步和异步" class="headerlink" title="同步和异步"></a>同步和异步</h3><p>单线程会导致所有任务都要排队，即假如有计时器，程序会堵住。为了解决这个问题，利用多核 CPU 的计算能力，HTML5 提出 Web Worker 标准，允许 Javascript 开启多个线程，于是，JS 出现了同步和异步。</p>
@@ -594,7 +596,7 @@
 <li>定时器，如 setTimeout,setInterval 等</li>
 </ol>
 <p>例子：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">console.log(1);    //①        setTimeout(function () &#123;            console.log(3);        &#125;, 0);             //②        console.log(2);     //③<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">console.log(1);    //①        setTimeout(function () {            console.log(3);        }, 0);             //②        console.log(2);     //③<br></code></pre></td></tr></tbody></table></figure>
 
 <p>分析：</p>
 <ol>
@@ -1458,7 +1460,7 @@
       <a href="/about" target="_blank">赤蓝紫</a>
       |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
       <br />
-       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">254.7k</span>&nbsp;字      
+       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">232.9k</span>&nbsp;字      
       <span id="busuanzi_container_site_pv"> |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次 </span>
        
       <span id="busuanzi_container_site_uv"> |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人 </span>

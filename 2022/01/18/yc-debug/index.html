@@ -71,7 +71,9 @@
         }
     </script>
     <script src="/libs/valine/av-min.js"></script>
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="赤蓝紫" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="赤蓝紫" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
   
 
@@ -474,14 +476,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    770
+                    744
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    2 分
                 </div>
                 
 
@@ -552,7 +554,7 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;log&quot;</span>);<br><span class="hljs-built_in">console</span>.warn(<span class="hljs-string">&quot;warn&quot;</span>);<br><span class="hljs-built_in">console</span>.error(<span class="hljs-string">&quot;error&quot;</span>);<br><span class="hljs-built_in">console</span>.debug(<span class="hljs-string">&quot;debug&quot;</span>);<br><span class="hljs-built_in">console</span>.info(<span class="hljs-string">&quot;info&quot;</span>);<br><br><span class="hljs-keyword">const</span> peoples = [<br>  &#123;<br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;clz&quot;</span>,<br>    <span class="hljs-attr">age</span>: <span class="hljs-number">21</span>,<br>  &#125;,<br>  &#123;<br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;czh&quot;</span>,<br>    <span class="hljs-attr">age</span>: <span class="hljs-number">22</span>,<br>  &#125;,<br>];<br><span class="hljs-built_in">console</span>.table(peoples);<br><br><span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;%s %c%s&quot;</span>, <span class="hljs-string">&quot;Hello&quot;</span>, <span class="hljs-string">&quot;font-size: 24px;color: red;&quot;</span>, <span class="hljs-string">&quot;World&quot;</span>);<br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">"log"</span>);<br><span class="hljs-built_in">console</span>.warn(<span class="hljs-string">"warn"</span>);<br><span class="hljs-built_in">console</span>.error(<span class="hljs-string">"error"</span>);<br><span class="hljs-built_in">console</span>.debug(<span class="hljs-string">"debug"</span>);<br><span class="hljs-built_in">console</span>.info(<span class="hljs-string">"info"</span>);<br><br><span class="hljs-keyword">const</span> peoples = [<br>  {<br>    <span class="hljs-attr">name</span>: <span class="hljs-string">"clz"</span>,<br>    <span class="hljs-attr">age</span>: <span class="hljs-number">21</span>,<br>  },<br>  {<br>    <span class="hljs-attr">name</span>: <span class="hljs-string">"czh"</span>,<br>    <span class="hljs-attr">age</span>: <span class="hljs-number">22</span>,<br>  },<br>];<br><span class="hljs-built_in">console</span>.table(peoples);<br><br><span class="hljs-built_in">console</span>.log(<span class="hljs-string">"%s %c%s"</span>, <span class="hljs-string">"Hello"</span>, <span class="hljs-string">"font-size: 24px;color: red;"</span>, <span class="hljs-string">"World"</span>);<br></code></pre></td></tr></tbody></table></figure>
 
 <p><img src="https://s2.loli.net/2022/01/18/OhTrEu2CmDBGIRb.png" alt="image-20220118150413480"></p>
 <h3 id="2-3-Sorce-Tab"><a href="#2-3-Sorce-Tab" class="headerlink" title="2.3 Sorce Tab"></a>2.3 Sorce Tab</h3><p><img src="https://s2.loli.net/2022/01/18/r1DxKLAFanMEhcu.png" alt="image-20220118150447113"></p>
@@ -1380,7 +1382,7 @@
       <a href="/about" target="_blank">赤蓝紫</a>
       |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
       <br />
-       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">254.7k</span>&nbsp;字      
+       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">232.9k</span>&nbsp;字      
       <span id="busuanzi_container_site_pv"> |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次 </span>
        
       <span id="busuanzi_container_site_uv"> |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人 </span>
