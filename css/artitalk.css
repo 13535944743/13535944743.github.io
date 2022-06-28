@@ -1,5 +1,4 @@
 div#artitalk_main {
-  width: 1020px;
   margin: 50px auto;
   background-color: #fff;
   padding: 10px;
@@ -12,4 +11,11 @@ div#artitalk_main {
 #operare_artitalk .shuoshuo_input_log {
   width: unset;
   height: unset;
+}
+
+
+@media only screen and (min-width: 993px) {
+  div#artitalk_main {
+    width: 800px;
+  }
 }
