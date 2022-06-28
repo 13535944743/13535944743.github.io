@@ -1,0 +1,15 @@
+div#artitalk_main {
+  width: 1020px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 10px;
+}
+
+#artitalk_main .power {
+  margin: 10px 10px 0 0;
+}
+
+#operare_artitalk .shuoshuo_input_log {
+  width: unset;
+  height: unset;
+}
