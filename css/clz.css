@@ -83,3 +83,7 @@ td {
     position: relative;
     top: 2px;
 }
+
+.country-flag {
+    margin-top: 10px;
+}
