@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.clzczh.top/2022/03/30/css-float/</loc>
+    
+    <lastmod>2022-07-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.clzczh.top/2022/07/17/arrify%E8%BD%AC%E6%95%B0%E7%BB%84/</loc>
     
     <lastmod>2022-07-17</lastmod>
@@ -473,15 +482,6 @@
     <loc>https://www.clzczh.top/2021/11/01/Rem-Layout/</loc>
     
     <lastmod>2022-04-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.clzczh.top/2022/03/30/css-float/</loc>
-    
-    <lastmod>2022-04-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
